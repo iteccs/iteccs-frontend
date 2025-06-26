@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>How to Pay - ITeec</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="ITecc Logo" />
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="howtopay.html">How to Pay</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="content payment-page">
+    <h1>Secure Payment</h1>
+    <p class="subtitle">Choose your preferred method to pay for ITeec's consulting services.</p>
+
+    <div class="payment-wrapper">
+      <!-- PayPal -->
+      <div class="payment-box paypal-box">
+        <h2>Pay with PayPal</h2>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+          <input type="hidden" name="cmd" value="_xclick" />
+          <input type="hidden" name="business" value="your-paypal-email@example.com" />
+          <input type="hidden" name="item_name" value="ITeec Consulting Services" />
+          <input type="hidden" name="currency_code" value="USD" />
+          <input type="hidden" name="amount" value="100.00" />
+          <input type="text" name="first_name" placeholder="First Name" required />
+          <input type="text" name="last_name" placeholder="Last Name" required />
+          <input type="email" name="payer_email" placeholder="Email" required />
+          <button type="submit" class="btn-paypal">Pay with PayPal</button>
+        </form>
+      </div>
+
+      <!-- Stripe -->
+      <div class="payment-box stripe-box">
+        <h2>Pay with Card</h2>
+        <p class="stripe-text">Use your credit or debit card to make a secure payment powered by Stripe.</p>
+        <form action="https://buy.stripe.com/test_payment_link" method="GET" target="_blank">
+          <button type="submit" class="btn-stripe">Pay with Stripe</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 ITeec. All rights reserved.</p>
+  </footer>
+   <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/685c148eee661a190cce9055/1iujs4qol';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+  <!--End of Tawk.to Script-->  
+</body>
+</html>
