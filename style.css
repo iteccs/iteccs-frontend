@@ -1,30 +1,29 @@
+/* Use Inter font (add link in HTML <head>) */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
+  background-color: #f9fafc;
+  color: #333;
 }
 
+/* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #222;
-  padding: 10px 20px;
+  background-color: #1a1a1a;
+  padding: 15px 30px;
   color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
-
-.logo img {
-  width: 40px;
-  margin-right: 10px;
-  vertical-align: middle;
-}
-
 
 .nav-links {
   list-style: none;
   display: flex;
   gap: 20px;
   padding-left: 0;
+  margin: 0;
 }
 
 .nav-links li {
@@ -34,54 +33,85 @@ body {
 .nav-links a {
   color: white;
   text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: 500;
 }
 
+.nav-links a:hover {
+  background-color: #333;
+  color: #00bfff;
+  transform: scale(1.1) translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 191, 255, 0.3);
+}
+
+/* Hero Section */
 .hero {
   text-align: center;
   padding: 100px 20px;
-  background: linear-gradient(135deg);
+  background: linear-gradient(135deg, #e0f7fa, #f1f8ff);
   color: white;
 }
 
+/* CTA Button */
 .cta-button {
   background-color: #ffcc00;
   color: black;
-  padding: 10px 20px;
+  padding: 12px 24px;
   border: none;
   text-decoration: none;
   font-weight: bold;
-  border-radius: 5px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
 }
 
+.cta-button:hover {
+  background-color: #f5b800;
+}
+
+/* Content Section */
 .content {
-  padding: 40px 20px;
-  background: linear-gradient(135deg);
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #e0f7fa, #f1f8ff);
 }
 
+/* Forms */
 form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
   max-width: 500px;
   margin-top: 20px;
 }
 
 form input,
 form textarea {
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
 }
 
 form button {
-  padding: 10px;
+  padding: 12px;
   background-color: #2575fc;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
+form button:hover {
+  background-color: #1a5de7;
+  transform: translateY(-2px);
+}
+
+/* Card Layout */
 .card-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -90,41 +120,50 @@ form button {
 }
 
 .card {
-  background-color: #f5f5f5;
+  background-color: #ffffff;
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
 }
 
+/* Footer */
 footer {
   padding: 20px;
-  background-color: #222;
+  background-color: #1a1a1a;
   color: white;
   text-align: center;
 }
 
+/* Chat Box */
 .chat-box {
   margin-top: 10px;
   background-color: #ffcc00;
   color: black;
   display: inline-block;
   padding: 10px;
-  border-radius: 5px;
-  cursor: pointer; /* <- Add this */
+  border-radius: 6px;
+  cursor: pointer;
   font-weight: bold;
+  transition: background 0.3s ease;
 }
 
+.chat-box:hover {
+  background-color: #f5b800;
+}
+
+/* Payment Page */
 .payment-page {
   max-width: 1200px;
   margin: auto;
   padding: 60px 20px;
   background-color: #f4f6f8;
-  border-radius: 10px;
+  border-radius: 12px;
   text-align: center;
 }
 
@@ -151,11 +190,18 @@ footer {
   background-color: #ffffff;
   padding: 30px 25px;
   border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
   flex: 1 1 350px;
   max-width: 500px;
   min-width: 300px;
   text-align: left;
+  transition: all 0.3s ease;
+}
+
+.payment-box:hover {
+  border: 1px solid #2575fc;
+  box-shadow: 0 8px 20px rgba(37, 117, 252, 0.1);
+  transform: translateY(-6px);
 }
 
 .payment-box h2 {
@@ -173,14 +219,17 @@ footer {
   font-size: 1rem;
 }
 
+/* Buttons */
 .btn-paypal, .btn-stripe {
-  padding: 12px;
+  padding: 14px;
   border: none;
   border-radius: 8px;
-  font-size: 1rem;
-  font-weight: bold;
+  font-size: 1.05rem;
+  font-weight: 600;
   width: 100%;
   cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .btn-paypal {
@@ -190,6 +239,7 @@ footer {
 
 .btn-paypal:hover {
   background-color: #ffb347;
+  transform: translateY(-2px);
 }
 
 .btn-stripe {
@@ -199,14 +249,17 @@ footer {
 
 .btn-stripe:hover {
   background-color: #5469d4;
+  transform: translateY(-2px);
 }
 
+/* Stripe Text */
 .stripe-text {
   margin-bottom: 20px;
   color: #555;
   font-size: 0.95rem;
 }
 
+/* Responsive */
 @media (max-width: 768px) {
   .payment-wrapper {
     flex-direction: column;
@@ -214,17 +267,18 @@ footer {
   }
 }
 
-iframe[title="chat widget"] {
-  display: none !important;
-}
-
+/* Logo */
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
 }
 
 .logo img {
-  height: 80px; /* Adjust size as needed */
-  width: auto;
+  width: 100px;
+  margin-right: 12px;
+}
+
+/* Remove unwanted iframe */
+iframe[title="chat widget"] {
+  display: none !important;
 }

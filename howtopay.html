@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>How to Pay - ITeec</title>
+  <title>How to Pay - ITeecs</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <nav class="navbar">
     <div class="logo">
-      <img src="logo.png" alt="ITecc Logo" />
+      <img src="logo.png" alt="ITeccs Logo" />
     </div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
@@ -30,13 +31,13 @@
         <h2>Pay with PayPal</h2>
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
           <input type="hidden" name="cmd" value="_xclick" />
-          <input type="hidden" name="business" value="your-paypal-email@example.com" />
-          <input type="hidden" name="item_name" value="ITeec Consulting Services" />
+          <input type="hidden" name="business" value="kaffel07@gmail.com" />
+          <input type="hidden" name="item_name" value="ITeecs Consulting Services" />
           <input type="hidden" name="currency_code" value="USD" />
-          <input type="hidden" name="amount" value="100.00" />
+          <input type="number" name="amount" placeholder="Amount (USD)" required />
           <input type="text" name="first_name" placeholder="First Name" required />
           <input type="text" name="last_name" placeholder="Last Name" required />
-          <input type="email" name="payer_email" placeholder="Email" required />
+          <input type="email" name="email" placeholder="Email" required />
           <button type="submit" class="btn-paypal">Pay with PayPal</button>
         </form>
       </div>
@@ -45,7 +46,7 @@
       <div class="payment-box stripe-box">
         <h2>Pay with Card</h2>
         <p class="stripe-text">Use your credit or debit card to make a secure payment powered by Stripe.</p>
-        <form action="https://buy.stripe.com/test_payment_link" method="GET" target="_blank">
+        <form action="https://buy.stripe.com/test_8x228t0yjer61rjcC1cIE00" method="GET" target="_blank">
           <button type="submit" class="btn-stripe">Pay with Stripe</button>
         </form>
       </div>
@@ -53,20 +54,20 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 ITeec. All rights reserved.</p>
+    <p>&copy; 2025 ITeecs. All rights reserved.</p>
   </footer>
-   <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-  (function(){
-  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-  s1.async=true;
-  s1.src='https://embed.tawk.to/685c148eee661a190cce9055/1iujs4qol';
-  s1.charset='UTF-8';
-  s1.setAttribute('crossorigin','*');
-  s0.parentNode.insertBefore(s1,s0);
-  })();
+  <!--Start of Tawk.to Script-->
+  <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/685e2123390063190e54b4b2/1iunr2sv2';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
   </script>
-  <!--End of Tawk.to Script-->  
+  <!--End of Tawk.to Script--> 
 </body>
 </html>
