@@ -1,10 +1,13 @@
-/* Use Inter font (add link in HTML <head>) */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f9fafc;
-  color: #333;
+  color: #222;
 }
 
 /* Navbar */
@@ -41,7 +44,7 @@ body {
 
 .nav-links a:hover {
   background-color: #333;
-  color: #00bfff;
+  color: #2575fc;
   transform: scale(1.1) translateY(-2px);
   box-shadow: 0 4px 10px rgba(0, 191, 255, 0.3);
 }
@@ -52,6 +55,48 @@ body {
   padding: 100px 20px;
   background: linear-gradient(135deg, #e0f7fa, #f1f8ff);
   color: white;
+  background-size: 110%;
+  animation: zoomIn 8s ease-out forwards;
+}
+.hero-text {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #1a1a1a;
+  animation: fadeSlideUp 1s ease-out both;
+  animation-delay: 0.4s;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #2575fc;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+h1, h2, .hero-text h1 {
+  font-family: 'Poppins', sans-serif;
+}
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes zoomIn {
+  from {
+    background-size: 120%;
+  }
+  to {
+    background-size: 100%;
+  }
 }
 
 /* CTA Button */
@@ -81,8 +126,10 @@ form {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  max-width: 500px;
   margin-top: 20px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto; /* Only once */
 }
 
 form input,
@@ -282,3 +329,45 @@ footer {
 iframe[title="chat widget"] {
   display: none !important;
 }
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.testimonials {
+  padding: 60px 20px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  color: #1a1a1a;
+}
+
+.testimonials .card-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.testimonials .card {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 300px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.testimonials .card p {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+.card i {
+  margin-bottom: 10px;
+  display: block;
+}
+
