@@ -1,0 +1,157 @@
+<!-- services.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Education - ITeccs</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Fonts and Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="ITeccs Logo">
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="consulting.html">Consulting</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="howtopay.html">How to Pay</a></li>
+      <li>
+        <a href="contact.html" class="contact-nav-button">
+          <i class="fas fa-envelope"></i> Contact Us
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <main class="content">
+    <h1 class="fade-in-up">Education & Development Center for STEM and Professional Training</h1>
+    <p class="fade-in-up">ITECCS delivers cutting-edge STEM and applied science education through remote
+       courses, tailored to the unique needs of colleges, universities, industry,
+      startups, and workforce development programs. Our offerings include:
+    </p>
+    <ul class="fade-in-up">
+      <li>Custom curricula, hands-on workshops, bootcamps, and design courses
+        that equip learners with practical, industry-ready skills.
+      </li>
+      <li>Certificates, diplomas, tutoring, and Continuing Professional Education
+        programs that help students, educators, and professionals thrive in a rapidly
+        evolving, technology-driven world.
+      </li>
+      <li>Workforce training and professional development designed to support
+        lifelong learning, upskilling, and reskilling for individuals and organizations alike.
+      </li>
+    </ul>
+    <p class="fade-in-up">By combining high-quality teaching with flexible delivery, ITECCS ensures that every
+      learner gains the knowledge and confidence to succeed in science, engineering, and
+      innovation.
+    </p>
+    <div class="card-container">
+      <a href="courses.html" class="card">
+        <i class="fas fa-book-open fa-2x" style="color: #2575fc;"></i>
+        <h2>Courses</h2>
+        <p>TBD</p>
+      </a>
+      <a href="certifications.html" class="card">
+        <i class="fas fa-scroll fa-2x" style="color: #2575fc;"></i>
+        <h2>Certificates</h2>
+        <p>TBD</p>
+      </a>
+      <a href="workshops.html" class="card">
+        <i class="fas fa-tools fa-2x" style="color: #2575fc;"></i>
+        <h2>Workshops</h2>
+        <p>TBD</p>
+      </a>
+      <a href="stem.html" class="card">
+        <i class="fas fa-code fa-2x" style="color:#2575fc;"></i>
+        <h2>Youth/STEM Program</h2>
+        <p>TBD</p>
+      </a>
+      <a href="upskilling.html" class="card">
+        <i class="fas fa-rocket fa-2x" style="color: #2575fc;"></i>
+        <h2>Professional UpSkilling</h2>
+        <p>TBD</p>
+      </a>
+      <a href="contedu.html" class="card">
+        <i class="fas fa-infinity fa-2x" style="color: #2575fc;"></i>
+        <h2>Continuing Professional Education</h2>
+        <p>TBD</p>
+      </a>
+      <a href="research.html" class="card">
+        <i class="fas fa-microscope fa-2x" style="color: #2575fc;"></i>
+        <h2>Research</h2>
+        <p>TBD</p>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 ITeccs. All rights reserved.</p>
+  </footer>
+  <!-- scroll reveal animation -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const fadeElems = document.querySelectorAll(".fade-in-up");
+  
+      const observer = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target); // animate ONCE only
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+  
+      fadeElems.forEach(el => observer.observe(el));
+    });
+  </script>
+  <!-- End scroll reveal animation -->
+  <!-- Custom Chat Button -->
+  <button id="custom-chat-btn">
+    <i class="fas fa-comments"></i>
+  </button> 
+
+  <!-- Tawk.to Script -->
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {};
+    var Tawk_LoadStart = new Date();
+
+    (function(){
+      var s1=document.createElement("script"),
+          s0=document.getElementsByTagName("script")[0];
+      s1.async=true;
+      s1.src='https://embed.tawk.to/685e2123390063190e54b4b2/1iunr2sv2';
+      s1.charset='UTF-8';
+      s1.setAttribute('crossorigin','*');
+      s0.parentNode.insertBefore(s1,s0);
+    })();
+
+    // Hide default widget once fully loaded
+    Tawk_API.onLoad = function(){
+      Tawk_API.hideWidget();
+    };
+
+    // Custom button opens chat
+    document.addEventListener("DOMContentLoaded", function(){
+      var btn = document.getElementById("custom-chat-btn");
+      if(btn){
+        btn.addEventListener("click", function(){
+          if(typeof Tawk_API !== "undefined"){
+            Tawk_API.maximize(); // open chat window
+          }
+        });
+      }
+    });
+  </script>
+  <!-- End of Tawk.to Script -->      
+</body>
+</html>

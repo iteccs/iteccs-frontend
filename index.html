@@ -4,11 +4,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ITeccs - Home</title>
+  <title>Home - ITeccs</title>
   <link rel="stylesheet" href="style.css">
   <!-- Fonts and Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
@@ -19,25 +18,31 @@
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About Us</a></li>
-      <li><a href="services.html">Services</a></li>
+      <li><a href="consulting.html">Consulting</a></li>
+      <li><a href="education.html">Education</a></li>
       <li><a href="howtopay.html">How to Pay</a></li>
       <li>
         <a href="contact.html" class="contact-nav-button">
           <i class="fas fa-envelope"></i> Contact Us
         </a>
       </li>
-      
     </ul>
   </nav>
 
   <header class="hero">
-    <!-- Hero content here -->
+    <video autoplay muted loop playsinline class="hero-video">
+      <source src="iteccs.mp4" type="video/mp4" />
+      Your browser doesn't support video background.
+    </video>
     <div class="hero-text">
-      <h1>Innovating Your Digital Future</h1>
-      <p>Engineering. Consulting. Certification. Education.</p>
-      <a href="services.html" class="cta-button">Explore Our Services</a>
+      <div class="hero-content">
+        <h2>Innovation in Technology, Education, Certification, and Consulting Services</h2>
+        <p>Empowering Innovators, Engineers, and Scientists </p>
+        <a href="coreservices.html" class="cta-button">Explore Our Core Services</a>
+      </div>
     </div>
   </header>
+
   <section class="testimonials">
     <h2>What Our Clients Say</h2>
     <div class="card-container">
@@ -51,21 +56,48 @@
       </div>
     </div>
   </section>  
+
   <footer>
     <p>&copy; 2025 ITeccs. All rights reserved.</p>
   </footer>
-    <!--Start of Tawk.to Script-->
+
+  <!-- Custom Chat Button -->
+  <button id="custom-chat-btn">
+    <i class="fas fa-comments"></i>
+  </button> 
+
+  <!-- Tawk.to Script -->
   <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    var Tawk_API = Tawk_API || {};
+    var Tawk_LoadStart = new Date();
+
     (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/685e2123390063190e54b4b2/1iunr2sv2';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
+      var s1=document.createElement("script"),
+          s0=document.getElementsByTagName("script")[0];
+      s1.async=true;
+      s1.src='https://embed.tawk.to/685e2123390063190e54b4b2/1iunr2sv2';
+      s1.charset='UTF-8';
+      s1.setAttribute('crossorigin','*');
+      s0.parentNode.insertBefore(s1,s0);
     })();
+
+    // Hide default widget once fully loaded
+    Tawk_API.onLoad = function(){
+      Tawk_API.hideWidget();
+    };
+
+    // Custom button opens chat
+    document.addEventListener("DOMContentLoaded", function(){
+      var btn = document.getElementById("custom-chat-btn");
+      if(btn){
+        btn.addEventListener("click", function(){
+          if(typeof Tawk_API !== "undefined"){
+            Tawk_API.maximize(); // open chat window
+          }
+        });
+      }
+    });
   </script>
-  <!--End of Tawk.to Script-->
+  <!-- End of Tawk.to Script -->    
 </body>
 </html>

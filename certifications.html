@@ -1,0 +1,121 @@
+<!-- certifications.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - ITeccs</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Fonts and Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="ITeccs Logo">
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="consulting.html">Consulting</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="howtopay.html">How to Pay</a></li>
+      <li>
+        <a href="contact.html" class="contact-nav-button">
+          <i class="fas fa-envelope"></i> Contact Us
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <main class="content">
+    <h1 class="fade-in-up">Online Certificate Programs</h1>
+    <div class="card-container">
+      <a href="" class="card">
+        <i class="fas fa-book-open fa-2x" style="color: #2575fc;"></i>
+        <h2>Data Science & Big Data</h2>
+        <p>TBD</p>
+      </a>
+      <a href="" class="card">
+        <i class="fas fa-book-open fa-2x" style="color: #2575fc;"></i>
+        <h2>Cloud Computing & DevOps</h2>
+        <p>TBD</p>
+      </a>
+      <a href="" class="card">
+        <i class="fas fa-book-open fa-2x" style="color: #2575fc;"></i>
+        <h2>Applied & Computational Mathematics</h2>
+        <p>TBD</p>
+      </a>
+      <a href="" class="card">
+        <i class="fas fa-book-open fa-2x" style="color: #2575fc;"></i>
+        <h2>Engineering</h2>
+        <p>TBD</p>
+      </a>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 ITeccs. All rights reserved.</p>
+  </footer>
+  <!-- scroll reveal animation -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const fadeElems = document.querySelectorAll(".fade-in-up");
+  
+      const observer = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target); // animate ONCE only
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+  
+      fadeElems.forEach(el => observer.observe(el));
+    });
+  </script>
+  <!-- End scroll reveal animation -->
+  <!-- Custom Chat Button -->
+  <button id="custom-chat-btn">
+    <i class="fas fa-comments"></i>
+  </button> 
+
+  <!-- Tawk.to Script -->
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {};
+    var Tawk_LoadStart = new Date();
+
+    (function(){
+      var s1=document.createElement("script"),
+          s0=document.getElementsByTagName("script")[0];
+      s1.async=true;
+      s1.src='https://embed.tawk.to/685e2123390063190e54b4b2/1iunr2sv2';
+      s1.charset='UTF-8';
+      s1.setAttribute('crossorigin','*');
+      s0.parentNode.insertBefore(s1,s0);
+    })();
+
+    // Hide default widget once fully loaded
+    Tawk_API.onLoad = function(){
+      Tawk_API.hideWidget();
+    };
+
+    // Custom button opens chat
+    document.addEventListener("DOMContentLoaded", function(){
+      var btn = document.getElementById("custom-chat-btn");
+      if(btn){
+        btn.addEventListener("click", function(){
+          if(typeof Tawk_API !== "undefined"){
+            Tawk_API.maximize(); // open chat window
+          }
+        });
+      }
+    });
+  </script>
+  <!-- End of Tawk.to Script -->        
+</body>
+</html>

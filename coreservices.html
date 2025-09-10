@@ -1,0 +1,147 @@
+<!-- coreservices.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Core Services - ITeccs</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Fonts and Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="ITeccs Logo">
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="consulting.html">Consulting</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="howtopay.html">How to Pay</a></li>
+      <li>
+        <a href="contact.html" class="contact-nav-button">
+          <i class="fas fa-envelope"></i> Contact Us
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Page Content -->
+  <main class="content">
+    <h1 class="fade-in-up">Our Core Services</h1>
+    <p class="fade-in-up">
+      ITECCS provides specialized services in research, innovation, and professional development. 
+      We support universities, industries, startups, and government agencies with technical expertise 
+      and training programs.
+    </p>
+
+    <!-- Card Grid -->
+    <div class="card-container fade-in-up">
+      <div class="card">
+        <i class="fas fa-lightbulb fa-2x" style="color:#2575fc;"></i>
+        <h2>R&D Advisory</h2>
+        <p>Innovation-driven consulting to advance research and development initiatives.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-laptop-code fa-2x" style="color:#2575fc;"></i>
+        <h2>Advanced Training</h2>
+        <p>Custom simulation tools and technical training programs for industry readiness.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-handshake fa-2x" style="color:#2575fc;"></i>
+        <h2>Collaboration</h2>
+        <p>Research partnerships and grant proposal development for joint projects.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-graduation-cap fa-2x" style="color:#2575fc;"></i>
+        <h2>Education</h2>
+        <p>Research-backed initiatives and training programs that foster innovation.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-file-alt fa-2x" style="color:#2575fc;"></i>
+        <h2>Grant Support</h2>
+        <p>Proposal guidance aligned with DoD, NSF, NIH, and DOE funding priorities.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-server fa-2x" style="color:#2575fc;"></i>
+        <h2>Infrastructure</h2>
+        <p>Shared computing resources for advanced technical and research projects.</p>
+      </div>
+    </div>
+  </main>
+  <!-- Call to Action -->
+  <section class="cta-section">
+    <h2>Ready to Work With Us?</h2>
+    <p>Partner with us for expert consulting, education, and certification.</p>
+    <a href="contact.html" class="cta-button">Contact Us Today</a>
+  </section>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 ITeccs. All rights reserved.</p>
+  </footer>
+
+  <!-- scroll reveal animation -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const fadeElems = document.querySelectorAll(".fade-in-up");
+
+      const observer = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target); // animate ONCE only
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+
+      fadeElems.forEach(el => observer.observe(el));
+    });
+  </script>
+
+  <!-- Custom Chat Button -->
+  <button id="custom-chat-btn">
+    <i class="fas fa-comments"></i>
+  </button> 
+
+  <!-- Tawk.to Script -->
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {};
+    var Tawk_LoadStart = new Date();
+
+    (function(){
+      var s1=document.createElement("script"),
+          s0=document.getElementsByTagName("script")[0];
+      s1.async=true;
+      s1.src='https://embed.tawk.to/685e2123390063190e54b4b2/1iunr2sv2';
+      s1.charset='UTF-8';
+      s1.setAttribute('crossorigin','*');
+      s0.parentNode.insertBefore(s1,s0);
+    })();
+
+    // Hide default widget once fully loaded
+    Tawk_API.onLoad = function(){
+      Tawk_API.hideWidget();
+    };
+
+    // Custom button opens chat
+    document.addEventListener("DOMContentLoaded", function(){
+      var btn = document.getElementById("custom-chat-btn");
+      if(btn){
+        btn.addEventListener("click", function(){
+          if(typeof Tawk_API !== "undefined"){
+            Tawk_API.maximize(); // open chat window
+          }
+        });
+      }
+    });
+  </script>
+  <!-- End of Tawk.to Script -->
+</body>
+</html>

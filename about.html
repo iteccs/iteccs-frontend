@@ -19,7 +19,8 @@
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About Us</a></li>
-      <li><a href="services.html">Services</a></li>
+      <li><a href="consulting.html">Consulting</a></li>
+      <li><a href="education.html">Education</a></li>
       <li><a href="howtopay.html">How to Pay</a></li>
       <li>
         <a href="contact.html" class="contact-nav-button">
@@ -30,25 +31,119 @@
   </nav>
 
   <main class="content">
-    <h1>About Us</h1>
-    <p>Welcome to ITeccs! We provide expert consulting in Computing, Engineering, Data Science, and Education. Our team is dedicated to helping businesses succeed through innovation and tailored strategies.</p>
+    <h1 class="fade-in-up">About Us</h1>
+    <p class="fade-in-up">ITECCS Institute of Technology empowers the next generation of innovators, engineers,
+      and scientists by integrating cutting-edge STEM education, applied research, and high-impact engineering consulting.
+    </p>
+    <h1 class="fade-in-up">Our Mission</h1>
+    <p class="fade-in-up">The institute develops tailored curricula, hands-on workshops, bootcamps, and design
+       courses in various topics for all levels for colleges, universities, and workforce
+       programs, while offering training, tutoring, and supporting grant applications,
+       and evaluating academic programs. ITECCS offers trainings and certificate programs,
+       as well as a vibrant portfolio of Continuing Professional Education, custom training,
+       events, and workforce development programs that provide tailored upskilling and
+       reskilling opportunities to help individuals and organizations stay competitive in an
+       evolving job market.
+    </p>
+    <p class="fade-in-up">Its Research and Consulting Division partners with industry, startups, colleges,
+      universities, research labs, government programs, and manufacturing organizations,
+      delivering expertise in technology and engineering fields like computational fluid 
+      dynamics, porous media, applied mathematics, data science, numerical methods,
+      and high-performance computing, along with R&D advisory, simulation and modeling
+      tools, technical training, and research collaborations.
+    </p>
+    <p class="fade-in-up">The Innovative advanced research computing Center at ITECCS
+       also serves as a collaborative hub for applied mathematics, engineering,
+       and computational science. It unites multidisciplinary teams to address complex
+       challenges in numerical algorithms and linear algebra, deep learning and inverse problems,
+       optimization and PDEs, fluid dynamics and porous media, scientific computing, neural
+       networks, and AI. The center promotes high-level research, fosters collaboration
+       between academia and industry, provides shared computing resources
+       and training programs, and actively engages students, faculty, and industry
+       partners to produce peer-reviewed research aligned with DoD, NSF, NIH, and DOE
+      agencies goals. By cultivating interdisciplinary skills and igniting STEM
+      enthusiasm, the center ensures sustainable research funding, creates new knowledge,
+      and inspires the next generation of scientists, engineers, and innovators.
+    </p>
+    <p class="fade-in-up">Through its integration of education, professional development,
+       workforce training, research, and innovation; ITECCS bridges theory and application,
+      transforming knowledge into measurable impact across education, industry, 
+      government, and society.
+    </p>
+    <h1 class="fade-in-up">Our Impact</h1>
+    <p class="fade-in-up">At ITECCS, we bridge education, research, innovation, and workforce
+      development to deliver measurable impact across education, industry, government,
+      and society.
+    </p>
+    <ul class="fade-in-up">
+      <li>We ignite STEM passion in students and professionals.</li>
+      <li>We foster collaboration between scientists, engineers, educators, and entrepreneurs.</li>
+    </ul>
+    <p class="fade-in-up">We transform theory into real-world solutions, empowering the
+       next generation of innovators, engineers, and scientists.
+    </p>
   </main>
 
   <footer>
     <p>&copy; 2025 ITeccs. All rights reserved.</p>
   </footer>
-  <!--Start of Tawk.to Script-->
-  <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/685e2123390063190e54b4b2/1iunr2sv2';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-    })();
+  <!-- scroll reveal animation -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const fadeElems = document.querySelectorAll(".fade-in-up");
+  
+      const observer = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target); // animate ONCE only
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+  
+      fadeElems.forEach(el => observer.observe(el));
+    });
   </script>
-  <!--End of Tawk.to Script-->        
+  <!-- End scroll reveal animation -->
+  <!-- Custom Chat Button -->
+  <button id="custom-chat-btn">
+    <i class="fas fa-comments"></i>
+  </button> 
+  <!-- Tawk.to Script -->
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {};
+    var Tawk_LoadStart = new Date();
+
+    (function(){
+      var s1=document.createElement("script"),
+          s0=document.getElementsByTagName("script")[0];
+      s1.async=true;
+      s1.src='https://embed.tawk.to/685e2123390063190e54b4b2/1iunr2sv2';
+      s1.charset='UTF-8';
+      s1.setAttribute('crossorigin','*');
+      s0.parentNode.insertBefore(s1,s0);
+    })();
+
+    // Hide default widget once fully loaded
+    Tawk_API.onLoad = function(){
+      Tawk_API.hideWidget();
+    };
+
+    // Custom button opens chat
+    document.addEventListener("DOMContentLoaded", function(){
+      var btn = document.getElementById("custom-chat-btn");
+      if(btn){
+        btn.addEventListener("click", function(){
+          if(typeof Tawk_API !== "undefined"){
+            Tawk_API.maximize(); // open chat window
+          }
+        });
+      }
+    });
+  </script>
+  <!-- End of Tawk.to Script -->        
 </body>
 </html>
