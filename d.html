@@ -4,95 +4,73 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ITeccs - AI & Engineering Solutions</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    body { margin:0; font-family: 'Inter', sans-serif; color:#333; }
-    a { text-decoration: none; }
-    header {
-      background: url('https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
-      height: 100vh; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px;
-    }
-    header h1 { font-size: 3rem; margin-bottom: 20px; }
-    header p { font-size: 1.3rem; margin-bottom: 30px; max-width: 700px; }
-    .btn { background: #ff6f00; color: white; padding: 15px 35px; border-radius: 8px; font-weight: 600; transition: 0.3s; }
-    .btn:hover { background: #e65c00; }
-    section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
-    h2 { text-align: center; margin-bottom: 50px; font-size: 2.2rem; }
-    .cards { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
-    .card { background: #f4f4f4; border-radius: 12px; padding: 30px; flex: 1 1 300px; max-width: 350px; text-align: center; transition: 0.3s; }
-    .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-    .card img { width: 60px; margin-bottom: 20px; }
-    .testimonials { background: #0a1f44; color: white; padding: 80px 20px; text-align: center; }
-    .testimonial { max-width: 600px; margin: 20px auto; font-style: italic; }
-    .cta { background: #ff6f00; color: white; padding: 80px 20px; text-align: center; }
-    .cta a { color: white; }
-    @media(max-width:768px){ header h1{font-size:2.2rem;} header p{font-size:1.1rem;} }
+    body { font-family: Arial, sans-serif; margin:0; padding:0; line-height:1.6; color:#333; }
+    header { background: #0a1f44; color: white; text-align: center; padding: 100px 20px; }
+    header h1 { font-size: 2.8rem; margin-bottom: 20px; }
+    header p { font-size: 1.2rem; margin-bottom: 30px; }
+    header a { background: #ff6f00; color: white; padding: 15px 30px; text-decoration: none; font-weight: bold; border-radius: 5px; }
+    section { padding: 60px 20px; max-width: 1200px; margin: 0 auto; }
+    .services, .why { display: flex; flex-wrap: wrap; gap: 20px; }
+    .card { flex: 1; min-width: 280px; background: #f4f4f4; padding: 20px; border-radius: 8px; }
+    .testimonials { background: #e0e0e0; padding: 60px 20px; text-align: center; }
+    .cta { text-align: center; padding: 60px 20px; background: #0a1f44; color: white; }
+    .cta a { background: #ff6f00; padding: 15px 30px; color: white; text-decoration: none; font-weight: bold; border-radius: 5px; }
   </style>
 </head>
 <body>
 
-  <!-- Hero Section -->
   <header>
     <h1>Engineering the Future with AI & High-Fidelity Simulations</h1>
     <p>Scalable tools for digital twins, multiphysics modeling, and data-driven engineering across Aerospace, Mechanical, Civil, and Biomedical sectors.</p>
-    <a href="https://iteccs.com/contact" class="btn">Start Your Innovation</a>
+    <a href="https://iteccs.com/contact">Start Your Innovation</a>
   </header>
 
-  <!-- Services Section -->
   <section>
     <h2>Our Core Services</h2>
-    <div class="cards">
+    <div class="services">
       <div class="card">
-        <img src="https://img.icons8.com/ios-filled/100/000000/artificial-intelligence.png" alt="AI & Engineering Simulations">
         <h3>AI & Engineering Simulations</h3>
-        <p>Custom algorithms and frameworks for hypersonics, biofluids, microfluidics, and structural mechanics.</p>
+        <p>Custom numerical algorithms and simulation frameworks for hypersonics, biofluids, microfluidics, and structural mechanics.</p>
       </div>
       <div class="card">
-        <img src="https://img.icons8.com/ios-filled/100/000000/consultation.png" alt="Technical Consulting">
         <h3>Technical Consulting</h3>
-        <p>Expert guidance bridging AI, HPC, optimization, and engineering design for complex industrial challenges.</p>
+        <p>Expert guidance bridging AI, HPC, optimization, and engineering design to solve complex industrial challenges.</p>
       </div>
       <div class="card">
-        <img src="https://img.icons8.com/ios-filled/100/000000/online-course.png" alt="Educational Programs">
         <h3>Educational Programs</h3>
-        <p>Tailored courses and certifications to upskill engineers, scientists, and innovators in advanced technologies.</p>
+        <p>Tailored courses and certification programs to upskill engineers, scientists, and innovators in cutting-edge technologies.</p>
       </div>
     </div>
   </section>
 
-  <!-- Why ITeccs Section -->
-  <section>
+  <section class="why">
     <h2>Why ITeccs</h2>
-    <div class="cards">
+    <div class="services">
       <div class="card">
-        <img src="https://img.icons8.com/ios-filled/100/000000/engineering.png" alt="High-Fidelity Solutions">
         <h3>High-Fidelity Solutions</h3>
         <p>Scalable tools for digital twins and multiphysics simulations.</p>
       </div>
       <div class="card">
-        <img src="https://img.icons8.com/ios-filled/100/000000/cloud.png" alt="End-to-End Expertise">
         <h3>End-to-End Expertise</h3>
         <p>From R&D and software engineering to cloud-ready industrial deployment.</p>
       </div>
       <div class="card">
-        <img src="https://img.icons8.com/ios-filled/100/000000/lock-2.png" alt="Secure & Reliable">
         <h3>Secure & Reliable</h3>
         <p>Advanced cybersecurity and cloud integration for enterprise-grade solutions.</p>
       </div>
     </div>
   </section>
 
-  <!-- Testimonials Section -->
   <section class="testimonials">
     <h2>What Our Clients Say</h2>
-    <p class="testimonial">“ITeccs transformed our approach to simulations, improving efficiency by 30%.” – Jane D., TechCo</p>
-    <p class="testimonial">“Their AI-driven consulting helped us accelerate our product development.” – John S., DataCo</p>
+    <p>“ITeccs transformed our approach to simulations, improving efficiency by 30%.” – Jane D., TechCo</p>
+    <p>“Their AI-driven consulting helped us accelerate our product development.” – John S., DataCo</p>
   </section>
 
-  <!-- Call to Action Section -->
   <section class="cta">
     <h2>Ready to innovate with ITeccs?</h2>
-    <a href="https://iteccs.com/contact" class="btn">Contact Us Today</a>
+    <a href="https://iteccs.com/contact">Contact Us Today</a>
   </section>
 
 </body>
