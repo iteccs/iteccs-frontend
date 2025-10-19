@@ -3,21 +3,54 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Research Areas</title>
+  <title>AdvancedApplied</title>
   <style>
     body{font-family: Arial, Helvetica, sans-serif; padding:20px; background:#fff; color:#111}
     pre{font-size:16px; line-height:1.6;}
   </style>
 </head>
 <body>
-  <pre>PDEs: Nonlinear, coupled systems, stability, control
+  <pre>Advanced Applied & Computational Mathematics
+PDEs: Nonlinear, coupled systems, stability, control
 Numerical Methods: Finite difference, spectral, FEM, finite-volume
 Optimization & Control: PDE-constrained optimization, gradient-based learning, inverse problems
 Linear Algebra & Scientific Computing: High-dimensional solvers, eigenvalue analysis, preconditioning
 Inverse Problems & Deep Learning: PINNs for parameter reconstruction & medical imaging
 Multiscale & Reduced-Order Modeling
 Scientific & Parallel Computing: CPU/GPU, HPC simulations, statistical modeling
-Data Science & AI: Uncertainty quantification, deep learning, physics-informed AI</pre>
+Data Science & AI: Uncertainty quantification, deep learning, physics-informed AI
+
+🔹 Computation & Data-Driven Engineering
+Automated simulation pipelines & digital twin development
+High-performance data processing & interactive visualization
+Scientific Machine Learning (SciML) & AI-enhanced simulations
+Surrogate modeling, multiscale, and reduced-order simulations
+AI in CFD, molecular dynamics, and quantum mechanics
+Data-driven imaging: microscopy, tomography, spectroscopy, particle tracking
+End-to-end AI & data solutions: algorithm development, cloud integration, MLOps
+
+🔹 Cybersecurity, Cloud & Software Engineering
+Cloud architecture & digital transformation
+AI-driven cybersecurity, threat detection & risk mitigation
+Custom software engineering, platform development, system integration
+
+🔹 Aerospace, Civil, Mechanical & Biomedical Engineering
+Propulsion, hypersonics, high-speed aerodynamics
+Structural mechanics, fracture analysis, sustainable infrastructure
+Thermal energy systems, microfluidics, biofluids
+Brain modeling, cardiovascular & respiratory simulations
+Tissue biomechanics, implants, drug delivery, tissue growth modeling
+CFD, multiphysics & flow stability, ion-driven & electrokinetic instabilities
+Multiscale modeling of tear film breakup & biofluid transport
+
+🔹 Quantum Computing & Advanced Physics
+Quantum algorithms, simulation & cryptography
+Photonics, nanoscale systems & advanced physics modeling
+Consulting & development for emerging quantum technologies
+
+🔹 Renewable Energy & Environmental Sustainability
+Energy storage & next-generation battery modeling
+AI for climate prediction, pollution monitoring & resource optimization
+Environmental simulations, porous media flows, water-energy nexus research</pre>
 </body>
 </html>
-
