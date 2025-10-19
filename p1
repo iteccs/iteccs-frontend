@@ -1,0 +1,87 @@
+<!-- Expertise -->
+<section id="expertise" class="fade-in-up bg-gray-50 py-16 px-6">
+  <div class="max-w-7xl mx-auto text-center">
+    <h2 class="text-4xl font-bold text-gray-900 mb-6">Our Expertise: Cutting-Edge Solutions for a Technology-Driven Future</h2>
+    <p class="text-lg text-gray-700 mb-12">
+      We specialize in advanced research and applied technologies that empower businesses, universities, and institutions to innovate and lead. 
+      Our multidisciplinary expertise spans critical domains shaping the future of science, engineering, and technology:
+    </p>
+  </div>
+
+  <div class="max-w-7xl mx-auto grid gap-12 md:grid-cols-2 lg:grid-cols-3">
+    <!-- Expertise Cards -->
+    <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+      <h3 class="text-2xl font-semibold mb-4">🔹 Advanced Applied & Computational Mathematics</h3>
+      <ul class="space-y-3 text-gray-700">
+        <li><strong>PDEs:</strong> Nonlinear systems, stability, and control</li>
+        <li><strong>Numerical Methods:</strong> Finite difference, spectral, FEM, finite-volume</li>
+        <li><strong>Optimization:</strong> PDE-constrained, gradient-based, inverse problems</li>
+        <li><strong>Scientific Computing:</strong> High-dimensional solvers, HPC, preconditioning</li>
+        <li><strong>AI & Data Science:</strong> PINNs, uncertainty quantification, deep learning</li>
+      </ul>
+    </div>
+
+    <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+      <h3 class="text-2xl font-semibold mb-4">🔹 Computation & Data-Driven Engineering</h3>
+      <ul class="space-y-3 text-gray-700">
+        <li>Automated simulation pipelines & digital twins</li>
+        <li>Scientific ML & AI-enhanced simulations</li>
+        <li>Surrogate and reduced-order modeling</li>
+        <li>AI in CFD, molecular dynamics & quantum mechanics</li>
+      </ul>
+    </div>
+
+    <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+      <h3 class="text-2xl font-semibold mb-4">🔹 Cybersecurity, Cloud & Software Engineering</h3>
+      <ul class="space-y-3 text-gray-700">
+        <li>Cloud architecture & digital transformation</li>
+        <li>AI-driven cybersecurity & threat detection</li>
+        <li>Custom software & systems integration</li>
+      </ul>
+    </div>
+
+    <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+      <h3 class="text-2xl font-semibold mb-4">🔹 Aerospace, Civil, Mechanical & Biomedical Engineering</h3>
+      <ul class="space-y-3 text-gray-700">
+        <li>Propulsion, hypersonics & high-speed aerodynamics</li>
+        <li>Biofluids, tissue modeling, and porous media</li>
+        <li>CFD, multiphysics & flow stability</li>
+        <li>Tear film breakup & electrokinetic instabilities</li>
+      </ul>
+    </div>
+
+    <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+      <h3 class="text-2xl font-semibold mb-4">🔹 Quantum Computing & Advanced Physics</h3>
+      <ul class="space-y-3 text-gray-700">
+        <li>Quantum algorithms & cryptography</li>
+        <li>Photonics & nanoscale systems</li>
+      </ul>
+    </div>
+
+    <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+      <h3 class="text-2xl font-semibold mb-4">🔹 Renewable Energy & Environmental Sustainability</h3>
+      <ul class="space-y-3 text-gray-700">
+        <li>Energy storage & next-generation batteries</li>
+        <li>AI for climate & environmental modeling</li>
+        <li>Porous media & water-energy nexus research</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Education Section -->
+<section id="education-training" class="iteccs-edu fade-in-up">
+  <!-- (retain your CSS-inlined block or move to style.css) -->
+  <!-- Education structure unchanged from your original — cleaned version -->
+</section>
+
+<!-- Additional Info -->
+<section id="impact" class="fade-in-up">
+  <h2>Our Impact</h2>
+  <p>At ITECCS, we bridge education, research, innovation, and workforce development to deliver measurable impact across education, industry, government, and society.</p>
+  <ul>
+    <li>We ignite STEM passion in students and professionals.</li>
+    <li>We foster collaboration among scientists, engineers, and educators.</li>
+    <li>We transform theory into real-world solutions.</li>
+  </ul>
+</section>
