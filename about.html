@@ -168,6 +168,373 @@ Our expertise spans fluid dynamics, porous media, multiscale modeling, stability
     </ul>
     </section>
     </p>
+
+    <section id="education-training" class="iteccs-edu">
+  <style>
+    /* Minimal, elegant styles — move to your site stylesheet as needed */
+    :root{
+      --bg:#ffffff;
+      --card:#f8fbff;
+      --accent:#1f6feb;
+      --muted:#6b7280;
+      --text:#0f1724;
+      --card-border: rgba(15,23,36,0.06);
+      --radius:12px;
+      --gap:24px;
+      --maxw:1100px;
+      --container-padding:28px;
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    .iteccs-edu{
+      background:var(--bg);
+      color:var(--text);
+      padding:48px 16px;
+      display:flex;
+      justify-content:center;
+    }
+
+    .iteccs-edu .wrap{
+      width:100%;
+      max-width:var(--maxw);
+      padding:var(--container-padding);
+      box-sizing:border-box;
+    }
+
+    .iteccs-edu header{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      margin-bottom:28px;
+    }
+
+    .iteccs-edu h2{
+      margin:0;
+      font-size:28px;
+      line-height:1.05;
+      letter-spacing:-0.02em;
+      color:var(--text);
+    }
+
+    .iteccs-edu p.lead{
+      margin:0;
+      color:var(--muted);
+      font-size:15px;
+      max-width:78ch;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:var(--gap);
+      align-items:start;
+    }
+
+    @media(min-width:980px){
+      .grid{ grid-template-columns: 1fr 420px; }
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--card-border);
+      border-radius:var(--radius);
+      padding:20px;
+      box-shadow: 0 6px 18px rgba(20,30,50,0.04);
+    }
+
+    .primary{
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+    }
+
+    .section-title{
+      margin:0 0 6px 0;
+      font-weight:600;
+      font-size:18px;
+      color:var(--accent);
+    }
+
+    .subhead{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .feature-list{
+      display:grid;
+      gap:12px;
+      margin:0;
+      padding:0;
+      list-style:none;
+    }
+
+    .feature{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+    }
+
+    .feature .marker{
+      min-width:8px;
+      height:8px;
+      margin-top:6px;
+      background:var(--accent);
+      border-radius:50%;
+      flex-shrink:0;
+    }
+
+    .feature p{
+      margin:0;
+      color:var(--text);
+      font-size:15px;
+      line-height:1.45;
+    }
+
+    .feature .muted{
+      color:var(--muted);
+      font-size:13px;
+      margin-top:6px;
+    }
+
+    .domains{
+      display:grid;
+      gap:12px;
+    }
+
+    .domain{
+      border-left:3px solid rgba(31,111,235,0.1);
+      padding:12px 12px 12px 16px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.6), transparent);
+      border-radius:8px;
+    }
+
+    .domain h4{
+      margin:0 0 6px 0;
+      font-size:15px;
+      color:var(--accent);
+    }
+
+    .domain p{
+      margin:0;
+      color:var(--muted);
+      font-size:13.5px;
+      line-height:1.45;
+    }
+
+    .aside{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+
+    .cta{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      align-items:stretch;
+    }
+
+    .btn{
+      display:inline-block;
+      text-decoration:none;
+      text-align:center;
+      padding:12px 14px;
+      border-radius:10px;
+      font-weight:600;
+      font-size:14px;
+      border: none;
+      cursor:pointer;
+    }
+
+    .btn-primary{
+      background:var(--accent);
+      color:#fff;
+      box-shadow: 0 6px 18px rgba(31,111,235,0.12);
+    }
+
+    .btn-ghost{
+      background:transparent;
+      border:1px solid var(--card-border);
+      color:var(--text);
+    }
+
+    .meta{
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.5;
+    }
+
+    footer.small{
+      margin-top:10px;
+      color:var(--muted);
+      font-size:13px;
+    }
+  </style>
+
+  <div class="wrap" role="region" aria-labelledby="edu-title">
+    <header>
+      <h2 id="edu-title">Education, Professional Training &amp; Certificates</h2>
+      <p class="lead">ITECCS empowers learners, professionals, and organizations with practical, software-focused education that bridges knowledge and innovation. Our programs combine applied theory, hands-on projects, and modern tool training to prepare you for careers in STEM, AI, and engineering.</p>
+    </header>
+
+    <div class="grid" aria-hidden="false">
+      <!-- Main column -->
+      <div class="primary">
+        <section class="card" aria-labelledby="learning-title">
+          <h3 id="learning-title" class="section-title">Learning for Every Level</h3>
+          <p class="subhead">Flexible, high-impact programs for beginners to advanced professionals — designed for individuals, teams, and institutions.</p>
+
+          <ul class="feature-list" aria-label="Core offerings">
+            <li class="feature">
+              <span class="marker" aria-hidden="true"></span>
+              <div>
+                <p><strong>STEM Courses, Bootcamps &amp; Workshops</strong> — Applied Mathematics, AI, Data Science, Computational Engineering, Quantum Computing, Renewable Energy, and Sustainability taught by experienced instructors.</p>
+              </div>
+            </li>
+
+            <li class="feature">
+              <span class="marker" aria-hidden="true"></span>
+              <div>
+                <p><strong>Custom Academic &amp; Career Programs</strong> — We partner with schools, universities and organizations to design curricula, mentorship pathways, and stackable credential programs.</p>
+              </div>
+            </li>
+
+            <li class="feature">
+              <span class="marker" aria-hidden="true"></span>
+              <div>
+                <p><strong>Hands-On &amp; Software-Based Training</strong> — Interactive labs, digital twins and modeling projects using tools such as MATLAB, COMSOL, ANSYS, OpenFOAM, TensorFlow and PyTorch.</p>
+              </div>
+            </li>
+
+            <li class="feature">
+              <span class="marker" aria-hidden="true"></span>
+              <div>
+                <p><strong>Certificate Programs &amp; Stackable Credentials</strong> — Modular certificates recognized by industry and academia, structured to support progressive career growth.</p>
+              </div>
+            </li>
+
+            <li class="feature">
+              <span class="marker" aria-hidden="true"></span>
+              <div>
+                <p><strong>Academic Support &amp; Mentorship</strong> — Personalized tutoring and guidance to accelerate learning and professional outcomes.</p>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section class="card" aria-labelledby="upskill-title">
+          <h3 id="upskill-title" class="section-title">Upskilling, Reskilling &amp; Lifelong Learning</h3>
+          <p class="subhead">Continuing education and workforce development designed to keep you and your organization competitive.</p>
+
+          <ul class="feature-list" aria-label="Upskilling offerings">
+            <li class="feature">
+              <span class="marker" aria-hidden="true"></span>
+              <div>
+                <p><strong>Professional &amp; Continuing Education (CPE)</strong> — Career-aligned courses in AI, scientific computing, and engineering.</p>
+              </div>
+            </li>
+
+            <li class="feature">
+              <span class="marker" aria-hidden="true"></span>
+              <div>
+                <p><strong>Customized Industry &amp; Government Training</strong> — Tailored programs in digital twins, AI-enhanced simulations, HPC, and systems integration.</p>
+              </div>
+            </li>
+
+            <li class="feature">
+              <span class="marker" aria-hidden="true"></span>
+              <div>
+                <p><strong>Bootcamps &amp; Practical Workshops</strong> — Short, immersive sessions focused on real-world projects and immediate application.</p>
+              </div>
+            </li>
+
+            <li class="feature">
+              <span class="marker" aria-hidden="true"></span>
+              <div>
+                <p><strong>Stackable Career Pathways</strong> — Modular credentials that assemble into clear career tracks toward mastery.</p>
+              </div>
+            </li>
+
+            <li class="feature">
+              <span class="marker" aria-hidden="true"></span>
+              <div>
+                <p><strong>Flexible Delivery</strong> — Online, in-person, or hybrid formats to suit individual and institutional schedules.</p>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section class="card" aria-labelledby="domains-title">
+          <h3 id="domains-title" class="section-title">Specialized Training &amp; Certification Domains</h3>
+          <p class="subhead">Practical, software-led instruction across foundational and emerging technical fields.</p>
+
+          <div class="domains" role="list">
+            <article class="domain" role="listitem" aria-labelledby="d1">
+              <h4 id="d1">Applied &amp; Computational Mathematics</h4>
+              <p>PDEs, numerical methods, optimization, linear algebra, and high-performance modeling.</p>
+            </article>
+
+            <article class="domain" role="listitem" aria-labelledby="d2">
+              <h4 id="d2">Data Science &amp; Artificial Intelligence</h4>
+              <p>Deep learning, physics-informed AI, uncertainty quantification, and machine learning workflows.</p>
+            </article>
+
+            <article class="domain" role="listitem" aria-labelledby="d3">
+              <h4 id="d3">Computation &amp; Data-Driven Engineering</h4>
+              <p>Digital twins, simulation pipelines, surrogate modeling, and visualization tools.</p>
+            </article>
+
+            <article class="domain" role="listitem" aria-labelledby="d4">
+              <h4 id="d4">Aerospace, Civil, Mechanical &amp; Biomedical Engineering</h4>
+              <p>CFD, multiphysics design, structural analysis, biofluids, and tissue modeling.</p>
+            </article>
+
+            <article class="domain" role="listitem" aria-labelledby="d5">
+              <h4 id="d5">Cybersecurity, Cloud &amp; Software Engineering</h4>
+              <p>Cloud architecture, secure systems, AI-driven cybersecurity, and DevOps integration.</p>
+            </article>
+
+            <article class="domain" role="listitem" aria-labelledby="d6">
+              <h4 id="d6">Quantum Computing &amp; Advanced Physics</h4>
+              <p>Quantum algorithms, simulation frameworks, and nanoscale modeling tools.</p>
+            </article>
+
+            <article class="domain" role="listitem" aria-labelledby="d7">
+              <h4 id="d7">Renewable Energy &amp; Environmental Sustainability</h4>
+              <p>Energy storage modeling, porous media analysis, and AI applications for climate and resilience.</p>
+            </article>
+          </div>
+        </section>
+      </div>
+
+      <!-- Aside / CTA column -->
+      <aside class="aside" aria-label="Enroll and contact">
+        <div class="card">
+          <h3 class="section-title">Get Started</h3>
+          <p class="meta">Explore courses, request a custom program, or join an upcoming bootcamp.</p>
+
+          <div class="cta" role="group" aria-label="Calls to action">
+            <a class="btn btn-primary" href="/courses" title="Explore ITECCS courses">Explore Courses</a>
+            <a class="btn btn-ghost" href="/contact" title="Contact ITECCS for training">Request Custom Training</a>
+          </div>
+
+          <p class="footer small">Formats: Online • In-person • Hybrid · Certificates & CPE available</p>
+        </div>
+
+        <div class="card">
+          <h3 class="section-title">Why ITECCS</h3>
+          <p class="meta">Hands-on learning, industry software training, expert mentorship, flexible pathways, and recognized credentials that support career development.</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+
+
+
+    
     <h1 class="fade-in-up">What we do </h1>
     <p class="fade-in-up">The institute develops tailored curricula, hands-on workshops, bootcamps, and design
        courses in various topics for all levels for colleges, universities, and workforce
