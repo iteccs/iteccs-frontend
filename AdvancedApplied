@@ -1,1 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Research Areas</title>
+  <style>
+    body{font-family: Arial, Helvetica, sans-serif; padding:20px; background:#fff; color:#111}
+    pre{font-size:16px; line-height:1.6;}
+  </style>
+</head>
+<body>
+  <pre>PDEs: Nonlinear, coupled systems, stability, control
+Numerical Methods: Finite difference, spectral, FEM, finite-volume
+Optimization & Control: PDE-constrained optimization, gradient-based learning, inverse problems
+Linear Algebra & Scientific Computing: High-dimensional solvers, eigenvalue analysis, preconditioning
+Inverse Problems & Deep Learning: PINNs for parameter reconstruction & medical imaging
+Multiscale & Reduced-Order Modeling
+Scientific & Parallel Computing: CPU/GPU, HPC simulations, statistical modeling
+Data Science & AI: Uncertainty quantification, deep learning, physics-informed AI</pre>
+</body>
+</html>
 
