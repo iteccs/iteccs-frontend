@@ -1,4 +1,4 @@
-<!-- workshops.html -->
+<!-- research.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +31,99 @@
   </nav>
 
   <main class="content">
-    <h1>TBD</h1>
+    <h1></h1>
+
+ <section id="workshops" style="padding:60px 20px; background:#f9f9f9; font-family:Arial, sans-serif;">
+
+  <!-- Intro Section -->
+  <div style="text-align:center; margin-bottom:50px;">
+    <h2 style="font-size:2.8rem; color:#1a1a1a; margin-bottom:15px;">
+      Stay Ahead with Cutting-Edge Engineering & Computational Skills
+    </h2>
+    <p style="font-size:1.15rem; color:#555; max-width:750px; margin:auto; line-height:1.6;">
+      Technology evolves fast—your skills should too. At <strong>ITECCS</strong>, we offer advanced, hands-on workshops that equip engineers, researchers, and professionals with the latest tools and techniques in <strong>AI, computational science, applied mathematics, digital twins, HPC, CFD, biomedical modeling, and more</strong>.  
+      Whether you’re looking to solve complex engineering problems, master high-performance simulations, or innovate with AI-driven workflows, our programs provide practical, real-world experience to accelerate your expertise and impact.
+    </p>
+    <a href="#workshop-cards" style="display:inline-block; margin-top:25px; padding:12px 30px; background:#0073e6; color:white; text-decoration:none; font-weight:bold; border-radius:8px; transition:background 0.3s;">
+      View Workshops
+    </a>
+  </div>
+
+  <!-- Workshops Grid -->
+  <div id="workshop-cards" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:20px;">
+
+    <!-- Example Workshop Card -->
+    <div style="background:white; padding:20px; border-radius:12px; box-shadow:0 6px 15px rgba(0,0,0,0.1); transition:transform 0.3s;">
+      <h3 style="color:#0073e6;">AI & Computational Science</h3>
+      <ul style="padding-left:20px; color:#333; line-height:1.6;">
+        <li>AI-Driven Engineering Simulations: From Modeling to Optimization</li>
+        <li>Machine Learning for Fluid & Structural Systems</li>
+        <li>Data-Driven Design for Mechanical and Aerospace Engineering</li>
+        <li>Inverse Problem Solving in Engineering Systems</li>
+        <li>Physics-Informed Neural Networks for Parameter Estimation</li>
+        <li>Deep Learning Workflows for Scientific Computation</li>
+        <li>Quantifying Uncertainty in Predictive Engineering Models</li>
+      </ul>
+    </div>
+
+    <!-- Advanced Applied Mathematics & Data Engineering -->
+    <div style="background:white; padding:20px; border-radius:12px; box-shadow:0 6px 15px rgba(0,0,0,0.1); transition:transform 0.3s;">
+      <h3 style="color:#0073e6;">Advanced Applied Mathematics & Data Engineering</h3>
+      <ul style="padding-left:20px; color:#333; line-height:1.6;">
+        <li>PDE Modeling of Nonlinear Coupled Engineering Systems</li>
+        <li>Finite Difference, FEM, and Spectral Methods for Complex Problems</li>
+        <li>PDE-Constrained Optimization & Gradient-Based Control</li>
+        <li>Linear Algebra for High-Dimensional Engineering Simulations</li>
+        <li>Inverse Problems & Deep Learning in Imaging and Material Design</li>
+        <li>Multiscale & Reduced-Order Modeling for Engineering Applications</li>
+        <li>HPC-Based Simulation for Large-Scale Mathematical Models</li>
+        <li>Data Science & AI: Physics-informed AI & Scientific Machine Learning</li>
+      </ul>
+    </div>
+
+    <!-- Digital Twins & Smart Engineering -->
+    <div style="background:white; padding:20px; border-radius:12px; box-shadow:0 6px 15px rgba(0,0,0,0.1); transition:transform 0.3s;">
+      <h3 style="color:#0073e6;">Digital Twins & Smart Engineering</h3>
+      <ul style="padding-left:20px; color:#333; line-height:1.6;">
+        <li>Developing Digital Twins for Aerospace and Mechanical Systems</li>
+        <li>IoT-Integrated Simulation Pipelines for Smart Infrastructure</li>
+        <li>Virtual Prototyping for Rapid Product Testing</li>
+        <li>AI-Powered Digital Twin Analytics</li>
+        <li>Interactive Visualization & Data Interpretation for Engineering Systems</li>
+        <li>Surrogate & Reduced-Order Modeling for Digital Twin Optimization</li>
+      </ul>
+    </div>
+
+    <!-- Repeat similar cards for all remaining categories -->
+
+  </div>
+
+  <style>
+    /* Hover Effect for Cards */
+    #workshop-cards div {
+      cursor: default;
+    }
+    #workshop-cards div:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    }
+
+    /* Responsive Adjustment */
+    @media (max-width: 768px) {
+      #workshop-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* CTA Hover */
+    a[href="#workshop-cards"]:hover {
+      background:#005bb5;
+    }
+  </style>
+
+</section>
+
+
     <p></p>
   </main>
 
