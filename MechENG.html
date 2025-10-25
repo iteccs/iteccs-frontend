@@ -1,0 +1,439 @@
+<!-- upskilling.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - ITeccs</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Fonts and Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="ITeccs Logo">
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="consulting.html">Consulting</a></li>
+      <li><a href="education.html">Education</a></li> 
+      <li><a href="howtopay.html">How to Pay</a></li>
+      <li>
+        <a href="contact.html" class="contact-nav-button">
+          <i class="fas fa-envelope"></i> Contact Us
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <main class="content">
+    <h1></h1>
+    <p></p>
+
+<section class="program-wrapper">
+  <style>
+    .program-wrapper {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      color: #1a1a1a;
+      background-color: #ffffff;
+      line-height: 1.5;
+      padding: 2rem 1rem 4rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .track-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    @media(min-width: 768px){
+      .track-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media(min-width: 1200px){
+      .track-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+
+    .track-card {
+      border: 1px solid rgba(0,0,0,0.07);
+      border-radius: 1rem;
+      padding: 1.5rem 1.5rem 1.25rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+
+    .track-eyebrow {
+      font-size: .75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      color: #6b6b6b;
+      margin-bottom: .5rem;
+    }
+
+    .track-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #111;
+      line-height: 1.3;
+      margin-bottom: .5rem;
+    }
+
+    .track-desc {
+      font-size: .9rem;
+      color: #444;
+      margin-bottom: 1rem;
+    }
+
+    .subcategory {
+      font-size: .8rem;
+      font-weight: 600;
+      color: #111;
+      margin-top: 1rem;
+      margin-bottom: .25rem;
+    }
+
+    .course-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      font-size: .9rem;
+      color: #222;
+    }
+
+    .course-list li {
+      padding-left: 1rem;
+      position: relative;
+      margin-bottom: .4rem;
+    }
+
+    .course-list li::before {
+      content: " ";
+      position: absolute;
+      left: 0;
+      color: #6366f1; /* accent dot */
+      font-weight: 600;
+    }
+
+    /* Section header */
+    .hero-heading {
+      font-size: clamp(1.5rem, 1vw + 1rem, 2rem);
+      font-weight: 600;
+      color: #0f172a;
+      line-height: 1.2;
+      max-width: 50ch;
+      margin: 0 auto 0.5rem;
+      text-align: center;
+    }
+
+    .hero-sub {
+      font-size: .95rem;
+      color: #475569;
+      text-align: center;
+      max-width: 70ch;
+      margin: 0 auto 2rem;
+      line-height: 1.5;
+    }
+
+    /* Research / Capstone card layout tweak */
+    .full-row {
+      grid-column: span 1;
+    }
+    @media(min-width:768px){
+      .full-row {
+        grid-column: span 2;
+      }
+    }
+    @media(min-width:1200px){
+      .full-row {
+        grid-column: span 3;
+      }
+    }
+
+  </style>
+
+  <!-- Hero / Intro -->
+  <header>
+
+<!-- =========================
+     Mechanical Engineering
+========================= -->
+<section id="mechanical-engineering" class="program-wrapper">
+
+  <!-- Header -->
+  <header>
+    <h2 class="hero-heading">Mechanical Engineering</h2>
+    <p class="hero-sub">
+      From the fundamentals of mechanics and thermodynamics to intelligent systems, robotics, and energy innovation — 
+      Mechanical Engineering at ITECCS bridges classical theory with modern technology and real-world design.
+    </p>
+  </header>
+
+  <!-- Course Grid -->
+  <div class="track-grid">
+
+    <!-- 1. Core Mechanics & Analytical Foundations -->
+    <article class="track-card">
+      <div class="track-eyebrow">Foundations</div>
+      <h3 class="track-title">Core Mechanics & Analytical Foundations</h3>
+      <p class="track-desc">
+        Analytical and mathematical principles underlying the modeling and analysis of all mechanical systems.
+      </p>
+      <ul class="course-list">
+        <li>Engineering Analysis Using Numerical Methods</li>
+        <li>Mathematical Methods for Engineers</li>
+        <li>Computational Methods in Engineering</li>
+        <li>Analytical Mechanics</li>
+        <li>Continuum Mechanics</li>
+        <li>Mechanics of Materials</li>
+        <li>Structural Mechanics</li>
+        <li>Linear & Nonlinear Elasticity</li>
+        <li>Energy Methods and Variational Principles</li>
+        <li>Numerical Simulation & Optimization</li>
+      </ul>
+    </article>
+
+    <!-- 2. Thermal, Fluid & Energy Systems -->
+    <article class="track-card">
+      <div class="track-eyebrow">Energy & Transport</div>
+      <h3 class="track-title">Thermal, Fluid & Energy Systems</h3>
+      <p class="track-desc">
+        Energy conversion, fluid mechanics, and sustainable systems shaping modern industry and climate technologies.
+      </p>
+      <ul class="course-list">
+        <li>Thermodynamics</li>
+        <li>Fluid Mechanics</li>
+        <li>Heat Transfer</li>
+        <li>Heat and Mass Transfer</li>
+        <li>Compressible Flow</li>
+        <li>Internal Combustion Engines</li>
+        <li>Gas Turbines for Power and Propulsion</li>
+        <li>Energy Systems for Buildings</li>
+        <li>Sustainable Energy Solutions</li>
+        <li>Thermal Systems Design & Simulation</li>
+      </ul>
+    </article>
+
+    <!-- 3. Dynamics, Vibrations & Control -->
+    <article class="track-card">
+      <div class="track-eyebrow">Motion & Control</div>
+      <h3 class="track-title">Dynamics, Vibrations & Control Systems</h3>
+      <p class="track-desc">
+        Dynamic modeling, vibration analysis, and feedback control for stable, high-performance mechanical systems.
+      </p>
+      <ul class="course-list">
+        <li>Mechanical Vibrations</li>
+        <li>Dynamic Systems & Controls</li>
+        <li>Kinematics & Dynamics of Machinery</li>
+        <li>Advanced Structural Dynamics</li>
+        <li>Adaptive & Nonlinear Control</li>
+        <li>Robust & Optimal Control</li>
+        <li>Vehicle Control Systems</li>
+        <li>Active Vibration Control</li>
+        <li>Smart Structures & Adaptive Systems</li>
+      </ul>
+    </article>
+
+    <!-- 4. Mechatronics & Robotics -->
+    <article class="track-card">
+      <div class="track-eyebrow">Automation & Intelligence</div>
+      <h3 class="track-title">Mechatronics, Robotics & Intelligent Systems</h3>
+      <p class="track-desc">
+        Integration of mechanical, electrical, and computing systems for robotics, automation, and smart machines.
+      </p>
+      <ul class="course-list">
+        <li>Introduction to Mechatronics</li>
+        <li>Electronics & Instrumentation</li>
+        <li>Robotics and Automation</li>
+        <li>Robotics Laboratory</li>
+        <li>Human–Robot Interaction</li>
+        <li>Industrial Internet of Things (IIoT)</li>
+        <li>Soft Robotics & Bioinspired Actuation</li>
+        <li>Autonomous Vehicle Systems</li>
+        <li>Assistive & Wearable Robotics</li>
+      </ul>
+    </article>
+
+    <!-- 5. Design & Manufacturing -->
+    <article class="track-card">
+      <div class="track-eyebrow">Design & Innovation</div>
+      <h3 class="track-title">Design, Manufacturing & Product Innovation</h3>
+      <p class="track-desc">
+        Hands-on engineering design from concept to prototype, blending CAD, optimization, and creativity.
+      </p>
+      <ul class="course-list">
+        <li>Engineering Design and Economics</li>
+        <li>Mechanical Design I & II</li>
+        <li>Engineering Design & Project (Capstone)</li>
+        <li>Computer-Aided Design & Manufacturing (CAD/CAM)</li>
+        <li>Additive Manufacturing & Rapid Prototyping</li>
+        <li>Design for Manufacturing & Assembly</li>
+        <li>Materials Selection in Design</li>
+        <li>Global Collaborative Design</li>
+        <li>Optimization Techniques in Engineering</li>
+      </ul>
+    </article>
+
+    <!-- 6. Materials & Solids -->
+    <article class="track-card">
+      <div class="track-eyebrow">Materials & Mechanics</div>
+      <h3 class="track-title">Materials, Solids & Nanomechanics</h3>
+      <p class="track-desc">
+        Explore material behavior from atomic structure to large-scale applications and advanced composites.
+      </p>
+      <ul class="course-list">
+        <li>Materials Science & Engineering</li>
+        <li>Composite Materials</li>
+        <li>Deformation & Fracture</li>
+        <li>Fatigue & Failure Analysis</li>
+        <li>Nano & Micromechanics of Materials</li>
+        <li>Materials in Extreme Environments</li>
+        <li>Computational Materials Engineering</li>
+        <li>Advanced Materials Characterization</li>
+        <li>Biomaterials & Smart Materials</li>
+      </ul>
+    </article>
+
+    <!-- 7. Aerospace & Automotive Systems -->
+    <article class="track-card">
+      <div class="track-eyebrow">Flight & Mobility</div>
+      <h3 class="track-title">Aerospace, Automotive & Vehicle Systems</h3>
+      <p class="track-desc">
+        Design and control of systems operating in air, space, and land — from drones to advanced propulsion.
+      </p>
+      <ul class="course-list">
+        <li>Aerospace Propulsion Systems</li>
+        <li>Spacecraft Propulsion</li>
+        <li>Drone Technology & Flight Operations</li>
+        <li>Automotive Engineering</li>
+        <li>Vehicle Control & Dynamics</li>
+        <li>Gas Turbines for Power & Propulsion</li>
+        <li>Hypersonic Flow & Compressible Aerodynamics</li>
+        <li>Aerospace Structures</li>
+        <li>Engineering Acoustics & Noise Control</li>
+      </ul>
+    </article>
+
+    <!-- 8. Biomechanics & Bioinspired -->
+    <article class="track-card">
+      <div class="track-eyebrow">Bioengineering</div>
+      <h3 class="track-title">Biomechanics & Bioinspired Systems</h3>
+      <p class="track-desc">
+        Applying mechanical principles to living systems and bioinspired technologies.
+      </p>
+      <ul class="course-list">
+        <li>Introduction to Mechanobiology</li>
+        <li>Cell Mechanobiology</li>
+        <li>Musculoskeletal Biomechanics</li>
+        <li>Biological Transport Phenomena</li>
+        <li>Bio-Inspired Technology</li>
+        <li>Biomedical Systems Design</li>
+        <li>BioMEMS & Microscale Systems</li>
+        <li>Soft Robotics for Medicine</li>
+        <li>Biomechanical Modeling & Simulation</li>
+      </ul>
+    </article>
+
+    <!-- 9. Computational & Data-Driven -->
+    <article class="track-card">
+      <div class="track-eyebrow">Simulation & AI</div>
+      <h3 class="track-title">Computational & Data-Driven Engineering</h3>
+      <p class="track-desc">
+        Advanced modeling, multiphysics simulation, and AI for solving complex mechanical problems.
+      </p>
+      <ul class="course-list">
+        <li>Computational Fluid Dynamics (CFD)</li>
+        <li>Finite Element Analysis & Simulation</li>
+        <li>Computational Solid Mechanics</li>
+        <li>Multiphysics Modeling</li>
+        <li>Optimization & Inverse Problems</li>
+        <li>Machine Learning for Mechanics</li>
+        <li>Physics-Informed Neural Networks (PINNs)</li>
+        <li>High-Performance Computing</li>
+        <li>Data Visualization & Analytics</li>
+      </ul>
+    </article>
+
+    <!-- 10. Leadership & Research -->
+    <article class="track-card full-row">
+      <div class="track-eyebrow">Professional Growth</div>
+      <h3 class="track-title">Leadership, Research & Professional Practice</h3>
+      <p class="track-desc">
+        Building leadership, innovation, and research skills through hands-on projects and professional development.
+      </p>
+      <ul class="course-list">
+        <li>Technology, Innovation & Humanistic Engineering</li>
+        <li>Engineering Leadership & Project Management</li>
+        <li>Global Collegiate Design Projects</li>
+        <li>Professional Communication & Ethics</li>
+        <li>Independent & Directed Studies</li>
+        <li>Undergraduate & Graduate Research</li>
+        <li>Mechanical Engineering Laboratory</li>
+        <li>Special Topics in Energy & Design</li>
+        <li>Capstone Design & Senior Projects</li>
+      </ul>
+    </article>
+
+  </div><!-- End Grid -->
+</section>
+
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 ITeccs. All rights reserved.</p>
+  </footer>
+  <!-- Custom Chat Button -->
+  <button id="custom-chat-btn">
+    <i class="fas fa-comments"></i>
+  </button> 
+
+  <!-- Tawk.to Script -->
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {};
+    var Tawk_LoadStart = new Date();
+
+    (function(){
+      var s1=document.createElement("script"),
+          s0=document.getElementsByTagName("script")[0];
+      s1.async=true;
+      s1.src='https://embed.tawk.to/685e2123390063190e54b4b2/1iunr2sv2';
+      s1.charset='UTF-8';
+      s1.setAttribute('crossorigin','*');
+      s0.parentNode.insertBefore(s1,s0);
+    })();
+
+    // Hide default widget once fully loaded
+    Tawk_API.onLoad = function(){
+      Tawk_API.hideWidget();
+    };
+
+    // Custom button opens chat
+    document.addEventListener("DOMContentLoaded", function(){
+      var btn = document.getElementById("custom-chat-btn");
+      if(btn){
+        btn.addEventListener("click", function(){
+          if(typeof Tawk_API !== "undefined"){
+            Tawk_API.maximize(); // open chat window
+          }
+        });
+      }
+    });
+  </script>
+  <!-- End of Tawk.to Script -->        
+</body>
+</html>
