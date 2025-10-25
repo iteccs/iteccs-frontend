@@ -1,17 +1,131 @@
-<!-- stem.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us - ITeccs</title>
+  <title>Stem</title>
   <link rel="stylesheet" href="style.css">
   <!-- Fonts and Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>/* =====================
+   STEM Program Cards
+===================== */
+.program-wrapper {
+  max-width: 1400px; /* make grid wider */
+  margin: 0 auto 4rem;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+  gap: 30px; /* reduce gap a little */
+}
+
+/* Glassy card style */
+.program-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 20px 15px; /* reduce vertical padding to make shorter height */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  cursor: pointer;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+
+  /* Make width stretch more inside the grid */
+  height: auto; 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+
+  /* Scroll fade-in initial state */{
+  opacity: 0;
+  transform: translateY(40px) rotateX(0deg) rotateY(0deg);
+}
+
+/* Scroll fade-in visible state */
+.program-card.visible {
+  opacity: 1;
+  transform: translateY(0) rotateX(0deg) rotateY(0deg);
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+/* Hover tilt + pop */
+.program-card:hover {
+  transform: translateY(-10px) rotateX(var(--tiltX,0deg)) rotateY(var(--tiltY,0deg)) scale(1.03);
+  box-shadow: 0 25px 40px rgba(37,117,252,0.25);
+}
+
+/* Card pop on click */
+.program-card.pop {
+  transform: scale(1.05) rotateX(var(--tiltX,0deg)) rotateY(var(--tiltY,0deg));
+}
+
+/* Card headings and text */
+
+.program-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.program-card p {
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+  line-height: 1.4;
+}
+
+.program-subarea {
+  margin-top: 8px;
+}
+
+.program-outcome {
+  margin-top: 10px;
+  padding-top: 10px;
+  font-size: 0.9rem;
+}
+
+
+/* Optional: animated icon circle (if used) */
+.program-card .card-icon-circle {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: #2575fc;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(37,117,252,0.2);
+  animation: pulse 2s infinite alternate;
+}
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 4px 15px rgba(37,117,252,0.2); }
+  100% { transform: scale(1.1); box-shadow: 0 8px 25px rgba(37,117,252,0.4); }
+}
+
+.program-card:hover .card-icon-circle {
+  transform: scale(1.2);
+  box-shadow: 0 12px 35px rgba(37,117,252,0.5);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .program-card {
+    padding: 25px 15px;
+  }
+  .program-card h3 {
+    font-size: 1.3rem;
+  }
+}
+
+</style>
 </head>
 <body>
+  <!-- Navbar -->
   <nav class="navbar">
     <div class="logo">
       <img src="logo.png" alt="ITeccs Logo">
@@ -19,8 +133,9 @@
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About Us</a></li>
+      <li><a href="Founder.html">Who We Are</a></li>
       <li><a href="consulting.html">Consulting</a></li>
-      <li><a href="education.html">Education</a></li> 
+      <li><a href="education.html">Education</a></li>
       <li><a href="howtopay.html">How to Pay</a></li>
       <li>
         <a href="contact.html" class="contact-nav-button">
@@ -30,24 +145,104 @@
     </ul>
   </nav>
 
-  <main class="content">
-    <h1>TBD</h1>
-    <p></p>
-  </main>
+  <!-- Hero Modern -->
+  <section class="hero-modern">
+    <div class="hero-overlay"></div>
+    <img src="stem.jpg" alt="STEM background" class="hero-bg-modern" />
+    <div class="hero-content-modern">
+      <h2 class="hero-heading">STEM Programs</h2>
+      <p class="hero-sub">
+        Engineering intelligence, Designing systems, and Advancing human capability. 
+        Our programs connect mathematics, computation, engineering, materials, medicine, and intelligent systems.
+      </p>
+    </div>
+  </section>
 
+  <!-- Program Cards -->
+  <main class="program-wrapper">
+
+  <!-- Program 1 -->
+  <div class="program-card">
+    <div class="card-icon-circle" style="background-color:#E0F2FF;">
+      <i class="fas fa-brain"></i>
+    </div>
+    <h3>Mathematical Intelligence & Computational Science</h3>
+    <p>The mathematical engine behind modern simulation, prediction, automation, and AI. Students learn equations, computation, and intelligent decision-making.</p>
+    <div class="program-subarea">Mathematics</div>
+    <p>Advanced calculus, linear algebra, analysis, and differential equations.</p>
+    <div class="program-subarea">Applied & Computational Mathematics</div>
+    <p>Numerical methods, PDE modeling, optimization, high-performance computing.</p>
+    <div class="program-subarea">Applied Statistics & Probability</div>
+    <p>Statistical modeling, stochastic processes, data-driven decision making.</p>
+    <div class="program-subarea">Data Science & AI</div>
+    <p>Machine learning, deep learning, physics-informed AI, large-scale data systems.</p>
+    <div class="program-outcome">Outcome: Developing algorithms, building intelligent models, simulating complex systems for high-impact applications.</div>
+  </div>
+
+  <!-- Program 2 -->
+  <div class="program-card">
+    <div class="card-icon-circle" style="background-color:#FFF0E0;">
+      <i class="fas fa-cogs"></i>
+    </div>
+    <h3>Mechanical, Civil & Structural Systems</h3>
+    <p>Designing the physical world — from advanced machines to resilient cities. Students learn motion, load, heat, flow, and structural optimization.</p>
+    <div class="program-subarea">Mechanical Engineering</div>
+    <p>Dynamics, thermofluids, solid mechanics, energy systems, robotics, control.</p>
+    <div class="program-subarea">Civil & Environmental Engineering</div>
+    <p>Structural analysis, sustainable infrastructure, water systems, transportation.</p>
+    <div class="program-subarea">Applied Physics</div>
+    <p>Continuum mechanics, fluid dynamics, thermodynamics, optics/photonics.</p>
+    <div class="program-outcome">Outcome: Optimizing structures, machines, and infrastructure for safety, efficiency, and sustainability.</div>
+  </div>
+
+  <!-- Program 3 -->
+  <div class="program-card">
+    <div class="card-icon-circle" style="background-color:#E8FFE0;">
+      <i class="fas fa-flask"></i>
+    </div>
+    <h3>Materials, Chemical & Bio-Systems Engineering</h3>
+    <p>Engineering matter, energy, and life. Students innovate in smart materials, clean energy, medical devices, and regenerative systems.</p>
+    <div class="program-subarea">Materials Science & Engineering</div>
+    <p>Metals, polymers, ceramics, composites, nanomaterials, manufacturing.</p>
+    <div class="program-subarea">Chemical & Biomolecular Engineering</div>
+    <p>Transport phenomena, reaction engineering, electrochemical systems, process modeling.</p>
+    <div class="program-subarea">Applied Biomedical Engineering</div>
+    <p>Biomechanics, tissue engineering, biomedical imaging, AI in medicine.</p>
+    <div class="program-outcome">Outcome: Creating smarter materials, cleaner energy, and human-centered medical solutions.</div>
+  </div>
+
+  <!-- Program 4 -->
+  <div class="program-card">
+    <div class="card-icon-circle" style="background-color:#FFFDE0;">
+      <i class="fas fa-microchip"></i>
+    </div>
+    <h3>Computing, Electronics & Intelligent Systems</h3>
+    <p>Where hardware, software, autonomy, and intelligence meet. Students design secure, adaptive, data-driven systems.</p>
+    <div class="program-subarea">Electrical & Computer Engineering</div>
+    <p>Circuits, embedded systems, sensing, image processing, robotics integration.</p>
+    <div class="program-subarea">Computer Science & Software Systems</div>
+    <p>Algorithms, operating systems, cybersecurity, cloud, scalable software architecture.</p>
+    <div class="program-subarea">Data & AI Systems Engineering</div>
+    <p>Autonomous systems, real-time AI, cyber-physical infrastructure.</p>
+    <div class="program-outcome">Outcome: Building intelligent, secure, connected solutions from robotics to large-scale AI.</div>
+  </div>
+
+</main>
+
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 ITeccs. All rights reserved.</p>
   </footer>
+
   <!-- Custom Chat Button -->
   <button id="custom-chat-btn">
     <i class="fas fa-comments"></i>
-  </button> 
+  </button>
 
   <!-- Tawk.to Script -->
   <script type="text/javascript">
     var Tawk_API = Tawk_API || {};
     var Tawk_LoadStart = new Date();
-
     (function(){
       var s1=document.createElement("script"),
           s0=document.getElementsByTagName("script")[0];
@@ -57,24 +252,66 @@
       s1.setAttribute('crossorigin','*');
       s0.parentNode.insertBefore(s1,s0);
     })();
-
-    // Hide default widget once fully loaded
-    Tawk_API.onLoad = function(){
-      Tawk_API.hideWidget();
-    };
-
-    // Custom button opens chat
+    Tawk_API.onLoad = function(){ Tawk_API.hideWidget(); };
     document.addEventListener("DOMContentLoaded", function(){
       var btn = document.getElementById("custom-chat-btn");
-      if(btn){
-        btn.addEventListener("click", function(){
-          if(typeof Tawk_API !== "undefined"){
-            Tawk_API.maximize(); // open chat window
-          }
-        });
-      }
+      if(btn){ btn.addEventListener("click", function(){
+        if(typeof Tawk_API !== "undefined"){ Tawk_API.maximize(); }
+      }); }
     });
   </script>
-  <!-- End of Tawk.to Script -->        
+
+  <!-- Embedded Animations JS -->
+  <script>
+    // Scroll fade-in for program cards
+    const cards = document.querySelectorAll('.program-card');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.2 });
+    cards.forEach(card => observer.observe(card));
+
+    // Tilt hover + pop effect
+    cards.forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const deltaX = (x - centerX) / centerX;
+        const deltaY = (centerY - y) / centerY;
+        card.style.setProperty('--tiltX', `${deltaY * 5}deg`);
+        card.style.setProperty('--tiltY', `${deltaX * 5}deg`);
+        card.style.transform = `rotateX(var(--tiltX)) rotateY(var(--tiltY)) scale(1.03)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+      });
+      card.addEventListener('click', () => {
+        card.classList.add('pop');
+        setTimeout(() => card.classList.remove('pop'), 200);
+      });
+    });
+
+    // Hero parallax background
+    const heroBg = document.querySelector('.hero-bg-modern');
+    document.addEventListener('mousemove', e => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 10;
+      const y = (e.clientY / window.innerHeight - 0.5) * 10;
+      heroBg.style.transform = `translate(${x}px, ${y}px) scale(1.05)`;
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e){
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
 </body>
 </html>

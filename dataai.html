@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - ITeccs</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Fonts and Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="ITeccs Logo">
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="Founder.html">Who We Are</a></li>
+      <li><a href="consulting.html">Consulting</a></li>
+      <li><a href="education.html">Education</a></li> 
+      <li><a href="howtopay.html">How to Pay</a></li>
+      <li>
+        <a href="contact.html" class="contact-nav-button">
+          <i class="fas fa-envelope"></i> Contact Us
+        </a>
+      </li>
+    </ul>
+  </nav>
+    <!-- Hero Modern -->
+    <section class="hero-modern">
+      <div class="hero-overlay"></div>
+      <img src="AI.jpg" alt="Data Science background" class="hero-bg-modern" />
+      
+      <div class="hero-content-modern">
+        <h2 class="hero-heading">Data Science & Artificial Intelligence</h2>
+        <p class="hero-sub">
+         Master the fundamentals of Data Science and AI, machine learning, and intelligent systems—preparing you for cutting-edge research and real-world applications. 
+        </p>
+      </div>
+    </section>
+    <!-- Main Content -->
+    <main class="content">
+      <section class="program-wrapper">
+        <div class="track-grid">
+              <!-- Foundations of Data Science -->
+              <article class="track-card">
+                    <div class="track-eyebrow">Foundations</div>
+                  <h3 class="track-title">Foundations of Data Science</h3>
+                    <ul>
+                      <li>Mathematics of Data Science</li>
+                      <li>Practical Mathematics for AI</li>
+                      <li>Mathematical and Computational Foundations of Data Science</li>
+                      <li>Data Science: Modeling and Analytics</li>
+                    <li>Introduction to Data Science</li>
+                    <li>Advanced Data Science</li>
+                  </ul>
+            </article>
+
+            <!-- Programming, Engineering & Infrastructure -->
+            <article class="track-card">
+                <div class="track-eyebrow">Data Engineering</div>
+                <h3 class="track-title">Programming, Engineering and Infrastructure</h3>
+                <ul>
+                  <li>Data Engineering Principles and Practice</li>
+                  <li>Data Patterns and Representations</li>
+                  <li>Software Engineering for Data Science</li>
+                  <li>Algorithms for Data Science</li>
+                  <li>Foundations of Algorithm Analysis</li>
+                </ul>
+            </article>
+
+            <!-- Machine Learning & AI Systems -->
+            <article class="track-card">
+                <div class="track-eyebrow">Machine learning</div>
+                <h3 class="track-title">Machine Learning and AI Systems</h3>
+                <ul>
+                  <li>Machine Learning I and II</li>
+                  <li>Probabilistic Machine Learning</li>
+                  <li>Theory of Machine Learning</li>
+                  <li>Foundations of Neural Networks</li>
+                  <li>Statistical Machine Vision</li>
+                  <li>Equivariant Machine Learning</li>
+                  <li>Machine Learning in Finance</li>
+                  <li>Large-Scale Optimization for Data Science</li>
+                </ul>
+            </article>
+
+            <!-- Specialized Applications & Research -->
+            <article class="track-card">
+                <div class="track-eyebrow">AI Specialization</div>
+                <h3 class="track-title">Specialized Applications and Research</h3>
+                <ul>
+                  <li>Computational Molecular Medicine</li>
+                  <li>Data Science Methods for Large-Scale Graphs</li>
+                  <li>Data Mining</li>
+                  <li>Optimal Transport</li>
+                </ul>
+            </article>
+        </div>
+      </section>
+  </main>
+
+<!-- Footer -->
+  <footer>
+    <p>&copy; 2025 ITeccs. All rights reserved.</p>
+  </footer>
+
+  <!-- Custom Chat Button -->
+  <button id="custom-chat-btn">
+    <i class="fas fa-comments"></i>
+  </button>
+
+   <!-- Tawk.to Script -->
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {};
+    var Tawk_LoadStart = new Date();
+
+    (function(){
+      var s1=document.createElement("script"),
+          s0=document.getElementsByTagName("script")[0];
+      s1.async=true;
+      s1.src='https://embed.tawk.to/685e2123390063190e54b4b2/1iunr2sv2';
+      s1.charset='UTF-8';
+      s1.setAttribute('crossorigin','*');
+      s0.parentNode.insertBefore(s1,s0);
+    })();
+
+    // Hide default widget once fully loaded
+    Tawk_API.onLoad = function(){
+      Tawk_API.hideWidget();
+    };
+
+    // Custom button opens chat
+    document.addEventListener("DOMContentLoaded", function(){
+      var btn = document.getElementById("custom-chat-btn");
+      if(btn){
+        btn.addEventListener("click", function(){
+          if(typeof Tawk_API !== "undefined"){
+            Tawk_API.maximize(); // open chat window
+          }
+        });
+      }
+    });
+  </script>
+  <!-- End of Tawk.to Script -->        
+
+  <!-- Embedded Animations -->
+  <script>
+    // Scroll reveal effect
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.track-card, .section-title').forEach(el => observer.observe(el));
+
+    // 3D tilt effect
+    const tiltCards = document.querySelectorAll('.track-card');
+    tiltCards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const rotateY = ((x / rect.width) - 0.5) * 12;
+        const rotateX = ((y / rect.height) - 0.5) * -12;
+        card.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg) scale(1.03)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+      });
+    });
+
+    // Subtle gradient animation
+    document.addEventListener('DOMContentLoaded', () => {
+      const bg = document.querySelector('.animated-bg');
+      let angle = 0;
+      setInterval(() => {
+        angle = (angle + 0.3) % 360;
+        bg.style.background = `linear-gradient(${angle}deg, #1e1f5b, #6a11cb, #2575fc)`;
+      }, 80);
+    });
+  </script>
+</body>
+</html>
+

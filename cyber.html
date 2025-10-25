@@ -1,992 +1,305 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Information Systems & Cybersecurity Courses • ITECCS</title>
-  <style>
-    :root{
-      --bg:#0b1220;--panel:#0f1830;--card:#131e3b;--muted:#9fb0d1;--text:#e8eeff;--accent:#60a5fa;--chip:#1b2a55;--ring:#2b3f7a
-    }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;background:linear-gradient(180deg,#0b1220,#0a0f1c 40%,#0b1220);color:var(--text)}
-    header{padding:56px 24px 24px;max-width:1100px;margin:0 auto}
-    .kicker{letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600}
-    h1{margin:.25rem 0 1rem;font-size:clamp(28px,4vw,44px);line-height:1.1}
-    .sub{color:var(--muted);max-width:850px}
+  <title>Applied Physics Curriculum - ITeccs</title>
 
-    /* Toolbar */
-    .toolbar{position:sticky;top:0;background:rgba(11,18,32,.75);backdrop-filter:blur(10px);z-index:50;border-bottom:1px solid #1e2a4a}
-    .toolbar-inner{display:flex;gap:12px;align-items:center;max-width:1100px;margin:0 auto;padding:12px 24px}
-    input[type="search"]{flex:1;background:var(--panel);border:1px solid var(--ring);color:var(--text);padding:12px 14px;border-radius:12px;font-size:14px;outline:none}
-    .btn{background:var(--accent);color:#071225;border:0;padding:10px 14px;border-radius:12px;font-weight:700;cursor:pointer}
-    .ghost{background:transparent;color:var(--muted);border:1px solid var(--ring)}
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
 
-    /* Accordion */
-    main{max-width:1100px;margin:16px auto 80px;padding:0 24px}
-    details{background:var(--panel);border:1px solid var(--ring);border-radius:16px;margin:14px 0;overflow:hidden}
-    summary{list-style:none;cursor:pointer;padding:18px 24px;display:flex;gap:14px;align-items:center}
-    summary::-webkit-details-marker{display:none}
-    .chev{inline-size:10px;block-size:10px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(-45deg);transition:.25s ease;margin-left:auto}
-    details[open] .chev{transform:rotate(45deg)}
-    .summary-title{font-size:18px;font-weight:800}
-    .summary-sub{color:var(--muted);font-size:13px}
-
-    /* Grid */
-    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;padding:0 18px 18px}
-    .card{grid-column:span 12;background:var(--card);border:1px solid #20315f;border-radius:14px;padding:16px;display:flex;gap:12px;align-items:flex-start;transition:transform .15s ease,box-shadow .15s ease}
-    .card:hover{transform:translateY(-2px);box-shadow:0 6px 30px rgba(18,35,80,.35)}
-    @media(min-width:720px){.card{grid-column:span 6}}
-    @media(min-width:980px){.card{grid-column:span 4}}
-    .dot{width:8px;height:8px;border-radius:999px;background:var(--accent);margin-top:7px}
-    .title{font-weight:800;margin:0 0 6px;font-size:15px;letter-spacing:.2px}
-    .desc{margin:0;color:var(--muted);font-size:13px;line-height:1.4}
-    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-    .chip{background:var(--chip);border:1px solid #263a73;color:var(--muted);font-size:11px;padding:6px 8px;border-radius:999px}
-
-    footer{max-width:1100px;margin:24px auto 60px;padding:0 24px;color:var(--muted);font-size:12px}
-  </style>
-  <style>
-    /* ✨ Visual polish & micro‑interactions */
-    @keyframes popIn{0%{transform:scale(.96);opacity:0}100%{transform:scale(1);opacity:1}}
-    .modal{animation:popIn .18s ease-out}
-    .btn{padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:rgba(30,41,59,.5);cursor:pointer;font-weight:600}
-    .btn:hover{transform:translateY(-1px)}
-    .btn.primary{background:linear-gradient(135deg,#06b6d4,#0ea5e9,#22d3ee);border:0}
-    .btn[disabled]{opacity:.6;cursor:not-allowed}
-    .pill{display:inline-flex;align-items:center;gap:8px;padding:4px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.1);font-size:12px;color:#a5b4fc;background:rgba(79,70,229,.12)}
-    .success-screen{position:fixed;inset:0;display:none;z-index:110;align-items:center;justify-content:center;background:radial-gradient(1200px 600px at 30% 20%,rgba(34,211,238,.12),transparent),radial-gradient(900px 400px at 80% 70%,rgba(99,102,241,.12),transparent),rgba(2,6,23,.8);backdrop-filter:blur(4px)}
-    .success-card{width:min(560px,94vw);background:#0b1220;border:1px solid rgba(255,255,255,.08);border-radius:18px;box-shadow:0 10px 40px rgba(0,0,0,.45);padding:22px}
-    .success-card h3{margin:6px 0 8px;font-size:22px}
-    .success-card p{color:#cbd5e1}
-  </style>
-  <style id="iteccs-theme">
-    :root{
-      --brand:#0ea5e9;--brand-2:#22d3ee;--ink:#0f172a;--muted:#475569;--bg:#f8fafc;--card:#ffffff;--ring:rgba(14,165,233,.35);--shadow:0 1px 2px rgba(2,6,23,.06),0 8px 24px rgba(2,6,23,.08)
-    }
-    @media (prefers-color-scheme: dark){:root{--bg:#0b1220;--card:#0f172a;--ink:#e2e8f0;--muted:#94a3b8;--shadow:0 1px 2px rgba(15,23,42,.4),0 8px 24px rgba(0,0,0,.5)}}
-    *{box-sizing:border-box}html,body{margin:0;padding:0}
-    body{font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";background:var(--bg);color:var(--ink);line-height:1.6}
-    a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}
-    .iteccs-container{max-width:1200px;margin-inline:auto;padding:24px}
-    .iteccs-topbar{position:sticky;top:0;z-index:40;background:linear-gradient(90deg,var(--brand),var(--brand-2));color:white;box-shadow:var(--shadow)}
-    .iteccs-topbar .inner{display:flex;align-items:center;gap:16px;justify-content:space-between;padding:12px 24px}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
-    .brand .logo{width:36px;height:36px;border-radius:10px;background:radial-gradient(120% 120% at 10% 10%,#fff,transparent 45%),linear-gradient(135deg,var(--brand-2),var(--brand));box-shadow:inset 0 0 0 2px rgba(255,255,255,.2)}
-    .brand .title{font-size:18px;letter-spacing:.2px}
-    .actions{display:flex;gap:10px}
-    .btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:12px;padding:10px 14px;background:rgba(255,255,255,.14);color:#fff;font-weight:600;backdrop-filter:saturate(1.4) blur(6px)}
-    .btn:hover{background:rgba(255,255,255,.22)}
-    .hero{background:linear-gradient(180deg,rgba(34,211,238,.08),transparent);border-bottom:1px solid rgba(2,6,23,.06)}
-    .hero h1{font-size:32px;margin:8px 0 4px;font-weight:800;letter-spacing:.2px}
-    .hero p{color:var(--muted);margin:0 0 16px}
-    .searchbar{display:flex;gap:10px;flex-wrap:wrap}
-    .searchbar input[type="search"]{flex:1;min-width:280px;border:1px solid rgba(2,6,23,.08);background:var(--card);box-shadow:var(--shadow);border-radius:14px;padding:12px 14px;outline:0}
-    .searchbar input[type="search"]:focus{border-color:var(--brand);box-shadow:0 0 0 4px var(--ring)}
-    .chip-btn{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(2,6,23,.08);background:var(--card);border-radius:999px;padding:8px 12px;margin:6px 6px 0 0;color:var(--muted);cursor:pointer;box-shadow:var(--shadow)}
-    .chip-btn[data-active="true"]{border-color:var(--brand);color:var(--brand)}
-    .catalog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-top:20px}
-    .course-card,[data-card],.card{background:var(--card);border:1px solid rgba(2,6,23,.06);border-radius:16px;box-shadow:var(--shadow);padding:16px;display:flex;flex-direction:column;gap:8px}
-    .course-card h3,.card h3{margin:0;font-size:18px;line-height:1.3}
-    .badge{display:inline-flex;align-items:center;gap:6px;font-size:12px;padding:6px 10px;border-radius:999px;background:rgba(14,165,233,.12);color:var(--brand);border:1px solid rgba(14,165,233,.2)}
-    details{background:var(--card);border:1px solid rgba(2,6,23,.06);border-radius:14px;padding:14px;box-shadow:var(--shadow)}
-    details+details{margin-top:12px}
-    summary{cursor:pointer;font-weight:700}
-    .section-title{display:flex;align-items:center;gap:10px;margin:28px 0 12px}
-    .section-title span{width:10px;height:10px;border-radius:3px;background:linear-gradient(135deg,var(--brand),var(--brand-2))}
-    .cta{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:36px 0 8px;background:linear-gradient(90deg,rgba(14,165,233,.08),rgba(34,211,238,.08));border:1px dashed rgba(14,165,233,.25);padding:18px;border-radius:16px}
-    .cta .buttons{display:flex;gap:10px;flex-wrap:wrap}
-    .cta .buttons .btn{background:linear-gradient(135deg,var(--brand),var(--brand-2));box-shadow:var(--shadow)}
-  </style>
+  <!-- Fonts and Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
-  <!-- Enrollment & Syllabus Modal (injected) -->
-  <style>
-    .modal-backdrop{position:fixed;inset:0;background:rgba(2,6,23,.6);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;z-index:100}
-    .modal{width:min(560px,92vw);background:var(--card,#0f172a);color:var(--ink,#e2e8f0);border:1px solid rgba(2,6,23,.12);border-radius:16px;box-shadow:var(--shadow,0 10px 40px rgba(0,0,0,.5));overflow:hidden}
-    .modal header{display:flex;align-items:center;justify-content:space-between;padding:16px 18px;border-bottom:1px solid rgba(2,6,23,.12)}
-    .modal header h3{margin:0;font-size:18px}
-    .modal .close{background:transparent;border:0;color:var(--muted,#94a3b8);font-size:22px;cursor:pointer}
-    .modal .content{padding:18px}
-    .modal form{display:grid;gap:12px}
-    .modal label{font-weight:600;font-size:13px}
-    .modal input,.modal select,.modal textarea{padding:10px 12px;border:1px solid rgba(2,6,23,.16);border-radius:10px;background:var(--bg,#0b1220);color:inherit;outline:0}
-    .modal .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .modal .actions{display:flex;gap:10px;justify-content:flex-end;padding:14px 18px;border-top:1px solid rgba(2,6,23,.12)}
-    .btn.primary{background:linear-gradient(135deg,var(--brand,#0ea5e9),var(--brand-2,#22d3ee));color:#fff}
-    .toast{position:fixed;right:18px;bottom:18px;background:var(--card,#0f172a);color:var(--ink,#e2e8f0);border:1px solid rgba(2,6,23,.14);padding:12px 14px;border-radius:12px;box-shadow:var(--shadow);display:none;z-index:120}
-  </style>
-  <div id="modalBackdrop" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="modal" role="document">
-      <header>
-        <h3 id="modalTitle">Fast‑Track Enrollment</h3>
-        <button class="close" aria-label="Close" id="modalClose">×</button>
-      </header>
-      <div class="content">
-        <form id="iteccsForm" action="https://formsubmit.co/info@iteccs.com" method="POST" target="hiddenFrame">
-          <div class="row">
-            <div>
-              <label for="name">Full name</label>
-              <input id="name" name="name" type="text" placeholder="Jane Doe" required />
-            </div>
-            <div>
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" placeholder="you@example.com" required />
-            </div>
-          </div>
-          <div class="row">
-            <div>
-              <label for="track">Track</label>
-              <select id="track" name="track" required>
-                <option value="Foundations">Foundations</option>
-                <option value="Cybersecurity">Cybersecurity</option>
-                <option value="Information Systems">Information Systems</option>
-              </select>
-            </div>
-            <div>
-              <label for="interest">Primary interest</label>
-              <input id="interest" name="interest" type="text" placeholder="e.g., Zero Trust, Database, GenAI" />
-            </div>
-          </div>
-          <div>
-            <label for="message">Notes (optional)</label>
-            <textarea id="message" name="message" rows="3" placeholder="Tell us your goals or any questions"></textarea>
-          </div>
-          <input type="hidden" name="form" value="iteccs-catalog" />
-          <input type="hidden" name="intent" id="formIntent" value="Enroll" />
-          <!-- Hidden email meta (FormSubmit) -->
-          <input type="hidden" name="_subject" id="_subjectHidden" value="ITECCS Inquiry" />
-          <input type="hidden" name="_template" value="table" />
-          <input type="hidden" name="_cc" id="_ccHidden" value="" />
-          <input type="hidden" name="_bcc" id="_bccHidden" value="" />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_next" value="#thank-you" />
-        </form>
-      </div>
-      <div class="actions">
-        <button class="btn" type="button" id="emailFallbackBtn">Send by Email</button>
-        <button class="btn primary" type="button" id="submitFormBtn">Submit</button>
-      </div>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="ITeccs Logo" />
     </div>
-  </div>
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
-  <iframe name="hiddenFrame" id="hiddenFrame" style="display:none"></iframe>
-
-  <!-- Success screen -->
-  <div id="successScreen" class="success-screen" aria-hidden="true">
-    <div class="success-card">
-      <span class="pill">✅ Submission received</span>
-      <h3>Thanks! We’ll reach out shortly.</h3>
-      <p>Your request has been sent to <strong>info@iteccs.com</strong>. Check your inbox for a confirmation copy. If you don’t see it in a couple of minutes, please check your spam folder.</p>
-      <div style="display:flex;gap:10px;margin-top:14px">
-        <button class="btn" id="successClose">Close</button>
-        <a class="btn primary" href="#catalog">Back to Catalog</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Thank-you anchor (for optional redirect) -->
-  <div id="thank-you" style="position:relative;top:-80px"></div>
-
-  <header class="iteccs-topbar">
-    <div class="inner">
-      <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
-        <div class="title">ITECCS • Information Systems & Cybersecurity Catalog</div>
-      </div>
-      <div class="actions">
-        <a class="btn" href="#enroll" id="enrollBtn">Enroll Now</a>
-        <a class="btn" href="#contact" id="syllabusBtn">Request Syllabus</a>
-      </div>
-    </div>
-  </header>
-
-  <section class="hero">
-    <div class="iteccs-container">
-      <h1>Build Real-World Capability</h1>
-      <p>Explore tightly organized tracks across Information Systems and Cybersecurity. Use search and filters to jump straight to what you need.</p>
-      <div class="searchbar">
-        <input type="search" id="courseSearch" placeholder="Search by course name, topic, or keyword…">
-        <div class="chips" id="chipsBar">
-          <button class="chip-btn" data-filter="is">Information Systems</button>
-          <button class="chip-btn" data-filter="cyber">Cybersecurity</button>
-          <button class="chip-btn" data-filter="ai">AI & ML</button>
-          <button class="chip-btn" data-filter="net">Networking</button>
-          <button class="chip-btn" data-filter="cloud">Cloud & DevOps</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <main id="main">
-    <!-- Quick Actions -->
-    <section id="quick-actions" style="position:sticky;top:64px;z-index:40;background:linear-gradient(180deg,var(--bg),rgba(255,255,255,0));backdrop-filter:saturate(1.1);padding:14px 0 0">
-      <div class="container" style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
-        <button id="startFoundationsBtn" class="btn" style="font-size:14px">Start with Foundations</button>
-        <button id="cyberTrackBtn" class="btn" style="font-size:14px">Cybersecurity Track</button>
-        <button id="isTrackBtn" class="btn" style="font-size:14px">Information Systems Track</button>
-        <button id="fastTrackBtn" class="btn" style="font-size:14px">Fast‑Track Enrollment</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="Founder.html">Who We Are</a></li>
+      <li><a href="consulting.html">Consulting</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="howtopay.html">How to Pay</a></li>
+      <li>
+        <a href="contact.html" class="contact-nav-button">
+          <i class="fas fa-envelope"></i> Contact Us
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- Hero Modern -->
+    <section class="hero-modern">
+      <div class="hero-overlay"></div>
+      <img src="cyber.jpg" alt="cyber background" class="hero-bg-modern" />
+      
+      <div class="hero-content-modern">
+        <h2 class="hero-heading">Information Systems & Cybersecurity</h2>
+        <p class="hero-sub">
+          Explore a curated, job‑aligned pathway across Information Systems and Cybersecurity. 
+        </p>
       </div>
     </section>
+  <!-- Main Content -->
+  <main class="content">
+    <section class="program-wrapper">
+      <div class="track-grid">
+          <!-- Information Systems & Enterprise Technology -->
+           <article class="track-card">
+                <div class="track-eyebrow">Information Systems</div>
+                <h3 class="track-title">Information Systems & Enterprise Technology</h3>
+                <p class="track-desc">
+                   Digital transformation, data platforms, AI for business, consulting practice.
+                </p>
+                <ul class="course-list">
+                    <li>Digital Transformation of Business</li>
+                    <li>Managing Complex Projects</li>
+                    <li>IT and Global Sourcing Strategy</li>
+                    <li>IT Consulting Lab Practicum</li>
+                    <li>Developing Internet Systems and Services</li>
+                    <li>Large‑Scale Computing on the Cloud</li>
+                    <li>Database Management</li>
+                    <li>Advanced Database Management</li>
+                    <li>Introduction to Java for Business</li>
+                    <li>Cyber Networks: Securing the Digital Frontiers</li>
+                    <li>Cybersecurity and Data Vulnerabilities</li>
+                    <li>Cybersecurity</li>
+                    <li>Responsible AI</li>
+                    <li>AI Development and Business Applications</li>
+                    <li>Generative AI</li>
+                    <li>Human‑AI Fusion</li>
+                    <li>Machine Learning: Design and Deployment</li>
+                    <li>Data Science and Business Intelligence</li>
+                </ul>
+            </article>
 
-    <div class="cta">
-      <strong>Not sure where to start?</strong>
-      <div class="buttons">
-        <button class="btn" id="ctaFoundation">Start with Foundations</button>
-        <button class="btn" id="ctaCyber">Cybersecurity Track</button>
-        <button class="btn" id="ctaIS">Information Systems Track</button>
-      </div>
-    </div>
+            <!-- Cybersecurity — Foundations, Engineering & Leadership -->
+            <article class="track-card">
+                <div class="track-eyebrow">Cybersecurity</div>
+                <h3 class="track-title">Cybersecurity — Foundations, Engineering & Leadership</h3>
+                <p class="track-desc">
+                   Governance, secure design, privacy, enterprise architectures.
+                </p>
+                <ul class="course-list">
+                    <li>Foundations of Information Assurance</li>
+                    <li>Information Security and Privacy</li>
+                    <li>Security Engineering</li>
+                    <li>Cyber Strategy and Leadership</li>
+                    <li>Information Assurance Architectures and Technologies</li>
+                </ul>
+            </article>
 
-    <!-- ===== Catalog ===== -->
-    <header>
-      <div class="kicker">ITECCS • Information Systems & Cybersecurity</div>
-      <h1>Future‑Ready Courses to Level Up Your Tech Career</h1>
-      <p class="sub">Explore a curated, job‑aligned pathway across Information Systems and Cybersecurity. Search, skim, and expand any section to view short, persuasive one‑line summaries. Everything here is designed to be copy‑ready for your website.</p>
-    </header>
+            <!-- Cryptography, Trust & Identity -->
+            <article class="track-card">
+                <div class="track-eyebrow">Cryptography</div>
+                <h3 class="track-title">Cryptography, Trust & Identity</h3>
+                <p class="track-desc">
+                   Crypto, PKI, authentication, and zero trust.
+                </p>
+                <ul class="course-list">
+                    <li>Cryptology</li>
+                    <li>Public Key Infrastructure and Managing E‑Security</li>
+                    <li>Zero Trust Principles and Practice</li>
+                    <li>Authentication Technologies</li>
+                    <li>Java Security</li>
+                </ul>
+            </article>
 
-    <div class="toolbar">
-      <div class="toolbar-inner">
-        <input id="q" type="search" placeholder="Search courses, topics, or skills… (e.g., Zero Trust, Web Security, Database)" />
-        <button class="btn ghost" id="expandAll">Expand All</button>
-        <button class="btn ghost" id="collapseAll">Collapse All</button>
-      </div>
-    </div>
+            <!-- Networks, Systems & Web -->
+            <article class="track-card">
+                <div class="track-eyebrow">Networks</div>
+                <h3 class="track-title">Networks, Systems & Web</h3>
+                <p class="track-desc">
+                   Securing networks, operating systems, and modern web stacks.
+                </p>
+                <ul class="course-list">
+                    <li>Network Security</li>
+                    <li>Operating Systems Security</li>
+                    <li>Web Security</li>
+                    <li>Advanced Web Security</li>
+                </ul>
+            </article>
 
-    <main id="catalog">
-      <!-- SECTION: Information Systems & Enterprise Technology -->
-      <details open>
-        <summary>
-          <div class="summary-title">Information Systems & Enterprise Technology</div>
-          <div class="summary-sub">Digital transformation, data platforms, AI for business, consulting practice</div>
-          <span class="chev"></span>
-        </summary>
-        <div class="grid">
-          <!-- 18 cards -->
-          <div class="card" data-tags="is business strategy transformation">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Digital Transformation of Business</h3>
-              <p class="desc">Learn how technology, people, and processes align to reinvent value creation and operating models.</p>
-              <div class="chips"><span class="chip">Strategy</span><span class="chip">Operating Models</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="is project management planning risk">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Managing Complex Projects</h3>
-              <p class="desc">Master scoping, risk, and delivery for large initiatives using modern PM tools and practices.</p>
-              <div class="chips"><span class="chip">PM</span><span class="chip">Risk</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="is sourcing strategy globalization">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">IT and Global Sourcing Strategy</h3>
-              <p class="desc">Design sourcing strategies and partnerships to scale global innovation and delivery.</p>
-              <div class="chips"><span class="chip">Sourcing</span><span class="chip">Partnerships</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="is consulting practicum client">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">IT Consulting Lab Practicum</h3>
-              <p class="desc">Deliver a real client project end‑to‑end—scoping, analysis, solutioning, and presentation.</p>
-              <div class="chips"><span class="chip">Practicum</span><span class="chip">Client Work</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="is internet systems services product design">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Developing Internet Systems and Services</h3>
-              <p class="desc">Design, build, and deploy internet‑scale services with UX, performance, and privacy in mind.</p>
-              <div class="chips"><span class="chip">Web Services</span><span class="chip">Product</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="is cloud big data aws distributed systems">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Large‑Scale Computing on the Cloud</h3>
-              <p class="desc">Use Hadoop, Spark, and AWS patterns to process massive datasets and power analytics.</p>
-              <div class="chips"><span class="chip">Hadoop</span><span class="chip">Spark</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="is database sql modeling">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Database Management</h3>
-              <p class="desc">Model, query, and manage relational databases to drive data‑driven decisions.</p>
-              <div class="chips"><span class="chip">SQL</span><span class="chip">Modeling</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="is database oracle plsql warehouse nosql">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Advanced Database Management</h3>
-              <p class="desc">Advance from SQL to PL/SQL, data warehousing, and operational DB administration.</p>
-              <div class="chips"><span class="chip">PL/SQL</span><span class="chip">Warehousing</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="is java programming beginners business">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Introduction to Java for Business</h3>
-              <p class="desc">Learn core Java through business‑focused projects to automate tasks and build apps.</p>
-              <div class="chips"><span class="chip">Java</span><span class="chip">Foundations</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="cyber telecom mobile networks strategy">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Cyber Networks: Securing the Digital Frontiers</h3>
-              <p class="desc">Explore telecom and mobile systems and how firms monetize secure networked services.</p>
-              <div class="chips"><span class="chip">Telecom</span><span class="chip">Mobility</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="cyber vulnerabilities risk data security">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Cybersecurity and Data Vulnerabilities</h3>
-              <p class="desc">Identify and describe real‑world software weaknesses using industry frameworks.</p>
-              <div class="chips"><span class="chip">Vulns</span><span class="chip">NIST/BF</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="cyber risk frameworks compliance investment">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Cybersecurity</h3>
-              <p class="desc">Apply risk and finance frameworks to prioritize controls, metrics, and compliance.</p>
-              <div class="chips"><span class="chip">Risk</span><span class="chip">Governance</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="ai ethics governance fairness">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Responsible AI</h3>
-              <p class="desc">Build trustworthy AI with safety, fairness, accountability, and regulatory alignment.</p>
-              <div class="chips"><span class="chip">AI Ethics</span><span class="chip">Governance</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="ai applications business tooling">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">AI Development and Business Applications</h3>
-              <p class="desc">Translate AI methods into practical business solutions with modern tools.</p>
-              <div class="chips"><span class="chip">AI</span><span class="chip">Use‑Cases</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="ai genai llms deep learning enterprise">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Generative AI</h3>
-              <p class="desc">Leverage LLMs and deep learning to analyze unstructured data and build APIs.</p>
-              <div class="chips"><span class="chip">LLMs</span><span class="chip">GenAI</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="ai human teaming bci strategy">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Human‑AI Fusion</h3>
-              <p class="desc">Design workflows where human creativity and AI intelligence amplify each other.</p>
-              <div class="chips"><span class="chip">Augmented</span><span class="chip">Teaming</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="ai ml python deployment ops">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Machine Learning: Design and Deployment</h3>
-              <p class="desc">Build, evaluate, and deploy ML pipelines in Python using industry libraries.</p>
-              <div class="chips"><span class="chip">ML</span><span class="chip">MLOps</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="ai bi analytics viz sentiment">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Data Science and Business Intelligence</h3>
-              <p class="desc">Apply visualization, social data, and predictive analytics to business decisions.</p>
-              <div class="chips"><span class="chip">BI</span><span class="chip">Analytics</span></div>
-            </div>
-          </div>
-        </div>
-      </details>
+            <!-- Industrial, Embedded, IoT & Cyber‑Physical Systems -->
+            <article class="track-card">
+                <div class="track-eyebrow">Industrial Systems</div>
+                <h3 class="track-title">Industrial, Embedded, IoT & Cyber‑Physical Systems</h3>
+                <p class="track-desc">
+                   ICS/SCADA, embedded security, UAVs, intelligent vehicles, IoT privacy.
+                </p>
+                <ul class="course-list">
+                    <li>Embedded Computer Systems — Vulnerabilities, Intrusions, and Protection Mechanisms</li>
+                    <li>Securing Industrial Control Systems</li>
+                    <li>Securing Industrial Control Systems (Applied)</li>
+                    <li>Cyber Physical Systems Security</li>
+                    <li>Introduction to Internet of Things Security and Privacy</li>
+                    <li>Intelligent Vehicles: Cybersecurity for Connected and Autonomous Vehicles</li>
+                </ul>
+            </article>
 
-      <!-- SECTION: Cybersecurity — Foundations, Engineering & Leadership -->
-      <details>
-        <summary>
-          <div class="summary-title">Cybersecurity — Foundations, Engineering & Leadership</div>
-          <div class="summary-sub">Governance, secure design, privacy, enterprise architectures</div>
-          <span class="chev"></span>
-        </summary>
-        <div class="grid">
-          <div class="card" data-tags="cyber foundations policy risk privacy">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Foundations of Information Assurance</h3>
-              <p class="desc">Survey threats, controls, policy, and risk to protect confidentiality, integrity, and availability.</p>
-              <div class="chips"><span class="chip">Policy</span><span class="chip">Risk</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="cyber privacy security policy systems">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Information Security and Privacy</h3>
-              <p class="desc">Connect perimeter, host, authentication, and IP protection with research‑backed practice.</p>
-              <div class="chips"><span class="chip">Privacy</span><span class="chip">Practice</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="cyber systems engineering design threat modeling">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Security Engineering</h3>
-              <p class="desc">Engineer secure systems end‑to‑end with prevention, detection, response, and tolerance.</p>
-              <div class="chips"><span class="chip">Design</span><span class="chip">Architecture</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="cyber leadership ciso strategy program">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Cyber Strategy and Leadership</h3>
-              <p class="desc">Level up to CISO‑ready skills: strategy, metrics, influence, and program execution.</p>
-              <div class="chips"><span class="chip">Leadership</span><span class="chip">CISO</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="cyber enterprise architecture zero trust nist cloud">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Information Assurance Architectures and Technologies</h3>
-              <p class="desc">Apply NIST and Zero Trust patterns to real enterprise and cloud security architectures.</p>
-              <div class="chips"><span class="chip">ZTA</span><span class="chip">NIST</span></div>
-            </div>
-          </div>
-        </div>
-      </details>
+            <!-- Forensics, Reverse Engineering & Malware -->
+            <article class="track-card">
+                <div class="track-eyebrow">Forensics</div>
+                <h3 class="track-title">Forensics, Reverse Engineering & Malware</h3>
+                <p class="track-desc">
+                   Dead/live forensics, reverse engineering, malware analysis, runtime defense.
+                </p>
+                <ul class="course-list">
+                    <li>Computer Forensics</li>
+                    <li>Digital Forensics Technologies and Techniques</li>
+                    <li>Mobile Device Forensics</li>
+                    <li>Reverse Engineering and Vulnerability Analysis</li>
+                    <li>Malware Analysis</li>
+                    <li>Engineering Runtime Malware Detection</li>
+                </ul>
+            </article>
 
-      <!-- SECTION: Cryptography, Trust & Identity -->
-      <details>
-        <summary>
-          <div class="summary-title">Cryptography, Trust & Identity</div>
-          <div class="summary-sub">Crypto, PKI, authentication, and zero trust</div>
-          <span class="chev"></span>
-        </summary>
-        <div class="grid">
-          <div class="card" data-tags="cyber crypto encryption signatures hash">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Cryptology</h3>
-              <p class="desc">Understand symmetric/asymmetric crypto, signatures, hashes, and quantum‑resistant trends.</p>
-              <div class="chips"><span class="chip">Crypto</span><span class="chip">Security</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="cyber pki certificates identity trust policy">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Public Key Infrastructure and Managing E‑Security</h3>
-              <p class="desc">Design certificate policies and key lifecycles to enable trusted digital business.</p>
-              <div class="chips"><span class="chip">PKI</span><span class="chip">Identity</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="cyber zero trust segmentation policy enforcement">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Zero Trust Principles and Practice</h3>
-              <p class="desc">Implement least‑privilege architectures with continuous verification across assets.</p>
-              <div class="chips"><span class="chip">Zero Trust</span><span class="chip">Architecture</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="cyber auth identity federation biometrics">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Authentication Technologies</h3>
-              <p class="desc">Evaluate passwords, tokens, biometrics, and federation with usability and privacy in mind.</p>
-              <div class="chips"><span class="chip">AuthN</span><span class="chip">Identity</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="cyber java crypto apis ssl web services security">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Java Security</h3>
-              <p class="desc">Apply JCA/JCE, TLS, code signing, and sandboxing to build secure Java applications.</p>
-              <div class="chips"><span class="chip">Java</span><span class="chip">APIs</span></div>
-            </div>
-          </div>
-        </div>
-      </details>
+            <!-- Threat Hunting, Intelligence & Exercises -->
+            <article class="track-card">
+                <div class="track-eyebrow">Threat Hunting</div>
+                <h3 class="track-title">Threat Hunting, Intelligence & Exercises</h3>
+                <p class="track-desc">
+                   IDS/IPS, EDR/SIEM/TIP, covert channels, red/blue exercises, analytics.
+                </p>
+                <ul class="course-list">
+                    <li>Intrusion Detection</li>
+                    <li>Cyber Threat Hunting and Intelligence</li>
+                    <li>Covert Channels</li>
+                    <li>Cyber Exercise</li>
+                    <li>Information Assurance Analysis</li>
+                </ul>
+            </article>
 
-      <!-- SECTION: Networks, Systems & Web -->
-      <details>
-        <summary>
-          <div class="summary-title">Networks, Systems & Web</div>
-          <div class="summary-sub">Securing networks, operating systems, and modern web stacks</div>
-          <span class="chev"></span>
-        </summary>
-        <div class="grid">
-          <div class="card" data-tags="cyber net network security vpn ipv6 cloud">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Network Security</h3>
-              <p class="desc">Secure protocols, routing, and hybrid cloud with applied cryptography and RMF practices.</p>
-              <div class="chips"><span class="chip">Networks</span><span class="chip">RMF</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="cyber os security linux windows virtualization">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Operating Systems Security</h3>
-              <p class="desc">Analyze OS hardening—including ASLR, CFI, TPMs—and defend against APTs and rootkits.</p>
-              <div class="chips"><span class="chip">OS</span><span class="chip">Hardening</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="cyber web security appsec xss sql injection tls">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Web Security</h3>
-              <p class="desc">Threat‑model the web stack and mitigate vulns with crypto, certs, and secure design.</p>
-              <div class="chips"><span class="chip">AppSec</span><span class="chip">TLS</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="cyber browser sandbox sop cors offensive defensive">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Advanced Web Security</h3>
-              <p class="desc">Go beyond basics: SOP/CORS, modern vulns, incident response, and emerging research.</p>
-              <div class="chips"><span class="chip">Browser</span><span class="chip">IR</span></div>
-            </div>
-          </div>
-        </div>
-      </details>
+            <!-- AI, GenAI & Assured Autonomy -->
+            <article class="track-card">
+                <div class="track-eyebrow">AI for Cybersecurity</div>
+                <h3 class="track-title">AI, GenAI & Assured Autonomy</h3>
+                <p class="track-desc">
+                   AI for defense, safety, robustness, explainability, human‑machine teaming.
+                </p>
+                <ul class="course-list">
+                    <li>AI for Cybersecurity</li>
+                    <li>Introduction to Assured AI and Autonomy</li>
+                    <li>Assured Autonomy</li>
+                    <li>AI for Assured Autonomy</li>
+                    <li>Generative AI for Cybersecurity</li>
+                    <li>Generative AI and Synthetic Threats</li>
+                </ul>
+            </article>
 
-      <!-- SECTION: Industrial, Embedded, IoT & CPS -->
-      <details>
-        <summary>
-          <div class="summary-title">Industrial, Embedded, IoT & Cyber‑Physical Systems</div>
-          <div class="summary-sub">ICS/SCADA, embedded security, UAVs, intelligent vehicles, IoT privacy</div>
-          <span class="chev"></span>
-        </summary>
-        <div class="grid">
-          <div class="card" data-tags="cyber embedded systems hardware exploits protection">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Embedded Computer Systems — Vulnerabilities, Intrusions, and Protection Mechanisms</h3>
-              <p class="desc">Study embedded attack surfaces and defenses beyond traditional networked systems.</p>
-              <div class="chips"><span class="chip">Embedded</span><span class="chip">Defense</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="cyber ics scada plc hmi purdue model">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Securing Industrial Control Systems</h3>
-              <p class="desc">Protect ICS/SCADA stacks—sensors, PLCs, HMIs—against modern threats and outages.</p>
-              <div class="chips"><span class="chip">ICS</span><span class="chip">SCADA</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="cyber ics applied security industrial case studies">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Securing Industrial Control Systems (Applied)</h3>
-              <p class="desc">Hands‑on ICS security with real attacks, mitigations, and resilience patterns.</p>
-              <div class="chips"><span class="chip">Hands‑On</span><span class="chip">OT</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="cyber cps control uav resilience ids">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Cyber Physical Systems Security</h3>
-              <p class="desc">Blend control theory and security to defend UAVs and industrial controllers.</p>
-              <div class="chips"><span class="chip">CPS</span><span class="chip">Control</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="cyber iot platforms security privacy protocols">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Introduction to Internet of Things Security and Privacy</h3>
-              <p class="desc">Secure heterogeneous IoT stacks across hardware, software, apps, and networks.</p>
-              <div class="chips"><span class="chip">IoT</span><span class="chip">Privacy</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="cyber autonomous vehicles v2x safety assured autonomy">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Intelligent Vehicles: Cybersecurity for Connected and Autonomous Vehicles</h3>
-              <p class="desc">Assess risks and assurance for AVs within transportation‑energy‑communications ecosystems.</p>
-              <div class="chips"><span class="chip">AV</span><span class="chip">Assurance</span></div>
-            </div>
-          </div>
-        </div>
-      </details>
+            <!--Ethical Hacking -->
+            <article class="track-card">
+                <div class="track-eyebrow">Ethical Hacking</div>
+                <h3 class="track-title">Ethical Hacking</h3>
+                <p class="track-desc">
+                   Offense‑informs‑defense: recon to post‑exploitation.
+                </p>
+                <ul class="course-list">
+                    <li>Introduction to Ethical Hacking</li>
+                </ul>
+            </article>
 
-      <!-- SECTION: Forensics, Reverse Engineering & Malware -->
-      <details>
-        <summary>
-          <div class="summary-title">Forensics, Reverse Engineering & Malware</div>
-          <div class="summary-sub">Dead/live forensics, reverse engineering, malware analysis, runtime defense</div>
-          <span class="chev"></span>
-        </summary>
-        <div class="grid">
-          <div class="card" data-tags="cyber forensics imaging registry logs evidence">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Computer Forensics</h3>
-              <p class="desc">Perform dead‑box acquisition and analysis with open‑source tools and courtroom reporting.</p>
-              <div class="chips"><span class="chip">DFIR</span><span class="chip">Imaging</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="cyber forensics signatures steganography anti-forensics">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Digital Forensics Technologies and Techniques</h3>
-              <p class="desc">Go deeper on signatures, compression, watermarking, and anti‑forensic tactics.</p>
-              <div class="chips"><span class="chip">DFIR</span><span class="chip">Analysis</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="cyber mobile android live extraction sim sd logs">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Mobile Device Forensics</h3>
-              <p class="desc">Extract and analyze live Android data—apps, logs, SIM/SD—to build evidence chains.</p>
-              <div class="chips"><span class="chip">Mobile</span><span class="chip">Live</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="cyber re static dynamic fuzzing mitigation">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Reverse Engineering and Vulnerability Analysis</h3>
-              <p class="desc">Unpack binaries with static/dynamic analysis and craft mitigations to raise the bar.</p>
-              <div class="chips"><span class="chip">RE</span><span class="chip">Fuzzing</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="cyber malware ransomware ioc debugging c2">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Malware Analysis</h3>
-              <p class="desc">Dissect modern malware, extract IOCs, and build tools—up to ransomware decryption.</p>
-              <div class="chips"><span class="chip">IOC</span><span class="chip">Reverse</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="cyber runtime detection kernel windows minifilters">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Engineering Runtime Malware Detection</h3>
-              <p class="desc">Instrument the Windows kernel to detect suspicious behavior in real time.</p>
-              <div class="chips"><span class="chip">Kernel</span><span class="chip">Detection</span></div>
-            </div>
-          </div>
-        </div>
-      </details>
-
-      <!-- SECTION: Threat Hunting, Intelligence & Exercises -->
-      <details>
-        <summary>
-          <div class="summary-title">Threat Hunting, Intelligence & Exercises</div>
-          <div class="summary-sub">IDS/IPS, EDR/SIEM/TIP, covert channels, red/blue exercises, analytics</div>
-          <span class="chev"></span>
-        </summary>
-        <div class="grid">
-          <div class="card" data-tags="cyber ids ips zeek snort nmap siem ml">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Intrusion Detection</h3>
-              <p class="desc">Deploy host/network IDS, analyze packets and logs, and balance detection trade‑offs.</p>
-              <div class="chips"><span class="chip">IDS/IPS</span><span class="chip">Zeek/Snort</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="cyber threat hunting edr siem tip attribution">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Cyber Threat Hunting and Intelligence</h3>
-              <p class="desc">Hunt APT/eCrime with EDR/SIEM workflows and structured intelligence frameworks.</p>
-              <div class="chips"><span class="chip">Hunting</span><span class="chip">Intel</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="cyber covert channels side channels leakage timing storage">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Covert Channels</h3>
-              <p class="desc">Build and defeat timing/storage channels to understand and reduce information leakage.</p>
-              <div class="chips"><span class="chip">Side‑Channel</span><span class="chip">Defense</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="cyber exercises tabletop ranges training assessment">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Cyber Exercise</h3>
-              <p class="desc">Design organization‑ready cyber exercises to train teams, tech, and procedures.</p>
-              <div class="chips"><span class="chip">Tabletop</span><span class="chip">Ranges</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="cyber traffic analysis hypothesis testing dfir">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Information Assurance Analysis</h3>
-              <p class="desc">Analyze flows, NetFlow/PCAP, and logs to build evidence and defend at scale.</p>
-              <div class="chips"><span class="chip">Analytics</span><span class="chip">DFIR</span></div>
-            </div>
-          </div>
-        </div>
-      </details>
-
-      <!-- SECTION: AI, GenAI & Assured Autonomy -->
-      <details>
-        <summary>
-          <div class="summary-title">AI, GenAI & Assured Autonomy</div>
-          <div class="summary-sub">AI for defense, safety, robustness, explainability, human‑machine teaming</div>
-          <span class="chev"></span>
-        </summary>
-        <div class="grid">
-          <div class="card" data-tags="cyber ai ml security phishing ids spam">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">AI for Cybersecurity</h3>
-              <p class="desc">Use ML to detect spam, phishing, malware, and intrusions with hands‑on labs.</p>
-              <div class="chips"><span class="chip">ML</span><span class="chip">Defense</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="cyber assurance ai safety fairness xai teaming">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Introduction to Assured AI and Autonomy</h3>
-              <p class="desc">Cover foundations of AI plus security, resilience, fairness, and explainability.</p>
-              <div class="chips"><span class="chip">Assurance</span><span class="chip">XAI</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="cyber autonomy safety security runtime guarantees">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Assured Autonomy</h3>
-              <p class="desc">Address safety and security guarantees for complex autonomous systems.</p>
-              <div class="chips"><span class="chip">Autonomy</span><span class="chip">Safety</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="cyber ai autonomy research seminar">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">AI for Assured Autonomy</h3>
-              <p class="desc">Connect ML with assurance methods for robust, predictable autonomous behavior.</p>
-              <div class="chips"><span class="chip">ML</span><span class="chip">Assured</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="cyber genai security llms misuse adversarial">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Generative AI for Cybersecurity</h3>
-              <p class="desc">Study LLMs and generative models for defense, including misuse and adversarial risks.</p>
-              <div class="chips"><span class="chip">GenAI</span><span class="chip">Defense</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="cyber synthetic threats deepfakes disinformation detection">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Generative AI and Synthetic Threats</h3>
-              <p class="desc">Detect and counter deepfakes, synthetic media, and influence operations.</p>
-              <div class="chips"><span class="chip">Deepfakes</span><span class="chip">Detection</span></div>
-            </div>
-          </div>
-        </div>
-      </details>
-
-      <!-- SECTION: Ethical Hacking -->
-      <details>
-        <summary>
-          <div class="summary-title">Ethical Hacking</div>
-          <div class="summary-sub">Offense‑informs‑defense: recon to post‑exploitation</div>
-          <span class="chev"></span>
-        </summary>
-        <div class="grid">
-          <div class="card" data-tags="cyber pentest recon exploitation lateral movement post-exploitation">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Introduction to Ethical Hacking</h3>
-              <p class="desc">Practice full kill‑chain tactics to expose weaknesses and inform defensive priorities.</p>
-              <div class="chips"><span class="chip">Red Team</span><span class="chip">TTPs</span></div>
-            </div>
-          </div>
-        </div>
-      </details>
-
-      <!-- SECTION: Capstones & Independent Study -->
-      <details>
-        <summary>
-          <div class="summary-title">Capstones & Independent Study</div>
-          <div class="summary-sub">Publishable projects, tools, and focused research</div>
-          <span class="chev"></span>
-        </summary>
-        <div class="grid">
-          <div class="card" data-tags="cyber capstone project publication tool">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Capstone Project in Cybersecurity</h3>
-              <p class="desc">Ship a publication‑quality paper and a substantial tool in a mentored team.</p>
-              <div class="chips"><span class="chip">Capstone</span><span class="chip">Team</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="cyber research mentorship focus">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Independent Study in Cybersecurity I</h3>
-              <p class="desc">Pursue a faculty‑mentored deep dive producing a significant paper or project.</p>
-              <div class="chips"><span class="chip">Research</span><span class="chip">Mentor</span></div>
-            </div>
-          </div>
-          <div class="card" data-tags="cyber research continuation advanced">
-            <div class="dot"></div>
-            <div>
-              <h3 class="title">Independent Study in Cybersecurity II</h3>
-              <p class="desc">Extend your study to deliver production‑grade results or a publishable manuscript.</p>
-              <div class="chips"><span class="chip">Advanced</span><span class="chip">Independent</span></div>
-            </div>
-          </div>
-        </div>
-      </details>
-    </main>
+            <!--Capstones & Independent Study -->
+            <article class="track-card">
+                <div class="track-eyebrow">Independent Study</div>
+                <h3 class="track-title">Capstones & Independent Study</h3>
+                <p class="track-desc">
+                   Publishable projects, tools, and focused research.
+                </p>
+                <ul class="course-list">
+                    <li>Capstone Project in Cybersecurity</li>
+                    <li>Independent Study in Cybersecurity I</li>
+                    <li>Independent Study in Cybersecurity II</li>
+                </ul>
+            </article>
+      </div>  
+    </section>
   </main>
 
+ <!-- Footer -->
   <footer>
-    <div>© <span id="year"></span> ITECCS. All rights reserved.</div>
+    <p>&copy; 2025 ITeccs. All rights reserved.</p>
   </footer>
 
-  <script>
-    // ===== Config (single source of truth) =====
-    const ITECCS_EMAIL = 'info@iteccs.com';
-    const ITECCS_ENDPOINT = null; // using classic HTML POST to FormSubmit
-    const CC_LIST = '';
-    const BCC_LIST = '';
-    const THANK_YOU_URL = '#thank-you'; // in-page thank-you anchor
+  <!-- Custom Chat Button -->
+  <button id="custom-chat-btn">
+    <i class="fas fa-comments"></i>
+  </button>
 
-    // ===== Utilities =====
-    const $ = (sel)=>document.querySelector(sel);
-    const $$ = (sel)=>Array.from(document.querySelectorAll(sel));
-    const showToast = (msg)=>{const t=$('#toast');t.textContent=msg;t.style.display='block';setTimeout(()=>t.style.display='none',4200)};
-    const openModal = (title,intent,preselect)=>{
-      $('#modalTitle').textContent = title;
-      $('#formIntent').value = intent||'Enroll';
-      if(preselect){ $('#track').value = preselect; }
-      const b=$('#modalBackdrop'); b.style.display='flex'; b.setAttribute('aria-hidden','false');
-      setTimeout(()=>{ $('#name')?.focus(); },80);
+   <!-- Tawk.to Script -->
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {};
+    var Tawk_LoadStart = new Date();
+
+    (function(){
+      var s1=document.createElement("script"),
+          s0=document.getElementsByTagName("script")[0];
+      s1.async=true;
+      s1.src='https://embed.tawk.to/685e2123390063190e54b4b2/1iunr2sv2';
+      s1.charset='UTF-8';
+      s1.setAttribute('crossorigin','*');
+      s0.parentNode.insertBefore(s1,s0);
+    })();
+
+    // Hide default widget once fully loaded
+    Tawk_API.onLoad = function(){
+      Tawk_API.hideWidget();
     };
-    const closeModal = ()=>{const b=$('#modalBackdrop'); b.style.display='none'; b.setAttribute('aria-hidden','true');};
-    const openSuccess = ()=>{const s=$('#successScreen'); s.style.display='flex'; s.setAttribute('aria-hidden','false');};
-    const closeSuccess = ()=>{const s=$('#successScreen'); s.style.display='none'; s.setAttribute('aria-hidden','true');};
 
-    // ===== Filtering =====
-    function normalize(str){return (str||'').toLowerCase();}
-    function filterCourses(){
-      const query = normalize($('#courseSearch')?.value || $('#q')?.value);
-      const activeChips = $$('#chipsBar .chip-btn[data-active="true"]').map(c=>c.getAttribute('data-filter'));
-      const cards = $$('.card');
-      let visibleCount = 0;
-      cards.forEach(card=>{
-        const text = normalize(card.innerText);
-        const tags = normalize(card.getAttribute('data-tags'));
-        const matchQuery = !query || text.includes(query) || tags.includes(query);
-        const matchChips = !activeChips.length || activeChips.some(f => tags.includes(f));
-        const ok = matchQuery && matchChips;
-        card.style.display = ok ? '' : 'none';
-        if(ok) visibleCount++;
-      });
-      return visibleCount;
-    }
-
-    // ===== Mailto Fallback =====
-    function fallbackEmail(p){
-      const subject = encodeURIComponent(`[${p.intent}] ${p.name} — ${p.track}`);
-      const body = encodeURIComponent(
-        `Name: ${p.name}\nEmail: ${p.email}\nTrack: ${p.track}\nInterest: ${p.interest}\n\nNotes:\n${p.message}\n\n— Sent from ITECCS Catalog`
-      );
-      window.location.href = `mailto:${ITECCS_EMAIL}?subject=${subject}&body=${body}`;
-      showToast('Opening your email client as a fallback…');
-      closeModal();
-    }
-
-    document.addEventListener('DOMContentLoaded',()=>{
-      // Top CTA buttons open the modal
-      $('#enrollBtn')?.addEventListener('click',(e)=>{e.preventDefault(); openModal('Fast‑Track Enrollment','Enroll');});
-      $('#syllabusBtn')?.addEventListener('click',(e)=>{e.preventDefault(); openModal('Request Syllabus','Syllabus');});
-      $('#startFoundationsBtn')?.addEventListener('click',()=>openModal('Start with Foundations','Enroll','Foundations'));
-      $('#cyberTrackBtn')?.addEventListener('click',()=>openModal('Cybersecurity Track','Enroll','Cybersecurity'));
-      $('#isTrackBtn')?.addEventListener('click',()=>openModal('Information Systems Track','Enroll','Information Systems'));
-      $('#fastTrackBtn')?.addEventListener('click',()=>openModal('Fast‑Track Enrollment','Enroll'));
-      $('#ctaFoundation')?.addEventListener('click',()=>openModal('Start with Foundations','Enroll','Foundations'));
-      $('#ctaCyber')?.addEventListener('click',()=>openModal('Cybersecurity Track','Enroll','Cybersecurity'));
-      $('#ctaIS')?.addEventListener('click',()=>openModal('Information Systems Track','Enroll','Information Systems'));
-
-      $('#modalClose')?.addEventListener('click',closeModal);
-      $('#modalBackdrop')?.addEventListener('click',(e)=>{ if(e.target.id==='modalBackdrop') closeModal(); });
-
-      // Submit handler (classic POST to FormSubmit in hidden iframe)
-      const submitBtn = $('#submitFormBtn');
-      $('#submitFormBtn')?.addEventListener('click', ()=>{
-        const form = $('#iteccsForm');
-        if(!form.reportValidity()){ return; }
-        const intent = $('#formIntent').value;
-        const name = $('#name').value;
-        const track = $('#track').value;
-        $('#_subjectHidden').value = `[${intent}] ${name} — ${track}`;
-        $('#_ccHidden').value = CC_LIST;
-        $('#_bccHidden').value = BCC_LIST;
-
-        submitBtn.setAttribute('disabled','true');
-        submitBtn.textContent = 'Submitting…';
-
-        const onFrameLoad = () => {
-          showToast('Submitted! Check your inbox for confirmation.');
-          form.reset();
-          closeModal();
-          openSuccess();
-          if(THANK_YOU_URL){ history.pushState(null,'',THANK_YOU_URL); }
-          submitBtn.removeAttribute('disabled');
-          submitBtn.textContent = 'Submit';
-          $('#hiddenFrame').removeEventListener('load', onFrameLoad);
-        };
-        $('#hiddenFrame').addEventListener('load', onFrameLoad);
-
-        try{ form.submit(); }
-        catch(e){
-          // Fallback to email
-          fallbackEmail({
-            name: $('#name').value,
-            email: $('#email').value,
-            track: $('#track').value,
-            interest: $('#interest').value,
-            message: $('#message').value,
-            intent
-          });
-          submitBtn.removeAttribute('disabled');
-          submitBtn.textContent = 'Submit';
-        }
-      });
-
-      // Success screen close
-      $('#successClose')?.addEventListener('click', closeSuccess);
-
-      // Email fallback button
-      $('#emailFallbackBtn')?.addEventListener('click',()=>{
-        const form = $('#iteccsForm');
-        if(!form.reportValidity()){ return; }
-        const d = Object.fromEntries(new FormData(form).entries());
-        fallbackEmail({name:d.name,email:d.email,track:d.track,interest:d.interest||'',message:d.message||'',intent:$('#formIntent').value});
-      });
-
-      // Search inputs
-      $('#courseSearch')?.addEventListener('input', filterCourses);
-      $('#q')?.addEventListener('input', filterCourses);
-
-      // Chips toggle
-      $$('#chipsBar .chip-btn').forEach(chip=>{
-        chip.addEventListener('click',()=>{
-          const isActive = chip.getAttribute('data-active') === 'true';
-          chip.setAttribute('data-active', String(!isActive));
-          filterCourses();
+    // Custom button opens chat
+    document.addEventListener("DOMContentLoaded", function(){
+      var btn = document.getElementById("custom-chat-btn");
+      if(btn){
+        btn.addEventListener("click", function(){
+          if(typeof Tawk_API !== "undefined"){
+            Tawk_API.maximize(); // open chat window
+          }
         });
+      }
+    });
+  </script>
+  <!-- End of Tawk.to Script -->        
+
+  <!-- Embedded Animations -->
+  <script>
+    // Scroll reveal effect
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
+    }, { threshold: 0.15 });
 
-      // Expand/Collapse all
-      $('#expandAll')?.addEventListener('click',()=>{$$('details').forEach(d=>d.open=true)});
-      $('#collapseAll')?.addEventListener('click',()=>{$$('details').forEach(d=>d.open=false)});
+    document.querySelectorAll('.track-card, .section-title').forEach(el => observer.observe(el));
 
-      // Footer year
-      $('#year').textContent = new Date().getFullYear();
+    // 3D tilt effect
+    const tiltCards = document.querySelectorAll('.track-card');
+    tiltCards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const rotateY = ((x / rect.width) - 0.5) * 12;
+        const rotateX = ((y / rect.height) - 0.5) * -12;
+        card.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg) scale(1.03)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+      });
+    });
 
-      // Initial filter run (no filters) to ensure layout stable
-      filterCourses();
+    // Subtle gradient animation
+    document.addEventListener('DOMContentLoaded', () => {
+      const bg = document.querySelector('.animated-bg');
+      let angle = 0;
+      setInterval(() => {
+        angle = (angle + 0.3) % 360;
+        bg.style.background = `linear-gradient(${angle}deg, #1e1f5b, #6a11cb, #2575fc)`;
+      }, 80);
     });
   </script>
 </body>

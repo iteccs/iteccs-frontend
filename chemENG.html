@@ -1,408 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=3.0" />
-  <title>STEM Programs</title>
-
-  <!-- Tailwind (optional if you already load it globally) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <style>
-    /* subtle gradient background */
-    body {
-      background: radial-gradient(circle at 20% 20%, #0f172a 0%, #000000 70%);
-      color: #fff;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", Roboto, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-    }
-
-    /* glass / card style */
-    .card {
-      background: rgba(15, 23, 42, 0.6);
-      border: 1px solid rgba(148,163,184,0.15);
-      box-shadow: 0 30px 80px rgba(0,0,0,0.6);
-      border-radius: 1rem;
-      transition: all 0.2s ease;
-    }
-    .card:hover {
-      background: rgba(30, 41, 59, 0.7);
-      border-color: rgba(255,255,255,0.2);
-      box-shadow: 0 50px 120px rgba(0,0,0,0.8);
-      transform: translateY(-2px) scale(1.01);
-    }
-
-    /* badge style */
-    .badge {
-      font-size: 0.7rem;
-      line-height: 1rem;
-      font-weight: 500;
-      padding: 0.25rem 0.5rem;
-      border-radius: 999px;
-      background: linear-gradient(90deg, rgba(16,185,129,0.15) 0%, rgba(16,185,129,0) 100%);
-      border: 1px solid rgba(16,185,129,0.5);
-      color: rgb(16,185,129);
-    }
-
-    .section-title {
-      font-size: 2rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      color: #38bdf8;
-      text-transform: uppercase;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .section-heading {
-      font-size: clamp(1.5rem, 1vw + 1rem, 2rem);
-      font-weight: 600;
-      letter-spacing: -0.04em;
-      color: #fff;
-    }
-
-    .section-desc {
-      color: rgb(203,213,225);
-      font-size: 1rem;
-      line-height: 1.5rem;
-      max-width: 60ch;
-    } 
-
-    .subarea-title {
-      font-weight: 600;
-      font-size: 1rem;
-      color: #fff;
-      letter-spacing: -0.03em;
-    }
-    .subarea-text {
-      color: rgb(148,163,184);
-      font-size: 0.9rem;
-      line-height: 1.4rem;
-    }
-
-    .outcome-label {
-      font-size: 0.7rem;
-      font-weight: 500;
-      color: rgb(226,232,240);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-    .outcome-text {
-      color: rgb(226,232,240);
-      font-size: 0.9rem;
-      line-height: 1.4rem;
-    }
-
-    .footer-block-title {
-      color: #fff;
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-    }
-    .footer-block-text {
-      color: rgb(148,163,184);
-      font-size: 0.9rem;
-      line-height: 1.4rem;
-    }
-
-    .accent-ring {
-      background: radial-gradient(circle at 30% 30%, rgba(16,185,129,.18) 0%, rgba(0,0,0,0) 70%);
-      filter: blur(40px);
-      border-radius: 9999px;
-      width: 220px;
-      height: 220px;
-      position: absolute;
-      opacity: .4;
-      pointer-events: none;
-    }
-    .accent-ring.blue {
-      background: radial-gradient(circle at 30% 30%, rgba(56,189,248,.18) 0%, rgba(0,0,0,0) 70%);
-    }
-    .accent-ring.pink {
-      background: radial-gradient(circle at 30% 30%, rgba(236,72,153,.15) 0%, rgba(0,0,0,0) 70%);
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - ITeccs</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Fonts and Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body class="antialiased">
-
-  <!-- HERO -->
-  <header class="relative overflow-hidden px-6 py-16 md:py-24 max-w-7xl mx-auto">
-    <div class="accent-ring blue -top-10 -left-10 hidden md:block"></div>
-    <div class="accent-ring pink bottom-0 right-10 hidden md:block"></div>
-
-   <section class="relative card p-6 md:p-8 max-w-7xl mx-auto mb-12">
-  <!-- Accent glow elements -->
-  <div class="accent-ring pink absolute -top-24 right-0 opacity-30 pointer-events-none"></div>
-  <div class="accent-ring blue absolute -bottom-24 left-10 opacity-20 pointer-events-none"></div>
-
-  <!-- Header / intro -->
-  <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 relative">
-    <div class="max-w-xl">
-      <div class="section-title text-cyan-400">
-        Chemical &amp; Biomolecular Engineering
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="ITeccs Logo">
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="Founder.html">Who We Are</a></li>
+      <li><a href="consulting.html">Consulting</a></li>
+      <li><a href="education.html">Education</a></li> 
+      <li><a href="howtopay.html">How to Pay</a></li>
+      <li>
+        <a href="contact.html" class="contact-nav-button">
+          <i class="fas fa-envelope"></i> Contact Us
+        </a>
+      </li>
+    </ul>
+  </nav>
+    <!-- Hero Modern -->
+    <section class="hero-modern">
+      <div class="hero-overlay"></div>
+      <img src="chemical.jpg" alt="chemical background" class="hero-bg-modern" />
+      
+      <div class="hero-content-modern">
+        <h2 class="hero-heading">Chemical & Biomolecular Engineering</h2>
+        <p class="hero-sub">
+          This area combines chemistry, biology, physics, computation, and systems design. Students learn how to model reactions, move mass and energy, design biomaterials, deliver drugs,
+          build clean energy systems, and shape the next generation of health and sustainability technologies.
+        </p>
       </div>
+    </section>
+    <!-- Main Content -->
+    <main class="content">
+        <section class="program-wrapper">
+          <div class="track-grid">
+            <!-- Thermodynamics, Energy & Molecular Science -->
+            <article class="track-card">
+              <div class="track-eyebrow"> Energy Science</div>
+              <h3 class="track-title">Thermodynamics, Energy & Molecular Science</h3>
+              <p class="track-desc">
+              How energy, entropy, and molecular interactions govern devices, reactions, and materials.
+              </p>
+              <div class="course-list-wrapper">
+                <ul class="course-list">
+                  <li>Engineering Thermodynamics</li>
+                  <li>Applied Physical Chemistry</li>
+                  <li>Thermodynamics and Statistical Mechanics</li>
+                  <li>Advanced Thermodynamics in Practice</li>
+                </ul>
+              </div>
+            </article>
 
-      <h2 class="section-heading mt-2">
-        Engineering matter, energy, and life
-      </h2>
+            <!--Transport, Flow & Multiscale Processes -->
+            <article class="track-card">
+              <div class="track-eyebrow">Transport Processes</div>
+              <h3 class="track-title">Transport, Flow & Multiscale Processes</h3>
+              <p class="track-desc">
+                How momentum, heat, and mass move through fluids, tissues, devices, and reactors.
+              </p>
+              <ul class="course-list">
+                <li>Transport Phenomena I</li>
+                <li>Transport Phenomena II</li>
+                <li>Transport Phenomena in Practice</li>
+                <li>Advanced Transport Phenomena</li>
+              </ul>   
+            </article>
 
-      <p class="section-desc mt-4">
-        This area combines chemistry, biology, physics, computation, and systems design.
-        Students learn how to model reactions, move mass and energy, design biomaterials,
-        deliver drugs, build clean energy systems, and shape the next generation of health
-        and sustainability technologies.
-      </p>
+            <!-- Reaction Engineering & Process Design -->
+            <article class="track-card">
+              <div class="track-eyebrow">Systems Design</div>
+              <h3 class="track-title">Reaction Engineering & Process Design</h3>
+              <p class="track-desc">
+                Designing chemical and biological transformations, and turning them into scalable systems.
+              </p>
+              <div class="course-list-wrapper">
+                <ul class="course-list">
+                  <li>Kinetic Processes</li>
+                  <li>Chemical & Biomolecular Separations</li>
+                  <li>Engineering Principles of Drug Delivery</li>
+                  <li>Advanced Topics in Pharmacodynamics</li>
+                </ul>   
+              </div>
+            </article>
+            
+            <!-- Biological Systems, Cells & Nanomedicine -->
+            <article class="track-card">
+              <div class="track-eyebrow">Biological Systems</div>
+              <h3 class="track-title">Biological Systems, Cells & Nanomedicine</h3>
+              <p class="track-desc">
+                Where engineering meets living systems, targeted therapy, and the human body.
+              </p>
+                <ul class="course-list">
+                  <li>Metabolic Systems Biotechnology</li>
+                  <li>Fundamentals of Cell Bioengineering</li>
+                  <li>Supramolecular Materials and Nanomedicine</li>
+                  <li>Project in Design: Pharmacodynamics I</li>
+                  <li>Project in Design: Pharmacokinetics II</li>
+                </ul>   
+            </article>
 
-      <div class="mt-6 flex flex-wrap gap-2 text-[0.7rem] font-medium text-slate-200">
-        <span class="badge">Biotech &amp; Medicine</span>
-        <span class="badge">Energy &amp; Sustainability</span>
-        <span class="badge">Computation &amp; AI</span>
-        <span class="badge">Advanced Materials</span>
-      </div>
-    </div>
+            <!-- Polymers, Soft Matter & Interfacial Science -->
+            <article class="track-card">
+              <div class="track-eyebrow">Polymer</div>
+              <h3 class="track-title">Polymers, Soft Matter & Interfacial Science</h3>
+              <p class="track-desc">
+                Designing responsive materials for energy, manufacturing, sustainability, and medicine.
+              </p>
+                <ul class="course-list">
+                  <li>Introduction to Polymeric Materials</li>
+                  <li>Polymer Physics</li>
+                  <li>Polymer Design and Bioconjugation</li>
+                  <li>Colloids and Nanoparticles</li>
+                  <li>Interfacial Science with Applications to Nanoscale Systems</li>
+                </ul>   
+            </article>
 
-    <!-- Outcomes summary -->
-    <div class="lg:w-1/2">
-      <div class="outcome-label">You will be able to:</div>
-      <div class="outcome-text mt-2">
-        • Design and optimize chemical and biological processes<br />
-        • Model transport, reaction, and delivery inside real systems (devices, tissues, reactors)<br />
-        • Build intelligent, sustainable, and data-driven solutions for energy, pharma, and healthcare<br />
-        • Translate molecular science into usable technology
-      </div>
-    </div>
-  </div>
+            <!-- Computation, Modeling & Intelligent Design -->
+            <article class="track-card">
+              <div class="track-eyebrow">Intelligent Design</div>
+              <h3 class="track-title">Computation, Modeling & Intelligent Design</h3>
+              <p class="track-desc">
+                Simulation, prediction, and digital design for molecules, devices, and full systems.
+              </p>
+                <ul class="course-list">
+                  <li>Software Carpentry</li>
+                  <li>Computational Protein Structure Prediction and Design</li>
+                  <li>Micro- and Nanotechnology</li>
+                  <li>Introduction to Nonlinear Dynamics and Chaos</li>
+                  <li>Project in Design: Alternative Energy</li>
+                </ul>   
+            </article>
 
-  <!-- Focus area grid -->
-  <div class="mt-10 grid gap-10 md:gap-12 lg:grid-cols-2">
-    <!-- Block A -->
-    <div>
-      <h3 class="subarea-title text-cyan-300">Thermodynamics, Energy &amp; Molecular Science</h3>
-      <p class="subarea-text mt-2">
-        How energy, entropy, and molecular interactions govern devices, reactions, and materials.
-      </p>
-      <ul class="mt-4 space-y-4 text-slate-300 text-sm leading-relaxed">
-        <li>
-          <span class="font-semibold text-white">Engineering Thermodynamics</span><br />
-          Energy and entropy balances in open systems; analysis of engines, turbines, compressors,
-          refrigeration, and heat pumps.
-        </li>
-        <li>
-          <span class="font-semibold text-white">Applied Physical Chemistry</span><br />
-          Phase equilibrium, vapor–liquid behavior, activity models, electrolyte and nonelectrolyte solutions,
-          and the molecular basis of thermodynamic properties.
-        </li>
-        <li>
-          <span class="font-semibold text-white">Thermodynamics and Statistical Mechanics</span><br />
-          Classical and molecular thermodynamics; ensembles, partition functions, equilibrium and stability
-          in chemical and biomolecular systems.
-        </li>
-        <li>
-          <span class="font-semibold text-white">Advanced Thermodynamics in Practice</span><br />
-          Practical thermodynamics and kinetics for real processes: energy cycles, phase equilibria,
-          reactor behavior, and multi-reaction kinetics.
-        </li>
-      </ul>
-    </div>
+            <!-- Energy, Sustainability & Climate Engineering -->
+            <article class="track-card">
+              <div class="track-eyebrow">Climate Engineering</div>
+              <h3 class="track-title">Energy, Sustainability & Climate Engineering</h3>
+              <p class="track-desc">
+                Building cleaner energy systems and climate-resilient technologies.
+              </p>
+                <ul class="course-list">
+                  <li>Renewable Energy Technologies</li>
+                  <li>Green Engineering, Alternative Energy and CO₂ Capture / Sequestration</li>
+                </ul>   
+            </article>
+        </div>
+      </section>
+    </main>
 
-    <!-- Block B -->
-    <div>
-      <h3 class="subarea-title text-cyan-300">Transport, Flow &amp; Multiscale Processes</h3>
-      <p class="subarea-text mt-2">
-        How momentum, heat, and mass move through fluids, tissues, devices, and reactors.
-      </p>
-      <ul class="mt-4 space-y-4 text-slate-300 text-sm leading-relaxed">
-        <li>
-          <span class="font-semibold text-white">Transport Phenomena I</span><br />
-          Foundations of momentum, heat, and mass transfer; derivation of Navier–Stokes; conservation
-          laws and exact solutions.
-        </li>
-        <li>
-          <span class="font-semibold text-white">Transport Phenomena II</span><br />
-          Laminar vs. turbulent flow, boundary layers, convective transfer, boiling, condensation,
-          interphase mass transfer, and industrial correlations.
-        </li>
-        <li>
-          <span class="font-semibold text-white">Transport Phenomena in Practice</span><br />
-          Biological and medical transport: oxygen in lungs, blood rheology, shear stress on cells,
-          filtration and membranes, drug movement and uptake in tissue.
-        </li>
-        <li>
-          <span class="font-semibold text-white">Advanced Transport Phenomena</span><br />
-          Application of transport theory and kinetics to vascular biology, microcirculation,
-          and deformable cells in low-Reynolds-number flow.
-        </li>
-      </ul>
-    </div>
+ <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 ITeccs. All rights reserved.</p>
+  </footer>
 
-    <!-- Block C -->
-    <div>
-      <h3 class="subarea-title text-cyan-300">Reaction Engineering &amp; Process Design</h3>
-      <p class="subarea-text mt-2">
-        Designing chemical and biological transformations, and turning them into scalable systems.
-      </p>
-      <ul class="mt-4 space-y-4 text-slate-300 text-sm leading-relaxed">
-        <li>
-          <span class="font-semibold text-white">Kinetic Processes</span><br />
-          Reaction rate data, homogeneous and heterogeneous kinetics, catalytic surfaces,
-          batch / plug flow / stirred tank reactor design, selectivity, nonisothermal reactors.
-        </li>
-        <li>
-          <span class="font-semibold text-white">Chemical &amp; Biomolecular Separations</span><br />
-          Distillation, extraction, gas absorption, ultrafiltration, reverse osmosis,
-          dialysis, adsorption, chromatography — including how separations change
-          for biochemical products.
-        </li>
-        <li>
-          <span class="font-semibold text-white">Engineering Principles of Drug Delivery</span><br />
-          Transport-driven delivery of therapeutics; controlled release, targeting,
-          interfacial chemistry, biodistribution, toxicity, and pharmacokinetics.
-        </li>
-        <li>
-          <span class="font-semibold text-white">Advanced Topics in Pharmacodynamics</span><br />
-          Project-based exploration of how drugs act in the body, how biological response
-          is modeled, and how therapy can be optimized.
-        </li>
-      </ul>
-    </div>
+  <!-- Custom Chat Button -->
+  <button id="custom-chat-btn">
+    <i class="fas fa-comments"></i>
+  </button>
 
-    <!-- Block D -->
-    <div>
-      <h3 class="subarea-title text-cyan-300">Biological Systems, Cells &amp; Nanomedicine</h3>
-      <p class="subarea-text mt-2">
-        Where engineering meets living systems, targeted therapy, and the human body.
-      </p>
-      <ul class="mt-4 space-y-4 text-slate-300 text-sm leading-relaxed">
-        <li>
-          <span class="font-semibold text-white">Metabolic Systems Biotechnology</span><br />
-          Systems biology of metabolism: cellular growth, stoichiometric models,
-          metabolic networks, flux analysis, genome-scale metabolic modeling,
-          and bioreactor design.
-        </li>
-        <li>
-          <span class="font-semibold text-white">Fundamentals of Cell Bioengineering</span><br />
-          Cell mechanics, cytoskeleton, adhesion, extracellular matrix, signal transduction,
-          mechanobiology, cancer progression, and therapeutic strategies.
-        </li>
-        <li>
-          <span class="font-semibold text-white">Supramolecular Materials and Nanomedicine</span><br />
-          Nanocarriers for drug delivery, diagnostic nanoparticles, scaffolds for tissue
-          engineering, and translation of nanoscale materials into clinical technologies.
-        </li>
-        <li>
-          <span class="font-semibold text-white">Project in Design: Pharmacodynamics</span><br />
-          Team-based modeling of how drugs act in vivo: bioavailability, spatial and temporal
-          response, and therapeutic impact.
-        </li>
-        <li>
-          <span class="font-semibold text-white">Project in Design: Pharmacokinetics</span><br />
-          Modeling of dosing, metabolism, transport across barriers like the blood–brain barrier,
-          tissue storage, and time-resolved drug distribution across organs.
-        </li>
-      </ul>
-    </div>
+   <!-- Tawk.to Script -->
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {};
+    var Tawk_LoadStart = new Date();
 
-    <!-- Block E -->
-    <div>
-      <h3 class="subarea-title text-cyan-300">Polymers, Soft Matter &amp; Interfacial Science</h3>
-      <p class="subarea-text mt-2">
-        Designing responsive materials for energy, manufacturing, sustainability, and medicine.
-      </p>
-      <ul class="mt-4 space-y-4 text-slate-300 text-sm leading-relaxed">
-        <li>
-          <span class="font-semibold text-white">Introduction to Polymeric Materials</span><br />
-          Polymer synthesis, processing, and structure–property relationships for structural
-          and functional polymers, including aerospace, medical, and sustainable materials.
-        </li>
-        <li>
-          <span class="font-semibold text-white">Polymer Physics</span><br />
-          Molecular origins of polymer behavior: relaxation, viscoelasticity, fracture,
-          phase transitions, physical aging, and emerging uses in 3D printing and tissue engineering.
-        </li>
-        <li>
-          <span class="font-semibold text-white">Polymer Design and Bioconjugation</span><br />
-          Advanced polymer and conjugation chemistry for biomaterials, biointerfaces,
-          smart delivery systems, and engineered tissues.
-        </li>
-        <li>
-          <span class="font-semibold text-white">Colloids and Nanoparticles</span><br />
-          Brownian motion, diffusion, aggregation, electrostatics, interfacial forces,
-          and nanoscale behavior in colloidal systems.
-        </li>
-        <li>
-          <span class="font-semibold text-white">Interfacial Science with Applications to Nanoscale Systems</span><br />
-          Fluid–fluid, solid–fluid, and solid–solid interfaces; how nanoscale surfaces
-          define performance in sensors, coatings, energy devices, and biomedical systems.
-        </li>
-      </ul>
-    </div>
+    (function(){
+      var s1=document.createElement("script"),
+          s0=document.getElementsByTagName("script")[0];
+      s1.async=true;
+      s1.src='https://embed.tawk.to/685e2123390063190e54b4b2/1iunr2sv2';
+      s1.charset='UTF-8';
+      s1.setAttribute('crossorigin','*');
+      s0.parentNode.insertBefore(s1,s0);
+    })();
 
-    <!-- Block F -->
-    <div>
-      <h3 class="subarea-title text-cyan-300">Computation, Modeling &amp; Intelligent Design</h3>
-      <p class="subarea-text mt-2">
-        Simulation, prediction, and digital design for molecules, devices, and full systems.
-      </p>
-      <ul class="mt-4 space-y-4 text-slate-300 text-sm leading-relaxed">
-        <li>
-          <span class="font-semibold text-white">Software Carpentry</span><br />
-          Practical scientific computing skills: programming, reproducibility,
-          data workflows, and research-grade tooling for modeling and simulation.
-        </li>
-        <li>
-          <span class="font-semibold text-white">Computational Protein Structure Prediction and Design</span><br />
-          Protein folding and docking, design of binding sites and interfaces, and
-          de novo protein design using molecular modeling and PyRosetta.
-        </li>
-        <li>
-          <span class="font-semibold text-white">Micro- and Nanotechnology</span><br />
-          Micro/nanofabrication methods, scaling laws, analytical techniques, and
-          applications in electronics, optics, biosensing, and implantable systems.
-        </li>
-        <li>
-          <span class="font-semibold text-white">Introduction to Nonlinear Dynamics and Chaos</span><br />
-          Real-world nonlinear systems in physics, chemistry, and biology: pattern
-          formation, chaotic behavior, data-driven analysis of dynamic systems.
-        </li>
-        <li>
-          <span class="font-semibold text-white">Project in Design: Alternative Energy</span><br />
-          Industry-style team project: modeling a real alternative energy process,
-          evaluating technical performance and economic viability.
-        </li>
-      </ul>
-    </div>
+    // Hide default widget once fully loaded
+    Tawk_API.onLoad = function(){
+      Tawk_API.hideWidget();
+    };
 
-    <!-- Block G -->
-    <div>
-      <h3 class="subarea-title text-cyan-300">Energy, Sustainability &amp; Climate Engineering</h3>
-      <p class="subarea-text mt-2">
-        Building cleaner energy systems and climate-resilient technologies.
-      </p>
-      <ul class="mt-4 space-y-4 text-slate-300 text-sm leading-relaxed">
-        <li>
-          <span class="font-semibold text-white">Renewable Energy Technologies</span><br />
-          Core science and engineering of alternative and renewable energy systems.
-        </li>
-        <li>
-          <span class="font-semibold text-white">Green Engineering, Alternative Energy and CO₂ Capture / Sequestration</span><br />
-          Environmentally responsible process design, carbon capture strategies
-          (solvent, membrane, oxy-fuel), storage pathways, policy and economics of
-          decarbonization, and long-term sustainability.
-        </li>
-      </ul>
-    </div>
-  </div>
+    // Custom button opens chat
+    document.addEventListener("DOMContentLoaded", function(){
+      var btn = document.getElementById("custom-chat-btn");
+      if(btn){
+        btn.addEventListener("click", function(){
+          if(typeof Tawk_API !== "undefined"){
+            Tawk_API.maximize(); // open chat window
+          }
+        });
+      }
+    });
+  </script>
+  <!-- End of Tawk.to Script -->        
 
-  <!-- Closing mission line -->
-  <div class="mt-12 border-t border-slate-700/50 pt-6 text-center">
-    <div class="text-[0.8rem] tracking-wide text-slate-400">
-      Chemical &amp; Biomolecular Engineering prepares you to solve problems in energy, health,
-      advanced materials, sustainability, and intelligent process design.
-    </div>
-  </div>
-</section>
+  <!-- Embedded Animations -->
+  <script>
+    // Scroll reveal effect
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.15 });
 
+    document.querySelectorAll('.track-card, .section-title').forEach(el => observer.observe(el));
 
+    // 3D tilt effect
+    const tiltCards = document.querySelectorAll('.track-card');
+    tiltCards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const rotateY = ((x / rect.width) - 0.5) * 12;
+        const rotateX = ((y / rect.height) - 0.5) * -12;
+        card.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg) scale(1.03)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+      });
+    });
+
+    // Subtle gradient animation
+    document.addEventListener('DOMContentLoaded', () => {
+      const bg = document.querySelector('.animated-bg');
+      let angle = 0;
+      setInterval(() => {
+        angle = (angle + 0.3) % 360;
+        bg.style.background = `linear-gradient(${angle}deg, #1e1f5b, #6a11cb, #2575fc)`;
+      }, 80);
+    });
+  </script>
 </body>
 </html>

@@ -1,0 +1,787 @@
+<!-- founder.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Founder & Director - ITeccs</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Fonts and Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="ITeccs Logo">
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="Founder.html">Who We Are</a></li>
+      <li><a href="consulting.html">Consulting</a></li>
+      <li><a href="education.html">Education</a></li> 
+      <li><a href="howtopay.html">How to Pay</a></li>
+      <li>
+        <a href="contact.html" class="contact-nav-button">
+          <i class="fas fa-envelope"></i> Contact Us
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <main class="content">
+    <h1></h1>
+    <p></p>
+
+    <section class="founder-wrapper">
+      <style>
+        .founder-wrapper {
+          font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+          color: #0f172a;
+          background-color: #ffffff;
+          line-height: 1.5;
+          padding: 2rem 1rem 4rem;
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+
+        /* HERO */
+        .founder-hero {
+          padding: 2.5rem 1.5rem 1.5rem;
+          background: radial-gradient(circle at top left, #e0f2fe, #f8fafc);
+          border-radius: 1.5rem;
+          box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+        }
+
+        .founder-hero__content {
+          display: grid;
+          grid-template-columns: minmax(0, 2fr) minmax(0, 1.1fr);
+          gap: 2.5rem;
+          align-items: center;
+        }
+
+        .founder-hero__eyebrow {
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+          font-size: 0.75rem;
+          color: #0ea5e9;
+          font-weight: 700;
+          margin-bottom: 0.4rem;
+        }
+
+        .founder-hero__title {
+          font-size: clamp(2.1rem, 3vw, 2.6rem);
+          font-weight: 800;
+          margin: 0;
+          color: #020617;
+        }
+
+        .founder-hero__subtitle {
+          margin-top: 0.4rem;
+          font-size: 0.95rem;
+          color: #475569;
+          font-weight: 600;
+        }
+
+        .founder-hero__tagline {
+          margin-top: 0.9rem;
+          font-size: 0.96rem;
+          color: #1f2937;
+          max-width: 36rem;
+          line-height: 1.6;
+        }
+
+        .founder-hero__buttons {
+          margin-top: 1.6rem;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.75rem;
+        }
+
+        .btn {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 999px;
+          padding: 0.6rem 1.4rem;
+          font-size: 0.92rem;
+          font-weight: 600;
+          text-decoration: none;
+          border: 1px solid transparent;
+          cursor: pointer;
+          transition: all 0.18s ease-out;
+        }
+
+        .btn-primary {
+          background: #0ea5e9;
+          color: #ffffff;
+        }
+
+        .btn-primary:hover {
+          background: #0284c7;
+        }
+
+        .btn-outline {
+          background: transparent;
+          border-color: #0ea5e9;
+          color: #0ea5e9;
+        }
+
+        .btn-outline:hover {
+          background: #e0f2fe;
+        }
+
+        .btn-text {
+          background: transparent;
+          color: #0f172a;
+        }
+
+        .btn-text:hover {
+          text-decoration: underline;
+        }
+
+        .founder-hero__photo-wrapper {
+          display: flex;
+          justify-content: center;
+        }
+
+        .founder-hero__photo {
+          width: 230px;
+          height: 230px;
+          border-radius: 999px;
+          object-fit: cover;
+          box-shadow: 0 18px 40px rgba(15, 23, 42, 0.32);
+          border: 4px solid #ffffff;
+          background: #e5e7eb;
+        }
+
+        /* STATS & ALIGNMENT BAR */
+        .founder-stats {
+          margin-top: 2.5rem;
+        }
+
+        .founder-stats__grid {
+          display: grid;
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+          gap: 1.25rem;
+        }
+
+        .founder-stats__item {
+          border-radius: 1rem;
+          padding: 1rem 1.2rem;
+          background: #f9fafb;
+          border: 1px solid rgba(15,23,42,0.04);
+        }
+
+        .founder-stats__number {
+          display: block;
+          font-size: 1.5rem;
+          font-weight: 800;
+          color: #0ea5e9;
+        }
+
+        .founder-stats__label {
+          font-size: 0.85rem;
+          color: #475569;
+          margin-top: 0.2rem;
+        }
+
+        .founder-align {
+          margin-top: 1.5rem;
+          border-radius: 999px;
+          background: #eff6ff;
+          padding: 0.75rem 1.25rem;
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          flex-wrap: wrap;
+        }
+
+        .founder-align__label {
+          font-size: 0.85rem;
+          font-weight: 600;
+          color: #1d4ed8;
+        }
+
+        .founder-align__logos {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.55rem;
+          font-size: 0.8rem;
+          color: #1f2937;
+        }
+
+        .founder-align__logos span {
+          background: #ffffff;
+          border-radius: 999px;
+          padding: 0.25rem 0.7rem;
+          border: 1px solid #e5e7eb;
+        }
+
+        /* QUOTE */
+        .founder-quote {
+          margin: 2.5rem auto 1.75rem;
+          max-width: 800px;
+          text-align: center;
+        }
+
+        .founder-quote blockquote {
+          margin: 0;
+          font-size: 1rem;
+          line-height: 1.6;
+          font-style: italic;
+          color: #1f2937;
+        }
+
+        .founder-quote__author {
+          margin-top: 0.6rem;
+          font-size: 0.9rem;
+          color: #64748b;
+        }
+
+        /* HIGHLIGHTS GRID */
+        .founder-highlights {
+          margin-top: 2.5rem;
+        }
+
+        .founder-highlights__grid {
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 1.5rem;
+        }
+
+        .founder-highlights__card {
+          background: #ffffff;
+          border-radius: 1.2rem;
+          padding: 1.25rem 1.3rem;
+          border: 1px solid rgba(15,23,42,0.06);
+          box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+        }
+
+        .founder-highlights__icon {
+          font-size: 1.4rem;
+          margin-bottom: 0.4rem;
+        }
+
+        .founder-highlights__card h3 {
+          font-size: 1.02rem;
+          margin: 0 0 0.45rem;
+        }
+
+        .founder-highlights__card p {
+          margin: 0;
+          font-size: 0.9rem;
+          color: #475569;
+          line-height: 1.6;
+        }
+
+        /* MESSAGE */
+        .founder-message {
+          margin: 2.75rem auto;
+          max-width: 820px;
+          background: #ffffff;
+          border-radius: 1.5rem;
+          padding: 1.75rem 1.8rem;
+          box-shadow: 0 18px 36px rgba(15, 23, 42, 0.08);
+        }
+
+        .founder-message h2 {
+          margin: 0 0 0.75rem;
+          font-size: 1.4rem;
+        }
+
+        .founder-message p {
+          font-size: 0.95rem;
+          color: #475569;
+          line-height: 1.7;
+          margin-bottom: 0.8rem;
+        }
+
+        .founder-message__signature {
+          margin-top: 0.9rem;
+          font-weight: 600;
+          color: #0f172a;
+        }
+
+        /* BIO SECTION */
+        .founder-bio {
+          margin-top: 2rem;
+          padding-top: 1rem;
+          border-top: 1px solid #e5e7eb;
+        }
+
+        .founder-bio h2 {
+          font-size: 1.5rem;
+          margin-bottom: 1rem;
+        }
+
+        .founder-bio h3 {
+          font-size: 1.12rem;
+          margin-top: 1.5rem;
+          margin-bottom: 0.5rem;
+        }
+
+        .founder-bio p {
+          font-size: 0.95rem;
+          color: #475569;
+          line-height: 1.7;
+          margin-bottom: 0.85rem;
+        }
+
+        .founder-bio ul {
+          padding-left: 1.1rem;
+          margin-bottom: 0.8rem;
+        }
+
+        .founder-bio li {
+          font-size: 0.93rem;
+          color: #475569;
+          margin-bottom: 0.45rem;
+        }
+
+        /* CTA SECTION */
+        .founder-cta {
+          margin-top: 2.75rem;
+        }
+
+        .founder-cta h2 {
+          font-size: 1.4rem;
+          text-align: center;
+          margin-bottom: 1.4rem;
+        }
+
+        .founder-cta__grid {
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 1.5rem;
+        }
+
+        .founder-cta__card {
+          background: #f9fafb;
+          border-radius: 1.2rem;
+          padding: 1.3rem 1.4rem;
+          border: 1px solid rgba(15,23,42,0.06);
+        }
+
+        .founder-cta__card h3 {
+          margin-top: 0;
+          font-size: 1.05rem;
+          margin-bottom: 0.4rem;
+        }
+
+        .founder-cta__card p {
+          font-size: 0.9rem;
+          color: #475569;
+          margin-bottom: 0.8rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+          .founder-hero__content {
+            grid-template-columns: minmax(0, 1fr);
+          }
+
+          .founder-stats__grid,
+          .founder-highlights__grid,
+          .founder-cta__grid {
+            grid-template-columns: minmax(0, 1fr);
+          }
+
+          .founder-align {
+            border-radius: 1rem;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .founder-hero {
+            padding: 1.8rem 1.1rem;
+          }
+        }
+      </style>
+
+      <!-- HERO -->
+      <section class="founder-hero">
+        <div class="founder-hero__content">
+          <div>
+            <p class="founder-hero__eyebrow">Founder & Director, ITECCS</p>
+            <h2 class="founder-hero__title">Dr. Ahmed Kaffel</h2>
+            <p class="founder-hero__subtitle">
+              Applied Mathematician · Engineering Scientist · STEM Professor
+            </p>
+            <p class="founder-hero__tagline">
+              Dr. Ahmed Kaffel builds advanced scientific, educational, and computational ecosystems
+              that unite applied mathematics, engineering, AI, and high-performance computing to
+              solve real-world problems and accelerate global innovation.
+            </p>
+            <div class="founder-hero__buttons">
+              <a href="research.html" class="btn btn-primary">Partner with ITECCS</a>
+              <a href="stem.html" class="btn btn-outline">Explore STEM Programs</a>
+              <a href="contact.html" class="btn btn-text">Contact Dr. Kaffel &rarr;</a>
+            </div>
+          </div>
+          <div class="founder-hero__photo-wrapper">
+            <img src="founder.jpg"
+                 alt="Dr. Ahmed Kaffel - Founder & Director of ITECCS"
+                 class="founder-hero__photo">
+          </div>
+        </div>
+      </section>
+
+      <!-- STATS -->
+      <section class="founder-stats">
+        <div class="founder-stats__grid">
+          <div class="founder-stats__item">
+            <span class="founder-stats__number">15+</span>
+            <span class="founder-stats__label">years in applied mathematics & engineering</span>
+          </div>
+          <div class="founder-stats__item">
+            <span class="founder-stats__number">40+</span>
+            <span class="founder-stats__label">peer-reviewed publications & research projects</span>
+          </div>
+          <div class="founder-stats__item">
+            <span class="founder-stats__number">300+</span>
+            <span class="founder-stats__label">students & professionals mentored</span>
+          </div>
+          <div class="founder-stats__item">
+            <span class="founder-stats__number">10+</span>
+            <span class="founder-stats__label">international collaborations & partnerships</span>
+          </div>
+        </div>
+
+        <div class="founder-align">
+          <p class="founder-align__label">
+            Research aligned with and collaborating toward:
+          </p>
+          <div class="founder-align__logos">
+            <span>NASA</span>
+            <span>NSF</span>
+            <span>NIH</span>
+            <span>DOE</span>
+            <span>DoD</span>
+            <span>Brown University</span>
+            <span>University of Maryland</span>
+            <span>Kimberly-Clark</span>
+            <span>IMFT (France)</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- QUOTE -->
+      <section class="founder-quote">
+        <blockquote>
+          “I founded ITECCS to build a modern, inclusive, and impactful ecosystem where advanced
+          research, engineering, AI, and STEM education move together — turning knowledge into
+          measurable real-world impact.”
+        </blockquote>
+        <p class="founder-quote__author">— Dr. Ahmed Kaffel, Founder & Director, ITECCS</p>
+      </section>
+
+      <!-- HIGHLIGHTS -->
+      <section class="founder-highlights">
+        <div class="founder-highlights__grid">
+          <article class="founder-highlights__card">
+            <div class="founder-highlights__icon">🔬</div>
+            <h3>Research & Scientific Computing</h3>
+            <p>
+              Multiscale modeling, high-performance scientific computing (HPC), CFD for Newtonian
+              and complex fluids, thin swelling porous media, inverse problems, biomedical imaging,
+              optimization, and AI/ML for scientific discovery and advanced engineering systems.
+            </p>
+          </article>
+
+          <article class="founder-highlights__card">
+            <div class="founder-highlights__icon">👨‍🏫</div>
+            <h3>STEM Education & Mentorship</h3>
+            <p>
+              Extensive teaching across differential equations, linear algebra, numerical analysis,
+              scientific computing, computational engineering, data science and machine learning,
+              finite mathematics, precalculus and calculus — with hands-on, software-based
+              learning and modern STEM pathways for learners from all backgrounds.
+            </p>
+          </article>
+
+          <article class="founder-highlights__card">
+            <div class="founder-highlights__icon">🛠</div>
+            <h3>Engineering & Consulting</h3>
+            <p>
+              Advanced simulation, digital twins, and modeling tools for aerospace, civil,
+              mechanical, biomedical, and energy systems using FEM, DG, FVM, ENO/WENO, spectral
+              methods, multiphase and porous-media modeling, and R&D advisory for industry and
+              government partners.
+            </p>
+          </article>
+
+          <article class="founder-highlights__card">
+            <div class="founder-highlights__icon">🌍</div>
+            <h3>Global Vision & Partnerships</h3>
+            <p>
+              Expanding ITECCS into a global innovation hub collaborating with NASA, NSF, NIH,
+              DOE, DoD, national labs, universities, and startups to address mission-critical
+              challenges in science, engineering, medicine, climate, and advanced technology
+              systems.
+            </p>
+          </article>
+
+          <article class="founder-highlights__card">
+            <div class="founder-highlights__icon">💡</div>
+            <h3>Innovation & Values</h3>
+            <p>
+              Innovation must be accessible; education must connect theory, computation, and
+              application; research must create measurable societal impact; STEM should empower
+              learners globally; and AI plus modeling are foundational for the future of science,
+              engineering, and medicine.
+            </p>
+          </article>
+
+          <article class="founder-highlights__card">
+            <div class="founder-highlights__icon">🤝</div>
+            <h3>Invitation to Collaborate</h3>
+            <p>
+              Dr. Kaffel welcomes collaboration with universities, research labs, industry
+              partners, government agencies, and startups interested in advancing STEM education,
+              applied research, and high-impact scientific and engineering innovation.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- MESSAGE FROM FOUNDER -->
+      <section class="founder-message">
+        <h2>Message from the Founder</h2>
+        <p>
+          “At ITECCS, we believe advanced science and technology should not be confined to a small
+          circle of experts or institutions. Our mission is to create pathways for students,
+          educators, professionals, and organizations to access cutting-edge tools in applied
+          mathematics, engineering, AI, and high-performance computing — and to use them to solve
+          real problems.”
+        </p>
+        <p>
+          “Whether you are a student exploring your first STEM course, a university looking to
+          expand your computational curriculum, a company tackling complex engineering challenges,
+          or an agency aligned with NASA, NSF, NIH, DOE, or DoD priorities, ITECCS is designed to
+          be your partner in discovery, innovation, and impact.”
+        </p>
+        <p class="founder-message__signature">
+          — Dr. Ahmed Kaffel<br>
+          Founder & Director, ITECCS
+        </p>
+      </section>
+
+      <!-- DETAILED BIO -->
+      <section class="founder-bio">
+        <h2>About Dr. Ahmed Kaffel</h2>
+
+        <h3>Professional Overview</h3>
+        <p>
+          Dr. Ahmed Kaffel is the Founder & Director of ITECCS, a leading multidisciplinary
+          organization driving innovation across education technology, advanced research,
+          engineering consulting, and workforce development. An Applied Mathematician, Engineering
+          Scientist, and STEM Professor, he bridges rigorous mathematical theory,
+          high-performance scientific computing, deep learning, and engineering physics to
+          address complex challenges in science, engineering, medicine, and emerging technologies.
+        </p>
+        <p>
+          He earned his Ph.D. and M.S. in Mathematics from Virginia Tech and an M.S. in
+          Engineering from the Tunisia Polytechnic School. Dr. Kaffel has served as a Research
+          Associate Scientist at Brown University and the University of Maryland, where he
+          contributed to groundbreaking work in computational fluid dynamics, porous media,
+          turbulence, inverse problems, scientific computing, biomedical modeling, and multiscale
+          simulation. He has also held academic appointments at Prince Sultan University,
+          Marquette University, and the University of Wisconsin–Milwaukee, teaching and mentoring
+          hundreds of students across mathematics, data science, scientific computing, and
+          engineering.
+        </p>
+        <p>
+          His research has been recognized through invited talks, international conference
+          presentations, competitive research contributions, and scholarly publications in leading
+          journals and peer-reviewed venues.
+        </p>
+
+        <h3>Research Expertise & Contributions</h3>
+        <p>
+          Dr. Kaffel’s scientific work focuses on the development of novel numerical methods and
+          multiscale mathematical models that capture the physics of complex systems.
+        </p>
+        <ul>
+          <li>
+            <strong>Core Research Areas:</strong> multiscale modeling; high-performance scientific
+            computing (HPC); computational fluid dynamics (CFD) for Newtonian and complex fluids;
+            thin swelling porous media and multiphase flow; hydrodynamic stability and
+            turbulence; inverse problems and biomedical imaging; AI/ML for scientific computing;
+            numerical algorithms, linear algebra, optimization, and PDEs.
+          </li>
+          <li>
+            <strong>Selected Contributions:</strong> wavelet-based meshless inversion algorithms
+            for magnetic induction tomography (MIT), enabling low-cost, non-contact medical
+            imaging; rigorous volume-averaging porous-media models used by Kimberly-Clark for
+            absorbent materials and thin swelling structures; hydrodynamic stability and
+            turbulence frameworks for viscoelastic, multiphase, and microchannel flows, including
+            collaborations with IMFT (France); advanced UUV hydrodynamic modeling and control; and
+            high-order PDE solvers (FEM, DG, FVM, ENO/WENO, spectral methods, ALE, BEM) for
+            complex engineering, biomedical, and environmental systems.
+          </li>
+        </ul>
+
+        <h3>Education Leadership, Teaching & Mentorship</h3>
+        <p>
+          Dr. Kaffel has taught an extensive range of STEM courses, including Differential
+          Equations (ODE & PDE), Numerical Analysis & Scientific Computing, Linear Algebra &
+          Matrix Theory, Applied & Computational Mathematics, Data Science & Machine Learning,
+          Computational Engineering & Modeling, Finite Mathematics, Precalculus, and Calculus.
+        </p>
+        <p>
+          His educational philosophy emphasizes practical, application-driven STEM learning, the
+          integration of AI, computation, and engineering simulation, and real-world projects
+          using tools such as MATLAB, COMSOL, ANSYS, OpenFOAM, TensorFlow, and PyTorch. He is
+          committed to equitable and accessible STEM pathways for learners from all backgrounds
+          and has mentored numerous students who have progressed into graduate programs, research
+          labs, and engineering careers in academia and industry.
+        </p>
+
+        <h3>ITECCS: A Modern Hybrid Center for Innovation</h3>
+        <p>
+          Under Dr. Kaffel’s leadership, ITECCS operates at the convergence of education
+          technology, applied and advanced research, engineering and scientific consulting, and
+          workforce development. ITECCS empowers learners, educators, institutions, and companies
+          with future-ready skills, tools, and support.
+        </p>
+        <p>
+          ITECCS develops tailored curricula, hands-on workshops, bootcamps, certificate programs,
+          and custom training across applied mathematics, AI/ML, data science, computational
+          engineering, quantum computing, renewable energy, and more. It partners with colleges,
+          universities, schools, workforce programs, and organizations to design curricula,
+          mentoring pathways, stackable credentials, academic support, and career-aligned
+          programs.
+        </p>
+
+        <h3>Advanced Research, Computing & Innovation at ITECCS</h3>
+        <p>
+          ITECCS leads cutting-edge, interdisciplinary research that bridges science, technology,
+          and real-world application. It collaborates with academic institutions, industry
+          leaders, research labs, and government agencies to develop practical solutions in AI,
+          high-performance computing, advanced simulation, and engineering.
+        </p>
+        <p>
+          The Innovative Advanced Research Computing Center at ITECCS acts as a collaborative hub
+          for applied mathematics, engineering, and computational science. It unites
+          multidisciplinary teams to address complex challenges in numerical algorithms and
+          linear algebra, deep learning and inverse problems, optimization and PDEs, fluid
+          dynamics and porous media, scientific computing, neural networks, AI, and quantum
+          computing. The center fosters collaboration between academia and industry, provides
+          shared computing resources and training programs, and engages students, faculty, and
+          partners to produce peer-reviewed research aligned with DoD, NSF, NIH, and DOE
+          priorities.
+        </p>
+
+        <h3>Workforce Development, Training & Consulting</h3>
+        <p>
+          ITECCS offers advanced simulation and modeling tools, technical consulting, and custom
+          R&D services, including digital twins and high-fidelity engineering simulations. Its
+          expertise spans fluid dynamics, porous media, multiscale modeling, stability analysis,
+          AI/ML, optimization, and data-driven engineering solutions.
+        </p>
+        <p>
+          Through specialized technical training, custom academic and professional programs, and
+          industry-aligned certificates, ITECCS supports upskilling, reskilling, and continuous
+          learning for individuals, teams, and organizations seeking to stay competitive in an
+          evolving job market.
+        </p>
+
+        <h3>Global Vision & Long-Term Strategy</h3>
+        <p>
+          Dr. Kaffel is expanding ITECCS into a world-leading innovation hub with partnerships
+          across NASA, NSF, NIH, DOE, DoD, national laboratories, universities, startups, and
+          international research centers. His 10-year vision is to build a globally recognized
+          ecosystem that advances discovery, transforms STEM education, develops world-class
+          simulation technologies, and prepares the next generation of engineers, scientists, and
+          innovators.
+        </p>
+        <p>
+          He is committed to expanding access to high-quality STEM education and creating
+          equitable pathways for learners from all backgrounds. His work connects research
+          communities across North America, Europe, Africa, and the Middle East, supporting
+          global collaboration and talent development.
+        </p>
+      </section>
+
+      <!-- CTAs -->
+      <section class="founder-cta">
+        <h2>Work with Dr. Kaffel & ITECCS</h2>
+        <div class="founder-cta__grid">
+          <article class="founder-cta__card">
+            <h3>Partner with ITECCS</h3>
+            <p>
+              Universities, research labs, agencies, and companies looking to collaborate on
+              applied research, AI/HPC projects, curriculum design, or joint proposals.
+            </p>
+            <a href="collaborate.html" class="btn btn-primary">Start a Collaboration</a>
+          </article>
+
+          <article class="founder-cta__card">
+            <h3>Join Our Programs</h3>
+            <p>
+              Students and professionals seeking STEM courses, bootcamps, certificates, and
+              software-based training in applied mathematics, AI, data science, and computational
+              engineering.
+            </p>
+            <a href="education.html" class="btn btn-outline">Explore STEM Programs</a>
+          </article>
+
+          <article class="founder-cta__card">
+            <h3>Request Technical Consulting</h3>
+            <p>
+              Organizations needing advanced modeling, simulation, AI/ML solutions, or engineering
+              analysis for complex real-world problems.
+            </p>
+            <a href="consulting.html" class="btn btn-text">View Consulting Services &rarr;</a>
+          </article>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 ITeccs. All rights reserved.</p>
+  </footer>
+
+  <!-- Custom Chat Button -->
+  <button id="custom-chat-btn">
+    <i class="fas fa-comments"></i>
+  </button> 
+
+  <!-- Tawk.to Script -->
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {};
+    var Tawk_LoadStart = new Date();
+
+    (function(){
+      var s1=document.createElement("script"),
+          s0=document.getElementsByTagName("script")[0];
+      s1.async=true;
+      s1.src='https://embed.tawk.to/685e2123390063190e54b4b2/1iunr2sv2';
+      s1.charset='UTF-8';
+      s1.setAttribute('crossorigin','*');
+      s0.parentNode.insertBefore(s1,s0);
+    })();
+
+    // Hide default widget once fully loaded
+    Tawk_API.onLoad = function(){
+      Tawk_API.hideWidget();
+    };
+
+    // Custom button opens chat
+    document.addEventListener("DOMContentLoaded", function(){
+      var btn = document.getElementById("custom-chat-btn");
+      if(btn){
+        btn.addEventListener("click", function(){
+          if(typeof Tawk_API !== "undefined"){
+            Tawk_API.maximize(); // open chat window
+          }
+        });
+      }
+    });
+  </script>
+  <!-- End of Tawk.to Script -->
+</body>
+</html>

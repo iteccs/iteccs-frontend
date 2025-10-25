@@ -1,378 +1,469 @@
-<!-- about.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us - ITeccs</title>
+  <meta name="description" content="ITECCS — applied research, education, and workforce development in AI, HPC, computational engineering, and STEM training. Explore courses, custom programs, and collaborative R&D.">
+  <link rel="canonical" href="https://www.iteccs.com/about.html">
+
+  <!-- Open Graph / Twitter Card -->
+  <meta property="og:title" content="About ITECCS — Education, Research & Workforce Development">
+  <meta property="og:description" content="Applied research, professional training, and workforce development in AI, HPC, computational engineering, and STEM education.">
+  <meta property="og:url" content="https://www.iteccs.com/about.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ITECCS">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Structured data (Organization) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "ITECCS",
+    "url": "https://www.iteccs.com",
+    "logo": "https://www.iteccs.com/logo.png",
+    "sameAs": [
+      "https://www.linkedin.com/company/iteccs",
+      "https://twitter.com/iteccs"
+    ],
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "telephone": "+1-414-629-1090",
+      "contactType": "customer service",
+      "email": "contact@iteccs.org"
+    }]
+  }
+  </script>
+
   <link rel="stylesheet" href="style.css">
-  <!-- Fonts and Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root{
+      --bg: #0a1022;
+      --panel: linear-gradient(180deg, rgba(10,16,34,0.9), rgba(12,20,44,0.65));
+      --text: #e9f1ff;
+      --muted: #cdd9f1;
+      --accent-1: #6aa8ff;
+      --accent-2: #8b7dff;
+      --card-shadow: 0 20px 60px rgba(0,0,0,0.35);
+    }
+    [data-theme='light']{
+      --bg: #f6f8fb;
+      --panel: linear-gradient(180deg,#ffffff,#f3f7ff);
+      --text: #081028;
+      --muted: #354a63;
+      --accent-1: #0b66ff;
+      --accent-2: #6f49ff;
+      --card-shadow: 0 12px 30px rgba(12,24,60,0.06);
+    }
+
+    /* Respect reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      * { transition: none !important; animation: none !important; }
+    }
+
+    html,body{height:100%;margin:0;font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial; background:var(--bg); color:var(--text);}
+
+ /* Navbar */
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1a1a1a;
+  padding: 15px 30px;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo img {
+  width: 150px;
+  height: auto;
+  margin-right: 16px;
+  filter: drop-shadow(0px 0px 8px rgba(37, 117, 252, 0.6));
+  transition: filter 0.3s ease;
+}
+.logo img:hover {
+  filter: drop-shadow(0px 0px 12px rgba(37, 117, 252, 0.9));
+}
+
+/* Navigation links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding-left: 0;
+  margin: 0;
+  margin-top: -10px;
+  margin-left: 200px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  display: inline;
+ 
+}
+
+.nav-links a:hover:not(.contact-nav-button) {
+  background-color: #333;
+  color: #2575fc;
+  transform: scale(1.1) translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 191, 255, 0.3);
+}
+
+/* Contact button */
+.contact-nav-button {
+  background-color: #ffcc00;
+  color: #1a1a1a !important;
+  font-weight: 600;
+  border-radius: 6px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  text-decoration: none !important; /* <-- FIX */
+}
+
+.contact-nav-button:hover {
+  background-color: #f5b800;
+  transform: translateY(-2px);
+  color: #000 !important;
+  box-shadow: 0 4px 10px rgba(255, 204, 0, 0.3);
+}
+/* Theme toggle */
+.theme-toggle {
+  background-color: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 4px 8px;           /* smaller */
+  border-radius: 10px;        /* tighter shape */
+  font-size: 0.75rem;         /* smaller text & icon */
+  color: var(--text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;                   /* smaller spacing */
+  height: 28px;               /* controls button height */
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Light mode */
+[data-theme='light'] .theme-toggle {
+  background-color: rgba(255, 255, 255, 0.917);
+  border: 1px solid rgba(255, 255, 255, 0.826);
+  color: var(--text);
+}
+
+/* Make the icon smaller */
+.theme-toggle i {
+  font-size: 0.85rem;
+}
+
+    /* Main container */
+    .futuristic-about {
+      background: var(--panel);
+      padding: 48px;
+      border-radius: 20px;
+      max-width: 1100px;
+      margin: 36px auto;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Remove blobs */
+    .futuristic-about::before,
+    .futuristic-about::after {
+      content: none !important;
+      display: none !important;
+    }
+
+    h1.section-title{font-size:2.1rem;font-weight:800;color:var(--text);border-left:4px solid var(--accent-1);padding-left:12px;margin:36px 0 12px}
+    h2,h3{margin-top:18px;color:var(--text)}
+    p,li{color:var(--muted);line-height:1.7;font-size:1.03rem}
+    ul{padding-left:1.1rem}
+
+    /* Buttons */
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700}
+    .btn-primary{background:var(--accent-1);color:white}
+    .btn-ghost{border:1px solid rgba(255,255,255,0.06);color:var(--text);background:transparent}
+
+    /* Cards & aside */
+    .grid{display:grid;grid-template-columns:1fr 340px;gap:28px;align-items:start}
+    .card{background:rgba(255,255,255,0.02);padding:18px;border-radius:12px}
+
+    /* Subtle float animation for decorative blobs */
+    @keyframes floaty{0%{transform:translateY(0)}50%{transform:translateY(-10px)}100%{transform:translateY(0)}}
+    .futuristic-about::before{animation:floaty 8s ease-in-out infinite}
+    .futuristic-about::after{animation:floaty 10s ease-in-out infinite}
+    .futuristic-about > * {
+  position: relative;
+  z-index: 2;
+}
+
+
+    /* Reveal animations */
+    [data-reveal]{opacity:0;transform:translateY(16px);transition:opacity 520ms ease,transform 520ms ease}
+    [data-reveal].show{opacity:1;transform:none}
+
+    /* Tiny entrance for headings */
+    @keyframes popIn{from{opacity:0;transform:scale(0.98)}to{opacity:1;transform:scale(1)}}
+    h1.section-title.show{animation:popIn 420ms ease both}
+  /* footer*/
+  footer {
+    background-color: #1a1a1a;
+    color: #ffffff !important;   /* always white */
+    text-align: center;
+    padding: 20px;
+    font-size: 0.95rem;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.4);
+  }
+
+  /* Light mode override */
+  [data-theme='light'] footer,
+  [data-theme='light'] footer p,
+  [data-theme='light'] footer a {
+    color: #ffffff !important; 
+  }
+
+    /* Responsive */
+    @media (max-width:980px){.grid{grid-template-columns:1fr}.futuristic-about{padding:28px}}
+  </style>
 </head>
 <body>
+
+  <!-- NAVIGATION -->
   <nav class="navbar">
     <div class="logo">
-      <img src="logo.png" alt="ITeccs Logo">
+      <a href="index.html">
+        <img src="logo.png" alt="ITeccs Logo">
+      </a>
     </div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="consulting.html">Consulting</a></li>
-      <li><a href="education.html">Education</a></li>
-      <li><a href="howtopay.html">How to Pay</a></li>
-      <li>
-        <a href="contact.html" class="contact-nav-button">
+    <button id="themeToggle" class="theme-toggle" aria-pressed="false" title="Toggle theme">
+        <i id="themeIcon" class="fas fa-moon"></i>
+        <span id="themeLabel">Dark</span>
+    </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="Founder.html">Who We Are</a></li>
+        <li><a href="consulting.html">Consulting</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="howtopay.html">How to Pay</a></li>
+      </ul>
+      <a href="contact.html" class="contact-nav-button">
           <i class="fas fa-envelope"></i> Contact Us
-        </a>
-      </li>
-    </ul>
+      </a>
   </nav>
 
-  <main class="content">
-    <h1 class="fade-in-up">About ITECCS</h1>
-    <p class="fade-in-up">
-ITECCS is a leading multidisciplinary organization at the forefront of education technology, applied research, professional training, workforce development and career transformation.
-</p>
-We deliver innovative real-world solutions, strategic consulting, and career upskilling programs that equip students, educators, professionals, institutions and companies with future-ready skills.
-By integrating cutting-edge technology, STEM education, applied research, and high-impact engineering consulting, ITECCS empowers individuals and organizations—including the next generation of innovators, engineers, and scientists—to grow, adapt, and lead in today’s fast-moving, technology-driven world.
 
-</p>
- <h1 class="fade-in-up">Our Mission</h1>
-At ITECCS, our mission is to bridge the gap between knowledge and real-world impact through inclusive education, transformative applied research, and innovative workforce solutions.
-</p>
-We empower students, educators, professionals, and institutions with the tools, skills, and support needed to solve complex challenges, drive meaningful progress, and lead with confidence in a rapidly evolving, technology-driven world.
-</p>
-By integrating education, research, and innovation, ITECCS bridges theory and application transforming knowledge into measurable impact—advancing outcomes across academia, industry, and society.
+  <!-- MAIN LAYOUT -->
+  <main class="futuristic-about" id="main" role="main">
+    <div class="grid">
+        <div>
+          <!-- ABOUT ITECCS -->
+          <h1 class="section-title" data-reveal>About ITECCS</h1>
+          <p data-reveal>ITECCS is a multidisciplinary organization at the forefront of education technology, applied research, professional training, workforce development, and career transformation. We deliver practical solutions, strategic consulting, and career upskilling programs that prepare learners and organizations for the future.</p>
 
-
-  </p>
-    <h1 class="fade-in-up">What We Do </h1>
-        <h2>Applied & Advanced Research </h2>   
-    <p>
-      At <span class="fade-in-up">ITECCS</span>, we lead cutting-edge, interdisciplinary research that bridges science, technology, and real-world application. 
-      Collaborating closely with academic institutions, industry leaders, research labs, and government agencies, we develop practical solutions in 
-      <strong>AI</strong>, <strong>High-Performance Computing (HPC)</strong>, and <strong>advanced engineering</strong>. 
-      Our work addresses some of today’s most complex challenges across engineering, medicine, and emerging technologies—driving impactful, forward-looking innovation.
-    </p>
-           <li>  <strong>Our Expertise :</strong> <a href="https://www.iteccs.com/exp"> at ITeccs </a>  </li>
-        
-       </p>
-          At <span class="fade-in-up">ITECCS</span>, research is not just academic—it’s actionable innovation. 
-      We push the boundaries of science and technology to deliver solutions that matter for industry, academy, government, society, 
-      and the next generation of science and technology. Our <strong>Advanced Research, Innovation, and Consulting Center</strong> serves as a hub for
-    transforming scientific research into impactful, real-world solutions. We provide a comprehensive suite of R&D, trainings and collaborative services designed to accelerate discovery, develop 
-    advanced technologies, and address mission-critical challenges across disciplines.  We offer:
-    </p>
-    <ul>
-      <li><strong>Advanced Simulation & Modeling Tools</strong><br>
-        Scalable, high-fidelity tools for physical modeling, digital twins, and and data-driven engineering simulations. At ITECCS, we fuse AI, HPC, and computational science to deliver powerful R&D solutions — from hypersonics and structural mechanics to biofluids, tissue biomechanics, and smart materials — all secure, cloud-ready, and built for real-world impact.
-        
-      </li>
-      <li><strong>Technical Consulting & Custom Solutions</strong><br>
-        End-to-end R&D services across domains—from AI and HPC, , and optimization, leveraging Advanced Applied Mathematics and Engineering across multiple disciplines — from Aerospace, Civil, and Mechanical Engineering to Biomedical, Environmental, and Energy systems.
-
-Our expertise spans fluid dynamics, porous media, multiscale modeling, stability analysis, and computation- and data-driven engineering solutions, delivering advanced tools and insights for complex challenges across science, engineering, and technology.
-      </li>
-      <li><strong>Collaborative Research & Innovation Programs</strong><br>
-        Joint efforts with universities, startups, industry partners, research institutions, and manufacturing leaders.
-      </li>
-      <li><strong>Specialized Training & Knowledge Transfer</strong><br>
-        Custom technical training in HPC, AI/ML, Multiphysics, applied mathematics- including linear algebra and inverse problem,
-        optimization and deep learning- combined with scientific computing and data science- to drive breakthroughs in complex engineering,
-        medicine, neuroscience, and emerging technologies. 
-      </li>
-    </ul>
-   %!% </section>
-    </p>
-
- 
-    </h2> Education, Professional Training &amp; Certificates</h2>
-      <p class="lead">ITECCS empowers learners, professionals, and organizations with practical, software-focused education that bridges knowledge and innovation. Our programs combine applied theory, hands-on projects, and modern tool training to prepare you for careers in STEM, AI, and engineering.</p>
-
-
- 
-          <h3 id="learning-title" class="section-title">Learning for Every Level</h3>
-          <p class="subhead">Flexible, high-impact programs for beginners to advanced professionals — designed for individuals, teams, and institutions.</p>
-
-          <ul class="feature-list" aria-label="Core offerings">
-            <li class="feature">
-              <span class="marker" aria-hidden="true"></span>
-              <div>
-                <p><strong>STEM Courses, Bootcamps &amp; Workshops</strong> — Applied Mathematics, AI, Data Science, Computational Engineering, Quantum Computing, Renewable Energy, and Sustainability taught by experienced instructors.</p>
-              </div>
-            </li>
-
-            <li class="feature">
-              <span class="marker" aria-hidden="true"></span>
-              <div>
-                <p><strong>Custom Academic &amp; Career Programs</strong> — We partner with schools, universities and organizations to design curricula, mentorship pathways, and stackable credential programs.</p>
-              </div>
-            </li>
-
-            <li class="feature">
-              <span class="marker" aria-hidden="true"></span>
-              <div>
-                <p><strong>Hands-On &amp; Software-Based Training</strong> — Interactive labs, digital twins and modeling projects using tools such as MATLAB, COMSOL, ANSYS, OpenFOAM, TensorFlow and PyTorch.</p>
-              </div>
-            </li>
-
-            <li class="feature">
-              <span class="marker" aria-hidden="true"></span>
-              <div>
-                <p><strong>Certificate Programs &amp; Stackable Credentials</strong> — Modular certificates recognized by industry and academia, structured to support progressive career growth.</p>
-              </div>
-            </li>
-
-            <li class="feature">
-              <span class="marker" aria-hidden="true"></span>
-              <div>
-                <p><strong>Academic Support &amp; Mentorship</strong> — Personalized tutoring and guidance to accelerate learning and professional outcomes.</p>
-              </div>
-            </li>
-          </ul>
-        </section>
-
-        <section class="card" aria-labelledby="upskill-title">
-          <h3 id="upskill-title" class="section-title">Upskilling, Reskilling &amp; Lifelong Learning</h3>
-          <p class="subhead">Continuing education and workforce development designed to keep you and your organization competitive.</p>
-
-          <ul class="feature-list" aria-label="Upskilling offerings">
-            <li class="feature">
-              <span class="marker" aria-hidden="true"></span>
-              <div>
-                <p><strong>Professional &amp; Continuing Education (CPE)</strong> — Career-aligned courses in AI, scientific computing, and engineering.</p>
-              </div>
-            </li>
-
-            <li class="feature">
-              <span class="marker" aria-hidden="true"></span>
-              <div>
-                <p><strong>Customized Industry &amp; Government Training</strong> — Tailored programs in digital twins, AI-enhanced simulations, HPC, and systems integration.</p>
-              </div>
-            </li>
-
-            <li class="feature">
-              <span class="marker" aria-hidden="true"></span>
-              <div>
-                <p><strong>Bootcamps &amp; Practical Workshops</strong> — Short, immersive sessions focused on real-world projects and immediate application.</p>
-              </div>
-            </li>
-
-            <li class="feature">
-              <span class="marker" aria-hidden="true"></span>
-              <div>
-                <p><strong>Stackable Career Pathways</strong> — Modular credentials that assemble into clear career tracks toward mastery.</p>
-              </div>
-            </li>
-
-            <li class="feature">
-              <span class="marker" aria-hidden="true"></span>
-              <div>
-                <p><strong>Flexible Delivery</strong> — Online, in-person, or hybrid formats to suit individual and institutional schedules.</p>
-              </div>
-            </li>
-          </ul>
-        </section>
-
-        <section class="card" aria-labelledby="domains-title">
-          <h3 id="domains-title" class="section-title">Specialized Training &amp; Certification Domains</h3>
-          <p class="subhead">Practical, software-led instruction across foundational and emerging technical fields.</p>
-
-          <div class="domains" role="list">
-            <article class="domain" role="listitem" aria-labelledby="d1">
-              <h4 id="d1">Applied &amp; Computational Mathematics</h4>
-              <p>PDEs, numerical methods, optimization, linear algebra, and high-performance modeling.</p>
-            </article>
-
-            <article class="domain" role="listitem" aria-labelledby="d2">
-              <h4 id="d2">Data Science &amp; Artificial Intelligence</h4>
-              <p>Deep learning, physics-informed AI, uncertainty quantification, and machine learning workflows.</p>
-            </article>
-
-            <article class="domain" role="listitem" aria-labelledby="d3">
-              <h4 id="d3">Computation &amp; Data-Driven Engineering</h4>
-              <p>Digital twins, simulation pipelines, surrogate modeling, and visualization tools.</p>
-            </article>
-
-            <article class="domain" role="listitem" aria-labelledby="d4">
-              <h4 id="d4">Aerospace, Civil, Mechanical &amp; Biomedical Engineering</h4>
-              <p>CFD, multiphysics design, structural analysis, biofluids, and tissue modeling.</p>
-            </article>
-
-            <article class="domain" role="listitem" aria-labelledby="d5">
-              <h4 id="d5">Cybersecurity, Cloud &amp; Software Engineering</h4>
-              <p>Cloud architecture, secure systems, AI-driven cybersecurity, and DevOps integration.</p>
-            </article>
-
-            <article class="domain" role="listitem" aria-labelledby="d6">
-              <h4 id="d6">Quantum Computing &amp; Advanced Physics</h4>
-              <p>Quantum algorithms, simulation frameworks, and nanoscale modeling tools.</p>
-            </article>
-
-            <article class="domain" role="listitem" aria-labelledby="d7">
-              <h4 id="d7">Renewable Energy &amp; Environmental Sustainability</h4>
-              <p>Energy storage modeling, porous media analysis, and AI applications for climate and resilience.</p>
-            </article>
-          </div>
-        </section>
-      </div>
-
-      <!-- Aside / CTA column -->
-      <aside class="aside" aria-label="Enroll and contact">
-        <div class="card">
-          <h3 class="section-title">Get Started</h3>
-          <p class="meta">Explore courses, request a custom program, or join an upcoming bootcamp.</p>
-
-          <div class="cta" role="group" aria-label="Calls to action">
-            <a class="btn btn-primary" href="/courses" title="Explore ITECCS courses">Explore Courses</a>
-            <a class="btn btn-ghost" href="/contact" title="Contact ITECCS for training">Request Custom Training</a>
+          <!-- ABOUT CARD -->
+          <div class="card" style="margin-top:14px">
+            <h3>About ITECCS</h3>
+            <p>Learn how we support education, research, and workforce development.</p>
+            <div style="display:flex;gap:8px;margin-top:10px">
+              <a class="btn btn-primary" href="#mission">Our Mission</a>
+              <a class="btn btn-ghost" href="#whatwedo">What We Do</a>
+            </div>
           </div>
 
-          <p class="footer small">Formats: Online • In-person • Hybrid · Certificates & CPE available</p>
+          <!-- OUR MISSION -->
+          <h1 class="section-title" data-reveal id="mission">Our Mission</h1>
+          <p data-reveal>To bridge the gap between knowledge and real-world impact through inclusive education, applied research, and workforce solutions that advance outcomes across academia, industry, and society.</p>
+
+          <!-- MISSION CARD -->
+          <div class="card" style="margin-top:14px">
+            <h3>Our Mission</h3>
+            <p>See how our programs and initiatives create meaningful change.</p>
+            <div style="display:flex;gap:8px;margin-top:10px">
+              <a class="btn btn-primary" href="education.html">Explore Education Programs</a>
+              <a class="btn btn-primary" href="consulting.html">Explore Consulting Programs</a>
+            </div>
+          </div>
+
+          <!-- WHAT WE DO -->
+          <h1 class="section-title" data-reveal id="whatwedo">What We Do</h1>
+          <h2 data-reveal>Applied & Advanced Research</h2>
+          <p data-reveal>We lead interdisciplinary research that connects AI, HPC, computational engineering, and domain science.</p>
+
+          <ul data-reveal>
+            <li><strong>Advanced Simulation & Modeling</strong></li>
+            <li><strong>Technical Consulting</strong></li>
+            <li><strong>Collaborative Research</strong></li>
+            <li><strong>Specialized Training</strong></li>
+          </ul>
+
+          <!-- WHAT WE DO CARD -->
+          <div class="card" style="margin-top:14px">
+            <h3>What We Do</h3>
+            <p>Explore our services, consulting, and applied research support.</p>
+            <div style="display:flex;gap:8px;margin-top:10px">
+              <a class="btn btn-primary" href="consulting.html">Consulting</a>
+              <a class="btn btn-ghost" href="straining.html">Training</a>
+            </div>
+          </div>
+
+          <!-- OUR IMPACT -->
+          <h1 class="section-title" data-reveal>Our Impact</h1>
+          <p data-reveal>We drive real results in STEM education, research innovation, and workforce readiness.</p>
+
+          <!-- IMPACT CARD -->
+          <div class="card" style="margin-top:14px">
+            <h3>Our Impact</h3>
+            <p>See examples of the outcomes our work has produced.</p>
+            <div style="display:flex;gap:8px;margin-top:10px">
+              <a class="btn btn-primary" href="education.html">Student Success</a>
+              <a class="btn btn-ghost" href="consulting.html">Research Impact</a>
+            </div>
+          </div>
+
+          <!-- WHO WE SERVE -->
+          <h1 class="section-title" data-reveal>Who We Serve</h1>
+          <ul data-reveal>
+            <li>Students and educators</li>
+            <li>Industry and startups</li>
+            <li>Government agencies</li>
+            <li>Nonprofits & community groups</li>
+          </ul>
+
+          <!-- WHO WE SERVE CARD -->
+          <div class="card" style="margin-top:14px">
+            <h3>Who We Serve</h3>
+            <p>See how our programs help different learners and organizations.</p>
+            <div style="display:flex;gap:8px;margin-top:10px">
+              <a class="btn btn-primary" href="education.html">For Students</a>
+              <a class="btn btn-ghost" href="consulting.html">For Organizations</a>
+            </div>
+          </div>
+
+          <!-- PARTNER WITH US -->
+          <h1 class="section-title" data-reveal>Partner With Us</h1>
+          <ul data-reveal>
+            <li><strong>Address:</strong> Milwaukee, Wisconsin, USA</li>
+            <li><strong>Email:</strong> contact@iteccs.org</li>
+            <li><strong>Phone:</strong> 414-629-1090</li>
+            <li><strong>Website:</strong> www.iteccs.com</li>
+          </ul>
+
+          <!-- PARTNER CARD -->
+          <div class="card" style="margin-top:14px">
+            <h3>Partner With Us</h3>
+            <p>Start a collaboration in research, education, or workforce development.</p>
+            <div style="display:flex;gap:8px;margin-top:10px">
+              <a class="btn btn-primary" href="contact.html">Contact Us</a>
+            </div>
+          </div>
+
         </div>
 
-        <div class="card">
-          <h3 class="section-title">Why ITECCS</h3>
-          <p class="meta">Hands-on learning, industry software training, expert mentorship, flexible pathways, and recognized credentials that support career development.</p>
+
+      <!-- ASIDE / CTA -->
+      <aside aria-label="Enroll and contact">
+        <div class="card" role="region" aria-labelledby="get-started">
+          <h3 id="get-started">Get Started</h3>
+          <p>Explore courses, request a custom program, or join a bootcamp.</p>
+          <div style="display:flex;gap:8px;margin-top:10px">
+            <a class="btn btn-primary" href="courses.html">Explore Courses</a>
+          </div>
+          <p style="font-size:0.9rem;color:var(--muted);margin-top:12px">Formats: Online • In-person • Hybrid · Certificates & CPE available</p>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <h3>Why ITECCS</h3>
+          <p>Hands-on learning, industry software training, expert mentorship, flexible pathways, and recognized credentials that support career development.</p>
         </div>
       </aside>
     </div>
-  </div>
-</section>
-
-
-
-
-    
-    <h1 class="fade-in-up">What we do </h1>
-    <p class="fade-in-up">The institute develops tailored curricula, hands-on workshops, bootcamps, and design
-       courses in various topics for all levels for colleges, universities, and workforce
-       programs, while offering training, tutoring, and supporting grant applications,
-       and evaluating academic programs. ITECCS offers trainings and certificate programs,
-       as well as a vibrant portfolio of Continuing Professional Education, custom training,
-       events, and workforce development programs that provide tailored upskilling and
-       reskilling opportunities to help individuals and organizations stay competitive in an
-       evolving job market.
-    </p>
-    <p class="fade-in-up">Its Research and Consulting Division partners with industry, startups, colleges,
-      universities, research labs, government programs, and manufacturing organizations,
-      delivering expertise in technology and engineering fields like computational fluid 
-      dynamics, porous media, applied mathematics, data science, numerical methods,
-      and high-performance computing, along with R&D advisory, simulation and modeling
-      tools, technical training, and research collaborations.
-    </p>
-    <p class="fade-in-up">The Innovative advanced research computing Center at ITECCS
-       also serves as a collaborative hub for applied mathematics, engineering,
-       and computational science. It unites multidisciplinary teams to address complex
-       challenges in numerical algorithms and linear algebra, deep learning and inverse problems,
-       optimization and PDEs, fluid dynamics and porous media, scientific computing, neural
-       networks, and AI. The center promotes high-level research, fosters collaboration
-       between academia and industry, provides shared computing resources
-       and training programs, and actively engages students, faculty, and industry
-       partners to produce peer-reviewed research aligned with DoD, NSF, NIH, and DOE
-      agencies goals. By cultivating interdisciplinary skills and igniting STEM
-      enthusiasm, the center ensures sustainable research funding, creates new knowledge,
-      and inspires the next generation of scientists, engineers, and innovators.
-     </p>
-    <h1 class="fade-in-up">Our Impact</h1>
-    <p class="fade-in-up">At ITECCS, we bridge education, research, innovation, and workforce
-      development to deliver measurable impact across education, industry, government,
-      and society.
-    </p>
-    <ul class="fade-in-up">
-      <li>We ignite STEM passion in students and professionals.</li>
-      <li>We foster collaboration between scientists, engineers, educators, and entrepreneurs.</li>
-    </ul>
-    <p class="fade-in-up">We transform theory into real-world solutions, empowering the
-       next generation of innovators, engineers, and scientists.
-    </p>
-    <h1 class="fade-in-up">Who We Serve</h1>
-     <p class="fade-in-up">
-    </p>
-       <ul>
-    <li>Students and educators</li>
-    <li>Colleges, universities, and K–12 institutions</li>
-    <li>Industry leaders and startups</li>
-    <li>Government agencies and public sector organizations</li>
-    <li>Community organizations and nonprofits</li>
-     </ul>
-
-        </p>
-    <h1 class="fade-in-up">Partner With Us</h1>
-     <p class="fade-in-up">
-    </p>
-       <ul>
-   <p>
-    <li> 📍 <strong>Address:</strong> Milwaukee- Wisconsin - USA <br>  </li>
-    <li> 📧 <strong>Email:</strong> <a href="mailto:contact@iteccs.org">contact@iteccs.org</a><br>  </li>
-    <li> 📞 <strong>Phone:</strong> 414-629-1090 <br> </li>
-    <li> 🌐 <strong>Website:</strong> <a href="https://www.iteccs.com">www.iteccs.com</a>  </li>
-     </ul>
-    </p>
   </main>
 
   <footer>
     <p>&copy; 2025 ITeccs. All rights reserved.</p>
   </footer>
-  <!-- scroll reveal animation -->
+
+  <!-- Scripts: theme, reveal, accessibility -->
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const fadeElems = document.querySelectorAll(".fade-in-up");
-  
-      const observer = new IntersectionObserver(
-        (entries, observer) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("visible");
-              observer.unobserve(entry.target); // animate ONCE only
-            }
-          });
-        },
-        { threshold: 0.2 }
-      );
-  
-      fadeElems.forEach(el => observer.observe(el));
-    });
-  </script>
-  <!-- End scroll reveal animation -->
-  <!-- Custom Chat Button -->
-  <button id="custom-chat-btn">
-    <i class="fas fa-comments"></i>
-  </button> 
-  <!-- Tawk.to Script -->
-  <script type="text/javascript">
-    var Tawk_API = Tawk_API || {};
-    var Tawk_LoadStart = new Date();
-
     (function(){
-      var s1=document.createElement("script"),
-          s0=document.getElementsByTagName("script")[0];
-      s1.async=true;
-      s1.src='https://embed.tawk.to/685e2123390063190e54b4b2/1iunr2sv2';
-      s1.charset='UTF-8';
-      s1.setAttribute('crossorigin','*');
-      s0.parentNode.insertBefore(s1,s0);
-    })();
+      const root = document.documentElement;
+      const toggle = document.getElementById('themeToggle');
+      const icon = document.getElementById('themeIcon');
+      const label = document.getElementById('themeLabel');
 
-    // Hide default widget once fully loaded
-    Tawk_API.onLoad = function(){
-      Tawk_API.hideWidget();
-    };
+      // Determine initial theme: localStorage -> system preference -> default dark
+      const stored = localStorage.getItem('iteccs:theme');
+      const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const initial = stored ? stored : (systemDark ? 'dark' : 'light');
 
-    // Custom button opens chat
-    document.addEventListener("DOMContentLoaded", function(){
-      var btn = document.getElementById("custom-chat-btn");
-      if(btn){
-        btn.addEventListener("click", function(){
-          if(typeof Tawk_API !== "undefined"){
-            Tawk_API.maximize(); // open chat window
+      function apply(theme){
+        root.setAttribute('data-theme', theme);
+        const isDark = theme === 'dark';
+        toggle.setAttribute('aria-pressed', String(isDark));
+        icon.className = isDark ? 'fas fa-moon' : 'fas fa-sun';
+        label.textContent = isDark ? 'Dark' : 'Light';
+      }
+
+      // initialize
+      apply(initial);
+
+      // Toggle handler
+      toggle.addEventListener('click', ()=>{
+        const current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+        const next = current === 'dark' ? 'light' : 'dark';
+        apply(next);
+        localStorage.setItem('iteccs:theme', next);
+      });
+
+      // Listen for system-level changes (but respect stored preference)
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)=>{
+        const stored = localStorage.getItem('iteccs:theme');
+        if(!stored){
+          apply(e.matches ? 'dark' : 'light');
+        }
+      });
+
+      // Intersection reveal (accessible)
+      const elems = document.querySelectorAll('[data-reveal]');
+      const io = new IntersectionObserver((entries, obs) =>{
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            entry.target.classList.add('show');
+            obs.unobserve(entry.target);
           }
         });
-      }
-    });
+      }, {threshold: 0.18});
+      elems.forEach(el => io.observe(el));
+
+      // Quick keyboard accessibility: T toggles theme
+      document.addEventListener('keydown', (e)=>{
+        if(e.key.toLowerCase() === 't' && (e.ctrlKey||e.metaKey)===false){
+          toggle.click();
+        }
+      });
+
+    })();
   </script>
-  <!-- End of Tawk.to Script -->        
+
 </body>
 </html>

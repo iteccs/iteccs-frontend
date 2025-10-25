@@ -2,23 +2,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us - ITeccs</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Applied Physics Curriculum - ITeccs</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+
   <!-- Fonts and Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
+  <!-- Navbar -->
   <nav class="navbar">
     <div class="logo">
-      <img src="logo.png" alt="ITeccs Logo">
+      <img src="logo.png" alt="ITeccs Logo" />
     </div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About Us</a></li>
+      <li><a href="Founder.html">Who We Are</a></li>
       <li><a href="consulting.html">Consulting</a></li>
       <li><a href="education.html">Education</a></li> 
       <li><a href="howtopay.html">How to Pay</a></li>
@@ -29,18 +33,29 @@
       </li>
     </ul>
   </nav>
-
+  <!-- Hero Modern -->
+    <section class="hero-modern">
+      <div class="hero-overlay"></div>
+      <img src="appliedmath.jpg" alt="Applied Math background" class="hero-bg-modern" />
+      
+      <div class="hero-content-modern">
+        <h2 class="hero-heading">Applied and Computational Mathematics</h2>
+        <p class="hero-sub">
+          Master Applied & Computational Mathematics through modeling and computational methods, gaining practical skills
+          to solve complex problems in science, engineering, and data-driven research.
+        </p>
+      </div>
+    </section>
+  <!-- Main Content -->
   <main class="content">
-    <h1></h1>
-    <p></p>
-
-<section class="category applied-computational-mathematics">
-  <h2>Applied &amp; Computational Mathematics</h2>
+    <section class="program-wrapper">
+      <div class="track-grid">
 
   <!-- Mathematical Modeling & Applications -->
-  <section class="subcategory modeling-applications">
-    <h3>Mathematical Modeling &amp; Applications</h3>
-    <ul>
+        <article class="track-card">
+          <div class="track-eyebrow">Modeling and Applications</div>
+          <h3 class="track-title">Mathematical Modeling and Applications</h3>
+            <ul class="course-list">
       <li>Mathematical Biology</li>
       <li>Mathematical Models in Healthcare</li>
       <li>Computational Molecular Medicine</li>
@@ -48,40 +63,46 @@
       <li>Foundational Methods in Applied Mathematics</li>
       <li>Modeling, Simulation, and Monte Carlo</li>
     </ul>
-  </section>
+        </article>
 
   <!-- Computational Methods & Scientific Computing -->
-  <section class="subcategory computational-methods">
-    <h3>Computational Methods &amp; Scientific Computing</h3>
-    <ul>
+        <article class="track-card">
+          <div class="track-eyebrow">Computational Methods</div>
+          <h3 class="track-title">Computational Methods and Scientific Computing</h3>
+          <div class="course-list-wrapper">
+              <ul class="course-list">
       <li>Computing for Applied Mathematics</li>
       <li>Numerical Linear Algebra</li>
       <li>Numerical Analysis</li>
       <li>Numerical Methods for Partial Differential Equations</li>
-      <li>Scientific &amp; High-Performance Computing</li>
+                <li>Scientific and High-Performance Computing</li>
       <li>Advanced Differential Equations (Partial, Nonlinear, Numerical)</li>
       <li>Stochastic Differential Equations: An Introduction With Applications</li>
     </ul>
-  </section>
+            </div>   
+        </article>
 
   <!-- Optimization & Algorithms -->
-  <section class="subcategory optimization-algorithms">
-    <h3>Optimization &amp; Algorithms</h3>
-    <ul>
+        <article class="track-card">
+          <div class="track-eyebrow">Optimization</div>
+          <h3 class="track-title">Optimization and Algorithms</h3>
+          <ul class="course-list">
       <li>Optimization for Data Science</li>
-      <li>Introduction to Optimization I &amp; II</li>
+           <li>Introduction to Optimization I and II</li>
       <li>Large-Scale Optimization for Data Science</li>
-      <li>Stochastic Optimization &amp; Control</li>
+           <li>Stochastic Optimization and Control</li>
       <li>Combinatorial Optimization</li>
       <li>Introduction to Convexity</li>
       <li>Game Theory</li>
     </ul>
-  </section>
+        </article>
 
   <!-- Applied Structures & Theory -->
-  <section class="subcategory applied-structures-theory">
-    <h3>Applied Structures &amp; Theory</h3>
-    <ul>
+        <article class="track-card">
+          <div class="track-eyebrow">Applied structures </div>
+          <h3 class="track-title">Applied Structures and Theory</h3>
+          <div class="course-list-wrapper">
+          <ul class="course-list">
       <li>General Applied Mathematics</li>
       <li>Applied Topology</li>
       <li>Computational Complexity and Approximation</li>
@@ -94,51 +115,57 @@
       <li>Probability and Stochastic Processes I &amp; II</li>
       <li>Theory of Probability</li>
     </ul>
-  </section>
+          </div>
+        </article>
+      </div>
 </section>
-
-
-
   </main>
 
+   <!-- Footer -->
   <footer>
     <p>&copy; 2025 ITeccs. All rights reserved.</p>
   </footer>
+
   <!-- Custom Chat Button -->
   <button id="custom-chat-btn">
     <i class="fas fa-comments"></i>
   </button> 
 
-  <!-- Tawk.to Script -->
-  <script type="text/javascript">
-    var Tawk_API = Tawk_API || {};
-    var Tawk_LoadStart = new Date();
+  <!-- Embedded Animations -->
+  <script>
+    // Scroll reveal effect
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.15 });
 
-    (function(){
-      var s1=document.createElement("script"),
-          s0=document.getElementsByTagName("script")[0];
-      s1.async=true;
-      s1.src='https://embed.tawk.to/685e2123390063190e54b4b2/1iunr2sv2';
-      s1.charset='UTF-8';
-      s1.setAttribute('crossorigin','*');
-      s0.parentNode.insertBefore(s1,s0);
-    })();
+    document.querySelectorAll('.track-card, .section-title').forEach(el => observer.observe(el));
 
-    // Hide default widget once fully loaded
-    Tawk_API.onLoad = function(){
-      Tawk_API.hideWidget();
-    };
+    // 3D tilt effect
+    const tiltCards = document.querySelectorAll('.track-card');
+    tiltCards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const rotateY = ((x / rect.width) - 0.5) * 12;
+        const rotateX = ((y / rect.height) - 0.5) * -12;
+        card.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg) scale(1.03)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+      });
+    });
 
-    // Custom button opens chat
-    document.addEventListener("DOMContentLoaded", function(){
-      var btn = document.getElementById("custom-chat-btn");
-      if(btn){
-        btn.addEventListener("click", function(){
-          if(typeof Tawk_API !== "undefined"){
-            Tawk_API.maximize(); // open chat window
-          }
-        });
-      }
+    // Subtle gradient animation
+    document.addEventListener('DOMContentLoaded', () => {
+      const bg = document.querySelector('.animated-bg');
+      let angle = 0;
+      setInterval(() => {
+        angle = (angle + 0.3) % 360;
+        bg.style.background = `linear-gradient(${angle}deg, #1e1f5b, #6a11cb, #2575fc)`;
+      }, 80);
     });
   </script>
   <!-- End of Tawk.to Script -->        

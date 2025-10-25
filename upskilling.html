@@ -4,11 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us - ITeccs</title>
+  <title>Upskilling</title>
   <link rel="stylesheet" href="style.css">
   <!-- Fonts and Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
@@ -19,6 +18,7 @@
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About Us</a></li>
+      <li><a href="Founder.html">Who We Are</a></li>
       <li><a href="consulting.html">Consulting</a></li>
       <li><a href="education.html">Education</a></li> 
       <li><a href="howtopay.html">How to Pay</a></li>
@@ -29,46 +29,70 @@
       </li>
     </ul>
   </nav>
+  <!-- Hero Modern -->
+    <section class="hero-modern">
+      <img src="upskilling-hero.jpg" class="hero-bg-modern" alt="Upskilling Background">
+      <div class="hero-overlay"></div>
 
-  <main class="content">
-    <h1></h1>
-    <p></p>
-    <section id="upskilling">
-  <h2>Upskilling, Reskilling & Lifelong Learning</h2>
-  <p>Technology moves fast — your skills should, too.  
-     At <strong>ITECCS</strong>, we offer cutting-edge continuing education and workforce development programs tailored to modern career demands. 
-    Our programs extend across all ITECCS research domains, from Advanced Applied Mathematics and Data-Driven Engineering to Renewable Energy, Cybersecurity,
-    and Quantum Technologies — helping participants stay competitive in a rapidly evolving technological world. We offer: </p>
+      <div class="hero-content-modern">
+        <h1 class="hero-heading">Upskilling, Reskilling & Lifelong Learning</h1>
+        <p class="hero-sub">
+          Future-ready training designed to empower individuals, teams, and organizations
+          in the age of AI, data-driven science, and advanced engineering.
+        </p>
+      </div>
+    </section>
+<main class="content">
+      <section class="upskill-practice-cards">
+  <div class="card-grid">
+    <!-- Example Card -->
+    <div class="practice-card">
+      <div class="card-icon-circle" style="background-color:#E0F2FF;">
+        <i class="fas fa-graduation-cap"></i>
+      </div>
+      <h3>Professional & Continuing Education (CPE)</h3>
+      <p>Career-focused training in AI, computational science, analytics, and engineering.</p>
+      <a href="straining.html" class="learn-more">Learn more</a>
+    </div>
 
-  <ul>
-    <li>
-      <strong>Professional & Continuing Education (CPE)</strong><br>
-      Advance your technical expertise with career-focused programs in AI, computational science, and engineering.
-    </li>
+    <div class="practice-card">
+      <div class="card-icon-circle" style="background-color:#FFF0E0;">
+        <i class="fas fa-industry"></i>
+      </div>
+      <h3>Customized Industry & Government Training</h3>
+      <p>Tailored workshops in HPC, digital twins, AI-enabled design, and advanced simulation.</p>
+      <a href="#" class="learn-more">Learn more</a>
+    </div>
 
-    <li>
-      <strong>Customized Industry & Government Training</strong><br>
-      Hands-on workshops in digital twins, AI-driven simulations, HPC, data-driven design, and advanced software integration — tailored to your organization’s needs.
-    </li>
+    <div class="practice-card">
+      <div class="card-icon-circle" style="background-color:#E8FFE0;">
+        <i class="fas fa-chalkboard-teacher"></i>
+      </div>
+      <h3>Bootcamps & Practical Workshops</h3>
+      <p>Intensive skill-building sessions designed for real-world impact.</p>
+      <a href="workshops.html" class="learn-more">Learn more</a>
+    </div>
 
-    <li>
-      <strong>Bootcamps & Practical Workshops</strong><br>
-      Short, immersive sessions designed to sharpen problem-solving skills, foster innovation, and enhance collaboration.
-    </li>
+    <div class="practice-card">
+      <div class="card-icon-circle" style="background-color:#FDE0FF;">
+        <i class="fas fa-layer-group"></i>
+      </div>
+      <h3>Stackable Career Pathways</h3>
+      <p>Earn micro-credentials and stack them toward advanced certificates.</p>
+      <a href="certifications.html" class="learn-more">Learn more</a>
+    </div>
 
-    <li>
-      <strong>Stackable Career Pathways</strong><br>
-      Earn integrated credentials step by step, building expertise that aligns with industry standards.
-    </li>
-
-    <li>
-      <strong>Flexible Learning Options</strong><br>
-      Study online, in-person, or via hybrid formats — learning that fits your schedule, not the other way around.
-    </li>
-  </ul>
+    <div class="practice-card">
+      <div class="card-icon-circle" style="background-color:#FFFDE0;">
+        <i class="fas fa-laptop"></i>
+      </div>
+      <h3>Flexible Learning Options</h3>
+      <p>Study anytime, anywhere—built to fit your schedule.</p>
+      <a href="courses.html" class="learn-more">Learn more</a>
+    </div>
+  </div>
 </section>
-
-  </main>
+</main>
 
   <footer>
     <p>&copy; 2025 ITeccs. All rights reserved.</p>
@@ -110,6 +134,81 @@
       }
     });
   </script>
-  <!-- End of Tawk.to Script -->        
+  <!-- End of Tawk.to Script -->  
+   <script>
+// =====================
+// CARD ANIMATIONS
+// =====================
+const cards = document.querySelectorAll('.practice-card');
+
+// Scroll fade-in
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.2 });
+cards.forEach(card => observer.observe(card));
+
+// Tilt effect on hover
+cards.forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const deltaX = (x - centerX) / centerX;
+    const deltaY = (centerY - y) / centerY;
+    card.style.setProperty('--tiltX', `${deltaY * 5}deg`);
+    card.style.setProperty('--tiltY', `${deltaX * 5}deg`);
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.setProperty('--tiltX', `0deg`);
+    card.style.setProperty('--tiltY', `0deg`);
+  });
+
+  // Pop effect on click
+  card.addEventListener('click', () => {
+    card.classList.add('pop');
+    setTimeout(() => card.classList.remove('pop'), 200);
+  });
+
+  // Icon pulse glow
+  const icon = card.querySelector('.card-icon-circle i');
+  let glow = 0;
+  let dir = 1;
+  function pulse() {
+    glow += dir * 0.5;
+    if (glow > 10 || glow < 0) dir *= -1;
+    icon.style.textShadow = `0 0 ${glow}px rgba(0,114,206,0.7)`;
+    requestAnimationFrame(pulse);
+  }
+  pulse();
+});
+
+// =====================
+// HERO PARALLAX BACKGROUND
+// =====================
+const heroBg = document.querySelector('.hero-bg-modern');
+document.addEventListener('mousemove', e => {
+  const x = (e.clientX / window.innerWidth - 0.5) * 10; // ±5px
+  const y = (e.clientY / window.innerHeight - 0.5) * 10; // ±5px
+  heroBg.style.transform = `translate(${x}px, ${y}px) scale(1.05)`;
+});
+
+// =====================
+// SMOOTH SCROLL FOR ANCHOR LINKS
+// =====================
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
+</script>      
 </body>
 </html>

@@ -1,659 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=3.0" />
-  <title>STEM Programs</title>
-
-  <!-- Tailwind (optional if you already load it globally) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <style>
-    /* subtle gradient background */
-    body {
-      background: radial-gradient(circle at 20% 20%, #0f172a 0%, #000000 70%);
-      color: #fff;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", Roboto, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-    }
-
-    /* glass / card style */
-    .card {
-      background: rgba(15, 23, 42, 0.6);
-      border: 1px solid rgba(148,163,184,0.15);
-      box-shadow: 0 30px 80px rgba(0,0,0,0.6);
-      border-radius: 1rem;
-      transition: all 0.2s ease;
-    }
-    .card:hover {
-      background: rgba(30, 41, 59, 0.7);
-      border-color: rgba(255,255,255,0.2);
-      box-shadow: 0 50px 120px rgba(0,0,0,0.8);
-      transform: translateY(-2px) scale(1.01);
-    }
-
-    /* badge style */
-    .badge {
-      font-size: 0.7rem;
-      line-height: 1rem;
-      font-weight: 500;
-      padding: 0.25rem 0.5rem;
-      border-radius: 999px;
-      background: linear-gradient(90deg, rgba(16,185,129,0.15) 0%, rgba(16,185,129,0) 100%);
-      border: 1px solid rgba(16,185,129,0.5);
-      color: rgb(16,185,129);
-    }
-
-    .section-title {
-      font-size: 2rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      color: #38bdf8;
-      text-transform: uppercase;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .section-heading {
-      font-size: clamp(1.5rem, 1vw + 1rem, 2rem);
-      font-weight: 600;
-      letter-spacing: -0.04em;
-      color: #fff;
-    }
-
-    .section-desc {
-      color: rgb(203,213,225);
-      font-size: 1rem;
-      line-height: 1.5rem;
-      max-width: 60ch;
-    } 
-
-    .subarea-title {
-      font-weight: 600;
-      font-size: 1rem;
-      color: #fff;
-      letter-spacing: -0.03em;
-    }
-    .subarea-text {
-      color: rgb(148,163,184);
-      font-size: 0.9rem;
-      line-height: 1.4rem;
-    }
-
-    .outcome-label {
-      font-size: 0.7rem;
-      font-weight: 500;
-      color: rgb(226,232,240);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-    .outcome-text {
-      color: rgb(226,232,240);
-      font-size: 0.9rem;
-      line-height: 1.4rem;
-    }
-
-    .footer-block-title {
-      color: #fff;
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-    }
-    .footer-block-text {
-      color: rgb(148,163,184);
-      font-size: 0.9rem;
-      line-height: 1.4rem;
-    }
-
-    .accent-ring {
-      background: radial-gradient(circle at 30% 30%, rgba(16,185,129,.18) 0%, rgba(0,0,0,0) 70%);
-      filter: blur(40px);
-      border-radius: 9999px;
-      width: 220px;
-      height: 220px;
-      position: absolute;
-      opacity: .4;
-      pointer-events: none;
-    }
-    .accent-ring.blue {
-      background: radial-gradient(circle at 30% 30%, rgba(56,189,248,.18) 0%, rgba(0,0,0,0) 70%);
-    }
-    .accent-ring.pink {
-      background: radial-gradient(circle at 30% 30%, rgba(236,72,153,.15) 0%, rgba(0,0,0,0) 70%);
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - ITeccs</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Fonts and Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body class="antialiased">
-
-  <!-- HERO -->
-  <header class="relative overflow-hidden px-6 py-16 md:py-24 max-w-7xl mx-auto">
-    <div class="accent-ring blue -top-10 -left-10 hidden md:block"></div>
-    <div class="accent-ring pink bottom-0 right-10 hidden md:block"></div>
-
- <section class="relative card p-6 md:p-8 max-w-7xl mx-auto mb-12">
-  <!-- Accent glows -->
-  <div class="accent-ring blue absolute -top-24 right-0 opacity-30 pointer-events-none"></div>
-  <div class="accent-ring pink absolute -bottom-24 left-10 opacity-20 pointer-events-none"></div>
-
-  <!-- HEADER / INTRO -->
-  <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 relative">
-    <div class="max-w-xl">
-      <div class="section-title text-cyan-400">
-        Electrical &amp; Computer Engineering
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="ITeccs Logo">
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="Founder.html">Who We Are</a></li>
+      <li><a href="consulting.html">Consulting</a></li>
+      <li><a href="education.html">Education</a></li> 
+      <li><a href="howtopay.html">How to Pay</a></li>
+      <li>
+        <a href="contact.html" class="contact-nav-button">
+          <i class="fas fa-envelope"></i> Contact Us
+        </a>
+      </li>
+    </ul>
+  </nav>
+    <!-- Hero Modern -->
+    <section class="hero-modern">
+      <div class="hero-overlay"></div>
+      <img src="electrical.jpg" alt="electrical background" class="hero-bg-modern" />
+      
+      <div class="hero-content-modern">
+        <h2 class="hero-heading">Electrical & Computer Engineering</h2>
+        <p class="hero-sub">
+          Electrical & Computer Engineering connects advanced electronics, embedded computing, wireless communication, robotics, signal intelligence, photonics, power systems, and AI. Students learn how modern systems actually work — from custom chips and FPGA logic to 5G networks,
+          radar, computer vision, autonomous drones, medical imaging, and intelligent power grids.
+        </p>
       </div>
-
-      <h2 class="section-heading mt-2">
-        Intelligent systems that sense, compute, communicate, and act
-      </h2>
-
-      <p class="section-desc mt-4">
-        Electrical &amp; Computer Engineering connects advanced electronics, embedded computing,
-        wireless communication, robotics, signal intelligence, photonics, power systems, and AI.
-        Students learn how modern systems actually work — from custom chips and FPGA logic to
-        5G networks, radar, computer vision, autonomous drones, medical imaging, and intelligent power grids.
-      </p>
-
-      <div class="mt-6 flex flex-wrap gap-2 text-[0.7rem] font-medium text-slate-200">
-        <span class="badge">Autonomy &amp; Robotics</span>
-        <span class="badge">5G &amp; Secure Wireless</span>
-        <span class="badge">Photonics &amp; Sensing</span>
-        <span class="badge">AI &amp; Perception</span>
-        <span class="badge">Power &amp; Electrification</span>
-      </div>
-    </div>
-
-    <div class="lg:w-1/2">
-      <div class="outcome-label">You will be able to:</div>
-      <div class="outcome-text mt-2">
-        • Design control systems for autonomous robots and aircraft<br />
-        • Build embedded and FPGA-based computing platforms<br />
-        • Engineer wireless, radar, optical, and satellite communication links<br />
-        • Develop AI-driven sensing, perception, and decision systems<br />
-        • Design power, energy, and electrification systems for the real world
-      </div>
-    </div>
-  </div>
-
-  <!-- MAIN GRID OF TRACKS -->
-  <div class="mt-10 grid gap-10 md:gap-12 lg:grid-cols-2">
-
-    <!-- TRACK 1 -->
-    <div>
-      <h3 class="subarea-title text-cyan-300">Signals, Systems &amp; Intelligent Foundations</h3>
-      <p class="subarea-text mt-2">
-        The analytical core of modern ECE: modeling, stability, estimation, optimization.
-      </p>
-
-      <ul class="mt-4 space-y-4 text-slate-300 text-sm leading-relaxed">
-
-        <li>
-          <span class="font-semibold text-white">Circuits, Devices and Fields</span><br />
-          Circuit theory, semiconductor devices, electromagnetics, and digital logic — the base layer of all electronic systems.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Signals and Systems</span><br />
-          Linear time-invariant systems, Fourier/Laplace/z-transforms, sampling, and system response in time and frequency.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Probability and Stochastic Processes for Engineers</span><br />
-          Random variables, stochastic processes, and noise modeling for sensing, communication, and estimation.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Linear System Theory</span><br />
-          State-space modeling, controllability, observability, stability, and feedback/observer design.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Estimation Theory and Applications</span><br />
-          Detection, parameter estimation, multivariate statistics, and inference in noisy environments for radar and communications.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Modern Convex Optimization</span><br />
-          Optimization algorithms (LP, QP, SOCP, SDP, ADMM) for control, signal processing, medical imaging, and machine learning.
-        </li>
-
-      </ul>
-    </div>
-
-    <!-- TRACK 2 -->
-    <div>
-      <h3 class="subarea-title text-cyan-300">Control, Autonomy &amp; Robotics</h3>
-      <p class="subarea-text mt-2">
-        Making machines stable, aware, adaptive, and self-directed.
-      </p>
-
-      <ul class="mt-4 space-y-4 text-slate-300 text-sm leading-relaxed">
-
-        <li>
-          <span class="font-semibold text-white">Continuous Control Systems</span><br />
-          Classical and state-space control, stability, controllability, observability, and controller design.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Discrete-Time Control Systems</span><br />
-          Digital control modeling, sampling effects, z-transform methods, and implementation on embedded platforms.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Optimal Control and Estimation</span><br />
-          Linear quadratic control, Kalman filters, stochastic estimation, and performance-driven decision strategies.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Decentralized Control and Consensus in Multi-Agent Systems</span><br />
-          Distributed cooperation, consensus algorithms, scalability, and robustness across teams of agents.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Uncrewed Aerial Vehicle Systems and Control</span><br />
-          Guidance, navigation, stabilization, and autonomous flight control using onboard sensing and real-time estimation.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Foundations of Reinforcement Learning</span><br />
-          Dynamic programming, optimal control, deep RL, and policy optimization for autonomous decision-making.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Feedback Control in Biological Signaling Pathways</span><br />
-          How cells regulate themselves — biological signaling and adaptation seen through control theory.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Introduction to AI in Robotics &amp; Intelligent Systems</span><br />
-          Robot kinematics, perception, learning-based control, human–robot teaming, and autonomy.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Modern Navigation Systems</span><br />
-          GPS, inertial navigation, terrain-aided navigation, sensor fusion, and multi-sensor state estimation.
-        </li>
-
-      </ul>
-    </div>
-
-    <!-- TRACK 3 -->
-    <div>
-      <h3 class="subarea-title text-cyan-300">Communication, Wireless, Networks &amp; Radar</h3>
-      <p class="subarea-text mt-2">
-        Moving information across air, fiber, orbit, and contested spectrum.
-      </p>
-
-      <ul class="mt-4 space-y-4 text-slate-300 text-sm leading-relaxed">
-
-        <li>
-          <span class="font-semibold text-white">Communications Systems Engineering</span><br />
-          Analog and digital modulation/demodulation (AM, FM, PM, PSK, QAM), channel noise, and link performance.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Next Generation Telecommunications</span><br />
-          Broadband, fiber, wireless backbones, voice/data/video transport, privacy, encryption, and future architectures.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Computer and Data Communication Networks</span><br />
-          Network architecture, routing, transport protocols, wireless evolution, and secure end-to-end communication.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Next Generation Mobile Networks and Security</span><br />
-          4G/5G architectures, mmWave, edge compute, handover, network slicing, and wireless security strategies.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Wireless and Mobile Cellular Communications</span><br />
-          Radio access networks, interference management, multiple-access schemes, link budgets, and capacity enhancement.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Satellite Communications Systems</span><br />
-          Satellite link design, antennas and payloads, high-throughput architectures, and deep-space communication limits.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Radar Systems</span><br />
-          Radar waveforms, ambiguity functions, range/Doppler processing, detection, and system-level performance.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Radar Signal Processing</span><br />
-          Doppler processing, adaptive filtering, moving target indication, and tracking from real radar data.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Synthetic Aperture Radar</span><br />
-          High-resolution imaging, motion compensation, interferometry, spotlight/stripmap modes, and moving target detection.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Passive Emitter Geo-Location</span><br />
-          Locating RF emitters using time-difference of arrival, direction finding, and statistical estimation.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Digital Receiver Synchronization Techniques</span><br />
-          Carrier and symbol recovery, timing synchronization, and robust demodulator alignment for digital receivers.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Multirate Signal Processing</span><br />
-          Decimation, interpolation, polyphase filter banks, and efficient multirate architectures.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Error Control Coding</span><br />
-          Block codes, convolutional codes, turbo-like iterative decoding, and forward error correction for reliability.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Iterative Methods in Communication Systems</span><br />
-          Belief propagation, factor graphs, and iterative decoding schemes that push performance toward channel capacity.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Software-Defined Radio for Wireless Communications</span><br />
-          End-to-end wireless physical layer design on programmable radio platforms (FPGA / SDR), from baseband to RF.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Image Compression, Packet Video, and Video Processing</span><br />
-          Compression standards, motion estimation, packetized video transport, quality, resilience, and streaming at scale.
-        </li>
-
-      </ul>
-    </div>
-
-    <!-- TRACK 4 -->
-    <div>
-      <h3 class="subarea-title text-cyan-300">Signal Processing, Perception &amp; Intelligent Sensing</h3>
-      <p class="subarea-text mt-2">
-        Teaching machines to see, hear, interpret, and understand the world.
-      </p>
-
-      <ul class="mt-4 space-y-4 text-slate-300 text-sm leading-relaxed">
-
-        <li>
-          <span class="font-semibold text-white">Digital Signal Processing</span><br />
-          Sampling, DFT/FFT, filtering, spectral analysis, and discrete-time system design.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Digital Signal Processing Lab / Applications of DSP</span><br />
-          Hands-on DSP implementation: deconvolution, beamforming, channel equalization, spectral estimation, and real-time filtering.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Adaptive Signal Processing</span><br />
-          Adaptive filters, LMS-like algorithms, interference cancellation, and channel equalization under changing conditions.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Advanced Digital Signal Processing</span><br />
-          High-resolution spectral estimation, optimal filters, subspace and least-squares techniques, matrix methods.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Machine Learning for Signal Processing</span><br />
-          Learning-based classification, denoising, retrieval, and interpretation of audio, speech, image, and video signals.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Deep Learning and Generative Artificial Intelligence</span><br />
-          Deep neural architectures, transformers, diffusion models, generative vision/audio models, and real deployment.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Deep Learning for Computer Vision</span><br />
-          Object detection, localization, segmentation, scene understanding, multimodal fusion, and robustness evaluation.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Machine Perception</span><br />
-          Multi-sensor perception (vision, radar, lidar), object tracking, scene understanding, and situational awareness for autonomy.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Speech Processing / Audio Signal Processing</span><br />
-          Speech production and perception, speech enhancement, coding, synthesis, recognition, and speaker ID.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Introduction to Digital Image and Video Processing</span><br />
-          Image/video sampling, filtering, feature extraction, motion estimation, stereo and depth, and texture analysis.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Image Processing &amp; Analysis / Image Engineering</span><br />
-          Imaging physics, sensing hardware, enhancement, segmentation, compression, biomedical and remote-sensing applications.
-        </li>
-
-      </ul>
-    </div>
-
-    <!-- TRACK 5 -->
-    <div>
-      <h3 class="subarea-title text-cyan-300">RF, Photonics &amp; Remote Sensing Hardware</h3>
-      <p class="subarea-text mt-2">
-        The physical layer: fields, light, antennas, receivers, and high-frequency electronics.
-      </p>
-
-      <ul class="mt-4 space-y-4 text-slate-300 text-sm leading-relaxed">
-
-        <li>
-          <span class="font-semibold text-white">Intermediate Electromagnetics</span><br />
-          Maxwell’s equations, propagation, reflection/refraction, transmission lines, waveguides, and radiation.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Electromagnetic Transmission Systems</span><br />
-          High-frequency transmission, impedance matching, scattering parameters, Smith Chart methods, and millimeter-wave behavior.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Principles of RF and Microwave Circuits / RF and Microwave Circuits</span><br />
-          S-parameters, amplifiers, mixers, oscillators, and passive/active microwave network design.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Microwave Systems &amp; Receiver Design</span><br />
-          RF/microwave front ends, noise figure, linearity, dynamic range, and architectures for radar and surveillance systems.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Antenna Systems</span><br />
-          Dipoles, loops, phased arrays, beam shaping, mutual coupling, and antenna measurement.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Advanced Antenna Systems</span><br />
-          Array synthesis, leaky-wave structures, mutual coupling analysis, and full-array performance optimization.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Antenna Design for Space Systems</span><br />
-          Spaceborne antennas for large and small spacecraft; link budget constraints, thermal and mechanical limits, verification workflows.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Laser Fundamentals</span><br />
-          Laser gain, pumping, resonators, Gaussian beams, and the physics of light–matter interaction.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Laser Systems and Applications</span><br />
-          Nonlinear optics, interferometry, holography, precision sensing, and photonic instrumentation.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Fundamentals of Photonics and Fiber Optic Systems</span><br />
-          Guided-wave optics, polarization, optoelectronic components, detectors, and high-speed optical communication links.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Fourier Techniques in Optics</span><br />
-          Diffraction, spatial frequency analysis, holography, optical information processing, and imaging as a Fourier system.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Introduction to Optical Instruments</span><br />
-          Design and performance of lenses, microscopes, telescopes, interferometers, spectrometers, and scientific imaging systems.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Advanced Topics in Optical Medical Imaging</span><br />
-          Optical sensing in biomedicine: fluorescence, Raman, scattering, endoscopy, molecular contrast, and neurophotonics.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Introduction to EO/IR Systems</span><br />
-          Electro-optical / infrared sensing systems, radiation physics, detectors, automatic target recognition, and remote sensing.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Propagation and Atmospheric Effects at RF / Microwave / Millimeter Wave</span><br />
-          How the environment (atmosphere, rain, ionosphere) shapes RF and microwave link performance in terrestrial, airborne, and space systems.
-        </li>
-
-      </ul>
-    </div>
-
-    <!-- TRACK 6 -->
-    <div>
-      <h3 class="subarea-title text-cyan-300">Embedded Systems, FPGA &amp; Advanced Computing Hardware</h3>
-      <p class="subarea-text mt-2">
-        Where intelligence meets silicon, firmware, and real-time constraints.
-      </p>
-
-      <ul class="mt-4 space-y-4 text-slate-300 text-sm leading-relaxed">
-
-        <li>
-          <span class="font-semibold text-white">Microprocessors for Robotic Systems</span><br />
-          Embedded compute platforms for robotics: sensor interfaces, actuation, and real-time control.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Embedded Microprocessor Systems / Embedded Systems Development Lab</span><br />
-          Hardware/software co-design, peripherals, timing, reliability, board bring-up, and full embedded product integration.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Computer Architecture</span><br />
-          Instruction sets, pipelining, hazards, caching, memory hierarchy, I/O, interrupts, DMA, and microarchitectural tradeoffs.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">FPGA Design Using VHDL</span><br />
-          RTL design, synthesis, timing closure, verification, and deploying custom digital logic on FPGA hardware.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">System-on-a-Chip FPGA Design Laboratory</span><br />
-          Custom SoC design, hardware acceleration, embedded processing, DSP pipelines, and Linux-on-FPGA integration.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Hardware Architectures for DSP Algorithms</span><br />
-          Mapping signal-processing algorithms into efficient hardware: pipelining, parallelism, systolic arrays, multi-rate/multichannel structures.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Digital VLSI System Design</span><br />
-          CMOS logic from gates to subsystems: combinational/sequential logic, synthesis, placement/routing, timing, full digital IC implementation.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Mixed-Mode VLSI Circuit Design</span><br />
-          Precision analog + digital on one chip: data converters, amplifiers, bias networks, layout for noise, robustness, and power.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Analog Electronic Circuit Design / Advanced Analog Electronic Circuit Design</span><br />
-          Amplifiers, oscillators, regulators, data-converter interfaces, SPICE-level behavior, and evaluation on real hardware.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">High Speed Digital Design</span><br />
-          Signal integrity at high data rates: transmission lines, crosstalk, differential signaling, timing closure, and compliance at board level.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Measurement and Instrumentation</span><br />
-          Building custom instruments: sensing, data acquisition, conversion and conditioning, calibration, and full performance validation.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Introduction to the Solid State / Electronic Materials</span><br />
-          Crystal structure, semiconductor physics, band structure, thermal/mechanical/optical properties of electronic materials and interfaces.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Introduction to Electronic Packaging</span><br />
-          Thermal, mechanical, electrical, and environmental design of high-speed/high-frequency electronic assemblies and enclosures.
-        </li>
-
-      </ul>
-    </div>
-
-    <!-- TRACK 7 -->
-    <div>
-      <h3 class="subarea-title text-cyan-300">Power, Energy Systems &amp; Electrification</h3>
-      <p class="subarea-text mt-2">
-        Powering vehicles, infrastructure, autonomy, and the grid.
-      </p>
-
-      <ul class="mt-4 space-y-4 text-slate-300 text-sm leading-relaxed">
-
-        <li>
-          <span class="font-semibold text-white">Introduction to Electric Power Systems</span><br />
-          Generation, transmission, transformers, load flow, fault analysis, reliability, and renewable integration into large-scale grids.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Electric Machines and Control for Electrification</span><br />
-          Electric motors and drives, motor control, power electronics for propulsion and automation, and model-based control for electrified systems.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Power System Control, Optimization, and Grid Management</span><br />
-          Grid stability, voltage and frequency control, dispatch, unit commitment, and economics of operating modern power networks.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Power Electronics / Applications of Power Electronics Design / Advanced Power Electronics</span><br />
-          Switching converters, EMI control, control loops, magnetics, PCB layout, thermal design, drive electronics, and high-efficiency energy conversion.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Microwave Systems &amp; Receiver Design</span><br />
-          High-frequency receiver chains, oscillators, mixers, noise figure, and radar/surveillance front ends — critical in aerospace, defense, and resilient infrastructure.
-        </li>
-
-        <li>
-          <span class="font-semibold text-white">Propagation and Atmospheric Effects at RF / Microwave / Millimeter Wave</span><br />
-          How the atmosphere, terrain, and environment shape high-frequency communication, sensing, and power-relevant remote monitoring links.
-        </li>
-
-      </ul>
-    </div>
-  </div>
-
-  <!-- CLOSING / VALUE PROPOSITION -->
-  <div class="mt-12 border-t border-slate-700/50 pt-6 text-center">
-    <div class="text-[0.8rem] tracking-wide text-slate-400">
-      Electrical &amp; Computer Engineering prepares you to design the nervous system of modern technology:
-      from embedded intelligence and autonomous flight control to 5G security, photonic sensing,
-      medical imaging, satellite links, high-speed computing hardware, and intelligent power grids.
-    </div>
-  </div>
-</section>
-
-
-
+    </section>
+    <!-- Main Content -->
+    <main class="content">
+        <section class="program-wrapper">
+          <div class="track-grid">
+            <!-- Signals, Systems & Intelligent Foundations -->
+            <article class="track-card">
+              <div class="track-eyebrow">Signal Intelligence</div>
+              <h3 class="track-title">Signals, Systems & Intelligent Foundations</h3>
+              <p class="track-desc">
+              The analytical core of modern ECE: modeling, stability, estimation, optimization.
+              </p>
+              <div class="course-list-wrapper">
+                <ul class="course-list">
+                  <li>Circuits, Devices and Fields</li>
+                  <li>Signals and Systems</li>
+                  <li>Probability and Stochastic Processes for Engineers</li>
+                  <li>Linear System Theory</li>
+                  <li>Estimation Theory and Applications</li>
+                  <li>Modern Convex Optimization</li>
+                </ul>
+              </div>
+            </article>
+
+            <!--Control, Autonomy & Robotics -->
+            <article class="track-card">
+              <div class="track-eyebrow">Autonomy & Robotics</div>
+              <h3 class="track-title">Control, Autonomy & Robotics</h3>
+              <p class="track-desc">
+                Making machines stable, aware, adaptive, and self-directed.
+              </p>
+              <ul class="course-list">
+                <li>Continuous Control Systems</li>
+                <li>Discrete-Time Control Systems</li>
+                <li>Optimal Control and Estimation</li>
+                <li>Decentralized Control and Consensus in Multi-Agent Systems</li>
+                <li>Uncrewed Aerial Vehicle Systems and Control</li>
+                <li>Foundations of Reinforcement Learning</li>
+                <li>Feedback Control in Biological Signaling Pathways</li>
+                <li>Introduction to AI in Robotics & Intelligent Systems</li>
+                <li>Modern Navigation Systems</li>
+              </ul>   
+            </article>
+
+            <!-- Communication, Wireless, Networks & Radar -->
+            <article class="track-card">
+              <div class="track-eyebrow">5G & Secure Wireless</div>
+              <h3 class="track-title">Communication, Wireless, Networks & Radar</h3>
+              <p class="track-desc">
+                Moving information across air, fiber, orbit, and contested spectrum.
+              </p>
+              <div class="course-list-wrapper">
+                <ul class="course-list">
+                  <li>Communications Systems Engineering</li>
+                  <li>Next Generation Telecommunications</li>
+                  <li>Computer and Data Communication Networks</li>
+                  <li>Next Generation Mobile Networks and Security</li>
+                  <li>Wireless and Mobile Cellular Communications</li>
+                  <li>Satellite Communications Systems</li>
+                  <li>Radar Systems</li>
+                  <li>Radar Signal Processing</li>
+                  <li>Synthetic Aperture Radar</li>
+                  <li>Passive Emitter Geo-Location</li>
+                  <li>Digital Receiver Synchronization Techniques</li>
+                  <li>Multirate Signal Processing</li>
+                  <li>Error Control Coding</li>
+                  <li>Iterative Methods in Communication Systems</li>
+                  <li>Software-Defined Radio for Wireless Communications</li>
+                  <li>Image Compression, Packet Video, and Video Processing</li>
+                </ul>   
+              </div>
+            </article>
+            
+            <!-- Signal Processing, Perception & Intelligent Sensing -->
+            <article class="track-card">
+              <div class="track-eyebrow">AI & Perception</div>
+              <h3 class="track-title">Signal Processing, Perception & Intelligent Sensing</h3>
+              <p class="track-desc">
+                Teaching machines to see, hear, interpret, and understand the world.
+              </p>
+                <ul class="course-list">
+                  <li>Digital Signal Processing</li>
+                  <li>Digital Signal Processing Lab / Applications of DSP</li>
+                  <li>Adaptive Signal Processing</li>
+                  <li>Advanced Digital Signal Processing</li>
+                  <li>Machine Learning for Signal Processing</li>
+                  <li>Deep Learning and Generative Artificial Intelligence</li>
+                  <li>Deep Learning for Computer Vision</li>
+                  <li>Machine Perception</li>
+                  <li>Speech Processing / Audio Signal Processing</li>
+                  <li>Introduction to Digital Image and Video Processing</li>
+                  <li>Image Processing & Analysis / Image Engineering</li>
+                </ul>   
+            </article>
+
+            <!-- RF, Photonics & Remote Sensing Hardware -->
+            <article class="track-card">
+              <div class="track-eyebrow">Photonics & Sensing</div>
+              <h3 class="track-title">RF, Photonics & Remote Sensing Hardware</h3>
+              <p class="track-desc">
+                The physical layer: fields, light, antennas, receivers, and high-frequency electronics.
+              </p>
+                <ul class="course-list">
+                  <li>Introduction to Polymeric Materials</li>
+                  <li>Polymer Physics</li>
+                  <li>Polymer Design and Bioconjugation</li>
+                  <li>Colloids and Nanoparticles</li>
+                  <li>Interfacial Science with Applications to Nanoscale Systems</li>
+                </ul>   
+            </article>
+
+            <!-- Computation, Modeling & Intelligent Design -->
+            <article class="track-card">
+              <div class="track-eyebrow">Intelligent Design</div>
+              <h3 class="track-title">Computation, Modeling & Intelligent Design</h3>
+              <p class="track-desc">
+                Simulation, prediction, and digital design for molecules, devices, and full systems.
+              </p>
+                <ul class="course-list">
+                  <li>Intermediate Electromagnetics</li>
+                  <li>Electromagnetic Transmission Systems</li>
+                  <li>Principles of RF and Microwave Circuits / RF and Microwave Circuits</li>
+                  <li>Microwave Systems & Receiver Design</li>
+                  <li>Antenna Systems</li>
+                  <li>Advanced Antenna Systems</li>
+                  <li>Antenna Design for Space Systems</li>
+                  <li>Laser Fundamentals</li>
+                  <li>Laser Systems and Applications</li>
+                  <li>Fundamentals of Photonics and Fiber Optic Systems</li>
+                  <li>Fourier Techniques in Optics</li>
+                  <li>Introduction to Optical Instruments</li>
+                  <li>Advanced Topics in Optical Medical Imaging</li>
+                  <li>Introduction to EO/IR Systems</li>
+                  <li>Propagation and Atmospheric Effects at RF / Microwave / Millimeter Wave</li>
+                </ul>   
+            </article>
+
+            <!-- Embedded Systems, FPGA & Advanced Computing Hardware -->
+            <article class="track-card">
+              <div class="track-eyebrow">Embedded Systems</div>
+              <h3 class="track-title">Embedded Systems, FPGA & Advanced Computing Hardware</h3>
+              <p class="track-desc">
+                Where intelligence meets silicon, firmware, and real-time constraints.
+              </p>
+                <ul class="course-list">
+                  <li>Microprocessors for Robotic Systems</li>
+                  <li>Embedded Microprocessor Systems / Embedded Systems Development Lab</li>
+                  <li>Computer Architecture</li>
+                  <li>FPGA Design Using VHDL</li>
+                  <li>System-on-a-Chip FPGA Design Laboratory</li>
+                  <li>Hardware Architectures for DSP Algorithms</li>
+                  <li>Digital VLSI System Design</li>
+                  <li>Mixed-Mode VLSI Circuit Design</li>
+                  <li>Analog Electronic Circuit Design / Advanced Analog Electronic Circuit Design</li>
+                  <li>High Speed Digital Design</li>
+                  <li>Measurement and Instrumentation</li>
+                  <li>Introduction to the Solid State / Electronic Materials</li>
+                  <li>Introduction to Electronic Packaging</li>
+                </ul>   
+            </article>
+
+            <!-- Power, Energy Systems & Electrification -->
+            <article class="track-card">
+              <div class="track-eyebrow">Energy Systems</div>
+              <h3 class="track-title">Power, Energy Systems & Electrification</h3>
+              <p class="track-desc">
+                Powering vehicles, infrastructure, autonomy, and the grid.
+              </p>
+                <ul class="course-list">
+                  <li>Introduction to Electric Power Systems</li>
+                  <li>Electric Machines and Control for Electrification</li>
+                  <li>Power System Control, Optimization, and Grid Management</li>
+                  <li>Power Electronics / Applications of Power Electronics Design / Advanced Power Electronics</li>
+                  <li>Microwave Systems & Receiver Design</li>
+                  <li>Propagation and Atmospheric Effects at RF / Microwave / Millimeter Wave</li>
+                </ul>   
+            </article>
+        </div>
+      </section>
+    </main>
+
+ <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 ITeccs. All rights reserved.</p>
+  </footer>
+
+  <!-- Custom Chat Button -->
+  <button id="custom-chat-btn">
+    <i class="fas fa-comments"></i>
+  </button>
+
+   <!-- Tawk.to Script -->
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {};
+    var Tawk_LoadStart = new Date();
+
+    (function(){
+      var s1=document.createElement("script"),
+          s0=document.getElementsByTagName("script")[0];
+      s1.async=true;
+      s1.src='https://embed.tawk.to/685e2123390063190e54b4b2/1iunr2sv2';
+      s1.charset='UTF-8';
+      s1.setAttribute('crossorigin','*');
+      s0.parentNode.insertBefore(s1,s0);
+    })();
+
+    // Hide default widget once fully loaded
+    Tawk_API.onLoad = function(){
+      Tawk_API.hideWidget();
+    };
+
+    // Custom button opens chat
+    document.addEventListener("DOMContentLoaded", function(){
+      var btn = document.getElementById("custom-chat-btn");
+      if(btn){
+        btn.addEventListener("click", function(){
+          if(typeof Tawk_API !== "undefined"){
+            Tawk_API.maximize(); // open chat window
+          }
+        });
+      }
+    });
+  </script>
+  <!-- End of Tawk.to Script -->        
+
+  <!-- Embedded Animations -->
+  <script>
+    // Scroll reveal effect
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.track-card, .section-title').forEach(el => observer.observe(el));
+
+    // 3D tilt effect
+    const tiltCards = document.querySelectorAll('.track-card');
+    tiltCards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const rotateY = ((x / rect.width) - 0.5) * 12;
+        const rotateX = ((y / rect.height) - 0.5) * -12;
+        card.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg) scale(1.03)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+      });
+    });
+
+    // Subtle gradient animation
+    document.addEventListener('DOMContentLoaded', () => {
+      const bg = document.querySelector('.animated-bg');
+      let angle = 0;
+      setInterval(() => {
+        angle = (angle + 0.3) % 360;
+        bg.style.background = `linear-gradient(${angle}deg, #1e1f5b, #6a11cb, #2575fc)`;
+      }, 80);
+    });
+  </script>
 </body>
 </html>

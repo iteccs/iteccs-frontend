@@ -1,4 +1,3 @@
-<!-- upskilling.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +18,7 @@
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About Us</a></li>
+      <li><a href="Founder.html">Who We Are</a></li>
       <li><a href="consulting.html">Consulting</a></li>
       <li><a href="education.html">Education</a></li> 
       <li><a href="howtopay.html">How to Pay</a></li>
@@ -29,406 +29,251 @@
       </li>
     </ul>
   </nav>
-
-  <main class="content">
-    <h1></h1>
-    <p></p>
-
-<section class="program-wrapper">
-  <style>
-    .program-wrapper {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-      color: #1a1a1a;
-      background-color: #ffffff;
-      line-height: 1.5;
-      padding: 2rem 1rem 4rem;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    .track-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    @media(min-width: 768px){
-      .track-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media(min-width: 1200px){
-      .track-grid {
-        grid-template-columns: 1fr 1fr 1fr;
-      }
-    }
-
-    .track-card {
-      border: 1px solid rgba(0,0,0,0.07);
-      border-radius: 1rem;
-      padding: 1.5rem 1.5rem 1.25rem;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.04);
-      background: #fff;
-      display: flex;
-      flex-direction: column;
-      min-height: 100%;
-    }
-
-    .track-eyebrow {
-      font-size: .75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: .05em;
-      color: #6b6b6b;
-      margin-bottom: .5rem;
-    }
-
-    .track-title {
-      font-size: 1.125rem;
-      font-weight: 600;
-      color: #111;
-      line-height: 1.3;
-      margin-bottom: .5rem;
-    }
-
-    .track-desc {
-      font-size: .9rem;
-      color: #444;
-      margin-bottom: 1rem;
-    }
-
-    .subcategory {
-      font-size: .8rem;
-      font-weight: 600;
-      color: #111;
-      margin-top: 1rem;
-      margin-bottom: .25rem;
-    }
-
-    .course-list {
-      list-style: none;
-      padding-left: 0;
-      margin: 0;
-      font-size: .9rem;
-      color: #222;
-    }
-
-    .course-list li {
-      padding-left: 1rem;
-      position: relative;
-      margin-bottom: .4rem;
-    }
-
-    .course-list li::before {
-      content: " ";
-      position: absolute;
-      left: 0;
-      color: #6366f1; /* accent dot */
-      font-weight: 600;
-    }
-
-    /* Section header */
-    .hero-heading {
-      font-size: clamp(1.5rem, 1vw + 1rem, 2rem);
-      font-weight: 600;
-      color: #0f172a;
-      line-height: 1.2;
-      max-width: 50ch;
-      margin: 0 auto 0.5rem;
-      text-align: center;
-    }
-
-    .hero-sub {
-      font-size: .95rem;
-      color: #475569;
-      text-align: center;
-      max-width: 70ch;
-      margin: 0 auto 2rem;
-      line-height: 1.5;
-    }
-
-    /* Research / Capstone card layout tweak */
-    .full-row {
-      grid-column: span 1;
-    }
-    @media(min-width:768px){
-      .full-row {
-        grid-column: span 2;
-      }
-    }
-    @media(min-width:1200px){
-      .full-row {
-        grid-column: span 3;
-      }
-    }
-
-  </style>
-
-  <!-- Hero / Intro -->
-  <header>
-
-
-<section id="applied-biomedical-engineering" class="program-block">
-
-  <!-- =======================
-       Header / Hero
-  ======================== -->
-  <header class="program-header">
-    <div class="program-header-content">
-      <h1 class="program-title">Applied Biomedical Engineering</h1>
-      <p class="program-blurb">
-        Physiology, medical devices, imaging, neuroengineering, biomechanics,
-        data science, and translational design for human health.
-      </p>
-    </div>
-
-    <div class="program-meta">
-      <span class="program-pill">Medical Devices</span>
-      <span class="program-pill">Human Performance</span>
-      <span class="program-pill">AI in Healthcare</span>
-    </div>
-  </header>
-
-  <!-- =======================
-       Category Grid
-  ======================== -->
-  <div class="category-grid">
-
-
-    <!-- Physiology & Systems Biology -->
-    <article class="category-card">
-      <div class="card-head">
-        <h2 class="card-title">Physiology &amp; Systems Biology</h2>
-        <p class="card-tagline">Whole-body function, organ systems, and cellular biology as an engineering platform.</p>
+  <!-- Hero Modern -->
+    <section class="hero-modern">
+      <div class="hero-overlay"></div>
+      <img src="biomedical.jpg" alt="Biomedical background" class="hero-bg-modern" />
+      <div class="hero-content-modern">
+        <h2 class="hero-heading">Applied Biomedical Engineering</h2>
+        <p class="hero-sub">
+          Physiology, medical devices, imaging, neuroengineering, biomechanics, data science, and 
+          translational design for human health.<br>
+          Medical Devices Human Performance AI in Healthcare
+        </p>
       </div>
+    </section>
+  <!-- Main Content -->
+    <main class="content">
+        <section class="program-wrapper">
+          <div class="track-grid">
+            <!-- Physiology & Systems Biology -->
+            <article class="track-card">
+              <div class="track-eyebrow">Physiology</div>
+              <h3 class="card-title">Physiology and Systems Biology</h3>
+              <p class="track-desc"> 
+                Whole-body function, organ systems, and cellular biology as an engineering platform.
+              </p>
+              <div class="course-list-wrapper">
+                <ul class="course-list">
+                  <li>Physiology for Applied Biomedical Engineering I</li>
+                  <li>Physiology for Applied Biomedical Engineering II</li>
+                  <li>Molecular Biology</li>
+                  <li>Advances in Pulmonary Therapeutics</li>
+                  <li>Advances in Cardiovascular Medicine</li>
+                  <li>Neuropharmacology</li>
+                  <li>Methods in Neurobiology</li>
+                  <li>Foundations of Computational Biology and Bioinformatics</li>
+                </ul>
+              </div>
 
-      <ul class="course-list">
-        <li>Physiology for Applied Biomedical Engineering I</li>
-        <li>Physiology for Applied Biomedical Engineering II</li>
-        <li>Molecular Biology</li>
-        <li>Advances in Pulmonary Therapeutics</li>
-        <li>Advances in Cardiovascular Medicine</li>
-        <li>Neuropharmacology</li>
-        <li>Methods in Neurobiology</li>
-        <li>Foundations of Computational Biology and Bioinformatics</li>
-      </ul>
-
-      <div class="sub-block">
-        <h3 class="sub-heading">Quantitative Foundations</h3>
-        <ul class="course-list">
-          <li>Mathematical Methods</li>
-          <li>Biological Solid &amp; Fluid Mechanics</li>
-        </ul>
-      </div>
-    </article>
-
-
-    <!-- Biomechanics, Movement & Rehabilitation -->
-    <article class="category-card">
-      <div class="card-head">
-        <h2 class="card-title">Biomechanics, Movement &amp; Rehabilitation</h2>
-        <p class="card-tagline">Human motion, injury, assistive technology, and performance engineering.</p>
-      </div>
-
-      <ul class="course-list">
-        <li>Introduction to Biomechanics</li>
-        <li>Biomechanical Engineering in Sports</li>
-        <li>Orthopedic Biomechanics</li>
-        <li>Biological Solid &amp; Fluid Mechanics</li>
-        <li>Rehabilitation Engineering</li>
-        <li>Rehabilitation Engineering II</li>
-        <li>Computational Methods in Biomedical Engineering</li>
-      </ul>
-    </article>
+              <div class="subcategory">Quantitative Foundations</div>
+                <ul class="course-list">
+                  <li>Mathematical Methods</li>
+                  <li>Biological Solid & Fluid Mechanics</li>
+                </ul>
+            </article>
 
 
-    <!-- Medical Imaging, Sensing & Instrumentation -->
-    <article class="category-card">
-      <div class="card-head">
-        <h2 class="card-title">Medical Imaging, Sensing &amp; Instrumentation</h2>
-        <p class="card-tagline">How we see, sense, measure, and interact with the body.</p>
-      </div>
-
-      <div class="sub-block">
-        <h3 class="sub-heading">Sensors &amp; Devices</h3>
-        <ul class="course-list">
-          <li>Medical Sensors &amp; Devices</li>
-          <li>Principles of Medical Instrumentation and Devices</li>
-          <li>Biochemical Sensors</li>
-          <li>Applied Bioelectrical Engineering</li>
-          <li>Projects in Medical Sensors and Devices</li>
-        </ul>
-      </div>
-
-      <div class="sub-block">
-        <h3 class="sub-heading">Imaging &amp; Image Processing</h3>
-        <ul class="course-list">
-          <li>Principles of Medical Imaging</li>
-          <li>Medical Device Innovation and Design</li>
-          <li>Applied Medical Image Processing</li>
-          <li>MR Imaging in Medicine</li>
-          <li>Biophotonics</li>
-          <li>Principles and Applications of Modern X-ray Imaging and Computed Tomography</li>
-        </ul>
-      </div>
-
-      <div class="sub-block">
-        <h3 class="sub-heading">Neural &amp; Functional Imaging</h3>
-        <ul class="course-list">
-          <li>Functional Neuroimaging and Neural Sensors</li>
-          <li>Frontiers in Neuroengineering</li>
-        </ul>
-      </div>
-    </article>
+            <!-- Biomechanics, Movement & Rehabilitation -->
+            <article class="track-card">
+                <div class="track-eyebrow">Biomechanics</div>
+                <h3 class="card-title">Biomechanics, Movement and Rehabilitation</h3>
+                <p class="track-desc">
+                  Human motion, injury, assistive technology, and performance engineering.
+                </p>
+              <div class="course-list-wrapper">
+                <ul class="course-list">
+                  <li>Introduction to Biomechanics</li>
+                  <li>Biomechanical Engineering in Sports</li>
+                  <li>Orthopedic Biomechanics</li>
+                  <li>Biological Solid and Fluid Mechanics</li>
+                  <li>Rehabilitation Engineering</li>
+                  <li>Rehabilitation Engineering II</li>
+                  <li>Computational Methods in Biomedical Engineering</li>
+                </ul>
+              </div>
+            </article>
 
 
-    <!-- Computational & Data-Driven Biomedical Engineering -->
-    <article class="category-card">
-      <div class="card-head">
-        <h2 class="card-title">Computational &amp; Data-Driven Biomedical Engineering</h2>
-        <p class="card-tagline">Modeling, simulation, AI, and decision support in health.</p>
-      </div>
+            <!-- Medical Imaging, Sensing & Instrumentation -->
+            <article class="track-card">
+              <div class="track-eyebrow">Medical Imaging</div>
+                <h3 class="card-title">Medical Imaging, Sensing and Instrumentation</h3>
+                <p class="track-desc">
+                  How we see, sense, measure, and interact with the body.
+                </p>
+              <div class="subcategory">Sensors and Devices</div>
+              <div class="course-list-wrapper">
+                <ul class="course-list">
+                  <li>Medical Sensors and Devices</li>
+                  <li>Principles of Medical Instrumentation and Devices</li>
+                  <li>Biochemical Sensors</li>
+                  <li>Applied Bioelectrical Engineering</li>
+                  <li>Projects in Medical Sensors and Devices</li>
+                </ul>
+              </div>
 
-      <ul class="course-list">
-        <li>Mathematical Methods</li>
-        <li>Computational Methods in Biomedical Engineering</li>
-        <li>Advanced Signal Processing for Biomedical Engineers</li>
-        <li>Biomedical Data Science</li>
-        <li>Artificial Intelligence and Machine Learning for Global Health</li>
-        <li>Sparse Representations in Computer Vision and Machine Learning</li>
-        <li>Computational Medicine: Cardiology</li>
-        <li>Models of the Neuron</li>
-      </ul>
+              <div class="subcategory">Imaging and Image Processing</div>
+                <ul class="course-list">
+                  <li>Principles of Medical Imaging</li>
+                  <li>Medical Device Innovation and Design</li>
+                  <li>Applied Medical Image Processing</li>
+                  <li>MR Imaging in Medicine</li>
+                  <li>Biophotonics</li>
+                  <li>Principles and Applications of Modern X-ray Imaging and Computed Tomography</li>
+                </ul>
 
-      <div class="sub-block">
-        <h3 class="sub-heading">Bioinformatics &amp; Systems-Level Insight</h3>
-        <ul class="course-list">
-          <li>Foundations of Computational Biology and Bioinformatics</li>
-          <li>Modeling Approaches to Cell and Tissue Engineering</li>
-        </ul>
-      </div>
-    </article>
+              <div class="subcategory"> Neural and Functional Imaging</div>
+                <ul class="course-list">
+                  <li>Functional Neuroimaging and Neural Sensors</li>
+                  <li>Frontiers in Neuroengineering</li>
+                </ul>
+            </article>
 
+            <!-- Computational & Data-Driven Biomedical Engineering -->
+            <article class="track-card">
+              <div class="track-eyebrow">Computational Methods</div>
+              <h3 class="card-title">Computational and Data-Driven Biomedical Engineering</h3>
+              <p class="track-desc">Modeling, simulation, AI, and decision support in health.</p>
+  
+              <div class="course-list-wrapper">
+                <ul class="course-list">
+                  <li>Mathematical Methods</li>
+                  <li>Computational Methods in Biomedical Engineering</li>
+                  <li>Advanced Signal Processing for Biomedical Engineers</li>
+                  <li>Biomedical Data Science</li>
+                  <li>Artificial Intelligence and Machine Learning for Global Health</li>
+                  <li>Sparse Representations in Computer Vision and Machine Learning</li>
+                  <li>Computational Medicine: Cardiology</li>
+                  <li>Models of the Neuron</li>
+                </ul>
+              </div>
 
-    <!-- Cell, Tissue & Regenerative Engineering -->
-    <article class="category-card">
-      <div class="card-head">
-        <h2 class="card-title">Cell, Tissue &amp; Regenerative Engineering</h2>
-        <p class="card-tagline">From cells to tissues to organ-level repair and regeneration.</p>
-      </div>
+                <div class="subcategory">Bioinformatics and Systems-Level Insight</div>
+                <ul class="course-list">
+                  <li>Foundations of Computational Biology and Bioinformatics</li>
+                  <li>Modeling Approaches to Cell and Tissue Engineering</li>
+                </ul>   
+            </article>
 
-      <ul class="course-list">
-        <li>Molecular Biology</li>
-        <li>Cell and Tissue Engineering</li>
-        <li>Regenerative Tissue Engineering</li>
-        <li>Biomaterials</li>
-        <li>Biomimetics in Biomedical Engineering</li>
-        <li>Biochemical and Cellular Engineering</li>
-        <li>Biomedical Applications of Glycoengineering</li>
-        <li>Immunoengineering</li>
-      </ul>
+            <!-- Cell, Tissue & Regenerative Engineering -->
+            <article class="track-card">
+              <div class="track-eyebrow">Cell Engineering</div>
+              <h3 class="card-title">Cell, Tissue and Regenerative Engineering</h3>
+              <p class="track-desc">From cells to tissues to organ-level repair and regeneration.</p>
+              
+              <div class="course-list-wrapper">
+                <ul class="course-list">
+                  <li>Molecular Biology</li>
+                  <li>Cell and Tissue Engineering</li>
+                  <li>Regenerative Tissue Engineering</li>
+                  <li>Biomaterials</li>
+                  <li>Biomimetics in Biomedical Engineering</li>
+                  <li>Biochemical and Cellular Engineering</li>
+                  <li>Biomedical Applications of Glycoengineering</li>
+                  <li>Immunoengineering</li>
+                </ul>
+              </div>
 
-      <div class="sub-block">
-        <h3 class="sub-heading">Modeling &amp; Control of Biological Repair</h3>
-        <ul class="course-list">
-          <li>Modeling Approaches to Cell and Tissue Engineering</li>
-        </ul>
-      </div>
-    </article>
-
-
-    <!-- Neural Engineering & Neurotechnology -->
-    <article class="category-card">
-      <div class="card-head">
-        <h2 class="card-title">Neural Engineering &amp; Neurotechnology</h2>
-        <p class="card-tagline">Interfaces, sensing, stimulation, decoding, and repair of the nervous system.</p>
-      </div>
-
-      <ul class="course-list">
-        <li>Functional Neuroimaging and Neural Sensors</li>
-        <li>Neural Prosthetics: Science, Technology, and Applications</li>
-        <li>Frontiers in Neuroengineering</li>
-        <li>Introduction to Brain-Computer Interfaces</li>
-        <li>Models of the Neuron</li>
-        <li>Neuropharmacology</li>
-        <li>Methods in Neurobiology</li>
-      </ul>
-    </article>
-
-
-    <!-- Cardiovascular, Pulmonary & Clinical Systems -->
-    <article class="category-card">
-      <div class="card-head">
-        <h2 class="card-title">Cardiovascular, Pulmonary &amp; Clinical Systems</h2>
-        <p class="card-tagline">Heart, lung, circulation, and physiological monitoring as engineered systems.</p>
-      </div>
-
-      <ul class="course-list">
-        <li>Advances in Cardiovascular Medicine</li>
-        <li>Advances in Pulmonary Therapeutics</li>
-        <li>Biological Solid &amp; Fluid Mechanics</li>
-        <li>Computational Medicine: Cardiology</li>
-        <li>Applied Bioelectrical Engineering</li>
-        <li>Biomedical Engineering Practice and Innovation</li>
-      </ul>
-    </article>
+              <div class="subcategory">Modeling & Control of Biological Repair</div>
+              <ul class="course-list">
+                <li>Modeling Approaches to Cell and Tissue Engineering</li>
+              </ul>
+             
+            </article>
 
 
-    <!-- Regulatory, Ethics, Translation & Entrepreneurship -->
-    <article class="category-card">
-      <div class="card-head">
-        <h2 class="card-title">Regulation, Ethics &amp; Translational Innovation</h2>
-        <p class="card-tagline">From idea to clinic: safety, compliance, IP, markets, business.</p>
-      </div>
-
-      <ul class="course-list">
-        <li>Regulation of Medical Devices</li>
-        <li>Ethics in Biomedical Engineering Research and Management</li>
-        <li>Medical Device Innovation and Design</li>
-        <li>Medical Device Marketing and Market Position Establishment</li>
-        <li>Biomedical Engineering Practice and Innovation</li>
-        <li>Bioentrepreneurship</li>
-        <li>Global Health Engineering</li>
-      </ul>
-    </article>
-
-
-    <!-- Global Health & Health Equity -->
-    <article class="category-card">
-      <div class="card-head">
-        <h2 class="card-title">Global Health &amp; Health Equity Engineering</h2>
-        <p class="card-tagline">Building technologies and systems that work in the real world, not just the lab.</p>
-      </div>
-
-      <ul class="course-list">
-        <li>Artificial Intelligence and Machine Learning for Global Health</li>
-        <li>Global Health Engineering</li>
-        <li>Biomedical Data Science</li>
-        <li>Medical Device Innovation and Design</li>
-        <li>Medical Sensors &amp; Devices</li>
-        <li>Projects in Medical Sensors and Devices</li>
-      </ul>
-    </article>
-
-  </div><!-- /category-grid -->
-</section>
+            <!-- Neural Engineering & Neurotechnology -->
+            <article class="track-card">
+              <div class="track-eyebrow"> Neural Engineering</div>
+              <h3 class="card-title">Neural Engineering and Neurotechnology</h3>
+              <p class="track-desc">
+                Interfaces, sensing, stimulation, decoding, and repair of the nervous system.
+              </p>
+              
+              <div class="course-list-wrapper">
+                <ul class="course-list">
+                  <li>Functional Neuroimaging and Neural Sensors</li>
+                  <li>Neural Prosthetics: Science, Technology, and Applications</li>
+                  <li>Frontiers in Neuroengineering</li>
+                  <li>Introduction to Brain-Computer Interfaces</li>
+                  <li>Models of the Neuron</li>
+                  <li>Neuropharmacology</li>
+                  <li>Methods in Neurobiology</li>
+                </ul>
+              </div>
+            </article>
 
 
+            <!-- Cardiovascular, Pulmonary & Clinical Systems -->
+            <article class="track-card">
+              <div class="track-eyebrow">Cardiovascular and Pulmonary</div>
+                <h3 class="card-title">Cardiovascular, Pulmonary and Clinical Systems</h3>
+                <p class="track-desc">Heart, lung, circulation, and physiological monitoring as engineered systems.</p>
+              <div class="course-list-wrapper">
+                <ul class="course-list">
+                  <li>Advances in Cardiovascular Medicine</li>
+                  <li>Advances in Pulmonary Therapeutics</li>
+                  <li>Biological Solid and Fluid Mechanics</li>
+                  <li>Computational Medicine: Cardiology</li>
+                  <li>Applied Bioelectrical Engineering</li>
+                  <li>Biomedical Engineering Practice and Innovation</li>
+                </ul>
+              </div>
+            </article>
 
 
-  </main>
+            <!-- Regulatory, Ethics, Translation & Entrepreneurship -->
+            <article class="track-card">
+              <div class="track-eyebrow">Medical Devices</div>
+              <h3 class="card-title">Regulation, Ethics and Translational Innovation</h3>
+              <p class="track-desc">From idea to clinic: safety, compliance, IP, markets, business.</p>
+              
+              <div class="course-list-wrapper">
+                <ul class="course-list">
+                  <li>Regulation of Medical Devices</li>
+                  <li>Ethics in Biomedical Engineering Research and Management</li>
+                  <li>Medical Device Innovation and Design</li>
+                  <li>Medical Device Marketing and Market Position Establishment</li>
+                  <li>Biomedical Engineering Practice and Innovation</li>
+                  <li>Bioentrepreneurship</li>
+                  <li>Global Health Engineering</li>
+                </ul>
+              </div>
+            </article>
 
+
+            <!-- Global Health & Health Equity -->
+            <article class="track-card">
+              <div class="track-eyebrow">Global Health</div>
+              <h3 class="card-title">Global Health and Health Equity Engineering</h3>
+              <p class="track-desc">Building technologies and systems that work in the real world, not just the lab.</p>
+          
+             <div class="course-list-wrapper">
+                <ul class="course-list">
+                  <li>Artificial Intelligence and Machine Learning for Global Health</li>
+                  <li>Global Health Engineering</li>
+                  <li>Biomedical Data Science</li>
+                  <li>Medical Device Innovation and Design</li>
+                  <li>Medical Sensors and Devices</li>
+                  <li>Projects in Medical Sensors and Devices</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </section>
+    </main>
+
+ <!-- Footer -->
   <footer>
     <p>&copy; 2025 ITeccs. All rights reserved.</p>
   </footer>
+
   <!-- Custom Chat Button -->
   <button id="custom-chat-btn">
     <i class="fas fa-comments"></i>
-  </button> 
-
-  <!-- Tawk.to Script -->
+  </button>
+<!-- Tawk.to Script -->
   <script type="text/javascript">
     var Tawk_API = Tawk_API || {};
     var Tawk_LoadStart = new Date();
@@ -460,6 +305,43 @@
       }
     });
   </script>
-  <!-- End of Tawk.to Script -->        
+  <!-- End of Tawk.to Script -->  
+  <!-- Embedded Animations -->
+  <script>
+    // Scroll reveal effect
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.track-card, .section-title').forEach(el => observer.observe(el));
+
+    // 3D tilt effect
+    const tiltCards = document.querySelectorAll('.track-card');
+    tiltCards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const rotateY = ((x / rect.width) - 0.5) * 12;
+        const rotateX = ((y / rect.height) - 0.5) * -12;
+        card.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg) scale(1.03)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+      });
+    });
+
+    // Subtle gradient animation
+    document.addEventListener('DOMContentLoaded', () => {
+      const bg = document.querySelector('.animated-bg');
+      let angle = 0;
+      setInterval(() => {
+        angle = (angle + 0.3) % 360;
+        bg.style.background = `linear-gradient(${angle}deg, #1e1f5b, #6a11cb, #2575fc)`;
+      }, 80);
+    });
+  </script>
 </body>
 </html>

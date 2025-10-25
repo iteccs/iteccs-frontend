@@ -1,78 +1,267 @@
-<!-- research.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us - ITeccs</title>
+  <title>Training | ITeccs</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Fonts and Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>  
+    .hero-sub {
+      font-size: 1.15rem;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.95); /* almost white */
+    }
+    main.content {
+      max-width: 1200px; margin:4rem auto; padding:3rem 2rem;
+      opacity:0; transform:translateY(20px);
+      transition:opacity 1s ease, transform 1s ease;
+    }
+    section {margin:4rem 0;}
+    section h2 {font-size:2rem; margin-bottom:1rem; color:#2575fc; border-left:5px solid #2575fc; padding-left:10px;}
+    section p {font-size:1rem; color:#444; margin-bottom:1rem;}
+    
+    .cards-grid {display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:2rem;}
+    .glass-card {
+      background: rgba(255,255,255,0.5);
+      backdrop-filter: blur(10px) saturate(120%);
+      -webkit-backdrop-filter: blur(10px) saturate(120%);
+      border:1px solid rgba(255,255,255,0.3);
+      border-radius:20px;
+      padding:2rem;
+      box-shadow:0 8px 24px rgba(0,0,0,0.08);
+      position:relative;
+      overflow:hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+     .course-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.course-card img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 1;
+}
+
+.course-card .card-text {
+  position: relative;
+  z-index: 2;
+  transition: opacity 0.5s ease;
+  text-align: center;
+}
+
+.course-card:hover img {
+  opacity: 1;
+}
+
+.course-card:hover .card-text {
+  opacity: 0;
+}
+
+    .glass-card:hover {
+      transform: translateY(-3px);
+      box-shadow:0 16px 48px rgba(0,0,0,0.12);
+    }
+    .course-card .card-icon-circle {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 20px auto;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: #2575fc;
+  box-shadow: 0 4px 15px rgba(37,117,252,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: pulse 2s infinite alternate;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 4px 15px rgba(37,117,252,0.2); }
+  100% { transform: scale(1.1); box-shadow: 0 8px 25px rgba(37,117,252,0.4); }
+}
+
+.course-card:hover .card-icon-circle {
+  transform: scale(1.2);
+  box-shadow: 0 12px 35px rgba(37,117,252,0.5);
+}
+
+
+    /* CTA Button */
+    .cta-button {
+      background-color: #ffcc00; color:black; padding:12px 24px; border:none;
+      border-radius:8px; font-weight:bold; text-decoration:none;
+      transition: background 0.3s ease, transform 0.3s ease;
+      display:inline-block;
+    }
+    .cta-button:hover {background-color:#f5b800; transform:translateY(-2px);}
+  </style>
 </head>
 <body>
+  <!-- Navbar -->
   <nav class="navbar">
-    <div class="logo">
-      <img src="logo.png" alt="ITeccs Logo">
-    </div>
+    <div class="logo"><img src="logo.png" alt="ITeccs Logo"></div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About Us</a></li>
+      <li><a href="Founder.html">Who We Are</a></li>
       <li><a href="consulting.html">Consulting</a></li>
-      <li><a href="education.html">Education</a></li>  
+      <li><a href="education.html">Education</a></li>
       <li><a href="howtopay.html">How to Pay</a></li>
-      <li>
-        <a href="contact.html" class="contact-nav-button">
-          <i class="fas fa-envelope"></i> Contact Us
-        </a>
-      </li>
+      <li><a href="contact.html" class="contact-nav-button"><i class="fas fa-envelope"></i> Contact Us</a></li>
     </ul>
   </nav>
+<!-- Hero Modern -->
+    <section class="hero-modern">
+      <img src="training-hero.jpg" class="hero-bg-modern" alt=training Background">
+      <div class="hero-overlay"></div>
 
-  <main class="content">
-    <h1></h1>
+      <div class="hero-content-modern">
+        <h1 class="hero-heading">Specialized Training & Certification Domains</h1>
+        <p class="hero-sub">
+          ITECCS empowers innovators with hands-on technical programs bridging theory and industry-ready skills. 
+        Our training combines <strong>theory, simulation, and practice</strong> to make learners industry-ready.
+        </p>
+      </div>
+    </section>
+  <main class="content" id="mainContent">
 
-    
+    <!-- Training Domains / Expertise -->
+      <section>
+        <h2>Our Expertise</h2>
+        <div class="cards-grid">
+          <div class="glass-card course-card">
+            <div class="card-icon-circle" style="background-color:#FFF0E0;">
+              <i class="fas fa-calculator"></i>
+            </div>
+            <h3>Applied & Computational Mathematics</h3>
+            <p>PDEs, numerical methods, optimization, linear algebra, HPC modeling, and inverse problems.</p>
+          </div>
+          <div class="glass-card course-card">
+            <div class="card-icon-circle" style="background-color:#E0FFF5;">
+              <i class="fas fa-robot"></i>
+            </div>
+            <h3>Data Science & AI</h3>
+            <p>Deep learning, physics-informed AI, machine learning workflows, and uncertainty quantification.</p>
+          </div>
+          <div class="glass-card course-card">
+            <div class="card-icon-circle" style="background-color:#FFF0F0;">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <h3>Advanced Software Training</h3>
+            <p>Python, MATLAB, Fortran, COMSOL, ANSYS, OpenFOAM, TensorFlow, PyTorch, visualization tools.</p>
+          </div>
+          <div class="glass-card course-card">
+            <div class="card-icon-circle" style="background-color:#E0E0FF;">
+              <i class="fas fa-cogs"></i>
+            </div>
+            <h3>Computation & Data-Driven Engineering</h3>
+            <p>Digital twins, AI-driven modeling, simulation pipelines, and visualization tools.</p>
+          </div>
+        </div>
+      </section>
 
-<section id="training-knowledge-transfer">
-  <h2>Specialized Training & Certification Domains </h2>
-  <p>
-    ITECCS integrates cutting-edge science with modern software training, 
-    empowering innovators through <strong>custom technical programs</strong> 
-    that combine <strong>theory, simulation, and hands-on practice</strong>, 
-    bridging academic insight with industry-ready skills.
-  </p>
+      <!-- Methodology -->
+      <section>
+        <h2>Our Training Methodology</h2>
+        <div class="cards-grid">
+          <div class="glass-card course-card">
+            <div class="card-icon-circle" style="background-color:#FFF5E0;">
+              <i class="fas fa-book"></i>
+            </div>
+            <h3>Theory</h3>
+            <p>Learn foundational concepts with clear, structured lectures.</p>
+          </div>
+          <div class="glass-card course-card">
+            <div class="card-icon-circle" style="background-color:#E0FFF5;">
+              <i class="fas fa-flask"></i>
+            </div>
+            <h3>Simulation</h3>
+            <p>Apply theory in lab and software simulations.</p>
+          </div>
+          <div class="glass-card course-card">
+            <div class="card-icon-circle" style="background-color:#FFF0F5;">
+              <i class="fas fa-hands"></i>
+            </div>
+            <h3>Hands-on Practice</h3>
+            <p>Work on real projects and exercises for mastery.</p>
+          </div>
+          <div class="glass-card course-card">
+            <div class="card-icon-circle" style="background-color:#E0E0FF;">
+              <i class="fas fa-certificate"></i>
+            </div>
+            <h3>Certification</h3>
+            <p>Get recognized for your skills with our certificate programs.</p>
+          </div>
+        </div>
+      </section>
 
-  <h3>Our expertise spans:</h3>
-  <ul>
-    <li><strong>Applied & Computational Mathematics</strong> – PDEs, numerical methods, optimization, linear algebra, HPC modeling, and inverse problems.</li>
-    <li><strong>Data Science & AI</strong> – Deep learning, physics-informed AI, machine learning workflows, and uncertainty quantification.</li>
-    <li><strong> Advanced training on Python, MATLAB, Fortran, COMSOL, ANSYS, OpenFOAM, TensorFlow, PyTorch, and visualization tools </strong>  — equipping learners to master high-level computational modeling, simulation, and data analysis. </li>
-    <li><strong>Computation & Data-Driven Engineering</strong> – Digital twins, AI-driven modeling, simulation pipelines, and visualization tools.</li>
-    <li><strong>Aerospace, Civil, Mechanical & Biomedical Engineering</strong> – CFD, turbulence, multiphysics design, structural analysis, biofluids, and tissue modeling.</li>
-    <li><strong>Cybersecurity, Cloud & Software Engineering</strong> – Cloud architecture, AI-powered cybersecurity, secure systems, and DevOps integration.</li>
-    <li><strong>Quantum Computing & Advanced Physics</strong> – Quantum algorithms, nanoscale systems, and advanced simulation frameworks.</li>
-    <li><strong>Renewable Energy & Environmental Sustainability</strong> – Energy storage, porous media modeling, and AI for climate and sustainability.</li>
-    <li><strong>High-Performance Computing & Scientific Computing</strong> – Large-scale simulations and advanced computational tools.</li>
-    <li><strong>Advanced Applied Mathematics & Engineering</strong> – Mathematical modeling and engineering problem-solving expertise.</li>
-  </ul>
-</section>
+        <!-- Featured Courses -->
+      <section>
+        <h2>Featured Courses</h2>
+        <div class="cards-grid">
+          <div class="glass-card course-card">
+            <img src="python_course.jpg" alt="Python Course">
+            <div class="card-text">
+              <h3>Advanced Python for Computational Engineering</h3>
+              <p>40 hours, using MATLAB & PyTorch for simulations and modeling.</p>
+            </div>
+          </div>
+          <div class="glass-card course-card">
+            <img src="data_ai_course.jpg" alt="Data AI">
+            <div class="card-text">
+              <h3>Data Science & AI Applications</h3>
+              <p>Learn deep learning, machine learning workflows, and uncertainty quantification.</p>
+            </div>
+          </div>
+          <div class="glass-card course-card">
+            <img src="hpc_course.jpg" alt="HPC Course">
+            <div class="card-text">
+              <h3>High-Performance Computing</h3>
+              <p>Simulate large-scale problems using HPC clusters and advanced numerical methods.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
+          <!-- CTA -->
+          <section class="glass-card" style="text-align:center;">
+            <h2>Ready to Start Your Training?</h2>
+            <p>Contact us today to enroll in our programs and accelerate your career.</p>
+            <a href="contact.html" class="cta-button">Get Started</a>
+          </section>
 
-
-    <p></p>
   </main>
 
   <footer>
     <p>&copy; 2025 ITeccs. All rights reserved.</p>
   </footer>
-  <!-- Custom Chat Button -->
+
   <button id="custom-chat-btn">
     <i class="fas fa-comments"></i>
   </button> 
 
-  <!-- Tawk.to Script -->
+  <script>
+    // Fade-in main content
+    const mainContent = document.getElementById('mainContent');
+    window.addEventListener('load', () => {
+      mainContent.style.opacity = '1';
+      mainContent.style.transform = 'translateY(0)';
+    });
+    document.getElementById("custom-chat-btn").addEventListener("click", () => {
+      if (typeof Tawk_API !== "undefined") Tawk_API.maximize();
+    });
+  </script>
+<!-- Tawk.to Script -->
   <script type="text/javascript">
     var Tawk_API = Tawk_API || {};
     var Tawk_LoadStart = new Date();
@@ -104,6 +293,6 @@
       }
     });
   </script>
-  <!-- End of Tawk.to Script -->        
+  <!-- End of Tawk.to Script -->     
 </body>
 </html>

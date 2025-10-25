@@ -1,4 +1,3 @@
-<!-- upskilling.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us - ITeccs</title>
   <link rel="stylesheet" href="style.css">
+
   <!-- Fonts and Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -19,6 +19,7 @@
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About Us</a></li>
+      <li><a href="Founder.html">Who We Are</a></li>
       <li><a href="consulting.html">Consulting</a></li>
       <li><a href="education.html">Education</a></li> 
       <li><a href="howtopay.html">How to Pay</a></li>
@@ -30,377 +31,256 @@
     </ul>
   </nav>
 
+  <!-- Hero Modern -->
+    <section class="hero-modern">
+      <div class="hero-overlay"></div>
+      <img src="material.jpg" alt="Materials Engineering background" class="hero-bg-modern" />
+      
+      <div class="hero-content-modern">
+        <h2 class="hero-heading">Materials Science & Engineering</h2>
+        <p class="hero-sub">
+          Our curriculum is built around how materials are designed, made,
+          measured, and used in the real world— from surgical implants and
+          jet engines to clean energy systems and stealth technology.
+        </p>
+        <p class="hero-sub">Explore our learning pathways below. Each pathway reflects an area where our students build depth,
+           do hands-on work, and solve real problems alongside faculty.
+        </p>
+      </div>
+    </section>
+
+  <!-- Main Content -->
   <main class="content">
-    <h1></h1>
-    <p></p>
+      <section class="program-wrapper">
+        <div class="track-grid">
+          <!-- Foundations -->
+          <article class="track-card">
+            <div class="track-eyebrow">Foundations</div>
+            <h3 class="track-title">Foundations of Materials Science & Engineering</h3>
+            <p class="track-desc">
+              Start here. These courses give you the language of materials — structure, 
+              phases, thermodynamics, transport, and how processing changes performance.
+            </p>
+            <div class="course-list-wrapper">
+              <ul class="course-list">
+                <li>Materials in Today’s World</li>
+                <li>The Science of Materials in Everyday Life</li>
+                <li>Elements of Materials Engineering</li>
+                <li>Fundamentals of Materials Engineering</li>
+                <li>Fundamentals of Materials Science</li>
+                <li>Materials Engineering Transition</li>
+                <li>Structure and Properties of Materials</li>
+                <li>Thermodynamics and Kinetics of Materials</li>
+                <li>Thermodynamics of Materials Systems</li>
+                <li>Physical Properties of Materials</li>
+                <li>Introduction to Solid State Chemistry</li>
+                <li>Crystallography and Crystal Structures</li>
+                <li>Mineralogy</li>
+                <li>Transport Phenomena in Materials Science and Engineering</li>
+              </ul> 
+            </div> 
+          </article>
 
-<section class="program-wrapper">
-  <style>
-    .program-wrapper {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-      color: #1a1a1a;
-      background-color: #ffffff;
-      line-height: 1.5;
-      padding: 2rem 1rem 4rem;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
+          <!-- Electronic Materials -->
+          <article class="track-card">
+            <div class="track-eyebrow">Electronic Materials</div>
+            <h3 class="track-title">Electronics, Photonics & Intelligent Functional Materials</h3>
+            <p class="track-desc">
+              How materials handle electricity, magnetism, light, heat, and radiation — and how that becomes devices,
+              sensors, stealth systems, and energy technology.
+            </p>
+            <div class="course-list-wrapper">
+              <ul class="course-list">
+                <li>Fundamentals of Electronic Materials</li>
+                <li>Electrical, Optical, and Magnetic Properties of Materials</li>
+                <li>Electronic, Magnetic, and Optical Properties of Materials Laboratory</li>
+                <li>Semiconductor Processing</li>
+                <li>Fundamentals of Metamaterials</li>
+                <li>Stealth Science and Engineering</li>
+                <li>Nuclear Materials</li>
+                <li>Principles of Materials Corrosion</li>
+              </ul>
+            </div>
+          </article>
 
-    .track-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2rem;
-      margin-top: 2rem;
-    }
+          <!--Biomaterials, Biomechanics & Human-Centered Materials-->
+          <article class="track-card">
+              <div class="track-eyebrow">Biomaterials & Biomechanics</div>
+              <h3 class="track-title">Biomaterials, Biomechanics & Human-Centered Materials</h3>
+              <p class="track-desc">
+                Where engineered matter meets the human body. Design implants,
+                soft tissue interfaces, responsive materials, and medical devices that actually work in living systems.
+              </p>
+              <div class="course-list-wrapper">
+                <ul class="course-list">
+                  <li>Introductory Biomaterials</li>
+                  <li>Biocompatibility Considerations of Biomaterials</li>
+                  <li>Applications of Biomaterials</li>
+                  <li>Biomaterials</li>
+                  <li>Musculoskeletal Biomechanics</li>
+                  <li>Biomechanics of the Cell</li>
+                  <li>Biomechanics of Development</li>
+                  <li>Biosolid Mechanics</li>
+                  <li>Biosensing & BioMEMS</li>
+                  <li>Introduction to Biophotonics</li>
+                  <li>Effective and Economic Design for Biomedical Instrumentation</li>
+                </ul>
+              </div>
+          </article>
 
-    @media(min-width: 768px){
-      .track-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
+          <!--Strength, Reliability & Extreme Environments-->
+          <article class="track-card">
+              <div class="track-eyebrow">Environments</div>
+              <h3 class="track-title">Strength, Reliability & Extreme Environments</h3>
+              <p class="track-desc">
+                Design for the real world, not the ideal one.
+                Predict and prevent failure under load, heat, impact, pressure, radiation, and time.
+              </p>
+              <div class="course-list-wrapper">
+                <ul class="course-list">
+                  <li>Mechanics-Based Design</li>
+                  <li>Mechanical Behavior of Materials</li>
+                  <li>Mechanical Behavior of Materials Laboratory</li>
+                  <li>Mechanical Properties of Materials</li>
+                  <li>Spacecrafts, Submarines, and Glaciers: Solid Mechanics in Extreme Environments</li>
+                  <li>Nondestructive Testing for In Situ Determination of Material Properties</li>
+                  <li>Stress Waves, Impacts and Shockwaves</li>
+                </ul>
+              </div>
+          </article>
 
-    @media(min-width: 1200px){
-      .track-grid {
-        grid-template-columns: 1fr 1fr 1fr;
-      }
-    }
+          <!--Metals, Ceramics & Microstructure Engineering-->
+          <article class="track-card">
+              <div class="track-eyebrow">Microstructure Engineering</div>
+              <h3 class="track-title">Metals, Ceramics & Microstructure Engineering</h3>
+              <p class="track-desc">
+                Control a material’s internal structure and you control its performance. This pathway is about heat treatment,
+                grain size, phase transformations, defects, irradiation, and advanced surfaces.
+              </p>
+              <div class="course-list-wrapper">
+                <ul class="course-list">
+                  <li>Materials Characterization</li>
+                  <li>Applied Materials Analysis</li>
+                  <li>Orientation Mapping of Crystalline Materials</li>
+                  <li>Physical Metallurgy</li>
+                  <li>Metals and Alloys</li>
+                  <li>Physical Ceramics</li>
+                  <li>Ceramic and Glass Materials Processing Laboratory</li>
+                  <li>Materials Laboratory I</li>
+                  <li>Materials Laboratory II</li>
+                  <li>Nuclear Materials</li>
+                  <li>Principles of Materials Corrosion</li>
+                </ul>
+              </div>
+          </article>
 
-    .track-card {
-      border: 1px solid rgba(0,0,0,0.07);
-      border-radius: 1rem;
-      padding: 1.5rem 1.5rem 1.25rem;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.04);
-      background: #fff;
-      display: flex;
-      flex-direction: column;
-      min-height: 100%;
-    }
+          <!--Polymers, Soft Matter & Composite Systems-->
+          <article class="track-card">
+              <div class="track-eyebrow">Polymer</div>
+              <h3 class="track-title">Polymers, Soft Matter & Composite Systems</h3>
+              <p class="track-desc">
+                Lightweight. High strength. Flexible. Biocompatible. Processable.
+                The future is multi-phase and multifunctional — from structural composites to biomedical polymers.
+              </p>
+              <div class="course-list-wrapper">
+                <ul class="course-list">
+                  <li>Introduction to Polymer Science</li>
+                  <li>Polymer Engineering</li>
+                  <li>Laboratory in Polymer Science</li>
+                  <li>Composite Materials</li>
+                  <li>Materials Selection and Design I and II</li>
+                  <li>Physical Metallurgy and Modeling of Metal Casting</li>
+                  <li>Ceramic and Glass Materials Processing Laboratory</li>
+                  <li>Bladesmithing</li>
+                </ul>
+              </div>
+          </article>
 
-    .track-eyebrow {
-      font-size: .75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: .05em;
-      color: #6b6b6b;
-      margin-bottom: .5rem;
-    }
+          <!--Advanced Manufacturing & Additive-->
+          <article class="track-card">
+              <div class="track-eyebrow">Manufacturing</div>
+              <h3 class="track-title">Advanced Manufacturing & Additive</h3>
+              <p class="track-desc">
+                Turn ideas into hardware. Learn modern manufacturing, metal additive,
+                ceramic processing, thin films, casting, and cleanroom fabrication — with real equipment.
+              </p>
+              <div class="course-list-wrapper">
+                <ul class="course-list">
+                  <li>Manufacturing Materials and Processes</li>
+                  <li>Chemical Synthesis and Processing of Advanced Materials</li>
+                  <li>Powder Processing</li>
+                  <li>Micro and Nano Structured Materials & Devices</li>
+                  <li>Introduction to Micro- and Nano-fabrication</li>
+                  <li>Metal Additive Manufacturing</li>
+                  <li>Design for Additive Manufacturing</li>
+                  <li>Elementary Metal Casting Laboratory</li>
+                  <li>Advanced Metal Casting Laboratory</li>
+                  <li>Foundry Safety</li>
+                  <li>Bladesmithing</li>
+                </ul>
+              </div>
+              <p class="track-desc">
+              <i>These courses emphasize safety culture, process qualification, and manufacturability at scale — skills
+              our graduates use immediately in aerospace, energy, defense, biomedical, and advanced manufacturing.</i>
+              </p>
+          </article>
 
-    .track-title {
-      font-size: 1.125rem;
-      font-weight: 600;
-      color: #111;
-      line-height: 1.3;
-      margin-bottom: .5rem;
-    }
+          <!--Nanoscience, Surfaces & Atomic-Scale Design-->
+          <article class="track-card">
+              <div class="track-eyebrow">Nanoscience</div>
+              <h3 class="track-title">Nanoscience, Surfaces & Atomic-Scale Design</h3>
+              <p class="track-desc">
+                Design at the nanoscale to control behavior at the macroscale.
+                Surfaces, thin films, catalysis, MEMS, quantum-relevant structure, and next-generation sensors.
+              </p>
+              <div class="course-list-wrapper">
+                <ul class="course-list">
+                  <li>Introduction to Nanotechnology</li>
+                  <li>Nanomaterials</li>
+                  <li>Chemistry of Nanomaterials</li>
+                  <li>Micro and Nano Structured Materials & Devices</li>
+                  <li>Introduction to Micro- and Nano-fabrication</li>
+                  <li>Semiconductor Processing</li>
+                  <li>Biosensing & BioMEMS</li>
+                  <li>Scanning Electron Microscopy: Fundamentals of Nanocharacterization and Nanofabrication</li>
+                  <li>Orientation Mapping of Crystalline Materials</li>
+                  <li>Materials Optimization Through Designed Experiments</li>
+                </ul>
+              </div>
+          </article>
 
-    .track-desc {
-      font-size: .9rem;
-      color: #444;
-      margin-bottom: 1rem;
-    }
+          <!--Data, Simulation, Professional Practice & Capstone-->
+          <article class="track-card">
+              <div class="track-eyebrow">Computing, Modeling & Data</div>
+              <h3 class="track-title">Data, Simulation, Professional Practice & Capstone</h3>
+              <p class="track-desc">
+                You won’t just learn science — you’ll learn to work like an engineer: coding,
+                modeling, experimental design, communication, ethics, global impact, and real client-driven design.
+              </p>
+              <div class="course-list-wrapper">
+                <ul class="course-list">
+                  <li>Math Programming in Materials Science I</li>
+                  <li>Mathematics Programming in Materials Science II</li>
+                  <li>Materials Optimization Through Designed Experiments</li>
+                  <li>Introduction to Molecular Dynamics Simulation</li>
+                  <li>Artificial Intelligence Methods for Materials Science</li>
+                </ul>
+              </div>
+          </article>
+        </div>
+      </section>
+    </main>
 
-    .subcategory {
-      font-size: .8rem;
-      font-weight: 600;
-      color: #111;
-      margin-top: 1rem;
-      margin-bottom: .25rem;
-    }
-
-    .course-list {
-      list-style: none;
-      padding-left: 0;
-      margin: 0;
-      font-size: .9rem;
-      color: #222;
-    }
-
-    .course-list li {
-      padding-left: 1rem;
-      position: relative;
-      margin-bottom: .4rem;
-    }
-
-    .course-list li::before {
-      content: " ";
-      position: absolute;
-      left: 0;
-      color: #6366f1; /* accent dot */
-      font-weight: 600;
-    }
-
-    /* Section header */
-    .hero-heading {
-      font-size: clamp(1.5rem, 1vw + 1rem, 2rem);
-      font-weight: 600;
-      color: #0f172a;
-      line-height: 1.2;
-      max-width: 50ch;
-      margin: 0 auto 0.5rem;
-      text-align: center;
-    }
-
-    .hero-sub {
-      font-size: .95rem;
-      color: #475569;
-      text-align: center;
-      max-width: 70ch;
-      margin: 0 auto 2rem;
-      line-height: 1.5;
-    }
-
-    /* Research / Capstone card layout tweak */
-    .full-row {
-      grid-column: span 1;
-    }
-    @media(min-width:768px){
-      .full-row {
-        grid-column: span 2;
-      }
-    }
-    @media(min-width:1200px){
-      .full-row {
-        grid-column: span 3;
-      }
-    }
-
-  </style>
-
-  <!-- Hero / Intro -->
-  <header>
-<section class="mse-curriculum">
-  <header class="mse-intro">
-    <h1>Materials Science & Engineering</h1>
-    <p>
-      Our curriculum is built around how materials are <strong>designed</strong>, 
-      <strong>made</strong>, <strong>measured</strong>, and <strong>used in the real world</strong> — 
-      from surgical implants and jet engines to clean energy systems and stealth technology.
-    </p>
-    <p>
-      Explore our learning pathways below. Each pathway reflects an area where our students build depth,
-      do hands-on work, and solve real problems alongside faculty.
-    </p>
-  </header>
-
-  <!-- -->
-  <section class="mse-pathway">
-    <h2> Foundations of Materials Science & Engineering</h2>
-    <p class="tagline">
-      Start here. These courses give you the language of materials — structure, phases, thermodynamics,
-      transport, and how processing changes performance.
-    </p>
-
-    <ul class="course-list">
-      <li>Materials in Today’s World</li>
-      <li>The Science of Materials in Everyday Life</li>
-      <li>Elements of Materials Engineering</li>
-      <li>Fundamentals of Materials Engineering</li>
-      <li>Fundamentals of Materials Science</li>
-      <li>Materials Engineering Transition</li>
-      <li>Structure and Properties of Materials</li>
-      <li>Thermodynamics and Kinetics of Materials</li>
-      <li>Thermodynamics of Materials Systems</li>
-      <li>Physical Properties of Materials</li>
-      <li>Introduction to Solid State Chemistry</li>
-      <li>Crystallography and Crystal Structures</li>
-      <li>Mineralogy</li>
-      <li>Transport Phenomena in Materials Science and Engineering</li>
-    </ul>
-  </section>
-
-  <!--  -->
-  <section class="mse-pathway">
-    <h2> Electronics, Photonics & Intelligent Functional Materials</h2>
-    <p class="tagline">
-      How materials handle electricity, magnetism, light, heat, and radiation — and how that becomes devices,
-      sensors, stealth systems, and energy technology.
-    </p>
-
-    <ul class="course-list">
-      <li>Fundamentals of Electronic Materials</li>
-      <li>Electrical, Optical, and Magnetic Properties of Materials</li>
-      <li>Electronic, Magnetic, and Optical Properties of Materials Laboratory</li>
-      <li>Semiconductor Processing</li>
-      <li>Fundamentals of Metamaterials</li>
-      <li>Stealth Science and Engineering</li>
-      <li>Nuclear Materials</li>
-      <li>Principles of Materials Corrosion</li>
-    </ul>
-  </section>
-
-  <!-- -->
-  <section class="mse-pathway">
-    <h2> Biomaterials, Biomechanics & Human-Centered Materials</h2>
-    <p class="tagline">
-      Where engineered matter meets the human body. Design implants, soft tissue interfaces, responsive
-      materials, and medical devices that actually work in living systems.
-    </p>
-
-    <ul class="course-list">
-      <li>Introductory Biomaterials</li>
-      <li>Biocompatibility Considerations of Biomaterials</li>
-      <li>Applications of Biomaterials</li>
-      <li>Biomaterials</li>
-      <li>Musculoskeletal Biomechanics</li>
-      <li>Biomechanics of the Cell</li>
-      <li>Biomechanics of Development</li>
-      <li>Biosolid Mechanics</li>
-      <li>Biosensing &amp; BioMEMS</li>
-      <li>Introduction to Biophotonics</li>
-      <li>Effective and Economic Design for Biomedical Instrumentation</li>
-    </ul>
-  </section>
-
-  <!-- -->
-  <section class="mse-pathway">
-    <h2> Strength, Reliability & Extreme Environments</h2>
-    <p class="tagline">
-      Design for the real world, not the ideal one. Predict and prevent failure under load, heat, impact,
-      pressure, radiation, and time.
-    </p>
-
-    <ul class="course-list">
-      <li>Mechanics-Based Design</li>
-      <li>Mechanical Behavior of Materials</li>
-      <li>Mechanical Behavior of Materials Laboratory</li>
-      <li>Mechanical Properties of Materials</li>
-      <li>Spacecrafts, Submarines, and Glaciers: Solid Mechanics in Extreme Environments</li>
-      <li>Nondestructive Testing for In Situ Determination of Material Properties</li>
-      <li>Stress Waves, Impacts and Shockwaves</li>
-    </ul>
-  </section>
-
-  <!--  -->
-  <section class="mse-pathway">
-    <h2> Metals, Ceramics & Microstructure Engineering</h2>
-    <p class="tagline">
-      Control a material’s internal structure and you control its performance. This pathway is about
-      heat treatment, grain size, phase transformations, defects, irradiation, and advanced surfaces.
-    </p>
-
-    <ul class="course-list">
-      <li>Materials Characterization</li>
-      <li>Applied Materials Analysis</li>
-      <li>Orientation Mapping of Crystalline Materials</li>
-      <li>Physical Metallurgy</li>
-      <li>Metals and Alloys</li>
-      <li>Physical Ceramics</li>
-      <li>Ceramic and Glass Materials Processing Laboratory</li>
-      <li>Materials Laboratory I</li>
-      <li>Materials Laboratory II</li>
-      <li>Nuclear Materials</li>
-      <li>Principles of Materials Corrosion</li>
-    </ul>
-  </section>
-
-  <!-- -->
-  <section class="mse-pathway">
-    <h2> Polymers, Soft Matter & Composite Systems</h2>
-    <p class="tagline">
-      Lightweight. High strength. Flexible. Biocompatible. Processable. The future is multi-phase and
-      multifunctional — from structural composites to biomedical polymers.
-    </p>
-
-    <ul class="course-list">
-      <li>Introduction to Polymer Science</li>
-      <li>Polymer Engineering</li>
-      <li>Laboratory in Polymer Science</li>
-      <li>Composite Materials</li>
-      <li>Materials Selection and Design I and II</li>
-      <li>Physical Metallurgy and Modeling of Metal Casting</li>
-      <li>Ceramic and Glass Materials Processing Laboratory</li>
-      <li>Bladesmithing</li>
-    </ul>
-  </section>
-
-  <!-- -->
-  <section class="mse-pathway">
-    <h2>Advanced Manufacturing & Additive</h2>
-    <p class="tagline">
-      Turn ideas into hardware. Learn modern manufacturing, metal additive, ceramic processing,
-      thin films, casting, and cleanroom fabrication — with real equipment.
-    </p>
-
-    <ul class="course-list">
-      <li>Manufacturing Materials and Processes</li>
-      <li>Chemical Synthesis and Processing of Advanced Materials</li>
-      <li>Powder Processing</li>
-      <li>Micro and Nano Structured Materials &amp; Devices</li>
-      <li>Introduction to Micro- and Nano-fabrication</li>
-      <li>Metal Additive Manufacturing</li>
-      <li>Design for Additive Manufacturing</li>
-      <li>Elementary Metal Casting Laboratory</li>
-      <li>Advanced Metal Casting Laboratory</li>
-      <li>Foundry Safety</li>
-      <li>Bladesmithing</li>
-    </ul>
-
-    <p class="note">
-      <em>These courses emphasize safety culture, process qualification, and manufacturability at scale — 
-      skills our graduates use immediately in aerospace, energy, defense, biomedical, and advanced manufacturing.</em>
-    </p>
-  </section>
-
-  <!--  -->
-  <section class="mse-pathway">
-    <h2> Nanoscience, Surfaces & Atomic-Scale Design</h2>
-    <p class="tagline">
-      Design at the nanoscale to control behavior at the macroscale. Surfaces, thin films,
-      catalysis, MEMS, quantum-relevant structure, and next-generation sensors.
-    </p>
-
-    <ul class="course-list">
-      <li>Introduction to Nanotechnology</li>
-      <li>Nanomaterials</li>
-      <li>Chemistry of Nanomaterials</li>
-      <li>Micro and Nano Structured Materials &amp; Devices</li>
-      <li>Introduction to Micro- and Nano-fabrication</li>
-      <li>Semiconductor Processing</li>
-      <li>Biosensing &amp; BioMEMS</li>
-      <li>Scanning Electron Microscopy: Fundamentals of Nanocharacterization and Nanofabrication</li>
-      <li>Orientation Mapping of Crystalline Materials</li>
-      <li>Materials Optimization Through Designed Experiments</li>
-    </ul>
-  </section>
-
-  <!-- -->
-  <section class="mse-pathway">
-    <h2>Data, Simulation, Professional Practice & Capstone</h2>
-    <p class="tagline">
-      You won’t just learn science — you’ll learn to work like an engineer: coding, modeling,
-      experimental design, communication, ethics, global impact, and real client-driven design.
-    </p>
-
-    <div class="mse-subpath">
-      <h3>Computing, Modeling & Data</h3>
-      <ul class="course-list">
-        <li>Math Programming in Materials Science I</li>
-        <li>Mathematics Programming in Materials Science II</li>
-        <li>Materials Optimization Through Designed Experiments</li>
-        <li>Introduction to Molecular Dynamics Simulation</li>
-        <li>Artificial Intelligence Methods for Materials Science</li>
-      </ul>
-    </div>
-
-
-
-
-  </section>
-
- </section>
-
-
-  </main>
-
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 ITeccs. All rights reserved.</p>
   </footer>
+
   <!-- Custom Chat Button -->
   <button id="custom-chat-btn">
     <i class="fas fa-comments"></i>
-  </button> 
-
-  <!-- Tawk.to Script -->
+  </button>
+<!-- Tawk.to Script -->
   <script type="text/javascript">
     var Tawk_API = Tawk_API || {};
     var Tawk_LoadStart = new Date();
@@ -433,5 +313,42 @@
     });
   </script>
   <!-- End of Tawk.to Script -->        
+  <!-- Embedded Animations -->
+  <script>
+    // Scroll reveal effect
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.track-card, .section-title').forEach(el => observer.observe(el));
+
+    // 3D tilt effect
+    const tiltCards = document.querySelectorAll('.track-card');
+    tiltCards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const rotateY = ((x / rect.width) - 0.5) * 12;
+        const rotateX = ((y / rect.height) - 0.5) * -12;
+        card.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg) scale(1.03)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+      });
+    });
+
+    // Subtle gradient animation
+    document.addEventListener('DOMContentLoaded', () => {
+      const bg = document.querySelector('.animated-bg');
+      let angle = 0;
+      setInterval(() => {
+        angle = (angle + 0.3) % 360;
+        bg.style.background = `linear-gradient(${angle}deg, #1e1f5b, #6a11cb, #2575fc)`;
+      }, 80);
+    });
+  </script>
 </body>
 </html>
