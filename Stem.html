@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>STEM Programs</title>
+
+  <!-- Tailwind (optional if you already load it globally) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* subtle gradient background */
+    body {
+      background: radial-gradient(circle at 20% 20%, #0f172a 0%, #000000 70%);
+      color: #fff;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", Roboto, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    /* glass / card style */
+    .card {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(148,163,184,0.15);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+      border-radius: 1rem;
+      transition: all 0.2s ease;
+    }
+    .card:hover {
+      background: rgba(30, 41, 59, 0.7);
+      border-color: rgba(255,255,255,0.2);
+      box-shadow: 0 50px 120px rgba(0,0,0,0.8);
+      transform: translateY(-2px) scale(1.01);
+    }
+
+    /* badge style */
+    .badge {
+      font-size: 0.7rem;
+      line-height: 1rem;
+      font-weight: 500;
+      padding: 0.25rem 0.5rem;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(16,185,129,0.15) 0%, rgba(16,185,129,0) 100%);
+      border: 1px solid rgba(16,185,129,0.5);
+      color: rgb(16,185,129);
+    }
+
+    .section-title {
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      color: #38bdf8;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-heading {
+      font-size: clamp(1.5rem, 1vw + 1rem, 2rem);
+      font-weight: 600;
+      letter-spacing: -0.04em;
+      color: #fff;
+    }
+
+    .section-desc {
+      color: rgb(203,213,225);
+      font-size: 1rem;
+      line-height: 1.5rem;
+      max-width: 60ch;
+    }
+
+    .subarea-title {
+      font-weight: 600;
+      font-size: 1rem;
+      color: #fff;
+      letter-spacing: -0.03em;
+    }
+    .subarea-text {
+      color: rgb(148,163,184);
+      font-size: 0.9rem;
+      line-height: 1.4rem;
+    }
+
+    .outcome-label {
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: rgb(226,232,240);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .outcome-text {
+      color: rgb(226,232,240);
+      font-size: 0.9rem;
+      line-height: 1.4rem;
+    }
+
+    .footer-block-title {
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .footer-block-text {
+      color: rgb(148,163,184);
+      font-size: 0.9rem;
+      line-height: 1.4rem;
+    }
+
+    .accent-ring {
+      background: radial-gradient(circle at 30% 30%, rgba(16,185,129,.18) 0%, rgba(0,0,0,0) 70%);
+      filter: blur(40px);
+      border-radius: 9999px;
+      width: 220px;
+      height: 220px;
+      position: absolute;
+      opacity: .4;
+      pointer-events: none;
+    }
+    .accent-ring.blue {
+      background: radial-gradient(circle at 30% 30%, rgba(56,189,248,.18) 0%, rgba(0,0,0,0) 70%);
+    }
+    .accent-ring.pink {
+      background: radial-gradient(circle at 30% 30%, rgba(236,72,153,.15) 0%, rgba(0,0,0,0) 70%);
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- HERO -->
+  <header class="relative overflow-hidden px-6 py-16 md:py-24 max-w-7xl mx-auto">
+    <div class="accent-ring blue -top-10 -left-10 hidden md:block"></div>
+    <div class="accent-ring pink bottom-0 right-10 hidden md:block"></div>
+
+    <div class="max-w-3xl relative">
+      <div class="section-title">
+        <span class="inline-flex h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_20px_rgba(34,211,238,0.8)]"></span>
+        STEM Programs
+      </div>
+
+      <h1 class="mt-4 section-heading">
+        Engineering intelligence. Designing systems. Advancing human capability.
+      </h1>
+
+      <p class="mt-4 section-desc text-slate-300">
+        Our STEM programs connect mathematics, computation, engineering, materials, medicine, and intelligent systems.
+        Students don’t just learn concepts — they learn how to build solutions for energy, health, infrastructure,
+        autonomy, and the future of work.
+      </p>
+
+      <div class="mt-6 flex flex-wrap gap-2 text-[0.7rem] font-medium text-slate-200">
+        <span class="badge">High-demand skills</span>
+        <span class="badge">Industry-aligned</span>
+        <span class="badge">Research-driven</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- GRID SECTIONS -->
+  <main class="px-6 pb-24 max-w-7xl mx-auto grid gap-10 lg:gap-12">
+
+    <!-- Block 1 -->
+    <section class="relative card p-6 md:p-8">
+      <div class="accent-ring green absolute -top-20 -right-10 opacity-30"></div>
+
+      <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8">
+        <!-- left block -->
+        <div class="max-w-xl">
+          <div class="section-title text-cyan-400">
+            <span class="inline-flex h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_20px_rgba(16,185,129,0.8)]"></span>
+            Pillar I
+          </div>
+
+          <h2 class="section-heading mt-2">
+            Mathematical Intelligence & Computational Science
+          </h2>
+
+          <p class="section-desc mt-4">
+            The mathematical engine behind modern simulation, prediction, automation, and AI.
+            Students learn to describe the world with equations, solve it with computation,
+            and steer it with intelligent decision-making.
+          </p>
+        </div>
+
+        <!-- right block: columns -->
+        <div class="grid gap-8 sm:grid-cols-2 lg:w-1/2">
+          <div>
+            <div class="subarea-title">Mathematics</div>
+            <div class="subarea-text mt-2">
+              Advanced calculus, linear algebra, analysis, and differential equations —
+              the core language of science and engineering.
+            </div>
+          </div>
+
+          <div>
+            <div class="subarea-title">Applied &amp; Computational Mathematics</div>
+            <div class="subarea-text mt-2">
+              Numerical methods, PDE modeling, scientific computing, optimization &amp; control,
+              high-performance simulation.
+            </div>
+          </div>
+
+          <div>
+            <div class="subarea-title">Applied Statistics &amp; Probability</div>
+            <div class="subarea-text mt-2">
+              Statistical modeling, stochastic processes, uncertainty quantification,
+              data-driven decision making.
+            </div>
+          </div>
+
+          <div>
+            <div class="subarea-title">Data Science &amp; Artificial Intelligence</div>
+            <div class="subarea-text mt-2">
+              Machine learning, deep learning, predictive analytics, physics-informed AI,
+              and large-scale data systems.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 border-t border-slate-700/50 pt-6">
+        <div class="outcome-label">Outcome</div>
+        <div class="outcome-text mt-1">
+          Graduates design algorithms, build intelligent models, and simulate complex systems for high-impact
+          applications in energy, finance, infrastructure, defense, and healthcare.
+        </div>
+      </div>
+    </section>
+
+    <!-- Block 2 -->
+    <section class="relative card p-6 md:p-8">
+      <div class="accent-ring blue absolute -bottom-24 -left-10 opacity-30"></div>
+
+      <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8">
+        <!-- left block -->
+        <div class="max-w-xl">
+          <div class="section-title text-cyan-400">
+            <span class="inline-flex h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_20px_rgba(34,211,238,0.8)]"></span>
+            Pillar II
+          </div>
+
+          <h2 class="section-heading mt-2">
+            Mechanical, Civil &amp; Structural Systems
+          </h2>
+
+          <p class="section-desc mt-4">
+            We design the physical world — from advanced machines to resilient cities.
+            Students learn how things move, carry load, transfer heat, manage flow,
+            and survive the real world.
+          </p>
+        </div>
+
+        <!-- right block -->
+        <div class="grid gap-8 sm:grid-cols-2 lg:w-1/2">
+          <div>
+            <div class="subarea-title">Mechanical Engineering</div>
+            <div class="subarea-text mt-2">
+              Dynamics, thermofluids, solid mechanics, heat transfer, energy systems,
+              robotics, mechatronics, and control.
+            </div>
+          </div>
+
+          <div>
+            <div class="subarea-title">Civil &amp; Environmental Engineering</div>
+            <div class="subarea-text mt-2">
+              Structural analysis, smart and sustainable infrastructure, water systems,
+              geotechnical and transportation engineering, resilient construction.
+            </div>
+          </div>
+
+          <div>
+            <div class="subarea-title">Applied Physics</div>
+            <div class="subarea-text mt-2">
+              Continuum mechanics, fluid dynamics, thermodynamics, electromagnetics,
+              optics/photonics, and computational physics for engineered systems.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 border-t border-slate-700/50 pt-6">
+        <div class="outcome-label">Outcome</div>
+        <div class="outcome-text mt-1">
+          Graduates model and optimize structures, machines, and infrastructure before they are built —
+          making them safer, cleaner, and more efficient.
+        </div>
+      </div>
+    </section>
+
+    <!-- Block 3 -->
+    <section class="relative card p-6 md:p-8">
+      <div class="accent-ring pink absolute -top-24 right-0 opacity-30"></div>
+
+      <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8">
+        <!-- left block -->
+        <div class="max-w-xl">
+          <div class="section-title text-cyan-400">
+            <span class="inline-flex h-2 w-2 rounded-full bg-pink-400 shadow-[0_0_20px_rgba(244,114,182,0.8)]"></span>
+            Pillar III
+          </div>
+
+          <h2 class="section-heading mt-2">
+            Materials, Chemical &amp; Bio-Systems Engineering
+          </h2>
+
+          <p class="section-desc mt-4">
+            We engineer matter, energy, and life. From smart materials and clean energy
+            to medical devices and regenerative systems, students work where science
+            touches the human body and the planet.
+          </p>
+        </div>
+
+        <!-- right block -->
+        <div class="grid gap-8 sm:grid-cols-2 lg:w-1/2">
+          <div>
+            <div class="subarea-title">Materials Science &amp; Engineering</div>
+            <div class="subarea-text mt-2">
+              Metals, polymers, ceramics, composites, functional and electronic materials,
+              nanomaterials, advanced manufacturing, and materials for energy and medicine.
+            </div>
+          </div>
+
+          <div>
+            <div class="subarea-title">Chemical &amp; Biomolecular Engineering</div>
+            <div class="subarea-text mt-2">
+              Transport phenomena, reaction engineering, catalysis, electrochemical systems,
+              bioprocessing, process modeling and control for energy, pharma, and sustainability.
+            </div>
+          </div>
+
+          <div>
+            <div class="subarea-title">Applied Biomedical Engineering</div>
+            <div class="subarea-text mt-2">
+              Biomechanics, biomaterials, tissue engineering, biomedical imaging,
+              assistive/rehabilitation devices, AI in medicine, human performance technologies.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 border-t border-slate-700/50 pt-6">
+        <div class="outcome-label">Outcome</div>
+        <div class="outcome-text mt-1">
+          Graduates create cleaner energy systems, smarter materials, scalable bioprocesses,
+          and human-centered medical solutions.
+        </div>
+      </div>
+    </section>
+
+    <!-- Block 4 -->
+    <section class="relative card p-6 md:p-8">
+      <div class="accent-ring blue absolute -bottom-24 right-10 opacity-30"></div>
+
+      <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8">
+        <!-- left block -->
+        <div class="max-w-xl">
+          <div class="section-title text-cyan-400">
+            <span class="inline-flex h-2 w-2 rounded-full bg-indigo-400 shadow-[0_0_20px_rgba(129,140,248,0.8)]"></span>
+            Pillar IV
+          </div>
+
+          <h2 class="section-heading mt-2">
+            Computing, Electronics &amp; Intelligent Systems
+          </h2>
+
+          <p class="section-desc mt-4">
+            Where hardware, software, autonomy, and intelligence meet.
+            Students design secure, adaptive, data-driven systems that sense,
+            decide, and act in real time.
+          </p>
+        </div>
+
+        <!-- right block -->
+        <div class="grid gap-8 sm:grid-cols-2 lg:w-1/2">
+          <div>
+            <div class="subarea-title">Electrical &amp; Computer Engineering</div>
+            <div class="subarea-text mt-2">
+              Circuits and electronics, embedded systems, sensing and instrumentation,
+              signal and image processing, communications, control, robotics integration,
+              power electronics, intelligent hardware.
+            </div>
+          </div>
+
+          <div>
+            <div class="subarea-title">Computer Science &amp; Software Systems</div>
+            <div class="subarea-text mt-2">
+              Algorithms, data structures, operating systems, cybersecurity,
+              high-performance and parallel computing, cloud and edge platforms,
+              scalable software architecture.
+            </div>
+          </div>
+
+          <div>
+            <div class="subarea-title">Data &amp; AI Systems Engineering</div>
+            <div class="subarea-text mt-2">
+              Autonomous systems, perception and sensing, real-time decision systems,
+              trustworthy AI at the edge, secure cyber-physical infrastructure.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 border-t border-slate-700/50 pt-6">
+        <div class="outcome-label">Outcome</div>
+        <div class="outcome-text mt-1">
+          Graduates build intelligent, secure, connected solutions — from robotics and autonomous platforms
+          to large-scale distributed AI.
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER / MISSION -->
+  <footer class="px-6 pb-28 max-w-7xl mx-auto">
+    <div class="card relative p-6 md:p-10 overflow-hidden">
+      <div class="accent-ring blue absolute -top-10 right-10 opacity-40"></div>
+      <div class="accent-ring pink absolute -bottom-10 left-10 opacity-30"></div>
+
+      <div class="grid gap-10 md:grid-cols-2">
+        <div>
+          <div class="footer-block-title">Why this matters</div>
+          <div class="footer-block-text mt-3">
+            Our programs are intentionally integrated. Mathematics informs simulation and control.
+            Materials enable cleaner energy and smarter devices. Mechanical and civil engineering
+            turn design into physical reality. Computing and electronics make those systems
+            intelligent, adaptive, and secure. Biomedical engineering brings that technology
+            directly to human health.
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-block-title">Impact areas</div>
+          <div class="footer-block-text mt-3 grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-6">
+            <div>Intelligent infrastructure</div>
+            <div>Autonomous &amp; robotic systems</div>
+            <div>Sustainable energy &amp; climate resilience</div>
+            <div>Advanced manufacturing &amp; materials</div>
+            <div>Biomedical devices &amp; human performance</div>
+            <div>Secure, data-driven decision making</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-10 border-t border-slate-700/50 pt-6 text-center">
+        <div class="text-[0.8rem] tracking-wide text-slate-400">
+          STEM Programs — preparing talent for what’s next.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
+
+
+
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 ITeccs. All rights reserved.</p>
+  </footer>
+  <!-- Custom Chat Button -->
+  <button id="custom-chat-btn">
+    <i class="fas fa-comments"></i>
+  </button> 
+
+  <!-- Tawk.to Script -->
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {};
+    var Tawk_LoadStart = new Date();
+
+    (function(){
+      var s1=document.createElement("script"),
+          s0=document.getElementsByTagName("script")[0];
+      s1.async=true;
+      s1.src='https://embed.tawk.to/685e2123390063190e54b4b2/1iunr2sv2';
+      s1.charset='UTF-8';
+      s1.setAttribute('crossorigin','*');
+      s0.parentNode.insertBefore(s1,s0);
+    })();
+
+    // Hide default widget once fully loaded
+    Tawk_API.onLoad = function(){
+      Tawk_API.hideWidget();
+    };
+
+    // Custom button opens chat
+    document.addEventListener("DOMContentLoaded", function(){
+      var btn = document.getElementById("custom-chat-btn");
+      if(btn){
+        btn.addEventListener("click", function(){
+          if(typeof Tawk_API !== "undefined"){
+            Tawk_API.maximize(); // open chat window
+          }
+        });
+      }
+    });
+  </script>
+  <!-- End of Tawk.to Script -->        
+</body>
+</html>
