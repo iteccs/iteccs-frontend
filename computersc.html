@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=3.0" />
+  <title>STEM Programs</title>
+
+  <!-- Tailwind (optional if you already load it globally) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* subtle gradient background */
+    body {
+      background: radial-gradient(circle at 20% 20%, #0f172a 0%, #000000 70%);
+      color: #fff;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", Roboto, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    /* glass / card style */
+    .card {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(148,163,184,0.15);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+      border-radius: 1rem;
+      transition: all 0.2s ease;
+    }
+    .card:hover {
+      background: rgba(30, 41, 59, 0.7);
+      border-color: rgba(255,255,255,0.2);
+      box-shadow: 0 50px 120px rgba(0,0,0,0.8);
+      transform: translateY(-2px) scale(1.01);
+    }
+
+    /* badge style */
+    .badge {
+      font-size: 0.7rem;
+      line-height: 1rem;
+      font-weight: 500;
+      padding: 0.25rem 0.5rem;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(16,185,129,0.15) 0%, rgba(16,185,129,0) 100%);
+      border: 1px solid rgba(16,185,129,0.5);
+      color: rgb(16,185,129);
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #38bdf8;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-heading {
+      font-size: clamp(1.5rem, 1vw + 1rem, 2rem);
+      font-weight: 600;
+      letter-spacing: -0.04em;
+      color: #fff;
+    }
+
+    .section-desc {
+      color: rgb(203,213,225);
+      font-size: 1rem;
+      line-height: 1.5rem;
+      max-width: 60ch;
+    } 
+
+    .subarea-title {
+      font-weight: 600;
+      font-size: 1rem;
+      color: #fff;
+      letter-spacing: -0.03em;
+    }
+    .subarea-text {
+      color: rgb(148,163,184);
+      font-size: 0.9rem;
+      line-height: 1.4rem;
+    }
+
+    .outcome-label {
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: rgb(226,232,240);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .outcome-text {
+      color: rgb(226,232,240);
+      font-size: 0.9rem;
+      line-height: 1.4rem;
+    }
+
+    .footer-block-title {
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .footer-block-text {
+      color: rgb(148,163,184);
+      font-size: 0.9rem;
+      line-height: 1.4rem;
+    }
+
+    .accent-ring {
+      background: radial-gradient(circle at 30% 30%, rgba(16,185,129,.18) 0%, rgba(0,0,0,0) 70%);
+      filter: blur(40px);
+      border-radius: 9999px;
+      width: 220px;
+      height: 220px;
+      position: absolute;
+      opacity: .4;
+      pointer-events: none;
+    }
+    .accent-ring.blue {
+      background: radial-gradient(circle at 30% 30%, rgba(56,189,248,.18) 0%, rgba(0,0,0,0) 70%);
+    }
+    .accent-ring.pink {
+      background: radial-gradient(circle at 30% 30%, rgba(236,72,153,.15) 0%, rgba(0,0,0,0) 70%);
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- HERO -->
+  <header class="relative overflow-hidden px-6 py-16 md:py-24 max-w-7xl mx-auto">
+    <div class="accent-ring blue -top-10 -left-10 hidden md:block"></div>
+    <div class="accent-ring pink bottom-0 right-10 hidden md:block"></div>
+
+  <section class="cs-curriculum" style="font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; color:#1a1a1a; line-height:1.5; background:#0f172a; padding:3rem 1rem; display:flex; justify-content:center;">
+  <div style="max-width:1200px; width:100%; color:#f8fafc;">
+
+    <!-- Header -->
+    <header style="text-align:center; margin-bottom:3rem;">
+      <div style="font-size:.75rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:#38bdf8; margin-bottom:.5rem;">
+        Department of Computer Science
+      </div>
+      <h1 style="font-size:2rem; font-weight:600; color:#f8fafc; margin:0;">
+        Computer Science Curriculum
+      </h1>
+      <p style="font-size:1rem; color:#94a3b8; max-width:760px; margin:1rem auto 0;">
+        Advanced computing, intelligent systems, secure infrastructure, and human-centered technology.
+        The curriculum below highlights core technical foundations and modern application areas powering
+        AI, cybersecurity, data science, health systems, and human-aligned intelligent autonomy.
+      </p>
+    </header>
+
+    <!-- Grid -->
+    <div style="
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(min(360px,100%),1fr));
+      gap:1.5rem;
+    ">
+
+      <!-- AI & Machine Learning -->
+      <section style="background:#1e253a; border:1px solid rgba(148,163,184,.15); border-radius:1rem; padding:1.5rem;">
+        <div style="display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:1rem;">
+          <div>
+            <h2 style="margin:0; font-size:1rem; font-weight:600; color:#38bdf8; letter-spacing:-0.03em;">
+              Artificial Intelligence & Machine Learning
+            </h2>
+            <p style="margin:.25rem 0 0; font-size:.8rem; color:#94a3b8; line-height:1.4;">
+              Learning systems, intelligence, decision-making, alignment, safety.
+            </p>
+          </div>
+          <div style="font-size:.7rem; background:#0ea5e9; color:#0f172a; font-weight:600; padding:.25rem .5rem; border-radius:.5rem;">
+            AI / ML
+          </div>
+        </div>
+        <ul style="list-style:none; padding:0; margin:0; font-size:.85rem; color:#f8fafc;">
+          <li>Artificial Intelligence</li>
+          <li>Machine Learning</li>
+          <li>Applied Machine Learning</li>
+          <li>Advanced Machine Learning: Machine Learning for Trustworthy AI</li>
+          <li>Theory of Replicable Machine Learning</li>
+          <li>Machine Learning: Advanced Topics</li>
+          <li>Machine Learning: Artificial Intelligence System Design &amp; Development</li>
+          <li>Machine Learning: Coping with Non-Stationary Environments and Errors</li>
+          <li>Human-in-the-Loop Machine Learning</li>
+          <li>Reinforcement Learning</li>
+          <li>Cognitive Artificial Intelligence</li>
+          <li>AI Safety, Alignment &amp; Governance</li>
+          <li>AI Ethics and Social Impact</li>
+          <li>Responsible AI and Ethics</li>
+          <li>The Ethics of Artificial Intelligence and Automation</li>
+          <li>Human and Machine Intelligence Alignment</li>
+          <li>Practical Generative AI</li>
+          <li>Probabilistic Graphical Models</li>
+          <li>Vision as Bayesian Inference</li>
+          <li>Advanced Topics in Causal Inference</li>
+          <li>Advanced Topics in Robot Perception</li>
+        </ul>
+      </section>
+
+      <!-- NLP / Vision / Robotics -->
+      <section style="background:#1e253a; border:1px solid rgba(148,163,184,.15); border-radius:1rem; padding:1.5rem;">
+        <div style="display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:1rem;">
+          <div>
+            <h2 style="margin:0; font-size:1rem; font-weight:600; color:#34d399; letter-spacing:-0.03em;">
+              Language, Vision &amp; Robotics
+            </h2>
+            <p style="margin:.25rem 0 0; font-size:.8rem; color:#94a3b8; line-height:1.4;">
+              Perception, autonomy, human communication.
+            </p>
+          </div>
+          <div style="font-size:.7rem; background:#10b981; color:#0f172a; font-weight:600; padding:.25rem .5rem; border-radius:.5rem;">
+            NLP / CV / Robotics
+          </div>
+        </div>
+        <ul style="list-style:none; padding:0; margin:0; font-size:.85rem; color:#f8fafc;">
+          <li>Natural Language Processing</li>
+          <li>Advanced NLP: Multilingual Methods</li>
+          <li>NLP: Self-Supervised Models</li>
+          <li>Natural Language Processing for Computational Social Science</li>
+          <li>Machine Translation</li>
+          <li>Information Retrieval and Web Agents</li>
+          <li>Introduction to Human Language Technology</li>
+          <li>Statistical Machine Vision</li>
+          <li>Computer Vision</li>
+          <li>FFT in Graphics &amp; Vision</li>
+          <li>Algorithms for Sensor-Based Robotics</li>
+          <li>Computer Integrated Surgery I</li>
+          <li>Computer Integrated Surgery II</li>
+          <li>Applications of Augmented Reality</li>
+          <li>Introduction to Augmented Reality</li>
+          <li>Advanced Topics in Robot Perception</li>
+        </ul>
+      </section>
+
+      <!-- Software & Programming -->
+      <section style="background:#1e253a; border:1px solid rgba(148,163,184,.15); border-radius:1rem; padding:1.5rem;">
+        <div style="display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:1rem;">
+          <div>
+            <h2 style="margin:0; font-size:1rem; font-weight:600; color:#818cf8; letter-spacing:-0.03em;">
+              Software Systems &amp; Engineering
+            </h2>
+            <p style="margin:.25rem 0 0; font-size:.8rem; color:#94a3b8; line-height:1.4;">
+              Robust code, scalable systems, production-grade software.
+            </p>
+          </div>
+          <div style="font-size:.7rem; background:#6366f1; color:#0f172a; font-weight:600; padding:.25rem .5rem; border-radius:.5rem;">
+            Software
+          </div>
+        </div>
+        <ul style="list-style:none; padding:0; margin:0; font-size:.85rem; color:#f8fafc;">
+          <li>Introduction to Python</li>
+          <li>Introduction to Programming Using Java</li>
+          <li>Intermediate Programming</li>
+          <li>Data Structures</li>
+          <li>Computer System Fundamentals</li>
+          <li>Operating Systems</li>
+          <li>Cloud Computing</li>
+          <li>Computer Networks</li>
+          <li>Software Defined Networks</li>
+          <li>Object-Oriented Software Engineering</li>
+          <li>Software Testing &amp; Debugging</li>
+          <li>Reliable Software Systems</li>
+          <li>Software System Design</li>
+          <li>Principles of Programming Languages</li>
+          <li>Functional Programming in Software Engineering</li>
+          <li>Compilers &amp; Interpreters</li>
+          <li>Program Synthesis: Symbolic &amp; LLM-Driven Methods</li>
+          <li>Open Source Software Engineering (Semesters of Code I)</li>
+          <li>Full-Stack JavaScript</li>
+          <li>User Interfaces &amp; Mobile Applications</li>
+          <li>Parallel Computing for Data Science</li>
+          <li>High-Performance Data Analytics</li>
+          <li>Introduction to High Performance Computing</li>
+        </ul>
+      </section>
+
+      <!-- Algorithms & Theory -->
+      <section style="background:#1e253a; border:1px solid rgba(148,163,184,.15); border-radius:1rem; padding:1.5rem;">
+        <div style="display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:1rem;">
+          <div>
+            <h2 style="margin:0; font-size:1rem; font-weight:600; color:#facc15; letter-spacing:-0.03em;">
+              Algorithms, Computation &amp; Theory
+            </h2>
+            <p style="margin:.25rem 0 0; font-size:.8rem; color:#94a3b8; line-height:1.4;">
+              Complexity, optimization, verification, guarantees.
+            </p>
+          </div>
+          <div style="font-size:.7rem; background:#eab308; color:#0f172a; font-weight:600; padding:.25rem .5rem; border-radius:.5rem;">
+            Theory
+          </div>
+        </div>
+        <ul style="list-style:none; padding:0; margin:0; font-size:.85rem; color:#f8fafc;">
+          <li>Foundations of Algorithms</li>
+          <li>Intro Algorithms</li>
+          <li>Randomized &amp; Big Data Algorithms</li>
+          <li>Approximation Algorithms</li>
+          <li>Algorithmic Game Theory</li>
+          <li>Algorithmic Foundations of Differential Privacy</li>
+          <li>Automata &amp; Computation Theory</li>
+          <li>Theory of Computation</li>
+          <li>Combinatorics &amp; Graph Theory in Computer Science</li>
+          <li>Computational Complexity &amp; Approximation</li>
+          <li>Algorithms for Bioinformatics</li>
+        </ul>
+      </section>
+
+      <!-- Data Infrastructure & Analytics -->
+      <section style="background:#1e253a; border:1px solid rgba(148,163,184,.15); border-radius:1rem; padding:1.5rem;">
+        <div style="display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:1rem;">
+          <div>
+            <h2 style="margin:0; font-size:1rem; font-weight:600; color:#f472b6; letter-spacing:-0.03em;">
+              Data Infrastructure &amp; Intelligent Analytics
+            </h2>
+            <p style="margin:.25rem 0 0; font-size:.8rem; color:#94a3b8; line-height:1.4;">
+              Data pipelines, large-scale systems, intelligent decisions.
+            </p>
+          </div>
+          <div style="font-size:.7rem; background:#ec4899; color:#0f172a; font-weight:600; padding:.25rem .5rem; border-radius:.5rem;">
+            Data
+          </div>
+        </div>
+        <ul style="list-style:none; padding:0; margin:0; font-size:.85rem; color:#f8fafc;">
+          <li>Databases</li>
+          <li>Advanced Databases</li>
+          <li>Data Engineering Principles &amp; Practice</li>
+          <li>Data Patterns &amp; Representations</li>
+          <li>Big Data Analytics</li>
+          <li>Introduction to Data Analysis</li>
+          <li>Data Science: Modeling &amp; Analytics</li>
+          <li>Computational Molecular Medicine</li>
+          <li>Genomic Data Science</li>
+          <li>Computational Genomics: Sequences</li>
+          <li>Computational Genomics: Applied Comparative Genomics</li>
+          <li>Introduction to Computational Immunogenomics</li>
+          <li>Digital Health &amp; Biomedical Informatics</li>
+          <li>Brain &amp; Computation</li>
+        </ul>
+      </section>
+
+      <!-- Security & Privacy -->
+      <section style="background:#1e253a; border:1px solid rgba(148,163,184,.15); border-radius:1rem; padding:1.5rem;">
+        <div style="display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:1rem;">
+          <div>
+            <h2 style="margin:0; font-size:1rem; font-weight:600; color:#fb7185; letter-spacing:-0.03em;">
+              Security, Privacy &amp; Cryptography
+            </h2>
+            <p style="margin:.25rem 0 0; font-size:.8rem; color:#94a3b8; line-height:1.4;">
+              Trustworthy systems, secure infrastructure, resilient computation.
+            </p>
+          </div>
+          <div style="font-size:.7rem; background:#f43f5e; color:#0f172a; font-weight:600; padding:.25rem .5rem; border-radius:.5rem;">
+            Security
+          </div>
+        </div>
+        <ul style="list-style:none; padding:0; margin:0; font-size:.85rem; color:#f8fafc;">
+          <li>Computer Ethics</li>
+          <li>Web Security</li>
+          <li>Language-Based Security</li>
+          <li>Security &amp; Privacy in Computing</li>
+          <li>Advanced Topics in Computer Security</li>
+          <li>Modern Cryptography</li>
+          <li>Advanced Topics in Cryptography</li>
+          <li>Practical Cryptographic Systems</li>
+          <li>Blockchains &amp; Cryptocurrencies</li>
+          <li>Medical Device Cybersecurity</li>
+          <li>AI Safety, Alignment &amp; Governance</li>
+          <li>Disinformation Self-Defense</li>
+        </ul>
+      </section>
+
+      <!-- Graphics, XR & Interactive Systems -->
+      <section style="background:#1e253a; border:1px solid rgba(148,163,184,.15); border-radius:1rem; padding:1.5rem;">
+        <div style="display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:1rem;">
+          <div>
+            <h2 style="margin:0; font-size:1rem; font-weight:600; color:#38bdf8; letter-spacing:-0.03em;">
+              Graphics, XR &amp; Interactive Systems
+            </h2>
+            <p style="margin:.25rem 0 0; font-size:.8rem; color:#94a3b8; line-height:1.4;">
+              Visual computing, simulation, human interaction.
+            </p>
+          </div>
+          <div style="font-size:.7rem; background:#0ea5e9; color:#0f172a; font-weight:600; padding:.25rem .5rem; border-radius:.5rem;">
+            Graphics / XR
+          </div>
+        </div>
+        <ul style="list-style:none; padding:0; margin:0; font-size:.85rem; color:#f8fafc;">
+          <li>Computer Graphics</li>
+          <li>Computer Graphics and 3D Game Programming</li>
+          <li>FFT in Graphics &amp; Vision</li>
+          <li>Applications of Augmented Reality</li>
+          <li>Introduction to Augmented Reality</li>
+          <li>Selected Topics in Computer Graphics</li>
+          <li>Selected Topics in Medical Image Processing</li>
+          <li>Seminar: Computer Integrated Surgery II</li>
+          <li>User Interfaces &amp; Mobile Applications</li>
+          <li>Data Visualization and Communication</li>
+          <li>Computer Integrated Surgery I</li>
+          <li>Computer Integrated Surgery II</li>
+        </ul>
+      </section>
+
+      <!-- Leadership, Policy & Entrepreneurship -->
+      <section style="background:#1e253a; border:1px solid rgba(148,163,184,.15); border-radius:1rem; padding:1.5rem;">
+        <div style="display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:1rem;">
+          <div>
+            <h2 style="margin:0; font-size:1rem; font-weight:600; color:#94a3b8; letter-spacing:-0.03em;">
+              Leadership, Policy &amp; Impact
+            </h2>
+            <p style="margin:.25rem 0 0; font-size:.8rem; color:#94a3b8; line-height:1.4;">
+              Ethics, governance, translational impact, entrepreneurship.
+            </p>
+          </div>
+          <div style="font-size:.7rem; background:#475569; color:#0f172a; font-weight:600; padding:.25rem .5rem; border-radius:.5rem;">
+            Impact
+          </div>
+        </div>
+        <ul style="list-style:none; padding:0; margin:0; font-size:.85rem; color:#f8fafc;">
+          <li>Computer Ethics</li>
+          <li>The Ethics of Artificial Intelligence and Automation</li>
+          <li>Human and Machine Intelligence Alignment</li>
+          <li>AI Ethics and Social Impact</li>
+          <li>Responsible AI and Ethics</li>
+          <li>Disinformation Self-Defense</li>
+          <li>Computer Science Innovation &amp; Entrepreneurship II</li>
+        </ul>
+      </section>
+
+    </div>
+
+  </div>
+</section>
