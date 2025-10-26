@@ -1,0 +1,467 @@
+<!-- upskilling.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - ITeccs</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Fonts and Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="ITeccs Logo">
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="consulting.html">Consulting</a></li>
+      <li><a href="education.html">Education</a></li> 
+      <li><a href="howtopay.html">How to Pay</a></li>
+      <li>
+        <a href="contact.html" class="contact-nav-button">
+          <i class="fas fa-envelope"></i> Contact Us
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <main class="content">
+    <h1></h1>
+    <p></p>
+
+<section class="program-wrapper">
+  <style>
+    .program-wrapper {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      color: #1a1a1a;
+      background-color: #ffffff;
+      line-height: 1.5;
+      padding: 2rem 1rem 4rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .track-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    @media(min-width: 768px){
+      .track-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media(min-width: 1200px){
+      .track-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+
+    .track-card {
+      border: 1px solid rgba(0,0,0,0.07);
+      border-radius: 1rem;
+      padding: 1.5rem 1.5rem 1.25rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+
+    .track-eyebrow {
+      font-size: .75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      color: #6b6b6b;
+      margin-bottom: .5rem;
+    }
+
+    .track-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #111;
+      line-height: 1.3;
+      margin-bottom: .5rem;
+    }
+
+    .track-desc {
+      font-size: .9rem;
+      color: #444;
+      margin-bottom: 1rem;
+    }
+
+    .subcategory {
+      font-size: .8rem;
+      font-weight: 600;
+      color: #111;
+      margin-top: 1rem;
+      margin-bottom: .25rem;
+    }
+
+    .course-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      font-size: .9rem;
+      color: #222;
+    }
+
+    .course-list li {
+      padding-left: 1rem;
+      position: relative;
+      margin-bottom: .4rem;
+    }
+
+    .course-list li::before {
+      content: " ";
+      position: absolute;
+      left: 0;
+      color: #6366f1; /* accent dot */
+      font-weight: 600;
+    }
+
+    /* Section header */
+    .hero-heading {
+      font-size: clamp(1.5rem, 1vw + 1rem, 2rem);
+      font-weight: 600;
+      color: #0f172a;
+      line-height: 1.2;
+      max-width: 50ch;
+      margin: 0 auto 0.5rem;
+      text-align: center;
+    }
+
+    .hero-sub {
+      font-size: .95rem;
+      color: #475569;
+      text-align: center;
+      max-width: 70ch;
+      margin: 0 auto 2rem;
+      line-height: 1.5;
+    }
+
+    /* Research / Capstone card layout tweak */
+    .full-row {
+      grid-column: span 1;
+    }
+    @media(min-width:768px){
+      .full-row {
+        grid-column: span 2;
+      }
+    }
+    @media(min-width:1200px){
+      .full-row {
+        grid-column: span 3;
+      }
+    }
+
+  </style>
+
+  <!-- Hero / Intro -->
+  <header>
+<section class="mse-curriculum">
+  <header class="mse-intro">
+    <h1>Materials Science & Engineering</h1>
+    <p>
+      Our curriculum is built around how materials are <strong>designed</strong>, 
+      <strong>made</strong>, <strong>measured</strong>, and <strong>used in the real world</strong> — 
+      from surgical implants and jet engines to clean energy systems and stealth technology.
+    </p>
+    <p>
+      Explore our learning pathways below. Each pathway reflects an area where our students build depth,
+      do hands-on work, and solve real problems alongside faculty.
+    </p>
+  </header>
+
+  <!-- PATHWAY 1 -->
+  <section class="mse-pathway">
+    <h2>Pathway 1. Foundations of Materials Science & Engineering</h2>
+    <p class="tagline">
+      Start here. These courses give you the language of materials — structure, phases, thermodynamics,
+      transport, and how processing changes performance.
+    </p>
+
+    <ul class="course-list">
+      <li>Materials in Today’s World</li>
+      <li>The Science of Materials in Everyday Life</li>
+      <li>Elements of Materials Engineering</li>
+      <li>Fundamentals of Materials Engineering</li>
+      <li>Fundamentals of Materials Science</li>
+      <li>Materials Engineering Transition</li>
+      <li>Structure and Properties of Materials</li>
+      <li>Thermodynamics and Kinetics of Materials</li>
+      <li>Thermodynamics of Materials Systems</li>
+      <li>Physical Properties of Materials</li>
+      <li>Introduction to Solid State Chemistry</li>
+      <li>Crystallography and Crystal Structures</li>
+      <li>Mineralogy</li>
+      <li>Transport Phenomena in Materials Science and Engineering</li>
+    </ul>
+  </section>
+
+  <!-- PATHWAY 2 -->
+  <section class="mse-pathway">
+    <h2>Pathway 2. Electronics, Photonics & Intelligent Functional Materials</h2>
+    <p class="tagline">
+      How materials handle electricity, magnetism, light, heat, and radiation — and how that becomes devices,
+      sensors, stealth systems, and energy technology.
+    </p>
+
+    <ul class="course-list">
+      <li>Fundamentals of Electronic Materials</li>
+      <li>Electrical, Optical, and Magnetic Properties of Materials</li>
+      <li>Electronic, Magnetic, and Optical Properties of Materials Laboratory</li>
+      <li>Semiconductor Processing</li>
+      <li>Fundamentals of Metamaterials</li>
+      <li>Stealth Science and Engineering</li>
+      <li>Nuclear Materials</li>
+      <li>Principles of Materials Corrosion</li>
+    </ul>
+  </section>
+
+  <!-- PATHWAY 3 -->
+  <section class="mse-pathway">
+    <h2>Pathway 3. Biomaterials, Biomechanics & Human-Centered Materials</h2>
+    <p class="tagline">
+      Where engineered matter meets the human body. Design implants, soft tissue interfaces, responsive
+      materials, and medical devices that actually work in living systems.
+    </p>
+
+    <ul class="course-list">
+      <li>Introductory Biomaterials</li>
+      <li>Biocompatibility Considerations of Biomaterials</li>
+      <li>Applications of Biomaterials</li>
+      <li>Biomaterials</li>
+      <li>Musculoskeletal Biomechanics</li>
+      <li>Biomechanics of the Cell</li>
+      <li>Biomechanics of Development</li>
+      <li>Biosolid Mechanics</li>
+      <li>Biosensing &amp; BioMEMS</li>
+      <li>Introduction to Biophotonics</li>
+      <li>Effective and Economic Design for Biomedical Instrumentation</li>
+    </ul>
+  </section>
+
+  <!-- PATHWAY 4 -->
+  <section class="mse-pathway">
+    <h2>Pathway 4. Strength, Reliability & Extreme Environments</h2>
+    <p class="tagline">
+      Design for the real world, not the ideal one. Predict and prevent failure under load, heat, impact,
+      pressure, radiation, and time.
+    </p>
+
+    <ul class="course-list">
+      <li>Mechanics-Based Design</li>
+      <li>Mechanical Behavior of Materials</li>
+      <li>Mechanical Behavior of Materials Laboratory</li>
+      <li>Mechanical Properties of Materials</li>
+      <li>Spacecrafts, Submarines, and Glaciers: Solid Mechanics in Extreme Environments</li>
+      <li>Nondestructive Testing for In Situ Determination of Material Properties</li>
+      <li>Stress Waves, Impacts and Shockwaves</li>
+    </ul>
+  </section>
+
+  <!-- PATHWAY 5 -->
+  <section class="mse-pathway">
+    <h2>Pathway 5. Metals, Ceramics & Microstructure Engineering</h2>
+    <p class="tagline">
+      Control a material’s internal structure and you control its performance. This pathway is about
+      heat treatment, grain size, phase transformations, defects, irradiation, and advanced surfaces.
+    </p>
+
+    <ul class="course-list">
+      <li>Materials Characterization</li>
+      <li>Applied Materials Analysis</li>
+      <li>Orientation Mapping of Crystalline Materials</li>
+      <li>Physical Metallurgy</li>
+      <li>Metals and Alloys</li>
+      <li>Physical Ceramics</li>
+      <li>Ceramic and Glass Materials Processing Laboratory</li>
+      <li>Materials Laboratory I</li>
+      <li>Materials Laboratory II</li>
+      <li>Nuclear Materials</li>
+      <li>Principles of Materials Corrosion</li>
+    </ul>
+  </section>
+
+  <!-- PATHWAY 6 -->
+  <section class="mse-pathway">
+    <h2>Pathway 6. Polymers, Soft Matter & Composite Systems</h2>
+    <p class="tagline">
+      Lightweight. High strength. Flexible. Biocompatible. Processable. The future is multi-phase and
+      multifunctional — from structural composites to biomedical polymers.
+    </p>
+
+    <ul class="course-list">
+      <li>Introduction to Polymer Science</li>
+      <li>Polymer Engineering</li>
+      <li>Laboratory in Polymer Science</li>
+      <li>Composite Materials</li>
+      <li>Materials Selection and Design I and II</li>
+      <li>Physical Metallurgy and Modeling of Metal Casting</li>
+      <li>Ceramic and Glass Materials Processing Laboratory</li>
+      <li>Bladesmithing</li>
+    </ul>
+  </section>
+
+  <!-- PATHWAY 7 -->
+  <section class="mse-pathway">
+    <h2>Pathway 7. Advanced Manufacturing & Additive</h2>
+    <p class="tagline">
+      Turn ideas into hardware. Learn modern manufacturing, metal additive, ceramic processing,
+      thin films, casting, and cleanroom fabrication — with real equipment.
+    </p>
+
+    <ul class="course-list">
+      <li>Manufacturing Materials and Processes</li>
+      <li>Chemical Synthesis and Processing of Advanced Materials</li>
+      <li>Powder Processing</li>
+      <li>Micro and Nano Structured Materials &amp; Devices</li>
+      <li>Introduction to Micro- and Nano-fabrication</li>
+      <li>Metal Additive Manufacturing</li>
+      <li>Design for Additive Manufacturing</li>
+      <li>Elementary Metal Casting Laboratory</li>
+      <li>Advanced Metal Casting Laboratory</li>
+      <li>Foundry Safety</li>
+      <li>Bladesmithing</li>
+    </ul>
+
+    <p class="note">
+      <em>These courses emphasize safety culture, process qualification, and manufacturability at scale — 
+      skills our graduates use immediately in aerospace, energy, defense, biomedical, and advanced manufacturing.</em>
+    </p>
+  </section>
+
+  <!-- PATHWAY 8 -->
+  <section class="mse-pathway">
+    <h2>Pathway 8. Nanoscience, Surfaces & Atomic-Scale Design</h2>
+    <p class="tagline">
+      Design at the nanoscale to control behavior at the macroscale. Surfaces, thin films,
+      catalysis, MEMS, quantum-relevant structure, and next-generation sensors.
+    </p>
+
+    <ul class="course-list">
+      <li>Introduction to Nanotechnology</li>
+      <li>Nanomaterials</li>
+      <li>Chemistry of Nanomaterials</li>
+      <li>Micro and Nano Structured Materials &amp; Devices</li>
+      <li>Introduction to Micro- and Nano-fabrication</li>
+      <li>Semiconductor Processing</li>
+      <li>Biosensing &amp; BioMEMS</li>
+      <li>Scanning Electron Microscopy: Fundamentals of Nanocharacterization and Nanofabrication</li>
+      <li>Orientation Mapping of Crystalline Materials</li>
+      <li>Materials Optimization Through Designed Experiments</li>
+    </ul>
+  </section>
+
+  <!-- PATHWAY 9 -->
+  <section class="mse-pathway">
+    <h2>Pathway 9. Data, Simulation, Professional Practice & Capstone</h2>
+    <p class="tagline">
+      You won’t just learn science — you’ll learn to work like an engineer: coding, modeling,
+      experimental design, communication, ethics, global impact, and real client-driven design.
+    </p>
+
+    <div class="mse-subpath">
+      <h3>Computing, Modeling & Data</h3>
+      <ul class="course-list">
+        <li>Math Programming in Materials Science I</li>
+        <li>Mathematics Programming in Materials Science II</li>
+        <li>Materials Optimization Through Designed Experiments</li>
+        <li>Introduction to Molecular Dynamics Simulation</li>
+        <li>Artificial Intelligence Methods for Materials Science</li>
+      </ul>
+    </div>
+
+    <div class="mse-subpath">
+      <h3>Professional Development & Ethics</h3>
+      <ul class="course-list">
+        <li>Materials Engineering Professional Development I</li>
+        <li>Materials Engineering Professional Development II</li>
+        <li>Senior Capstone Recitation</li>
+        <li>Honors Senior Capstone Recitation</li>
+      </ul>
+    </div>
+
+    <div class="mse-subpath">
+      <h3>Design Experience, Research & Global Practice</h3>
+      <ul class="course-list">
+        <li>Senior Design Laboratory</li>
+        <li>Honors Senior Design Laboratory</li>
+        <li>Materials Selection and Design I and II</li>
+        <li>Effective and Economic Design for Biomedical Instrumentation</li>
+        <li>Materials Science and Engineering Project I</li>
+        <li>Materials Science and Engineering Project II</li>
+        <li>Independent Study</li>
+        <li>Special Study</li>
+        <li>Undergraduate Research</li>
+        <li>Study Abroad</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="mse-outro">
+    <p>
+      By graduation, our students have built devices, forged alloys, processed polymers,
+      printed metal parts, modeled atomic motion, designed medical tools, argued ethics,
+      presented to real clients, and defended their decisions with data.
+    </p>
+    <p><strong>This isn’t just coursework. It’s a portfolio.</strong></p>
+  </footer>
+</section>
+
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 ITeccs. All rights reserved.</p>
+  </footer>
+  <!-- Custom Chat Button -->
+  <button id="custom-chat-btn">
+    <i class="fas fa-comments"></i>
+  </button> 
+
+  <!-- Tawk.to Script -->
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {};
+    var Tawk_LoadStart = new Date();
+
+    (function(){
+      var s1=document.createElement("script"),
+          s0=document.getElementsByTagName("script")[0];
+      s1.async=true;
+      s1.src='https://embed.tawk.to/685e2123390063190e54b4b2/1iunr2sv2';
+      s1.charset='UTF-8';
+      s1.setAttribute('crossorigin','*');
+      s0.parentNode.insertBefore(s1,s0);
+    })();
+
+    // Hide default widget once fully loaded
+    Tawk_API.onLoad = function(){
+      Tawk_API.hideWidget();
+    };
+
+    // Custom button opens chat
+    document.addEventListener("DOMContentLoaded", function(){
+      var btn = document.getElementById("custom-chat-btn");
+      if(btn){
+        btn.addEventListener("click", function(){
+          if(typeof Tawk_API !== "undefined"){
+            Tawk_API.maximize(); // open chat window
+          }
+        });
+      }
+    });
+  </script>
+  <!-- End of Tawk.to Script -->        
+</body>
+</html>
