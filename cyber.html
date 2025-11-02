@@ -114,7 +114,16 @@
       </div>
     </div>
   </section>
-  <main class="iteccs-container iteccs-main">
+  <main$1>
+    <!-- Quick Actions -->
+    <section id="quick-actions" style="position:sticky;top:64px;z-index:40;background:linear-gradient(180deg,var(--bg),rgba(255,255,255,0));backdrop-filter:saturate(1.1);padding:14px 0 0">
+      <div class="container" style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
+        <button id="startFoundationsBtn" class="btn" style="font-size:14px">Start with Foundations</button>
+        <button id="cyberTrackBtn" class="btn" style="font-size:14px">Cybersecurity Track</button>
+        <button id="isTrackBtn" class="btn" style="font-size:14px">Information Systems Track</button>
+        <button id="fastTrackBtn" class="btn" style="font-size:14px">Fast‑Track Enrollment</button>
+      </div>
+    </section>
     <div class="cta">
       <strong>Not sure where to start?</strong>
       <div class="buttons">
@@ -825,9 +834,36 @@
 Email: ${decodeURIComponent(email)}
 Track: ${decodeURIComponent(track)}
 Courses: ${decodeURIComponent(courses)}`);
-      window.location.href = `mailto:admissions@iteccs.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:info@iteccs.com?subject=${subject}&body=${body}`;
       closeModal();
     }); }
+      // Quick Action handlers
+    const startFoundationsBtn = document.getElementById('startFoundationsBtn');
+    const cyberTrackBtn = document.getElementById('cyberTrackBtn');
+    const isTrackBtn = document.getElementById('isTrackBtn');
+    const fastTrackBtn = document.getElementById('fastTrackBtn');
+
+    function applyFilter(term){
+      const search = document.getElementById('search');
+      const track = document.getElementById('filterSelect');
+      if(search){ search.value = term || ''; search.dispatchEvent(new Event('input')); }
+      if(track){
+        // Try to match a track in the dropdown if provided
+        const desired = (term||'').toLowerCase();
+        if(desired.includes('cyber')) track.value = 'Cybersecurity';
+        else if(desired.includes('information systems')) track.value = 'Information Systems';
+        else track.value = 'All';
+        track.dispatchEvent(new Event('change'));
+      }
+      // Scroll to course grid
+      const grid = document.getElementById('courseGrid');
+      if(grid) grid.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+
+    if(startFoundationsBtn){ startFoundationsBtn.addEventListener('click', ()=> applyFilter('Foundations')); }
+    if(cyberTrackBtn){ cyberTrackBtn.addEventListener('click', ()=> applyFilter('Cybersecurity')); }
+    if(isTrackBtn){ isTrackBtn.addEventListener('click', ()=> applyFilter('Information Systems')); }
+    if(fastTrackBtn){ fastTrackBtn.addEventListener('click', (e)=>{ e.preventDefault(); if(typeof openModal==='function'){ openModal(); } }); }
   </script>
   </main>
   <footer class="iteccs-container" id="contact" style="margin-bottom:40px">
@@ -837,7 +873,7 @@ Courses: ${decodeURIComponent(courses)}`);
         <div style="color:var(--muted)">We’ll build a 3–5 course pathway aligned to your goals (AI, Cloud, Security, Leadership).</div>
       </div>
       <div class="buttons">
-        <a class="btn" href="mailto:admissions@iteccs.com">Talk to an Advisor</a>
+        <a class="btn" href="mailto:info@iteccs.com">Talk to an Advisor</a>
         <a class="btn" href="#enroll">Fast-Track Enrollment</a>
       </div>
     </div>
