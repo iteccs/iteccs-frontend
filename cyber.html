@@ -46,6 +46,20 @@
 
     footer{max-width:1100px;margin:24px auto 60px;padding:0 24px;color:var(--muted);font-size:12px}
   </style>
+  <style>
+    /* ✨ Visual polish & micro‑interactions */
+    @keyframes popIn{0%{transform:scale(.96);opacity:0}100%{transform:scale(1);opacity:1}}
+    .modal{animation:popIn .18s ease-out}
+    .btn{padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:rgba(30,41,59,.5);cursor:pointer;font-weight:600}
+    .btn:hover{transform:translateY(-1px)}
+    .btn.primary{background:linear-gradient(135deg,#06b6d4,#0ea5e9,#22d3ee);border:0}
+    .btn[disabled]{opacity:.6;cursor:not-allowed}
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:4px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.1);font-size:12px;color:#a5b4fc;background:rgba(79,70,229,.12)}
+    .success-screen{position:fixed;inset:0;display:none;z-index:110;align-items:center;justify-content:center;background:radial-gradient(1200px 600px at 30% 20%,rgba(34,211,238,.12),transparent),radial-gradient(900px 400px at 80% 70%,rgba(99,102,241,.12),transparent),rgba(2,6,23,.8);backdrop-filter:blur(4px)}
+    .success-card{width:min(560px,94vw);background:#0b1220;border:1px solid rgba(255,255,255,.08);border-radius:18px;box-shadow:0 10px 40px rgba(0,0,0,.45);padding:22px}
+    .success-card h3{margin:6px 0 8px;font-size:22px}
+    .success-card p{color:#cbd5e1}
+  </style>
 <style id="iteccs-theme">
   :root{
     --brand:#0ea5e9;--brand-2:#22d3ee;--ink:#0f172a;--muted:#475569;--bg:#f8fafc;--card:#ffffff;--ring:rgba(14,165,233,.35);--shadow:0 1px 2px rgba(2,6,23,.06),0 8px 24px rgba(2,6,23,.08)
@@ -86,6 +100,194 @@
 </style>
 </head>
 <body>
+  <!-- Enrollment & Syllabus Modal (injected) -->
+  <style>
+    .modal-backdrop{position:fixed;inset:0;background:rgba(2,6,23,.6);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;z-index:100}
+    .modal{width:min(560px,92vw);background:var(--card,#0f172a);color:var(--ink,#e2e8f0);border:1px solid rgba(2,6,23,.12);border-radius:16px;box-shadow:var(--shadow,0 10px 40px rgba(0,0,0,.5));overflow:hidden}
+    .modal header{display:flex;align-items:center;justify-content:space-between;padding:16px 18px;border-bottom:1px solid rgba(2,6,23,.12)}
+    .modal header h3{margin:0;font-size:18px}
+    .modal .close{background:transparent;border:0;color:var(--muted,#94a3b8);font-size:22px;cursor:pointer}
+    .modal .content{padding:18px}
+    .modal form{display:grid;gap:12px}
+    .modal label{font-weight:600;font-size:13px}
+    .modal input,.modal select,.modal textarea{padding:10px 12px;border:1px solid rgba(2,6,23,.16);border-radius:10px;background:var(--bg,#0b1220);color:inherit;outline:0}
+    .modal .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .modal .actions{display:flex;gap:10px;justify-content:flex-end;padding:14px 18px;border-top:1px solid rgba(2,6,23,.12)}
+    .btn.primary{background:linear-gradient(135deg,var(--brand,#0ea5e9),var(--brand-2,#22d3ee));color:#fff}
+    .toast{position:fixed;right:18px;bottom:18px;background:var(--card,#0f172a);color:var(--ink,#e2e8f0);border:1px solid rgba(2,6,23,.14);padding:12px 14px;border-radius:12px;box-shadow:var(--shadow);display:none;z-index:120}
+  </style>
+  <div id="modalBackdrop" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal" role="document">
+      <header>
+        <h3 id="modalTitle">Fast‑Track Enrollment</h3>
+        <button class="close" aria-label="Close" id="modalClose">×</button>
+      </header>
+      <div class="content">
+        <form id="iteccsForm">
+          <div class="row">
+            <div>
+              <label for="name">Full name</label>
+              <input id="name" name="name" type="text" placeholder="Jane Doe" required />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@example.com" required />
+            </div>
+          </div>
+          <div class="row">
+            <div>
+              <label for="track">Track</label>
+              <select id="track" name="track" required>
+                <option value="Foundations">Foundations</option>
+                <option value="Cybersecurity">Cybersecurity</option>
+                <option value="Information Systems">Information Systems</option>
+              </select>
+            </div>
+            <div>
+              <label for="interest">Primary interest</label>
+              <input id="interest" name="interest" type="text" placeholder="e.g., Zero Trust, Database, GenAI" />
+            </div>
+          </div>
+          <div>
+            <label for="message">Notes (optional)</label>
+            <textarea id="message" name="message" rows="3" placeholder="Tell us your goals or any questions"></textarea>
+          </div>
+          <input type="hidden" name="form" value="iteccs-catalog" />
+          <input type="hidden" name="intent" id="formIntent" value="Enroll" />
+        </form>
+      </div>
+      <div class="actions">
+        <button class="btn" type="button" id="emailFallbackBtn">Send by Email</button>
+        <button class="btn primary" type="button" id="submitFormBtn">Submit</button>
+      </div>
+    </div>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <!-- Success screen -->
+  <div id="successScreen" class="success-screen" aria-hidden="true">
+    <div class="success-card">
+      <span class="pill">✅ Submission received</span>
+      <h3>Thanks! We’ll reach out shortly.</h3>
+      <p>Your request has been sent to <strong>info@iteccs.com</strong>. Check your inbox for a confirmation copy. If you don’t see it in a couple of minutes, please check your spam folder.</p>
+      <div style="display:flex;gap:10px;margin-top:14px">
+        <button class="btn" id="successClose">Close</button>
+        <a class="btn primary" href="#catalog">Back to Catalog</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Thank-you anchor (for optional redirect) -->
+  <div id="thank-you" style="position:relative;top:-80px"></div>
+
+  <script>
+    // ===== Config =====
+    const ITECCS_EMAIL = 'info@iteccs.com';
+    const ITECCS_ENDPOINT = 'https://formsubmit.co/ajax/info@iteccs.com'; // direct submit to info@iteccs.com via FormSubmit
+    const CC_LIST = ''; // e.g., 'admissions@iteccs.com,ceo@iteccs.com'
+    const BCC_LIST = ''; // e.g., 'archive@iteccs.com' 
+    const THANK_YOU_URL = '#thank-you'; // in-page thank-you screen anchor
+
+    // ===== Utilities =====
+    const $ = (sel)=>document.querySelector(sel);
+    const showToast = (msg)=>{const t=$('#toast');t.textContent=msg;t.style.display='block';setTimeout(()=>t.style.display='none',4200)};
+    const openModal = (title,intent,preselect)=>{
+      $('#modalTitle').textContent = title;
+      $('#formIntent').value = intent||'Enroll';
+      if(preselect){ $('#track').value = preselect; }
+      const b=$('#modalBackdrop'); b.style.display='flex'; b.setAttribute('aria-hidden','false');
+      setTimeout(()=>{ $('#name')?.focus(); },80);
+    };
+    const closeModal = ()=>{const b=$('#modalBackdrop'); b.style.display='none'; b.setAttribute('aria-hidden','true');};
+    const openSuccess = ()=>{const s=$('#successScreen'); s.style.display='flex'; s.setAttribute('aria-hidden','false');};
+    const closeSuccess = ()=>{const s=$('#successScreen'); s.style.display='none'; s.setAttribute('aria-hidden','true');};
+
+    document.addEventListener('DOMContentLoaded',()=>{
+      // Wire quick action buttons
+      $('#enrollBtn')?.addEventListener('click',(e)=>{e.preventDefault(); openModal('Fast‑Track Enrollment','Enroll');});
+      $('#syllabusBtn')?.addEventListener('click',(e)=>{e.preventDefault(); openModal('Request Syllabus','Syllabus');});
+      $('#startFoundationsBtn')?.addEventListener('click',()=>openModal('Start with Foundations','Enroll','Foundations'));
+      $('#cyberTrackBtn')?.addEventListener('click',()=>openModal('Cybersecurity Track','Enroll','Cybersecurity'));
+      $('#isTrackBtn')?.addEventListener('click',()=>openModal('Information Systems Track','Enroll','Information Systems'));
+      $('#fastTrackBtn')?.addEventListener('click',()=>openModal('Fast‑Track Enrollment','Enroll'));
+      $('#modalClose')?.addEventListener('click',closeModal);
+      $('#modalBackdrop')?.addEventListener('click',(e)=>{ if(e.target.id==='modalBackdrop') closeModal(); });
+
+      // Submit handler
+      const submitBtn = $('#submitFormBtn');
+      $('#submitFormBtn')?.addEventListener('click', async ()=>{
+        const form = $('#iteccsForm');
+        if(!form.reportValidity()){ return; }
+        const data = Object.fromEntries(new FormData(form).entries());
+        const payload = {
+          name: data.name,
+          email: data.email,
+          track: data.track,
+          interest: data.interest||'',
+          message: data.message||'',
+          intent: data.intent||$('#formIntent').value,
+          _subject: `[${data.intent||$('#formIntent').value}] ${data.name} — ${data.track}`,
+          _template: 'table',
+          _cc: CC_LIST,
+          _bcc: BCC_LIST
+        };
+        submitBtn.setAttribute('disabled','true');
+        submitBtn.textContent = 'Submitting…';
+        try{
+          const res = await fetch(ITECCS_ENDPOINT,{
+            method:'POST',
+            headers:{'Content-Type':'application/json','Accept':'application/json'},
+            body: JSON.stringify(payload)
+          });
+          if(res.ok){
+            showToast('Submitted! Check your inbox for confirmation.');
+            form.reset();
+            closeModal();
+            openSuccess();
+            if(THANK_YOU_URL){ history.pushState(null,'',THANK_YOU_URL); }
+          } else { fallbackEmail(payload); }
+        }catch(err){ fallbackEmail(payload); }
+        finally{ submitBtn.removeAttribute('disabled'); submitBtn.textContent='Submit'; }
+      });
+
+      // Success screen close
+      $('#successClose')?.addEventListener('click', closeSuccess);
+          if(res.ok){
+            showToast('Thanks! Your submission was received. We\'ll reply at '+payload.email+'.');
+            form.reset();
+            closeModal();
+          } else { fallbackEmail(payload); }
+        }catch(err){ fallbackEmail(payload); }
+      });
+
+      // Email fallback
+      $('#emailFallbackBtn')?.addEventListener('click',()=>{
+        const form = $('#iteccsForm');
+        if(!form.reportValidity()){ return; }
+        const d = Object.fromEntries(new FormData(form).entries());
+        fallbackEmail({name:d.name,email:d.email,track:d.track,interest:d.interest||'',message:d.message||'',intent:$('#formIntent').value});
+      });
+    });
+
+    function fallbackEmail(p){
+      const subject = encodeURIComponent(`[${p.intent}] ${p.name} — ${p.track}`);
+      const body = encodeURIComponent(
+        `Name: ${p.name}
+Email: ${p.email}
+Track: ${p.track}
+Interest: ${p.interest}
+
+Notes:
+${p.message}
+
+— Sent from ITECCS Catalog`
+      );
+      window.location.href = `mailto:${ITECCS_EMAIL}?subject=${subject}&body=${body}`;
+      showToast('Opening your email client as a fallback…');
+      closeModal();
+    }
+  </script>
+
   <header class="iteccs-topbar">
     <div class="inner">
       <div class="brand">
@@ -721,183 +923,4 @@
           </div>
         </div>
         <div class="card" data-tags="research continuation advanced">
-          <div class="dot"></div>
-          <div>
-            <h3 class="title">Independent Study in Cybersecurity II</h3>
-            <p class="desc">Extend prior independent work into advanced research or implementation.</p>
-            <div class="chips"><span class="chip">Advanced</span><span class="chip">Research</span></div>
-          </div>
-        </div>
-      </div>
-    </details>
-      
-    <!-- Enroll Modal -->
-    <div id="enrollModal" aria-hidden="true" style="position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,6,23,.45);backdrop-filter:blur(4px);z-index:60">
-      <div role="dialog" aria-modal="true" aria-labelledby="enrollTitle" style="background:var(--card);color:var(--ink);border:1px solid rgba(2,6,23,.12);border-radius:18px;box-shadow:var(--shadow);max-width:640px;width:92%;padding:20px">
-        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
-          <h2 id="enrollTitle" style="margin:0;font-size:22px">Fast‑Track Enrollment</h2>
-          <button id="closeEnroll" class="btn" style="background:transparent;color:var(--muted);border:1px solid rgba(2,6,23,.12)">Close</button>
-        </div>
-        <p style="margin:8px 0 12px;color:var(--muted)">Tell us what you want to take. We’ll confirm seats and send you a custom plan within 1 business day.</p>
-        <form id="enrollForm" style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-          <label style="display:flex;flex-direction:column;gap:6px">Full Name
-            <input name="name" required placeholder="Jane Doe" style="padding:10px;border:1px solid rgba(2,6,23,.12);border-radius:12px;background:var(--bg);color:var(--ink)">
-          </label>
-          <label style="display:flex;flex-direction:column;gap:6px">Email
-            <input name="email" type="email" required placeholder="you@email.com" style="padding:10px;border:1px solid rgba(2,6,23,.12);border-radius:12px;background:var(--bg);color:var(--ink)">
-          </label>
-          <label style="grid-column:1/3;display:flex;flex-direction:column;gap:6px">Track
-            <select name="track" style="padding:10px;border:1px solid rgba(2,6,23,.12);border-radius:12px;background:var(--bg);color:var(--ink)">
-              <option>Cybersecurity</option>
-              <option>Information Systems</option>
-              <option>AI & Data</option>
-              <option>Cloud & DevOps</option>
-              <option>Networking</option>
-            </select>
-          </label>
-          <label style="grid-column:1/3;display:flex;flex-direction:column;gap:6px">Courses of Interest
-            <textarea name="courses" rows="4" placeholder="e.g., Foundations of Information Assurance; Web Security; Network Security" style="padding:10px;border:1px solid rgba(2,6,23,.12);border-radius:12px;background:var(--bg);color:var(--ink)"></textarea>
-          </label>
-          <div style="grid-column:1/3;display:flex;gap:10px;justify-content:flex-end">
-            <button type="button" id="emailEnroll" class="btn">Send by Email</button>
-          </div>
-        </form>
-        <p style="margin:10px 0 0;color:var(--muted);font-size:12px">By submitting, you agree to be contacted about course scheduling and prerequisites.</p>
-      </div>
-    </div>
-  </main>
-
-  <footer>
-    Tip: Use the search box to filter instantly (e.g., “Zero Trust”, “Forensics”, “GenAI”).
-  </footer>
-
-  <script>
-    const q = document.getElementById('q');
-    const sections = Array.from(document.querySelectorAll('details'));
-    const cards = Array.from(document.querySelectorAll('.card'));
-    const expandAllBtn = document.getElementById('expandAll');
-    const collapseAllBtn = document.getElementById('collapseAll');
-
-    function filter() {
-      const term = q.value.trim().toLowerCase();
-      let anyVisible = false;
-      sections.forEach(sec => {
-        const secCards = Array.from(sec.querySelectorAll('.card'));
-        let visibleInSection = 0;
-        secCards.forEach(card => {
-          const text = card.innerText.toLowerCase() + ' ' + (card.dataset.tags || '');
-          const show = !term || text.includes(term);
-          card.style.display = show ? '' : 'none';
-          if (show) visibleInSection++;
-        });
-        // auto open section if it has matches
-        if (term) {
-          if (visibleInSection > 0) { sec.open = true; anyVisible = true; }
-          else { sec.open = false; }
-        }
-      });
-    }
-
-    q.addEventListener('input', filter);
-    expandAllBtn.addEventListener('click', () => sections.forEach(s => s.open = true));
-    collapseAllBtn.addEventListener('click', () => sections.forEach(s => s.open = false));
-      // Hook up buttons
-    const enrollBtn = document.getElementById('enrollBtn');
-    const syllabusBtn = document.getElementById('syllabusBtn');
-    const enrollModal = document.getElementById('enrollModal');
-    const closeEnroll = document.getElementById('closeEnroll');
-    const emailEnroll = document.getElementById('emailEnroll');
-    const enrollForm = document.getElementById('enrollForm');
-
-    function openModal(){ enrollModal.style.display='flex'; setTimeout(()=>{ enrollModal.querySelector('input[name="name"]').focus(); }, 50); }
-    function closeModal(){ enrollModal.style.display='none'; }
-
-    if(enrollBtn){ enrollBtn.addEventListener('click', (e)=>{ e.preventDefault(); openModal(); }); }
-    if(closeEnroll){ closeEnroll.addEventListener('click', closeModal); }
-    if(enrollModal){ enrollModal.addEventListener('click', (e)=>{ if(e.target===enrollModal) closeModal(); }); }
-    document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeModal(); });
-
-    if(syllabusBtn){ syllabusBtn.addEventListener('click', (e)=>{
-      // Smooth scroll to contact footer
-      const contact = document.getElementById('contact');
-      if(contact){ e.preventDefault(); contact.scrollIntoView({behavior:'smooth'}); }
-    }); }
-
-    if(emailEnroll){ emailEnroll.addEventListener('click', ()=>{
-      const data = new FormData(enrollForm);
-      const name = encodeURIComponent(data.get('name')||'');
-      const email = encodeURIComponent(data.get('email')||'');
-      const track = encodeURIComponent(data.get('track')||'');
-      const courses = encodeURIComponent(data.get('courses')||'');
-      const subject = encodeURIComponent('ITECCS Enrollment Request');
-      const body = encodeURIComponent(`Name: ${decodeURIComponent(name)}
-Email: ${decodeURIComponent(email)}
-Track: ${decodeURIComponent(track)}
-Courses: ${decodeURIComponent(courses)}`);
-      window.location.href = `mailto:info@iteccs.com?subject=${subject}&body=${body}`;
-      closeModal();
-    }); }
-      // Quick Action handlers
-    const startFoundationsBtn = document.getElementById('startFoundationsBtn');
-    const cyberTrackBtn = document.getElementById('cyberTrackBtn');
-    const isTrackBtn = document.getElementById('isTrackBtn');
-    const fastTrackBtn = document.getElementById('fastTrackBtn');
-
-    function applyFilter(term){
-      const search = document.getElementById('search');
-      const track = document.getElementById('filterSelect');
-      if(search){ search.value = term || ''; search.dispatchEvent(new Event('input')); }
-      if(track){
-        // Try to match a track in the dropdown if provided
-        const desired = (term||'').toLowerCase();
-        if(desired.includes('cyber')) track.value = 'Cybersecurity';
-        else if(desired.includes('information systems')) track.value = 'Information Systems';
-        else track.value = 'All';
-        track.dispatchEvent(new Event('change'));
-      }
-      // Scroll to course grid
-      const grid = document.getElementById('courseGrid');
-      if(grid) grid.scrollIntoView({behavior:'smooth', block:'start'});
-    }
-
-    if(startFoundationsBtn){ startFoundationsBtn.addEventListener('click', ()=> applyFilter('Foundations')); }
-    if(cyberTrackBtn){ cyberTrackBtn.addEventListener('click', ()=> applyFilter('Cybersecurity')); }
-    if(isTrackBtn){ isTrackBtn.addEventListener('click', ()=> applyFilter('Information Systems')); }
-    if(fastTrackBtn){ fastTrackBtn.addEventListener('click', (e)=>{ e.preventDefault(); if(typeof openModal==='function'){ openModal(); } }); }
-  </script>
-  </main>
-  <footer class="iteccs-container" id="contact" style="margin-bottom:40px">
-    <div class="cta">
-      <div>
-        <strong>Need a curated plan?</strong>
-        <div style="color:var(--muted)">We’ll build a 3–5 course pathway aligned to your goals (AI, Cloud, Security, Leadership).</div>
-      </div>
-      <div class="buttons">
-        <a class="btn" href="mailto:info@iteccs.com">Talk to an Advisor</a>
-        <a class="btn" href="#enroll">Fast-Track Enrollment</a>
-      </div>
-    </div>
-  </footer>
-  <script>
-    const chips = document.querySelectorAll('.chip');
-    chips.forEach(ch => ch.addEventListener('click', ()=>{
-      const active = ch.getAttribute('data-active') === 'true';
-      chips.forEach(c=>c.dataset.active=false);
-      if(!active){ ch.dataset.active=true; applyFilter(ch.dataset.filter); } else { applyFilter(''); }
-    }));
-
-    function filterCourses(e){
-      const q = (e?.target?.value || '').toLowerCase().trim();
-      document.querySelectorAll('.course-card, [data-card], .card, li').forEach(el=>{
-        const text = el.textContent.toLowerCase();
-        el.style.display = q.split(/\s+/).every(k=>text.includes(k)) ? '' : 'none';
-      });
-    }
-    function applyFilter(tag){
-      const all = document.querySelectorAll('[data-tags]');
-      if(!tag){ all.forEach(n=>n.style.display=''); return; }
-      all.forEach(n=>{ const tags=(n.dataset.tags||'').split(','); n.style.display = tags.includes(tag) ? '' : 'none'; });
-    }
-  </script>
-</body>
-</html>
+          <div cla
