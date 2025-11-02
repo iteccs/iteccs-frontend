@@ -123,7 +123,7 @@
         <button class="close" aria-label="Close" id="modalClose">×</button>
       </header>
       <div class="content">
-        <form id="iteccsForm">
+        <form id="iteccsForm" action="https://formsubmit.co/info@iteccs.com" method="POST" target="hiddenFrame">
           <div class="row">
             <div>
               <label for="name">Full name</label>
@@ -154,6 +154,13 @@
           </div>
           <input type="hidden" name="form" value="iteccs-catalog" />
           <input type="hidden" name="intent" id="formIntent" value="Enroll" />
+          <!-- Hidden email meta (FormSubmit) -->
+          <input type="hidden" name="_subject" id="_subjectHidden" value="ITECCS Inquiry" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_cc" id="_ccHidden" value="" />
+          <input type="hidden" name="_bcc" id="_bccHidden" value="" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_next" value="#thank-you" />
         </form>
       </div>
       <div class="actions">
@@ -163,6 +170,7 @@
     </div>
   </div>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <iframe name="hiddenFrame" id="hiddenFrame" style="display:none"></iframe>
 
   <!-- Success screen -->
   <div id="successScreen" class="success-screen" aria-hidden="true">
@@ -183,7 +191,10 @@
   <script>
     // ===== Config =====
     const ITECCS_EMAIL = 'info@iteccs.com';
-    const ITECCS_ENDPOINT = 'https://formsubmit.co/ajax/info@iteccs.com'; // direct submit to info@iteccs.com via FormSubmit
+    const ITECCS_ENDPOINT = null; // using classic HTML POST to FormSubmit action
+    const CC_LIST = '';
+    const BCC_LIST = '';
+    const THANK_YOU_URL = '#thank-you';
     const CC_LIST = ''; // e.g., 'admissions@iteccs.com,ceo@iteccs.com'
     const BCC_LIST = ''; // e.g., 'archive@iteccs.com' 
     const THANK_YOU_URL = '#thank-you'; // in-page thank-you screen anchor
@@ -213,32 +224,48 @@
       $('#modalClose')?.addEventListener('click',closeModal);
       $('#modalBackdrop')?.addEventListener('click',(e)=>{ if(e.target.id==='modalBackdrop') closeModal(); });
 
-      // Submit handler
+      // Submit handler (classic POST to FormSubmit in hidden iframe)
       const submitBtn = $('#submitFormBtn');
       $('#submitFormBtn')?.addEventListener('click', async ()=>{
         const form = $('#iteccsForm');
         if(!form.reportValidity()){ return; }
-        const data = Object.fromEntries(new FormData(form).entries());
-        const payload = {
-          name: data.name,
-          email: data.email,
-          track: data.track,
-          interest: data.interest||'',
-          message: data.message||'',
-          intent: data.intent||$('#formIntent').value,
-          _subject: `[${data.intent||$('#formIntent').value}] ${data.name} — ${data.track}`,
-          _template: 'table',
-          _cc: CC_LIST,
-          _bcc: BCC_LIST
-        };
+        // update subject with intent + name + track
+        const intent = $('#formIntent').value;
+        const name = $('#name').value;
+        const track = $('#track').value;
+        $('#_subjectHidden').value = `[${intent}] ${name} — ${track}`;
+        $('#_ccHidden').value = CC_LIST;
+        $('#_bccHidden').value = BCC_LIST;
         submitBtn.setAttribute('disabled','true');
         submitBtn.textContent = 'Submitting…';
+        const onFrameLoad = ()=>{
+          showToast('Submitted! Check your inbox for confirmation.');
+          form.reset();
+          closeModal();
+          openSuccess();
+          if(THANK_YOU_URL){ history.pushState(null,'',THANK_YOU_URL); }
+          submitBtn.removeAttribute('disabled');
+          submitBtn.textContent = 'Submit';
+          $('#hiddenFrame').removeEventListener('load', onFrameLoad);
+        };
+        $('#hiddenFrame').addEventListener('load', onFrameLoad);
         try{
-          const res = await fetch(ITECCS_ENDPOINT,{
-            method:'POST',
-            headers:{'Content-Type':'application/json','Accept':'application/json'},
-            body: JSON.stringify(payload)
+          form.submit();
+        }catch(e){
+          // Fallback to email client
+          const mail = buildMailto({
+            name: $('#name').value,
+            email: $('#email').value,
+            track: $('#track').value,
+            interest: $('#interest').value,
+            message: $('#message').value,
+            intent
           });
+          window.location.href = mail;
+          submitBtn.removeAttribute('disabled');
+          submitBtn.textContent = 'Submit';
+        }
+      });
           if(res.ok){
             showToast('Submitted! Check your inbox for confirmation.');
             form.reset();
