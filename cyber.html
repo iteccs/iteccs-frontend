@@ -1,0 +1,191 @@
+<section class="mx-auto max-w-7xl px-4 py-10 font-sans text-slate-800">
+  <style>
+    .grid{
+      display:grid; gap:1.25rem;
+      grid-template-columns: repeat(1,minmax(0,1fr));
+    }
+    @media(min-width:768px){ .grid{ grid-template-columns: repeat(2,minmax(0,1fr)); } }
+    @media(min-width:1200px){ .grid{ grid-template-columns: repeat(3,minmax(0,1fr)); } }
+    .card{
+      background:#fff; border:1px solid #e5e7eb; border-radius:16px; padding:18px 18px 16px;
+      box-shadow: 0 6px 20px rgba(2,6,23,.06);
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+    .card:hover{
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(2,6,23,.10);
+      border-color:#d1d5db;
+    }
+    .pill{
+      display:inline-block; font-size:.72rem; letter-spacing:.02em; 
+      padding:.25rem .6rem; border-radius:999px; background:#f1f5f9; color:#0f172a; margin-bottom:.5rem;
+    }
+    h2{ font-size:1.6rem; font-weight:800; margin:2.5rem 0 1rem; color:#0f172a; letter-spacing:-.01em }
+    h3{ font-size:1rem; font-weight:700; margin:.15rem 0 .5rem; color:#0f172a }
+    p{ font-size:.95rem; line-height:1.45; color:#334155; margin:0 }
+    .sub{ font-size:.82rem; color:#475569; margin-top:.35rem }
+    .group{ margin-top:2rem }
+    .hr{ height:1px; background:linear-gradient(90deg,transparent,#e5e7eb,transparent); margin:1.25rem 0 }
+  </style>
+
+  <!-- =================== INFORMATION SYSTEMS (contextual) =================== -->
+  <h2>Information Systems & Enterprise Technology</h2>
+  <div class="grid">
+    <div class="card">
+      <span class="pill">Digital & Strategy</span>
+      <h3>Digital Transformation of Business</h3>
+      <p>How digital technologies reshape markets, operations, and organizational value.</p>
+    </div>
+    <div class="card">
+      <span class="pill">Projects</span>
+      <h3>Managing Complex Projects</h3>
+      <p>Plan, scope, and deliver complex initiatives under uncertainty using pro tools.</p>
+    </div>
+    <div class="card">
+      <span class="pill">Strategy</span>
+      <h3>IT and Global Sourcing Strategy</h3>
+      <p>Global collaboration, sourcing models, risk analysis, and value creation via IT.</p>
+    </div>
+    <div class="card">
+      <span class="pill">Studio</span>
+      <h3>IT Consulting Lab Practicum</h3>
+      <p>Hands-on consulting with a corporate sponsor; deliver real solutions end-to-end.</p>
+    </div>
+    <div class="card">
+      <span class="pill">Web & Services</span>
+      <h3>Developing Internet Systems and Services</h3>
+      <p>Design secure, scalable online services and mobile-first user experiences.</p>
+    </div>
+    <div class="card">
+      <span class="pill">Cloud & Data</span>
+      <h3>Large-Scale Computing on the Cloud</h3>
+      <p>AWS big-data stack (HDFS, Spark, Hive) for distributed analytics and pipelines.</p>
+    </div>
+    <div class="card">
+      <span class="pill">Data</span>
+      <h3>Database Management</h3>
+      <p>Relational modeling, SQL practice, and building database-backed applications.</p>
+    </div>
+    <div class="card">
+      <span class="pill">Data</span>
+      <h3>Advanced Database Management</h3>
+      <p>PL/SQL, warehousing, Oracle stack, and RDBMS vs. NoSQL for enterprise systems.</p>
+    </div>
+    <div class="card">
+      <span class="pill">Programming</span>
+      <h3>Introduction to Java for Business</h3>
+      <p>Practical Java programming foundations for business technologists.</p>
+    </div>
+  </div>
+
+  <div class="hr"></div>
+
+  <!-- =================== CYBERSECURITY =================== -->
+  <h2>Cybersecurity — Foundations, Engineering & Leadership</h2>
+
+  <div class="group">
+    <h3 class="sub">Foundations & Governance</h3>
+    <div class="grid">
+      <div class="card"><span class="pill">Foundation</span><h3>Foundations of Information Assurance</h3><p>Core security principles, threats, risk, policy, and enterprise protections.</p></div>
+      <div class="card"><span class="pill">Privacy</span><h3>Information Security and Privacy</h3><p>Protect systems and data with policy, host/network controls, and formal analysis.</p></div>
+      <div class="card"><span class="pill">Leadership</span><h3>Cyber Strategy and Leadership</h3><p>Design and run enterprise-grade security programs; CISO-level readiness.</p></div>
+      <div class="card"><span class="pill">Architecture</span><h3>Information Assurance Architectures and Technologies</h3><p>NIST-aligned architectures, Zero Trust, CDM, and cloud security patterns.</p></div>
+    </div>
+  </div>
+
+  <div class="group">
+    <h3 class="sub">Network, Systems & Web Security</h3>
+    <div class="grid">
+      <div class="card"><span class="pill">Network</span><h3>Network Security</h3><p>Security architecture across wired, wireless, IPv6, and virtualized cloud networks.</p></div>
+      <div class="card"><span class="pill">OS</span><h3>Operating Systems Security</h3><p>Modern OS defenses (ASLR, CFI, TPMs) and hardening against APTs and rootkits.</p></div>
+      <div class="card"><span class="pill">Web</span><h3>Web Security</h3><p>Threat modeling, CIA/AAA, PKI, and hands-on labs with cloud and containers.</p></div>
+      <div class="card"><span class="pill">Web+</span><h3>Advanced Web Security</h3><p>Same-origin policy, CORS, sandboxing; attack and defend modern web stacks.</p></div>
+      <div class="card"><span class="pill">Java</span><h3>Java Security</h3><p>Crypto APIs, certificates, code signing, TLS, and secure service development.</p></div>
+      <div class="card"><span class="pill">Auth</span><h3>Authentication Technologies</h3><p>Passwords, PKI, smart cards, biometrics, federation, and human factors.</p></div>
+    </div>
+  </div>
+
+  <div class="group">
+    <h3 class="sub">Cryptography & Trust</h3>
+    <div class="grid">
+      <div class="card"><span class="pill">Crypto</span><h3>Cryptology</h3><p>Block ciphers, public-key crypto, signatures, hashes, and post-quantum overview.</p></div>
+      <div class="card"><span class="pill">PKI</span><h3>Public Key Infrastructure and Managing E-Security</h3><p>Certificates, key lifecycles, policy, and legal aspects for strong trust services.</p></div>
+      <div class="card"><span class="pill">Zero Trust</span><h3>Zero Trust Principles and Practice</h3><p>Design and rollout of Zero Trust strategies, controls, and enterprise adoption.</p></div>
+    </div>
+  </div>
+
+  <div class="group">
+    <h3 class="sub">Industrial / Embedded / IoT & CPS Security</h3>
+    <div class="grid">
+      <div class="card"><span class="pill">Embedded</span><h3>Embedded Systems: Vulnerabilities, Intrusions & Protection</h3><p>Attack surfaces and protections for non-networked embedded devices.</p></div>
+      <div class="card"><span class="pill">ICS</span><h3>Securing Industrial Control Systems</h3><p>Protect DCS/SCADA/PLC, HMIs, safety systems; Purdue Model and case studies.</p></div>
+      <div class="card"><span class="pill">ICS</span><h3>Securing Industrial Control Systems (Applied)</h3><p>Hands-on ICS vulnerability analysis and best practices for OT security.</p></div>
+      <div class="card"><span class="pill">CPS</span><h3>Cyber Physical Systems Security</h3><p>Control systems, protocol analysis, IDS design, and resilient CPS defenses.</p></div>
+      <div class="card"><span class="pill">IoT</span><h3>Introduction to IoT Security and Privacy</h3><p>Platforms, protocols, crypto, and a layered security methodology for IoT.</p></div>
+      <div class="card"><span class="pill">Vehicles</span><h3>Intelligent Vehicles: Cybersecurity</h3><p>Assured autonomy for connected/EV ecosystems and V2X security.</p></div>
+    </div>
+  </div>
+
+  <div class="group">
+    <h3 class="sub">Forensics, Reverse Engineering & Malware</h3>
+    <div class="grid">
+      <div class="card"><span class="pill">Forensics</span><h3>Computer Forensics</h3><p>Dead-box acquisition, file systems, logs, artifacts, and reporting.</p></div>
+      <div class="card"><span class="pill">Forensics</span><h3>Digital Forensics Technologies and Techniques</h3><p>Signatures, stego, watermarking, anti-forensics, and modern data processing.</p></div>
+      <div class="card"><span class="pill">Mobile</span><h3>Mobile Device Forensics</h3><p>Live extraction and analysis of Android artifacts, SIM/SD, and app traces.</p></div>
+      <div class="card"><span class="pill">RE</span><h3>Reverse Engineering and Vulnerability Analysis</h3><p>Static/dynamic analysis, fuzzing, exploit classes, and mitigations.</p></div>
+      <div class="card"><span class="pill">Malware</span><h3>Malware Analysis</h3><p>Kernel/user-mode debugging, C2 analysis, and ransomware decryption projects.</p></div>
+      <div class="card"><span class="pill">Runtime</span><h3>Engineering Runtime Malware Detection</h3><p>Kernel telemetry and behavior-based detection on Windows systems.</p></div>
+    </div>
+  </div>
+
+  <div class="group">
+    <h3 class="sub">Threat Hunting, Intelligence & Exercises</h3>
+    <div class="grid">
+      <div class="card"><span class="pill">IDS</span><h3>Intrusion Detection</h3><p>Host/network IDS/IPS, ML-aided analysis, and comparative tool evaluation.</p></div>
+      <div class="card"><span class="pill">Hunt</span><h3>Cyber Threat Hunting and Intelligence</h3><p>EDR, SIEM, TIP workflows, APT scenarios, and analytic attribution frameworks.</p></div>
+      <div class="card"><span class="pill">Covert</span><h3>Covert Channels</h3><p>Storage/timing channels and side-channel leakage—build and counter them.</p></div>
+      <div class="card"><span class="pill">Exercise</span><h3>Cyber Exercise</h3><p>Design and deliver exercises to assess people, tech, and processes.</p></div>
+      <div class="card"><span class="pill">Analysis</span><h3>Information Assurance Analysis</h3><p>Data-driven monitoring with SiLK, NetFlow, Splunk, IoT/ICS protocol analysis.</p></div>
+    </div>
+  </div>
+
+  <div class="group">
+    <h3 class="sub">AI, GenAI & Assured Autonomy</h3>
+    <div class="grid">
+      <div class="card"><span class="pill">AI+Sec</span><h3>AI for Cybersecurity</h3><p>Machine learning for spam/phishing, IDS, malware/botnet, and auth security.</p></div>
+      <div class="card"><span class="pill">Assurance</span><h3>Introduction to Assured AI and Autonomy</h3><p>Security, resilience, explainability, and ethics for AI-enabled autonomy.</p></div>
+      <div class="card"><span class="pill">Assurance</span><h3>Assured Autonomy</h3><p>Safety/security guarantees for autonomous systems via research-driven study.</p></div>
+      <div class="card"><span class="pill">AI+Autonomy</span><h3>AI for Assured Autonomy</h3><p>Core AI topics plus foundations of assuring autonomous decision pipelines.</p></div>
+      <div class="card"><span class="pill">GenAI</span><h3>Generative AI for Cybersecurity</h3><p>LLMs and diffusion models for defense, misuse, adversarial attacks, and SOC use.</p></div>
+      <div class="card"><span class="pill">GenAI</span><h3>Generative AI and Synthetic Threats</h3><p>Deepfakes, disinformation, and defenses; hands-on tools and research project.</p></div>
+    </div>
+  </div>
+
+  <div class="group">
+    <h3 class="sub">Ethical Hacking & Web App Defense</h3>
+    <div class="grid">
+      <div class="card"><span class="pill">Offense</span><h3>Introduction to Ethical Hacking</h3><p>Kill chain, TTPs, reconnaissance-to-post-exploitation with defensive insights.</p></div>
+    </div>
+  </div>
+
+  <div class="group">
+    <h3 class="sub">Capstones & Independent Study</h3>
+    <div class="grid">
+      <div class="card"><span class="pill">Capstone</span><h3>Capstone Project in Cybersecurity</h3><p>Team-based publication-quality solution and tooling on a real cyber problem.</p></div>
+      <div class="card"><span class="pill">Research</span><h3>Independent Study in Cybersecurity I</h3><p>Faculty-mentored research culminating in a significant paper or project.</p></div>
+      <div class="card"><span class="pill">Research</span><h3>Independent Study in Cybersecurity II</h3><p>Advanced continuation of independent research under faculty guidance.</p></div>
+    </div>
+  </div>
+
+  <div class="hr"></div>
+
+  <!-- =================== CROSS-LISTED (DATA/AI for IS) =================== -->
+  <h2>Data, AI & Decision Systems (IS & Cyber Crossover)</h2>
+  <div class="grid">
+    <div class="card"><span class="pill">BI</span><h3>Data Science and Business Intelligence</h3><p>Visualization, social analytics, and predictive modeling for business impact.</p></div>
+    <div class="card"><span class="pill">AI</span><h3>AI Development and Business Applications</h3><p>Practical AI models and deployment thinking for enterprise use cases.</p></div>
+    <div class="card"><span class="pill">ML</span><h3>Machine Learning: Design and Deployment</h3><p>Hands-on ML with scikit-learn, TensorFlow, and PyTorch in real scenarios.</p></div>
+    <div class="card"><span class="pill">GenAI</span><h3>Generative AI</h3><p>Foundation and diffusion models, NLP, prompt engineering, and governance.</p></div>
+    <div class="card"><span class="pill">Ethics</span><h3>Responsible AI</h3><p>Fairness, safety, transparency, compliance, and organizational AI governance.</p></div>
+  </div>
+</section>
