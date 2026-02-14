@@ -1,0 +1,137 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ITECCS | Applied Mathematics & Computational Innovation</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Fonts and Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="ITECCS Logo">
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="about.html">About</a></li>
+      <li>
+        <a href="contact.html" class="contact-nav-button">
+          <i class="fas fa-envelope"></i> Contact
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <video autoplay muted loop playsinline class="hero-video">
+      <source src="iteccs.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="hero-text">
+      <div class="hero-content">
+        <h1>ITECCS</h1>
+        <h2>Applied Mathematics, AI & Computational Innovation</h2>
+        <p>
+          Advancing research, education, and industry through multiscale modeling,
+          scientific computing, and data-driven intelligence.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="education.html" class="cta-button">Explore Education</a>
+          <a href="research.html" class="cta-button secondary">Explore Research</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Dual Mission Section -->
+  <section class="dual-section">
+
+    <div class="dual-card">
+      <i class="fas fa-graduation-cap"></i>
+      <h3>Education & Training</h3>
+      <p>
+        Structured courses, workshops, and applied mathematics programs designed
+        for students, engineers, and professionals seeking advanced analytical skills.
+      </p>
+      <a href="education.html" class="link-button">Learn More</a>
+    </div>
+
+    <div class="dual-card">
+      <i class="fas fa-microscope"></i>
+      <h3>Research & Consulting</h3>
+      <p>
+        Multiscale modeling, CFD, porous media analysis, inverse problems,
+        and AI-driven computational solutions for academic and industry partners.
+      </p>
+      <a href="research.html" class="link-button">Learn More</a>
+    </div>
+
+  </section>
+
+  <!-- Credibility Section -->
+  <section class="credibility">
+    <h2>Scientific Excellence & Innovation</h2>
+    <p>
+      ITECCS integrates peer-reviewed research, high-performance computing,
+      and advanced mathematical modeling to bridge academic discovery and
+      real-world application.
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 ITECCS | Institute for Theoretical & Computational Science</p>
+  </footer>
+
+  <!-- Custom Chat Button -->
+  <button id="custom-chat-btn">
+    <i class="fas fa-comments"></i>
+  </button>
+
+  <!-- Tawk.to Script -->
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {};
+    var Tawk_LoadStart = new Date();
+
+    (function(){
+      var s1=document.createElement("script"),
+          s0=document.getElementsByTagName("script")[0];
+      s1.async=true;
+      s1.src='https://embed.tawk.to/685e2123390063190e54b4b2/1iunr2sv2';
+      s1.charset='UTF-8';
+      s1.setAttribute('crossorigin','*');
+      s0.parentNode.insertBefore(s1,s0);
+    })();
+
+    Tawk_API.onLoad = function(){
+      Tawk_API.hideWidget();
+    };
+
+    document.addEventListener("DOMContentLoaded", function(){
+      var btn = document.getElementById("custom-chat-btn");
+      if(btn){
+        btn.addEventListener("click", function(){
+          if(typeof Tawk_API !== "undefined"){
+            Tawk_API.maximize();
+          }
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
