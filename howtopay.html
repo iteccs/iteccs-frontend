@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Secure Payment | ITECCS Institute for Theoretical & Computational Science</title>
+
+<meta name="description" content="Secure payment portal for ITECCS education programs, research services, and technical advisory. Powered by Stripe for global secure transactions.">
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+.payment-hero{
+padding:80px 20px;
+background:linear-gradient(135deg,#0f172a,#1e3a8a);
+color:white;
+text-align:center;
+}
+
+.payment-hero h1{
+font-size:2.5rem;
+font-weight:800;
+margin-bottom:18px;
+}
+
+.payment-hero p{
+max-width:800px;
+margin:auto;
+font-size:1.1rem;
+line-height:1.8;
+opacity:0.95;
+}
+
+.payment-container{
+padding:70px 20px;
+background:#f8fafc;
+text-align:center;
+}
+
+.payment-card{
+background:white;
+max-width:600px;
+margin:auto;
+padding:40px;
+border-radius:18px;
+box-shadow:0 12px 40px rgba(0,0,0,0.08);
+border:1px solid rgba(0,0,0,0.06);
+}
+
+.payment-card i{
+font-size:42px;
+color:#1e3a8a;
+margin-bottom:20px;
+}
+
+.payment-card h2{
+font-size:1.6rem;
+margin-bottom:14px;
+color:#0f172a;
+}
+
+.payment-card p{
+color:#475569;
+margin-bottom:25px;
+line-height:1.7;
+}
+
+.pay-btn{
+
+display:inline-block;
+padding:16px 28px;
+
+background:linear-gradient(135deg,#2563eb,#1e3a8a);
+
+color:white;
+
+font-size:1.1rem;
+
+font-weight:700;
+
+border-radius:10px;
+
+text-decoration:none;
+
+transition:0.3s;
+}
+
+.pay-btn:hover{
+transform:translateY(-3px);
+box-shadow:0 12px 30px rgba(37,99,235,0.35);
+}
+
+.security-note{
+margin-top:25px;
+font-size:0.9rem;
+color:#64748b;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav class="navbar">
+<div class="logo">
+<img src="logo.png" alt="ITECCS Logo">
+</div>
+
+<ul class="nav-links">
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="about.html">About Us</a></li>
+
+<li><a href="founder.html">Who We Are</a></li>
+
+<li><a href="program.html">Research & Innovation Programs</a></li>
+
+<li><a href="education.html">Education & Professional Training</a></li>
+
+<li><a href="consulting.html">Industry Collaboration & Technical Advisory</a></li>
+
+<li>
+<a href="contact.html" class="contact-nav-button">
+<i class="fas fa-envelope"></i> Contact Us
+</a>
+</li>
+
+</ul>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="payment-hero">
+
+<h1>Secure Payment Portal</h1>
+
+<p>
+
+ITECCS provides secure global payment processing for education programs, research collaborations, and technical advisory services.  
+
+All payments are processed through Stripe, ensuring enterprise-grade encryption, fraud protection, and international compliance.
+
+</p>
+
+</section>
+
+<!-- PAYMENT CARD -->
+
+<section class="payment-container">
+
+<div class="payment-card">
+
+<i class="fas fa-lock"></i>
+
+<h2>Make a Secure Payment</h2>
+
+<p>
+
+Click below to complete your payment securely. You will be redirected to Stripe's encrypted checkout page.
+
+Supported methods include credit/debit cards, Apple Pay, Google Pay, Klarna, and international payment options.
+
+</p>
+
+<!-- REPLACE THIS LINK WITH YOUR REAL STRIPE PAYMENT LINK -->
+
+<a href="https://buy.stripe.com/bJe9AU4q27ym6Ei1lUcfK01"
+class="pay-btn"
+target="_blank">
+
+Proceed to Secure Checkout
+
+</a>
+
+<div class="security-note">
+
+<i class="fas fa-shield-alt"></i>
+
+Payments are securely processed by Stripe. ITECCS never stores your card information.
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>&copy; 2026 ITECCS Institute for Theoretical & Computational Science. All rights reserved.</p>
+
+</footer>
+
+</body>
+
+</html>
