@@ -1,30 +1,30 @@
- 
+<!-- program.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us - ITeccs</title>
-  <link rel="stylesheet" href="style.css">
-  <!-- Fonts and Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Research & Innovation Programs | ITECCS Institute for Applied Mathematics, AI & Scientific Computing</title>
+  <meta name="description" content="ITECCS advances applied mathematics, AI, scientific computing, inverse problems, fluid mechanics, porous media, and high-performance simulation—delivering research programs, industry collaboration, and deployable computational innovation." />
+
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
   <nav class="navbar">
     <div class="logo">
-      <img src="logo.png" alt="ITeccs Logo">
+      <img src="logo.png" alt="ITECCS Logo">
     </div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About Us</a></li>
       <li><a href="Founder.html">Who We Are</a></li>
       <li><a href="program.html">Research & Innovation Programs</a></li>
-     
       <li><a href="education.html">Education & Professional Training</a></li>
-       <li><a href="consulting.html">Industry Collaboration & Technical Advisory</a></li>
-      <li><a href="howtopay.html">How to Pay</a></li>
+      <li><a href="consulting.html">Industry Collaboration & Technical Advisory</a></li>
       <li>
         <a href="contact.html" class="contact-nav-button">
           <i class="fas fa-envelope"></i> Contact Us
@@ -33,10 +33,19 @@
     </ul>
   </nav>
 
-
-
   <main class="content">
-    <h1>ITECCS designs and delivers tailored curricula, workshops, bootcamps, and design courses for all levels — serving colleges, universities, and workforce programs.
+    <section style="padding:60px 20px; background:#f8fafc; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;">
+
+      <!-- HERO -->
+      <div style="text-align:center; max-width:1050px; margin:auto; margin-bottom:40px;">
+      
+
+
+         <main class="content">
+    <h1>
+      <p style="font-size:1.15rem; line-height:1.85; color:#475569; margin:0;">
+       
+       ITECCS designs and delivers tailored curricula, workshops, bootcamps, and design courses for all levels — serving colleges, universities, and workforce programs.
 We offer training, tutoring, grant proposal development, and academic program evaluation, along with:
 
 <li> Certificate Programs & Continuing Professional Education (CPE) </li>
@@ -49,48 +58,97 @@ Our programs extend across all ITECCS research domains, from Advanced Applied Ma
     <p></p>
   </main>
 
+    
+ 
+
+        
+
+
+
+
+
   <footer>
-    <p>&copy; 2025 ITeccs. All rights reserved.</p>
+    <p>&copy; 2026 ITECCS. All rights reserved.</p>
   </footer>
-  <!-- Custom Chat Button -->
-  <button id="custom-chat-btn">
-    <i class="fas fa-comments"></i>
-  </button> 
 
-  <!-- Tawk.to Script -->
-  <script type="text/javascript">
-    var Tawk_API = Tawk_API || {};
-    var Tawk_LoadStart = new Date();
+  <style>
+    .card-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+    .card{
+      background:white;
+      padding:22px;
+      border-radius:12px;
+      box-shadow:0 6px 20px rgba(0,0,0,0.08);
+      transition:0.3s;
+    }
+    .card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 12px 30px rgba(0,0,0,0.15);
+    }
+    .card h3{
+      color:#0073e6;
+      margin:0 0 12px;
+      font-size:1.05rem;
+    }
+    .card p{
+      margin:0;
+      color:#334155;
+      line-height:1.7;
+      font-size:0.95rem;
+    }
+    .card ul{
+      padding-left:20px;
+      margin:0;
+      color:#334155;
+      line-height:1.6;
+      font-size:0.95rem;
+    }
+    .card li{ margin:0 0 6px; }
 
-    (function(){
-      var s1=document.createElement("script"),
-          s0=document.getElementsByTagName("script")[0];
-      s1.async=true;
-      s1.src='https://embed.tawk.to/685e2123390063190e54b4b2/1iunr2sv2';
-      s1.charset='UTF-8';
-      s1.setAttribute('crossorigin','*');
-      s0.parentNode.insertBefore(s1,s0);
-    })();
+    @media(max-width:1000px){
+      .card-grid{ grid-template-columns:repeat(2,1fr); }
+    }
+    @media(max-width:700px){
+      .card-grid{ grid-template-columns:1fr; }
+    }
+  </style>
 
-    // Hide default widget once fully loaded
-    Tawk_API.onLoad = function(){
-      Tawk_API.hideWidget();
-    };
-
-    // Custom button opens chat
-    document.addEventListener("DOMContentLoaded", function(){
-      var btn = document.getElementById("custom-chat-btn");
-      if(btn){
-        btn.addEventListener("click", function(){
-          if(typeof Tawk_API !== "undefined"){
-            Tawk_API.maximize(); // open chat window
-          }
-        });
-      }
-    });
-  </script>
-  <!-- End of Tawk.to Script -->        
 </body>
 </html>
 
-</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
