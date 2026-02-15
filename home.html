@@ -1,286 +1,356 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <!-- SEO Title -->
-  <title>
-    ITECCS Institute for Theoretical & Computational Science | Applied Mathematics, AI, Scientific Computing, Research, Education & Technical Advisory
-  </title>
+  <title>ITECCS — Institute for Theoretical & Computational Science | Applied Mathematics, AI & Scientific Computing</title>
 
-  <!-- SEO Meta -->
-  <meta name="description"
-        content="ITECCS Institute for Theoretical & Computational Science advances applied mathematics, artificial intelligence, scientific computing, multiphysics simulation, and inverse modeling. We provide research programs, professional education, and technical advisory for academia, industry, and government.">
-
-  <meta name="keywords"
-        content="Applied Mathematics, Scientific Computing, Artificial Intelligence, CFD, Porous Media, Numerical Methods, HPC, Simulation, Technical Advisory, Research Institute, STEM Education, Computational Science">
+  <meta name="description" content="ITECCS is a premier institute advancing applied mathematics, artificial intelligence, high-performance scientific computing, fluid mechanics, inverse problems, and multiphysics simulation through research, education, and technical advisory." />
 
   <link rel="stylesheet" href="style.css">
 
   <!-- Fonts and Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+
+  /* =============================
+     PRESTIGE HERO BUTTONS
+     ============================= */
+
+  .hero .cta-button {
+    background: linear-gradient(90deg, #1e3a8a, #0f172a);
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 13px 26px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    box-shadow: 0 10px 26px rgba(0,0,0,0.25);
+    transition: all 0.25s ease;
+  }
+
+  .hero .cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 42px rgba(0,0,0,0.35);
+  }
+
+
+  /* =============================
+     PRESTIGE CARD SECTION
+     ============================= */
+
+  .prestige-section {
+    padding: 70px 20px;
+    background: #f8fafc;
+    text-align: center;
+  }
+
+  .prestige-section h2 {
+    font-size: 2.1rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 14px;
+  }
+
+  .prestige-section p {
+    max-width: 850px;
+    margin: auto;
+    color: #475569;
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  .card-container {
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+
+    max-width: 1200px;
+    margin: 50px auto;
+
+    padding: 0 20px;
+  }
+
+  .card {
+
+    background: white;
+    padding: 32px 28px;
+
+    border-radius: 16px;
+
+    border: 1px solid rgba(15,23,42,0.08);
+
+    box-shadow:
+      0 12px 30px rgba(2,6,23,0.08);
+
+    transition: all 0.28s ease;
+
+    text-align: left;
+  }
+
+  .card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow:
+      0 22px 55px rgba(2,6,23,0.15);
+
+    border-color:
+      rgba(30,58,138,0.25);
+  }
+
+  .card i {
+
+    font-size: 26px;
+
+    color: #1e3a8a;
+
+    margin-bottom: 14px;
+  }
+
+  .card h3 {
+
+    font-size: 1.22rem;
+
+    font-weight: 700;
+
+    color: #0f172a;
+
+    margin-bottom: 10px;
+  }
+
+  .card p {
+
+    font-size: 1rem;
+
+    color: #475569;
+
+    line-height: 1.6;
+  }
+
+
+  /* responsive */
+
+  @media(max-width:1000px){
+
+    .card-container {
+      grid-template-columns: repeat(2,1fr);
+    }
+
+  }
+
+  @media(max-width:650px){
+
+    .card-container {
+      grid-template-columns: 1fr;
+    }
+
+  }
+
+  </style>
+
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+
 <nav class="navbar">
   <div class="logo">
-    <img src="logo.png" alt="ITECCS Institute Logo">
+    <img src="logo.png" alt="ITECCS Logo">
   </div>
 
   <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
 
-    <li><a href="about.html">About</a></li>
+    <li><a href="home.html">Home</a></li>
 
-    <li><a href="program.html">Research Programs</a></li>
+    <li><a href="about.html">About Us</a></li>
 
-    <li><a href="education.html">Education & Training</a></li>
+    <li><a href="founder.html">Who We Are</a></li>
 
-    <li><a href="consulting.html">Technical Advisory</a></li>
+    <li><a href="program.html">Research & Innovation Programs</a></li>
+
+    <li><a href="education.html">Education & Professional Training</a></li>
+
+    <li><a href="consulting.html">Industry Collaboration & Technical Advisory</a></li>
 
     <li>
       <a href="contact.html" class="contact-nav-button">
-        <i class="fas fa-envelope"></i> Contact
+        <i class="fas fa-envelope"></i> Contact Us
       </a>
     </li>
+
   </ul>
+
 </nav>
 
 
-<!-- HERO SECTION -->
+
 <header class="hero">
 
   <video autoplay muted loop playsinline class="hero-video">
-    <source src="iteccs.mp4" type="video/mp4" />
+
+    <source src="iteccs.mp4" type="video/mp4">
+
   </video>
 
   <div class="hero-text">
+
     <div class="hero-content">
 
-      <h1 style="font-size:2.8rem; font-weight:800; color:white; margin-bottom:10px;">
+      <h2 style="font-size:2.6rem; font-weight:800;">
         ITECCS
-      </h1>
-
-      <h2 style="font-size:1.5rem; font-weight:600; color:#2575fc;">
-        Institute for Theoretical & Computational Science
       </h2>
 
-      <p style="font-size:1.1rem; margin-top:18px; max-width:900px; margin-left:auto; margin-right:auto;">
-        Advancing applied mathematics, artificial intelligence, and scientific computing through
-        high-fidelity simulation, multiscale modeling, inverse methods, and scalable computational innovation.
+      <p style="font-size:1.2rem; font-weight:600; color:#60a5fa;">
+        Institute for Theoretical & Computational Science
       </p>
 
-      <p style="font-size:1rem; opacity:0.95; max-width:900px; margin-left:auto; margin-right:auto;">
-        ITECCS delivers world-class research programs, professional education, and technical advisory,
-        supporting universities, industry leaders, startups, and government agencies worldwide.
+      <p style="margin-top:12px; max-width:700px; margin-left:auto; margin-right:auto;">
+        Advancing applied mathematics, artificial intelligence, and high-performance scientific computing through novel numerical methods,
+        multiphysics modeling, and scalable simulation technologies — supporting scientific discovery, engineering innovation,
+        and real-world impact across academia, industry, and government.
       </p>
 
 
-      <!-- CTA BUTTONS -->
-      <div style="margin-top:25px;">
+      <div style="margin-top:18px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
 
-        <a href="program.html"
-           class="cta-button"
-           style="margin-right:10px;">
-           Explore Research Programs
+        <a href="program.html" class="cta-button">
+          Explore Research Programs
         </a>
 
-        <a href="education.html"
-           class="cta-button"
-           style="margin-right:10px;">
-           Education & Training
+        <a href="education.html" class="cta-button">
+          Education & Training
         </a>
 
-        <a href="consulting.html"
-           class="cta-button">
-           Technical Advisory & Collaboration
+        <a href="consulting.html" class="cta-button">
+          Technical Advisory & Collaboration
         </a>
 
       </div>
 
     </div>
+
   </div>
 
 </header>
 
 
 
-<!-- POSITIONING SECTION -->
-<section style="padding:60px 20px; background:#ffffff;">
+<section class="prestige-section">
 
-  <div style="text-align:center; max-width:1000px; margin:auto;">
+<h2>A Premier Institute Advancing Science, Engineering, and Innovation</h2>
 
-    <h2 style="font-size:2rem; color:#0f172a;">
-      A Premier Institute Advancing Science, Engineering, and Innovation
-    </h2>
-
-    <p style="color:#475569; line-height:1.8; margin-top:15px;">
-      ITECCS integrates rigorous mathematical theory, high-performance computing, and artificial intelligence
-      to solve complex scientific and engineering challenges. Our institute bridges foundational research,
-      advanced education, and deployable industrial solutions.
-    </p>
-
-  </div>
+<p>
+ITECCS integrates rigorous mathematical theory, artificial intelligence, and scalable scientific computing
+to develop advanced computational solutions addressing critical challenges in engineering, biomedical science,
+energy systems, and emerging technologies.
+</p>
 
 
-  <!-- CORE PILLARS -->
-  <div class="card-container" style="margin-top:40px;">
-
-    <a href="program.html" class="card">
-
-      <i class="fas fa-microscope fa-2x" style="color:#2575fc;"></i>
-
-      <h2>Research & Innovation Programs</h2>
-
-      <p>
-        Advanced research in applied mathematics, AI, fluid mechanics, porous media,
-        computational medicine, multiphysics simulation, and high-performance computing.
-      </p>
-
-    </a>
+<div class="card-container">
 
 
-    <a href="education.html" class="card">
+<div class="card">
 
-      <i class="fas fa-graduation-cap fa-2x" style="color:#2575fc;"></i>
+<i class="fas fa-microscope"></i>
 
-      <h2>Education & Professional Training</h2>
+<h3>Research & Innovation Programs</h3>
 
-      <p>
-        Courses, workshops, certificates, and advanced training programs in scientific computing,
-        applied mathematics, artificial intelligence, and engineering simulation.
-      </p>
+<p>
+World-class research in applied mathematics, inverse problems, fluid mechanics, porous media,
+computational imaging, multiphysics simulation, and high-performance computing.
+</p>
 
-    </a>
-
-
-    <a href="consulting.html" class="card">
-
-      <i class="fas fa-gear fa-2x" style="color:#2575fc;"></i>
-
-      <h2>Technical Advisory & Industry Collaboration</h2>
-
-      <p>
-        Expert technical advisory, modeling, simulation, algorithm development, and deployable
-        computational solutions for industry and government.
-      </p>
-
-    </a>
-
-  </div>
-
-</section>
+</div>
 
 
 
-<!-- EXPERTISE SECTION -->
-<section style="padding:60px 20px; background:#f8fafc;">
+<div class="card">
 
-  <div style="text-align:center; max-width:1000px; margin:auto;">
+<i class="fas fa-graduation-cap"></i>
 
-    <h2 style="font-size:2rem; color:#0f172a;">
-      Core Expertise
-    </h2>
+<h3>Education & Professional Training</h3>
 
-  </div>
+<p>
+Advanced training programs, workshops, and certifications in scientific computing, AI,
+numerical methods, and engineering simulation for students, researchers, and professionals.
+</p>
 
-
-  <div class="card-container" style="margin-top:30px;">
-
-    <div class="card">
-      <h3>Applied Mathematics & Numerical Methods</h3>
-      <p>PDEs, inverse problems, optimization, FEM, FVM, spectral methods, and scientific algorithms.</p>
-    </div>
-
-    <div class="card">
-      <h3>Scientific Computing & HPC</h3>
-      <p>GPU acceleration, parallel computing, scalable simulation, and multiphysics modeling.</p>
-    </div>
-
-    <div class="card">
-      <h3>Artificial Intelligence & Scientific Machine Learning</h3>
-      <p>Physics-informed AI, data-driven modeling, inverse modeling, and predictive systems.</p>
-    </div>
-
-    <div class="card">
-      <h3>Fluid Mechanics & Porous Media</h3>
-      <p>CFD, multiphase flow, turbulence, transport modeling, and industrial simulation.</p>
-    </div>
-
-    <div class="card">
-      <h3>Computational Medicine & Biomedical Modeling</h3>
-      <p>Medical imaging, inverse problems, physiological modeling, and precision medicine simulation.</p>
-    </div>
-
-    <div class="card">
-      <h3>Engineering Simulation & Digital Twins</h3>
-      <p>High-fidelity simulation, system modeling, predictive engineering, and design optimization.</p>
-    </div>
-
-  </div>
-
-</section>
+</div>
 
 
 
-<!-- CTA SECTION -->
-<section class="cta-section">
+<div class="card">
 
-  <h2>Collaborate with ITECCS</h2>
+<i class="fas fa-gears"></i>
 
-  <p>
-    Partner with our institute to advance research, education, and technological innovation.
-  </p>
+<h3>Technical Advisory & Industry Collaboration</h3>
 
-  <a href="contact.html" class="cta-button">
-    Start a Collaboration
-  </a>
+<p>
+Expert technical advisory, computational modeling, algorithm development,
+and deployable scientific software solutions for industry, startups, and government agencies.
+</p>
+
+</div>
+
+
+</div>
+
 
 </section>
 
 
 
 <footer>
-  <p>&copy; 2026 ITECCS Institute for Theoretical & Computational Science. All rights reserved.</p>
+
+<p>&copy; 2026 ITECCS. All rights reserved.</p>
+
 </footer>
 
 
 
-<!-- CHAT BUTTON -->
 <button id="custom-chat-btn">
-  <i class="fas fa-comments"></i>
+
+<i class="fas fa-comments"></i>
+
 </button>
 
 
 
-<!-- Tawk.to Chat -->
-<script>
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+<script type="text/javascript">
+
+var Tawk_API = Tawk_API || {};
+
+var Tawk_LoadStart = new Date();
 
 (function(){
-var s1=document.createElement("script");
-var s0=document.getElementsByTagName("script")[0];
+
+var s1=document.createElement("script"),
+
+s0=document.getElementsByTagName("script")[0];
+
 s1.async=true;
+
 s1.src='https://embed.tawk.to/685e2123390063190e54b4b2/1iunr2sv2';
+
 s1.charset='UTF-8';
+
 s1.setAttribute('crossorigin','*');
+
 s0.parentNode.insertBefore(s1,s0);
+
 })();
 
-Tawk_API.onLoad=function(){Tawk_API.hideWidget();};
+Tawk_API.onLoad=function(){
 
-document.addEventListener("DOMContentLoaded", function(){
-var btn=document.getElementById("custom-chat-btn");
-if(btn){
-btn.addEventListener("click", function(){
-Tawk_API.maximize();
-});
-}
-});
+Tawk_API.hideWidget();
+
+};
+
 </script>
 
 
