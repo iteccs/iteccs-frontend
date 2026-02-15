@@ -1,0 +1,170 @@
+<main class="futuristic-about" id="main" role="main">
+  <div class="grid">
+    <div>
+
+      <!-- ABOUT -->
+      <h1 class="section-title" data-reveal>About ITECCS</h1>
+
+      <p data-reveal>
+        The Institute for Theoretical & Computational Science (ITECCS) is an advanced research, education, and innovation center dedicated to the development and application of high-impact mathematical, computational, and data-driven methodologies. 
+        Our institute integrates rigorous theoretical foundations with high-performance scientific computing, artificial intelligence, and multiphysics simulation to address complex challenges across engineering, biomedical sciences, energy systems, and emerging technological domains.
+      </p>
+
+      <p data-reveal>
+        Founded on principles of scientific excellence, innovation, and societal impact, ITECCS serves as a bridge between fundamental research and real-world implementation—supporting universities, industry leaders, startups, and government agencies worldwide through collaborative research, advanced training, and deployable computational solutions.
+      </p>
+
+      <div class="card" style="margin-top:14px">
+        <h3>Institute Leadership & Vision</h3>
+        <p>
+          ITECCS operates at the intersection of mathematics, computational science, and engineering innovation—advancing next-generation technologies through research leadership, interdisciplinary collaboration, and transformative education.
+        </p>
+        <div style="display:flex;gap:8px;margin-top:10px">
+          <a class="btn btn-primary" href="program.html">Explore Research Programs</a>
+          <a class="btn btn-ghost" href="founder.html">Meet Our Leadership</a>
+        </div>
+      </div>
+
+
+      <!-- MISSION -->
+      <h1 class="section-title" data-reveal id="mission">Our Mission</h1>
+
+      <p data-reveal>
+        Our mission is to advance scientific discovery, technological innovation, and workforce excellence through rigorous research, high-performance computational modeling, and world-class education. 
+        We aim to develop scalable mathematical and computational solutions that address critical challenges in engineering, medicine, energy, artificial intelligence, and national infrastructure.
+      </p>
+
+      <p data-reveal>
+        By integrating theory, computation, and real-world application, ITECCS empowers researchers, engineers, and organizations to innovate, accelerate technological progress, and deliver measurable societal impact.
+      </p>
+
+      <div class="card" style="margin-top:14px">
+        <h3>Advancing Science, Technology, and Education</h3>
+        <p>
+          Our programs combine fundamental research, advanced training, and technical advisory to support innovation across academia, industry, and government sectors.
+        </p>
+        <div style="display:flex;gap:8px;margin-top:10px">
+          <a class="btn btn-primary" href="education.html">Education & Training Programs</a>
+          <a class="btn btn-primary" href="consulting.html">Technical Advisory & Collaboration</a>
+        </div>
+      </div>
+
+
+      <!-- WHAT WE DO -->
+      <h1 class="section-title" data-reveal id="whatwedo">Research, Innovation, and Technical Leadership</h1>
+
+      <p data-reveal>
+        ITECCS leads interdisciplinary research and innovation programs spanning applied mathematics, scientific computing, artificial intelligence, and computational engineering. 
+        Our work addresses complex multiscale systems, inverse problems, fluid dynamics, porous media transport, biomedical modeling, and AI-driven predictive simulation.
+      </p>
+
+      <ul data-reveal>
+        <li><strong>Advanced Mathematical Modeling and Scientific Computing</strong> for engineering, physics, and biomedical systems</li>
+
+        <li><strong>High-Performance Computing and AI-Driven Simulation</strong> for large-scale predictive modeling and optimization</li>
+
+        <li><strong>Computational Medicine and Biomedical Engineering</strong> including physiological modeling and medical imaging analysis</li>
+
+        <li><strong>Multiphysics and Multiscale Simulation</strong> across energy systems, porous media, and advanced materials</li>
+
+        <li><strong>Artificial Intelligence, Data Science, and Inverse Methods</strong> for discovery, diagnostics, and predictive analytics</li>
+
+        <li><strong>Technology Translation and Industry Collaboration</strong> transforming research into deployable industrial solutions</li>
+      </ul>
+
+      <div class="card" style="margin-top:14px">
+        <h3>Integrated Research and Innovation Programs</h3>
+        <p>
+          We provide end-to-end research support—from theoretical formulation and algorithm development to high-performance implementation and real-world deployment.
+        </p>
+        <div style="display:flex;gap:8px;margin-top:10px">
+          <a class="btn btn-primary" href="program.html">Research Programs</a>
+          <a class="btn btn-ghost" href="consulting.html">Technical Advisory</a>
+        </div>
+      </div>
+
+
+      <!-- IMPACT -->
+      <h1 class="section-title" data-reveal>Global Research and Educational Impact</h1>
+
+      <p data-reveal>
+        ITECCS contributes to scientific advancement and workforce development through cutting-edge research, professional training, and collaborative innovation initiatives. 
+        Our programs prepare the next generation of scientists and engineers while supporting organizations in developing transformative technologies.
+      </p>
+
+      <ul data-reveal>
+        <li>Development of advanced computational models and simulation frameworks</li>
+
+        <li>Training of engineers, scientists, and researchers in AI and scientific computing</li>
+
+        <li>Collaborative research partnerships with universities and industry</li>
+
+        <li>Technology innovation and research translation for real-world applications</li>
+
+        <li>Support for research grant development and interdisciplinary initiatives</li>
+      </ul>
+
+      <div class="card" style="margin-top:14px">
+        <h3>Advancing Scientific Discovery and Innovation</h3>
+        <p>
+          Our institute drives innovation through research leadership, interdisciplinary collaboration, and advanced education programs.
+        </p>
+        <div style="display:flex;gap:8px;margin-top:10px">
+          <a class="btn btn-primary" href="education.html">Education Programs</a>
+          <a class="btn btn-ghost" href="program.html">Research Initiatives</a>
+        </div>
+      </div>
+
+
+      <!-- WHO WE SERVE -->
+      <h1 class="section-title" data-reveal>Who We Serve</h1>
+
+      <ul data-reveal>
+        <li><strong>Universities and Research Institutions</strong> seeking advanced computational and interdisciplinary research collaboration</li>
+
+        <li><strong>Industry and Technology Companies</strong> requiring modeling, simulation, and AI-driven innovation</li>
+
+        <li><strong>Government and National Laboratories</strong> developing advanced scientific and engineering capabilities</li>
+
+        <li><strong>Healthcare and Biomedical Organizations</strong> applying computational methods to medical and physiological systems</li>
+
+        <li><strong>Students, Scientists, and Engineers</strong> pursuing advanced education and professional development</li>
+      </ul>
+
+      <div class="card" style="margin-top:14px">
+        <h3>Collaborate with ITECCS</h3>
+        <p>
+          We welcome collaboration with academic institutions, industry partners, and government agencies worldwide.
+        </p>
+        <div style="display:flex;gap:8px;margin-top:10px">
+          <a class="btn btn-primary" href="consulting.html">Industry Collaboration</a>
+          <a class="btn btn-ghost" href="education.html">Education & Training</a>
+        </div>
+      </div>
+
+
+      <!-- CONTACT -->
+      <h1 class="section-title" data-reveal>Partner With Us</h1>
+
+      <p data-reveal>
+        ITECCS is headquartered in Milwaukee, Wisconsin, and operates globally through research collaboration, advanced education programs, and technical advisory services.
+      </p>
+
+      <ul data-reveal>
+        <li><strong>Location:</strong> Milwaukee, Wisconsin, USA</li>
+        <li><strong>Email:</strong> contact@iteccs.org</li>
+        <li><strong>Phone:</strong> +1-414-629-1090</li>
+        <li><strong>Website:</strong> www.iteccs.com</li>
+      </ul>
+
+      <div class="card" style="margin-top:14px">
+        <h3>Initiate Collaboration or Partnership</h3>
+        <p>
+          Contact us to explore research collaboration, education programs, or technical advisory opportunities.
+        </p>
+        <div style="display:flex;gap:8px;margin-top:10px">
+          <a class="btn btn-primary" href="contact.html">Contact ITECCS</a>
+        </div>
+      </div>
+
+    </div>
