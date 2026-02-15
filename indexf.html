@@ -1,0 +1,337 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>ITECCS | Institute for Theoretical & Computational Science</title>
+
+<meta name="description" content="ITECCS is a premier institute advancing applied mathematics, artificial intelligence, high-performance computing, scientific simulation, and computational engineering through research, education, and technical advisory.">
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* ================= HERO ================= */
+
+.hero-content h2{
+    font-size:2.4rem;
+    font-weight:800;
+    margin-bottom:12px;
+}
+
+.hero-content p{
+    font-size:1.1rem;
+    line-height:1.7;
+    max-width:850px;
+    margin:auto;
+}
+
+/* ================= STRATEGIC SECTION ================= */
+
+.strategic-section{
+    padding:80px 20px;
+    background:#f8fafc;
+    text-align:center;
+}
+
+.strategic-section h2{
+    font-size:2.1rem;
+    font-weight:800;
+    color:#0f172a;
+    margin-bottom:15px;
+}
+
+.strategic-section p{
+    max-width:900px;
+    margin:auto;
+    color:#475569;
+    line-height:1.8;
+    font-size:1.05rem;
+}
+
+/* ================= CARD GRID ================= */
+
+.card-container{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+    max-width:1200px;
+    margin:50px auto;
+}
+
+.card{
+    background:white;
+    padding:35px 28px;
+    border-radius:18px;
+    border:1px solid rgba(15,23,42,0.08);
+    box-shadow:0 12px 35px rgba(2,6,23,0.08);
+    transition:0.3s ease;
+    text-align:left;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 22px 60px rgba(2,6,23,0.18);
+}
+
+.card i{
+    font-size:26px;
+    color:#1e3a8a;
+    margin-bottom:14px;
+}
+
+.card h3{
+    font-size:1.2rem;
+    font-weight:700;
+    margin-bottom:12px;
+    color:#0f172a;
+}
+
+.card p{
+    color:#475569;
+    line-height:1.7;
+}
+
+/* ================= RESEARCH DOMAINS ================= */
+
+.research-section{
+    padding:80px 20px;
+    background:white;
+    text-align:center;
+}
+
+.research-section h2{
+    font-size:2rem;
+    font-weight:800;
+    margin-bottom:10px;
+}
+
+.research-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    max-width:1200px;
+    margin:40px auto;
+}
+
+.research-item{
+    padding:18px;
+    border-radius:12px;
+    border:1px solid rgba(0,0,0,0.06);
+    font-weight:600;
+    background:#f8fafc;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1000px){
+    .card-container{grid-template-columns:repeat(2,1fr);}
+    .research-grid{grid-template-columns:repeat(2,1fr);}
+}
+
+@media(max-width:600px){
+    .card-container{grid-template-columns:1fr;}
+    .research-grid{grid-template-columns:1fr;}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+<div class="logo">
+<img src="logo.png" alt="ITECCS Logo">
+</div>
+
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About Us</a></li>
+<li><a href="founder.html">Who We Are</a></li>
+<li><a href="program.html">Research & Innovation Programs</a></li>
+<li><a href="education.html">Education & Professional Training</a></li>
+<li><a href="consulting.html">Industry Collaboration & Technical Advisory</a></li>
+
+<li>
+<a href="contact.html" class="contact-nav-button">
+<i class="fas fa-envelope"></i> Contact Us
+</a>
+</li>
+
+</ul>
+</nav>
+
+<!-- HERO -->
+
+<header class="hero">
+
+<video autoplay muted loop playsinline class="hero-video">
+<source src="iteccs.mp4" type="video/mp4"/>
+</video>
+
+<div class="hero-text">
+
+<div class="hero-content">
+
+<h2>Institute for Theoretical & Computational Science (ITECCS)</h2>
+
+<p>
+A premier institute advancing applied mathematics, artificial intelligence, scientific computing,
+and high-performance simulation to address critical challenges across engineering, medicine,
+energy systems, and emerging technologies.
+</p>
+
+<p>
+ITECCS integrates rigorous mathematical theory, scalable computational algorithms,
+and AI-driven methodologies to advance scientific discovery, accelerate technological innovation,
+and enable deployable solutions for academia, industry, and government.
+</p>
+
+<br>
+
+<a href="program.html" class="cta-button">Explore Research Programs</a>
+
+<a href="consulting.html" class="cta-button">Industry Collaboration & Technical Advisory</a>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- STRATEGIC SECTION -->
+
+<section class="strategic-section">
+
+<h2>Institutional Leadership in Research, Education, and Scientific Innovation</h2>
+
+<p>
+ITECCS operates at the forefront of scientific discovery and technological innovation,
+integrating applied mathematics, artificial intelligence, and high-performance computing
+to advance research, education, and real-world deployment across engineering,
+biomedical sciences, and advanced technology systems.
+</p>
+
+</section>
+
+<!-- STRATEGIC CARDS -->
+
+<div class="card-container">
+
+<div class="card">
+<i class="fas fa-microscope"></i>
+<h3>Research and Scientific Innovation</h3>
+<p>
+Advanced interdisciplinary research in applied mathematics, artificial intelligence,
+scientific computing, and multiphysics modeling supporting next-generation
+engineering and scientific discovery.
+</p>
+</div>
+
+<div class="card">
+<i class="fas fa-graduation-cap"></i>
+<h3>Education and Scientific Workforce Development</h3>
+<p>
+Graduate-level education, professional training, and workforce development programs
+preparing scientists, engineers, and researchers in computational science,
+AI, and advanced engineering simulation.
+</p>
+</div>
+
+<div class="card">
+<i class="fas fa-industry"></i>
+<h3>Technical Advisory and Industry Collaboration</h3>
+<p>
+Technical advisory, scientific consulting, and research-to-industry technology
+translation supporting innovation across academia, startups, industry, and government.
+</p>
+</div>
+
+</div>
+
+<!-- RESEARCH DOMAINS -->
+
+<section class="research-section">
+
+<h2>Strategic Research Domains</h2>
+
+<div class="research-grid">
+
+<div class="research-item">Applied Mathematics and Scientific Computing</div>
+
+<div class="research-item">Artificial Intelligence and Scientific Machine Learning</div>
+
+<div class="research-item">High-Performance Computing and Scalable Algorithms</div>
+
+<div class="research-item">Multiphysics Simulation and Computational Engineering</div>
+
+<div class="research-item">Computational Medicine and Biomedical Modeling</div>
+
+<div class="research-item">Energy Systems and Sustainability Modeling</div>
+
+<div class="research-item">Inverse Problems and Scientific Imaging</div>
+
+<div class="research-item">Advanced Computational and Emerging Technologies</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>&copy; 2026 ITECCS — Institute for Theoretical & Computational Science. All rights reserved.</p>
+
+</footer>
+
+<!-- CHAT BUTTON -->
+
+<button id="custom-chat-btn">
+<i class="fas fa-comments"></i>
+</button>
+
+<script>
+
+var Tawk_API = Tawk_API || {};
+var Tawk_LoadStart = new Date();
+
+(function(){
+var s1=document.createElement("script"),
+s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/685e2123390063190e54b4b2/1iunr2sv2';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+
+Tawk_API.onLoad = function(){
+Tawk_API.hideWidget();
+};
+
+document.addEventListener("DOMContentLoaded", function(){
+
+var btn = document.getElementById("custom-chat-btn");
+
+btn.addEventListener("click", function(){
+
+Tawk_API.maximize();
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
