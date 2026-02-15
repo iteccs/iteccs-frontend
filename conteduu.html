@@ -1,6 +1,4 @@
-
-
-<!-- contedu.html -->
+ 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +12,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <!-- Navbar -->
   <nav class="navbar">
     <div class="logo">
       <img src="logo.png" alt="ITeccs Logo">
@@ -36,6 +33,8 @@
     </ul>
   </nav>
 
+
+
   <main class="content">
     <h1>ITECCS designs and delivers tailored curricula, workshops, bootcamps, and design courses for all levels — serving colleges, universities, and workforce programs.
 We offer training, tutoring, grant proposal development, and academic program evaluation, along with:
@@ -50,17 +49,15 @@ Our programs extend across all ITECCS research domains, from Advanced Applied Ma
     <p></p>
   </main>
 
- <!-- Footer -->
   <footer>
     <p>&copy; 2025 ITeccs. All rights reserved.</p>
   </footer>
-
   <!-- Custom Chat Button -->
   <button id="custom-chat-btn">
     <i class="fas fa-comments"></i>
-  </button>
+  </button> 
 
-   <!-- Tawk.to Script -->
+  <!-- Tawk.to Script -->
   <script type="text/javascript">
     var Tawk_API = Tawk_API || {};
     var Tawk_LoadStart = new Date();
@@ -93,43 +90,7 @@ Our programs extend across all ITECCS research domains, from Advanced Applied Ma
     });
   </script>
   <!-- End of Tawk.to Script -->        
-
-  <!-- Embedded Animations -->
-  <script>
-    // Scroll reveal effect
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.15 });
-
-    document.querySelectorAll('.track-card, .section-title').forEach(el => observer.observe(el));
-
-    // 3D tilt effect
-    const tiltCards = document.querySelectorAll('.track-card');
-    tiltCards.forEach(card => {
-      card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const rotateY = ((x / rect.width) - 0.5) * 12;
-        const rotateX = ((y / rect.height) - 0.5) * -12;
-        card.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg) scale(1.03)`;
-      });
-      card.addEventListener('mouseleave', () => {
-        card.style.transform = '';
-      });
-    });
-
-    // Subtle gradient animation
-    document.addEventListener('DOMContentLoaded', () => {
-      const bg = document.querySelector('.animated-bg');
-      let angle = 0;
-      setInterval(() => {
-        angle = (angle + 0.3) % 360;
-        bg.style.background = `linear-gradient(${angle}deg, #1e1f5b, #6a11cb, #2575fc)`;
-      }, 80);
-    });
-  </script>
 </body>
+</html>
+
 </html>
