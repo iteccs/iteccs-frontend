@@ -1,0 +1,24 @@
+<script>
+(async function () {
+  const params = new URLSearchParams(window.location.search);
+  const session_id = params.get("session_id");
+  if (!session_id) {
+    document.body.innerHTML = "Missing session_id.";
+    return;
+  }
+
+  const res = await fetch("https://YOUR-BACKEND.com/api/stripe/confirm", {
+    method: "POST",
+    headers: {"Content-Type":"application/json"},
+    body: JSON.stringify({ session_id })
+  });
+
+  const data = await res.json();
+
+  if (data.ok && data.redirectUrl) {
+    window.location.href = data.redirectUrl; // LMS page
+  } else {
+    document.body.innerHTML = "Payment confirmed, but enrollment failed. Please contact support.";
+  }
+})();
+</script>
