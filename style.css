@@ -1261,3 +1261,29 @@ footer {
 .course-card:hover .card-text {
   opacity: 0;
 }
+
+/* ==============================
+   PROGRAM PAGE OVERRIDE
+============================== */
+
+.program-page {
+  background: #f8fafc;
+  padding-top: 40px;
+}
+
+.program-page .track-card {
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.05);
+  backdrop-filter: none;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.program-page .track-title {
+  color: #2575fc;
+}
+
+.program-page h1,
+.program-page h2 {
+  color: #1a1a1a;
+}
+
