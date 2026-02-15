@@ -2,153 +2,215 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Research & Innovation Programs | ITECCS Institute for Applied Mathematics, AI & Scientific Computing</title>
-  <meta name="description" content="ITECCS advances applied mathematics, AI, scientific computing, inverse problems, fluid mechanics, porous media, and high-performance simulation—delivering research programs, industry collaboration, and deployable computational innovation." />
+<title>Research & Innovation Programs | ITECCS Institute for Applied Mathematics, AI & Scientific Computing</title>
 
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<meta name="description" content="ITECCS advances applied mathematics, artificial intelligence, high-performance computing, inverse problems, fluid mechanics, porous media, renewable energy modeling, cybersecurity, and quantum technologies through research programs, professional education, and technical advisory." />
+
+<link rel="stylesheet" href="style.css" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* ================= HERO ================= */
+
+.program-hero{
+  padding:80px 20px;
+  text-align:center;
+  background:linear-gradient(135deg,#0f172a,#1e3a8a);
+  color:white;
+}
+
+.program-hero h1{
+  font-size:2.6rem;
+  font-weight:800;
+  margin-bottom:18px;
+}
+
+.program-hero p{
+  max-width:900px;
+  margin:auto;
+  line-height:1.8;
+  font-size:1.1rem;
+  opacity:0.95;
+}
+
+/* ================= CONTENT SECTION ================= */
+
+.program-section{
+  padding:70px 20px;
+  background:#f8fafc;
+  text-align:center;
+}
+
+.program-section h2{
+  font-size:2rem;
+  font-weight:800;
+  color:#0f172a;
+  margin-bottom:18px;
+}
+
+.program-section p{
+  max-width:900px;
+  margin:auto;
+  color:#475569;
+  line-height:1.8;
+  font-size:1.05rem;
+}
+
+/* ================= CARD GRID ================= */
+
+.card-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
+  max-width:1200px;
+  margin:50px auto;
+}
+
+.card{
+  background:white;
+  padding:35px 28px;
+  border-radius:18px;
+  border:1px solid rgba(15,23,42,0.08);
+  box-shadow:0 12px 35px rgba(2,6,23,0.08);
+  transition:0.3s ease;
+  text-align:left;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 22px 60px rgba(2,6,23,0.18);
+}
+
+.card i{
+  font-size:26px;
+  color:#1e3a8a;
+  margin-bottom:14px;
+}
+
+.card h3{
+  font-size:1.2rem;
+  font-weight:700;
+  margin-bottom:12px;
+  color:#0f172a;
+}
+
+.card ul{
+  padding-left:18px;
+  color:#475569;
+  line-height:1.7;
+}
+
+.card li{
+  margin-bottom:8px;
+}
+
+/* Responsive */
+
+@media(max-width:1000px){
+  .card-grid{ grid-template-columns:repeat(2,1fr); }
+}
+
+@media(max-width:650px){
+  .card-grid{ grid-template-columns:1fr; }
+}
+
+</style>
+
 </head>
 
 <body>
-  <nav class="navbar">
-    <div class="logo">
-      <img src="logo.png" alt="ITECCS Logo">
-    </div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="Founder.html">Who We Are</a></li>
-      <li><a href="program.html">Research & Innovation Programs</a></li>
-      <li><a href="education.html">Education & Professional Training</a></li>
-      <li><a href="consulting.html">Industry Collaboration & Technical Advisory</a></li>
-      <li>
-        <a href="contact.html" class="contact-nav-button">
-          <i class="fas fa-envelope"></i> Contact Us
-        </a>
-      </li>
+
+<nav class="navbar">
+  <div class="logo">
+    <img src="logo.png" alt="ITECCS Logo">
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="Founder.html">Who We Are</a></li>
+    <li><a href="program.html">Research & Innovation Programs</a></li>
+    <li><a href="education.html">Education & Professional Training</a></li>
+    <li><a href="consulting.html">Industry Collaboration & Technical Advisory</a></li>
+    <li>
+      <a href="contact.html" class="contact-nav-button">
+        <i class="fas fa-envelope"></i> Contact Us
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+
+<section class="program-hero">
+  <h1>Research & Innovation Programs</h1>
+  <p>
+    ITECCS designs and delivers rigorous research-driven programs in applied mathematics, artificial intelligence, 
+    scientific computing, multiphysics simulation, renewable energy systems, cybersecurity, and quantum technologies — 
+    integrating theory, computation, and real-world deployment.
+  </p>
+</section>
+
+<!-- OVERVIEW -->
+
+<section class="program-section">
+  <h2>Advanced Academic & Professional Programs</h2>
+  <p>
+    We serve universities, research institutions, government agencies, and industry partners through 
+    specialized training, grant proposal development, academic program evaluation, and 
+    workforce advancement initiatives aligned with emerging technological frontiers.
+  </p>
+</section>
+
+<!-- CARDS -->
+
+<div class="card-grid">
+
+  <div class="card">
+    <i class="fas fa-certificate"></i>
+    <h3>Certificate Programs & Continuing Professional Education (CPE)</h3>
+    <ul>
+      <li>Advanced Applied Mathematics</li>
+      <li>AI & Data-Driven Engineering</li>
+      <li>Scientific Computing & HPC</li>
+      <li>Cybersecurity & Secure Systems</li>
+      <li>Renewable Energy Modeling</li>
     </ul>
-  </nav>
+  </div>
 
-  <main class="content">
-    <section style="padding:60px 20px; background:#f8fafc; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;">
+  <div class="card">
+    <i class="fas fa-chalkboard-teacher"></i>
+    <h3>Custom Training & Workforce Development</h3>
+    <ul>
+      <li>Tailored industry-focused bootcamps</li>
+      <li>Upskilling & Reskilling initiatives</li>
+      <li>Multiphysics simulation training</li>
+      <li>Inverse modeling & imaging workshops</li>
+      <li>AI-powered engineering systems</li>
+    </ul>
+  </div>
 
-      <!-- HERO -->
-      <div style="text-align:center; max-width:1050px; margin:auto; margin-bottom:40px;">
-      
+  <div class="card">
+    <i class="fas fa-microscope"></i>
+    <h3>Academic & Research Support</h3>
+    <ul>
+      <li>Grant proposal development</li>
+      <li>Research mentorship</li>
+      <li>Curriculum design & evaluation</li>
+      <li>Interdisciplinary program building</li>
+      <li>Research-to-industry translation</li>
+    </ul>
+  </div>
 
+</div>
 
-         <main class="content">
-    <h1>
-      <p style="font-size:1.15rem; line-height:1.85; color:#475569; margin:0;">
-       
-       ITECCS designs and delivers tailored curricula, workshops, bootcamps, and design courses for all levels — serving colleges, universities, and workforce programs.
-We offer training, tutoring, grant proposal development, and academic program evaluation, along with:
-
-<li> Certificate Programs & Continuing Professional Education (CPE) </li>
-
-<li> Custom Training & Workforce Development Initiatives </li>
-
-<li> Upskilling and Reskilling Programs for individuals and organizations </li>
-
-Our programs extend across all ITECCS research domains, from Advanced Applied Mathematics and Data-Driven Engineering to Renewable Energy, Cybersecurity, and Quantum Technologies — helping participants stay competitive in a rapidly evolving technological world.</h1>
-    <p></p>
-  </main>
-
-    
- 
-
-        
-
-
-
-
-
-  <footer>
-    <p>&copy; 2026 ITECCS. All rights reserved.</p>
-  </footer>
-
-  <style>
-    .card-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:20px;
-    }
-    .card{
-      background:white;
-      padding:22px;
-      border-radius:12px;
-      box-shadow:0 6px 20px rgba(0,0,0,0.08);
-      transition:0.3s;
-    }
-    .card:hover{
-      transform:translateY(-6px);
-      box-shadow:0 12px 30px rgba(0,0,0,0.15);
-    }
-    .card h3{
-      color:#0073e6;
-      margin:0 0 12px;
-      font-size:1.05rem;
-    }
-    .card p{
-      margin:0;
-      color:#334155;
-      line-height:1.7;
-      font-size:0.95rem;
-    }
-    .card ul{
-      padding-left:20px;
-      margin:0;
-      color:#334155;
-      line-height:1.6;
-      font-size:0.95rem;
-    }
-    .card li{ margin:0 0 6px; }
-
-    @media(max-width:1000px){
-      .card-grid{ grid-template-columns:repeat(2,1fr); }
-    }
-    @media(max-width:700px){
-      .card-grid{ grid-template-columns:1fr; }
-    }
-  </style>
+<footer>
+  <p>&copy; 2026 ITECCS. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
