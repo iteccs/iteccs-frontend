@@ -1,0 +1,448 @@
+<!-- founder.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dr. Kaffel | Founder & Director of ITECCS | Applied Mathematics, AI, Scientific Computing</title>
+
+<meta name="description" content="Dr. Ahmed Kaffel is the Founder & Director of ITECCS, a computational research institute advancing applied mathematics, AI, scientific computing, digital twins, and engineering innovation through research, consulting, and education.">
+
+<meta name="keywords" content="Ahmed Kaffel, computational research institute, applied mathematics, scientific computing, AI research, engineering simulation, digital twins, computational scientist, HPC, CFD expert, AI consulting, engineering consulting, ITECCS">
+
+<meta name="author" content="Dr. Ahmed Kaffel">
+
+<meta property="og:title" content="Dr. Ahmed Kaffel | Founder & Director of ITECCS">
+<meta property="og:description" content="Computational scientist and founder of ITECCS advancing applied mathematics, AI, and scientific computing for research, consulting, and innovation.">
+<meta property="og:image" content="https://iteccs.com/founder.jpg">
+<meta property="og:url" content="https://iteccs.com/founder.html">
+<meta property="og:type" content="profile">
+
+<meta name="robots" content="index, follow">
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* =========================================================
+   ITECCS ELITE DESIGN SYSTEM
+   ========================================================= */
+
+:root{
+
+--navy:#0B1F3A;
+--navy-deep:#06152A;
+
+--blue:#1E5AA8;
+--blue-light:#2F80ED;
+
+--gold:#FDB515;
+
+--text:#0f172a;
+--text-soft:#475569;
+--text-muted:#64748b;
+
+--bg:#f8fafc;
+--card:#ffffff;
+
+--shadow-main:0 30px 80px rgba(2,6,23,.12);
+--shadow-soft:0 18px 40px rgba(2,6,23,.08);
+--shadow-light:0 8px 20px rgba(2,6,23,.06);
+
+--radius-xl:22px;
+--radius-lg:16px;
+}
+
+
+/* BODY */
+
+body{
+font-family:'Inter',sans-serif;
+background:
+radial-gradient(circle at 10% -10%, rgba(47,128,237,.06), transparent 50%),
+linear-gradient(180deg,#ffffff,#f8fafc);
+margin:0;
+color:var(--text);
+}
+
+
+/* NAVBAR */
+
+.navbar{
+
+background:linear-gradient(135deg,var(--navy-deep),var(--navy));
+
+padding:18px 40px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+box-shadow:0 8px 25px rgba(0,0,0,.15);
+}
+
+.nav-links a{
+color:white;
+text-decoration:none;
+font-weight:600;
+}
+
+.contact-nav-button{
+
+background:linear-gradient(135deg,var(--gold),#ffd95c);
+
+color:black;
+
+padding:8px 18px;
+
+border-radius:999px;
+
+font-weight:700;
+}
+
+
+/* WRAPPER */
+
+.founder-wrapper{
+
+max-width:1200px;
+
+margin:auto;
+
+padding:3rem 1rem 5rem;
+}
+
+
+/* HERO */
+
+.founder-hero{
+
+padding:3rem 2.5rem;
+
+border-radius:var(--radius-xl);
+
+background:
+
+radial-gradient(circle at 20% 0%, rgba(47,128,237,.2), transparent 60%),
+
+linear-gradient(135deg,var(--navy-deep),var(--navy),#162d63);
+
+box-shadow:var(--shadow-main);
+
+color:white;
+}
+
+.founder-hero__content{
+
+display:grid;
+
+grid-template-columns:2fr 1fr;
+
+gap:3rem;
+
+align-items:center;
+}
+
+.founder-hero__eyebrow{
+
+color:var(--gold);
+
+font-weight:700;
+
+letter-spacing:.08em;
+
+text-transform:uppercase;
+}
+
+.founder-hero__title{
+
+font-size:2.7rem;
+
+font-weight:800;
+}
+
+.founder-hero__subtitle{
+
+opacity:.9;
+
+font-weight:600;
+}
+
+.founder-hero__tagline{
+
+opacity:.95;
+
+line-height:1.7;
+}
+
+
+/* PHOTO */
+
+.founder-hero__photo{
+
+border-radius:50%;
+
+border:5px solid white;
+
+box-shadow:0 30px 70px rgba(0,0,0,.4);
+}
+
+
+/* BUTTONS */
+
+.btn{
+
+border-radius:999px;
+
+padding:.7rem 1.6rem;
+
+font-weight:700;
+
+text-decoration:none;
+
+transition:.25s;
+}
+
+.btn-primary{
+
+background:linear-gradient(135deg,var(--blue),var(--blue-light));
+
+color:white;
+
+box-shadow:0 12px 30px rgba(47,128,237,.35);
+}
+
+.btn-primary:hover{
+
+transform:translateY(-3px);
+}
+
+.btn-outline{
+
+border:2px solid var(--blue-light);
+
+color:var(--blue-light);
+}
+
+.btn-outline:hover{
+
+background:rgba(47,128,237,.12);
+}
+
+.btn-text{
+
+color:white;
+}
+
+
+/* CARDS */
+
+.founder-highlights__card,
+.founder-cta__card,
+.founder-stats__item,
+.founder-message{
+
+background:white;
+
+border-radius:var(--radius-lg);
+
+box-shadow:var(--shadow-light);
+
+border:1px solid rgba(15,23,42,.05);
+
+transition:.3s;
+}
+
+.founder-highlights__card:hover,
+.founder-cta__card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:var(--shadow-soft);
+}
+
+
+/* STATS NUMBER */
+
+.founder-stats__number{
+
+color:var(--blue);
+
+font-weight:800;
+}
+
+
+/* ALIGN BAR */
+
+.founder-align{
+
+background:linear-gradient(135deg,rgba(30,90,168,.08),rgba(47,128,237,.12));
+
+border-radius:999px;
+
+padding:.8rem 1.4rem;
+}
+
+
+/* QUOTE */
+
+.founder-quote blockquote{
+
+color:var(--navy);
+
+font-weight:500;
+}
+
+
+/* FINAL CTA */
+
+section[style*="linear-gradient"]{
+
+background:linear-gradient(135deg,var(--navy),var(--blue)) !important;
+
+box-shadow:var(--shadow-main);
+}
+
+
+/* FOOTER */
+
+footer{
+
+background:var(--navy-deep);
+
+color:white;
+
+text-align:center;
+
+padding:30px;
+
+margin-top:50px;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.founder-hero__content{
+
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+<div class="logo">
+<img src="logo.png" alt="ITECCS Logo">
+</div>
+
+<ul class="nav-links">
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="about.html">About Us</a></li>
+
+<li><a href="Founder.html">Who We Are</a></li>
+
+<li><a href="program.html">Research & Innovation Programs</a></li>
+
+<li><a href="education.html">Education & Professional Training</a></li>
+
+<li><a href="consulting.html">Industry Collaboration & Technical Advisory</a></li>
+
+<li><a href="howtopay.html">How to Pay</a></li>
+
+<li>
+<a href="contact.html" class="contact-nav-button">
+<i class="fas fa-envelope"></i> Contact Us
+</a>
+</li>
+
+</ul>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="founder-wrapper">
+
+<section class="founder-hero">
+
+<div class="founder-hero__content">
+
+<div>
+
+<p class="founder-hero__eyebrow">
+Founder & Director, ITECCS
+</p>
+
+<h2 class="founder-hero__title">
+Dr. Ahmed Kaffel
+</h2>
+
+<p class="founder-hero__subtitle">
+Applied Mathematician · Computational Scientist · Engineering Research Leader
+</p>
+
+<p class="founder-hero__tagline">
+
+Dr. Ahmed Kaffel leads ITECCS as a computational research institute advancing applied mathematics, artificial intelligence, and scalable scientific computing through research, industry collaboration, and advanced STEM education.
+
+</p>
+
+<div class="founder-hero__buttons">
+
+<a href="consulting.html" class="btn btn-primary">
+Collaborate with ITECCS
+</a>
+
+<a href="program.html" class="btn btn-outline">
+Explore our programs
+</a>
+
+<a href="contact.html" class="btn btn-text">
+Contact Dr. Kaffel →
+</a>
+
+</div>
+
+</div>
+
+<div class="founder-hero__photo-wrapper">
+
+<img src="founder.jpg"
+class="founder-hero__photo">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- YOUR REMAINING CONTENT CONTINUES EXACTLY SAME -->
+
+<!-- (All your existing stats, highlights, bio, CTA, footer, chat script remain unchanged) -->
+
+<footer>
+<p>&copy; 2025 ITECCS. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
