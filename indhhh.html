@@ -1,0 +1,477 @@
+<!-- index.html — ITECCS ULTRA-ELITE INSTITUTIONAL VERSION -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ITECCS | Institute of Technology, Engineering, Computing, and Computational Sciences</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* ================= ROOT ================= */
+
+:root{
+
+--brand:#0b2a5b;
+--brand2:#07101f;
+--accent:#f6c453;
+--accent2:#d9a83a;
+
+--ink:#0f172a;
+--muted:#475569;
+
+--radius:20px;
+
+}
+
+/* ================= GLOBAL ================= */
+
+*{box-sizing:border-box}
+
+body{
+
+margin:0;
+font-family:Inter;
+color:var(--ink);
+background:#ffffff;
+
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+
+position:fixed;
+top:0;
+width:100%;
+z-index:999;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:18px 36px;
+
+background:rgba(7,16,31,0.85);
+
+backdrop-filter:blur(12px);
+
+border-bottom:1px solid rgba(255,255,255,0.1);
+
+}
+
+.logo img{
+height:46px;
+}
+
+.nav-links{
+
+display:flex;
+gap:22px;
+list-style:none;
+
+}
+
+.nav-links a{
+
+color:#fff;
+text-decoration:none;
+font-weight:600;
+
+}
+
+.contact-nav-button{
+
+background:linear-gradient(135deg,var(--accent),var(--accent2));
+padding:10px 18px;
+border-radius:999px;
+color:#07101f !important;
+font-weight:800;
+
+}
+
+
+/* ================= HERO ================= */
+
+.hero{
+
+position:relative;
+height:100vh;
+overflow:hidden;
+
+}
+
+.hero-video{
+
+position:absolute;
+inset:0;
+
+width:100%;
+height:100%;
+
+object-fit:cover;
+
+z-index:-2;
+
+/* DO NOT TOUCH VIDEO */
+filter:none !important;
+opacity:1 !important;
+
+}
+
+.hero::after{
+
+content:"";
+
+position:absolute;
+inset:0;
+
+background:linear-gradient(
+135deg,
+rgba(7,16,31,0.6),
+rgba(7,16,31,0.35)
+);
+
+z-index:-1;
+
+}
+
+
+/* HERO CONTENT */
+
+.hero-text{
+
+position:absolute;
+bottom:80px;
+width:100%;
+display:flex;
+justify-content:center;
+
+}
+
+.hero-content{
+
+max-width:1000px;
+
+padding:40px;
+
+border-radius:var(--radius);
+
+background:rgba(7,16,31,0.6);
+
+border:1px solid rgba(255,255,255,0.18);
+
+backdrop-filter:blur(10px);
+
+color:#fff;
+text-align:center;
+
+animation: glow 6s infinite alternate;
+
+}
+
+@keyframes glow{
+
+from{
+
+box-shadow:0 20px 60px rgba(0,0,0,0.4);
+
+}
+
+to{
+
+box-shadow:0 20px 90px rgba(246,196,83,0.35);
+
+}
+
+}
+
+.hero-content h1{
+
+font-size:clamp(2.5rem,4vw,3.5rem);
+font-weight:900;
+
+}
+
+.hero-buttons{
+
+margin-top:18px;
+
+display:flex;
+justify-content:center;
+gap:16px;
+
+}
+
+.btn{
+
+padding:14px 24px;
+border-radius:999px;
+font-weight:800;
+text-decoration:none;
+
+}
+
+.btn-primary{
+
+background:linear-gradient(135deg,var(--accent),var(--accent2));
+color:#07101f;
+
+}
+
+.btn-outline{
+
+border:1px solid #fff;
+color:#fff;
+
+}
+
+
+/* ================= PRESTIGE BAND ================= */
+
+.prestige{
+
+background:#07101f;
+color:#fff;
+
+padding:30px;
+
+text-align:center;
+
+}
+
+.prestige span{
+
+margin:0 16px;
+font-weight:700;
+opacity:0.85;
+
+}
+
+
+/* ================= SECTION ================= */
+
+.section{
+
+padding:90px 20px;
+
+}
+
+.wrap{
+
+max-width:1200px;
+margin:auto;
+
+}
+
+
+/* ================= CARDS ================= */
+
+.cards{
+
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:28px;
+
+}
+
+.card{
+
+padding:32px;
+border-radius:var(--radius);
+background:#fff;
+
+box-shadow:0 15px 45px rgba(0,0,0,0.1);
+
+transition:0.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+box-shadow:0 25px 65px rgba(0,0,0,0.18);
+
+}
+
+
+/* ================= FOUNDER ================= */
+
+.founder{
+
+background:#f8fafc;
+
+padding:80px 20px;
+
+text-align:center;
+
+}
+
+.founder img{
+
+width:160px;
+border-radius:50%;
+margin-bottom:16px;
+
+box-shadow:0 20px 60px rgba(0,0,0,0.2);
+
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+
+background:#07101f;
+color:#fff;
+
+text-align:center;
+padding:30px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+<div class="logo">
+<img src="logo.png">
+</div>
+
+<ul class="nav-links">
+
+<li><a href="index.html">Home</a></li>
+<li><a href="founder.html">Founder</a></li>
+<li><a href="program.html">Research</a></li>
+<li><a href="consulting.html">Consulting</a></li>
+
+<li>
+<a href="contact.html" class="contact-nav-button">
+Contact
+</a>
+</li>
+
+</ul>
+
+</nav>
+
+
+<header class="hero">
+
+<video autoplay muted loop playsinline class="hero-video">
+<source src="iteccs.mp4" type="video/mp4">
+</video>
+
+<div class="hero-text">
+
+<div class="hero-content">
+
+<h1>
+ITECCS
+</h1>
+
+<p>
+Institute of Technology, Engineering, Computing, and Computational Sciences
+</p>
+
+<div class="hero-buttons">
+
+<a href="program.html" class="btn btn-primary">
+Research Programs
+</a>
+
+<a href="consulting.html" class="btn btn-outline">
+Industry Collaboration
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+
+<!-- PRESTIGE BAND -->
+
+<section class="prestige">
+
+Aligned with global research priorities:
+
+<span>NASA</span>
+<span>NSF</span>
+<span>NIH</span>
+<span>DOE</span>
+<span>DoD</span>
+
+</section>
+
+
+<!-- RESEARCH CARDS -->
+
+<section class="section">
+
+<div class="wrap">
+
+<div class="cards">
+
+<div class="card">
+<h3>Scientific Computing</h3>
+<p>Advanced numerical methods, simulation, and HPC.</p>
+</div>
+
+<div class="card">
+<h3>Artificial Intelligence</h3>
+<p>AI for scientific discovery and engineering.</p>
+</div>
+
+<div class="card">
+<h3>Engineering Simulation</h3>
+<p>Digital twins, multiphysics, and modeling.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOUNDER -->
+
+<section class="founder">
+
+<img src="founder.jpg">
+
+<h2>Founded by Dr. Ahmed Kaffel</h2>
+
+<p>
+Applied mathematician, computational scientist, and research leader advancing global scientific innovation.
+</p>
+
+</section>
+
+
+<footer>
+
+© 2026 ITECCS
+
+</footer>
+
+
+</body>
+
+</html>
