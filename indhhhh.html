@@ -1,0 +1,790 @@
+<!-- index.html (ULTRA-ELITE homepage — keeps your video EXACTLY as-is) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>ITECCS | Institute of Technology, Engineering, Computing, and Computational Sciences — Engineering, Applied Mathematics, AI & Scientific Computing</title>
+  <meta name="description" content="ITECCS advances engineering, applied mathematics, scientific computing, and AI-driven methods for high-fidelity simulation, inverse problems, porous media, fluid mechanics, and high-performance computing. Explore research programs, professional training, and technical advisory." />
+  <meta name="keywords" content="ITECCS, applied mathematics, scientific computing, high-performance computing, HPC, AI, inverse problems, computational imaging, porous media, fluid mechanics, turbulence, numerical methods, simulation, digital twins, technical advisory, professional training" />
+  <link rel="canonical" href="https://www.iteccs.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="ITECCS — Applied Mathematics, AI & Scientific Computing" />
+  <meta property="og:description" content="Research & innovation programs, education & professional training, and technical advisory in applied mathematics, HPC, AI, inverse problems, porous media, and fluid mechanics." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="ITECCS" />
+
+  <!-- Keep your external stylesheet if you use it across site -->
+  <link rel="stylesheet" href="style.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Page-only improvements (DO NOT touch your video rendering) -->
+  <style>
+    :root{
+      --ink:#0b1220;
+      --ink2:#0f172a;
+      --muted:#475569;
+      --muted2:#334155;
+
+      --line:rgba(15,23,42,0.10);
+      --line2:rgba(255,255,255,0.14);
+
+      --brand:#0b2a5b;
+      --brand2:#07101f;
+
+      --accent:#ffcc00;
+      --accent2:#f5b800;
+
+      --shadow: 0 18px 60px rgba(2,6,23,0.18);
+      --shadow2: 0 14px 40px rgba(2,6,23,0.10);
+
+      --radius: 22px;
+      --radius2: 16px;
+
+      --max: 1200px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--ink2);
+      background:#fff;
+      line-height:1.6;
+    }
+
+    /* ===== Elite motion (subtle, institutional) ===== */
+    @media (prefers-reduced-motion: no-preference){
+      .reveal{
+        opacity:0;
+        transform: translateY(14px);
+        animation: reveal .9s ease forwards;
+      }
+      .reveal.d2{ animation-delay:.10s }
+      .reveal.d3{ animation-delay:.18s }
+      .reveal.d4{ animation-delay:.26s }
+      @keyframes reveal{
+        to{ opacity:1; transform:none; }
+      }
+      .floaty{
+        animation: floaty 6.5s ease-in-out infinite alternate;
+      }
+      @keyframes floaty{
+        from{ transform: translateY(0); }
+        to{ transform: translateY(-6px); }
+      }
+      .card-sheen::after{
+        content:"";
+        position:absolute;
+        inset:-1px;
+        background:
+          radial-gradient(600px 240px at 20% 10%, rgba(37,117,252,0.16), transparent 55%),
+          radial-gradient(620px 260px at 80% 0%, rgba(106,17,203,0.14), transparent 55%),
+          radial-gradient(520px 260px at 60% 120%, rgba(255,204,0,0.12), transparent 60%);
+        opacity:.65;
+        pointer-events:none;
+      }
+    }
+
+    /* ================= NAVBAR (elite) ================= */
+    .navbar{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding: 16px 34px;
+      background: rgba(7, 16, 31, 0.86);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+    }
+    .logo img{ height: 44px; display:block; }
+    .nav-links{
+      display:flex;
+      gap: 22px;
+      list-style:none;
+      margin:0;
+      padding:0;
+      align-items:center;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .nav-links a{
+      color: rgba(255,255,255,0.92);
+      text-decoration:none;
+      font-weight:600;
+      font-size: 0.95rem;
+      letter-spacing: 0.1px;
+      opacity: 0.95;
+      transition: opacity .2s ease, transform .2s ease;
+    }
+    .nav-links a:hover{ opacity:1; transform: translateY(-1px); }
+    .contact-nav-button{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+      color: #0b1220 !important;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-weight: 900 !important;
+      border: 1px solid rgba(255,255,255,0.18);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.22);
+    }
+    .contact-nav-button:hover{ transform: translateY(-1px); filter: brightness(1.02); }
+
+    /* ================= HERO ================= */
+    /* Keep video exactly as-is: no filters, no opacity changes, no transforms. */
+    .hero { position: relative; height: 95vh; overflow: hidden; }
+    .hero-video{
+      position:absolute; inset:0;
+      width:100%; height:100%;
+      object-fit:cover;
+      z-index: -2;
+      /* IMPORTANT: no filter, no opacity, no blur */
+      filter: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
+    /* Premium readability WITHOUT degrading video */
+    .hero::after{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        radial-gradient(900px 500px at 20% 15%, rgba(255,204,0,0.14), transparent 60%),
+        radial-gradient(760px 420px at 80% 10%, rgba(59,130,246,0.16), transparent 55%),
+        linear-gradient(135deg, rgba(2,6,23,0.52), rgba(2,6,23,0.30));
+      z-index:-1; /* sits above video, below text */
+      pointer-events:none;
+    }
+
+    .hero-text{
+      position:relative;
+      z-index: 2;
+      height:100%;
+      display:flex;
+      align-items:flex-end;
+      justify-content:center;
+      padding: 0 18px 70px;
+      text-align:center;
+      color:#fff;
+    }
+
+    .hero-content{
+      max-width: 1020px;
+      padding: 26px 26px 22px;
+      border-radius: 20px;
+      background: rgba(2, 6, 23, 0.28);
+      border: 1px solid rgba(255,255,255,0.18);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 18px 60px rgba(0,0,0,0.32);
+      position:relative;
+      overflow:hidden;
+    }
+    /* subtle animated glow */
+    @media (prefers-reduced-motion: no-preference){
+      .hero-content{
+        animation: heroGlow 7.5s ease-in-out infinite alternate;
+      }
+      @keyframes heroGlow{
+        from{
+          box-shadow: 0 18px 60px rgba(0,0,0,0.32);
+        }
+        to{
+          box-shadow: 0 18px 88px rgba(255,204,0,0.28);
+        }
+      }
+    }
+
+    .hero-content .kicker{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      justify-content:center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.14);
+      font-size: 0.95rem;
+      margin-bottom: 14px;
+      font-weight: 700;
+    }
+
+    .hero-content h2{
+      font-family: 'Inter', sans-serif;
+      font-weight: 900;
+      font-size: clamp(1.9rem, 3.6vw, 2.75rem);
+      line-height: 1.12;
+      margin: 0 0 12px;
+      letter-spacing: -0.01em;
+      color:#fff;
+      text-shadow: 0 12px 40px rgba(0,0,0,0.35);
+    }
+
+    .hero-content p{
+      margin: 0 auto 12px;
+      max-width: 900px;
+      font-size: 1.08rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.92);
+    }
+
+    .hero-actions{
+      display:flex;
+      gap: 12px;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin-top: 16px;
+    }
+
+    .cta-primary{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: 12px 18px;
+      border-radius: 12px;
+      text-decoration:none;
+      font-weight: 900;
+      background: linear-gradient(135deg,#ffcc00,#f5b800);
+      color:#0b1220;
+      border: 1px solid rgba(255,255,255,0.15);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.22);
+      transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+    }
+    .cta-primary:hover{ transform: translateY(-2px); box-shadow: 0 16px 34px rgba(0,0,0,0.28); filter: brightness(1.02); }
+
+    .cta-secondary{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: 12px 18px;
+      border-radius: 12px;
+      text-decoration:none;
+      font-weight: 800;
+      background: rgba(255,255,255,0.10);
+      color:#fff;
+      border: 1px solid rgba(255,255,255,0.22);
+      transition: transform .2s ease, background .2s ease;
+    }
+    .cta-secondary:hover{ transform: translateY(-2px); background: rgba(255,255,255,0.14); }
+
+    /* ===== Prestige mini band below hero (elite, institutional) ===== */
+    .prestige-band{
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 18px;
+      z-index: 2;
+      display:flex;
+      justify-content:center;
+      padding: 0 18px;
+      pointer-events:none;
+    }
+    .prestige-inner{
+      pointer-events:auto;
+      max-width: 1100px;
+      width: 100%;
+      display:flex;
+      gap: 10px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:center;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(2,6,23,0.35);
+      border: 1px solid rgba(255,255,255,0.14);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 12px 36px rgba(0,0,0,0.26);
+    }
+    .prestige-inner strong{
+      color: rgba(255,255,255,0.92);
+      font-size: 0.92rem;
+      font-weight: 900;
+      letter-spacing: 0.02em;
+      margin-right: 2px;
+    }
+    .prestige-pill{
+      font-size: 0.86rem;
+      color: rgba(255,255,255,0.92);
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.08);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    /* ================= SECTIONS ================= */
+    .home-section{
+      padding: 76px 18px;
+      background: linear-gradient(135deg,#eef3ff,#f9fafc,#e8f0ff);
+      border-top: 1px solid rgba(15,23,42,0.06);
+    }
+    .home-wrap{ max-width: var(--max); margin: 0 auto; }
+
+    .home-title{
+      text-align:center;
+      font-size: clamp(1.8rem, 3vw, 2.25rem);
+      font-weight: 950;
+      color:#0f172a;
+      margin: 0 0 12px;
+      letter-spacing: -0.02em;
+    }
+    .home-sub{
+      text-align:center;
+      max-width: 980px;
+      margin: 0 auto 26px;
+      color:#475569;
+      font-size: 1.05rem;
+      line-height: 1.85;
+    }
+
+    /* ================= CARDS (your exact content, more elite) ================= */
+    .home-cards{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 28px;
+    }
+    .home-card{
+      background: #ffffff;
+      border-radius: 18px;
+      border: 1px solid rgba(15,23,42,0.08);
+      box-shadow: 0 14px 40px rgba(2,6,23,0.08);
+      padding: 30px 26px;
+      text-decoration:none;
+      color: inherit;
+      transition: transform .25s ease, box-shadow .25s ease;
+      position: relative;
+      overflow:hidden;
+    }
+    .home-card.card-sheen::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: linear-gradient(135deg, rgba(11,42,91,0.04), rgba(255,204,0,0.04));
+      pointer-events:none;
+    }
+    .home-card > *{ position: relative; z-index: 1; }
+
+    .home-card:hover{
+      transform: translateY(-8px);
+      box-shadow: 0 24px 70px rgba(2,6,23,0.16);
+    }
+    .home-card .icon{
+      width: 54px; height: 54px;
+      border-radius: 14px;
+      display:flex; align-items:center; justify-content:center;
+      background: rgba(37,117,252,0.10);
+      border: 1px solid rgba(37,117,252,0.18);
+      margin-bottom: 14px;
+    }
+    .home-card .icon i{ font-size: 22px; color:#1e3a8a; }
+
+    .home-card h3{
+      margin: 0 0 10px;
+      font-size: 1.25rem;
+      font-weight: 950;
+      color:#0f172a;
+      letter-spacing: -0.01em;
+    }
+    .home-card p{
+      margin: 0 0 14px;
+      color:#475569;
+      line-height: 1.75;
+      font-size: 1.0rem;
+      font-weight: 550;
+    }
+    .home-card .meta{
+      display:flex;
+      gap: 10px;
+      flex-wrap:wrap;
+      margin-top: 8px;
+    }
+    .pill{
+      font-size: 0.85rem;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.06);
+      color:#0f172a;
+      border: 1px solid rgba(15,23,42,0.08);
+      font-weight: 700;
+    }
+
+    /* ================= Founder band (ultra-elite, short) ================= */
+    .founder-band{
+      padding: 70px 18px;
+      background: linear-gradient(135deg,#ffffff,#f8fafc);
+      border-top: 1px solid rgba(15,23,42,0.06);
+      border-bottom: 1px solid rgba(15,23,42,0.06);
+    }
+    .founder-wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+      display:grid;
+      grid-template-columns: 1.35fr 0.65fr;
+      gap: 22px;
+      align-items:center;
+    }
+    .founder-card{
+      background:#fff;
+      border: 1px solid rgba(15,23,42,0.08);
+      border-radius: 20px;
+      padding: 24px 22px;
+      box-shadow: var(--shadow2);
+      position:relative;
+      overflow:hidden;
+    }
+    .founder-card h2{
+      margin:0 0 10px;
+      font-size: 1.55rem;
+      font-weight: 950;
+      letter-spacing: -0.02em;
+      color:#0f172a;
+    }
+    .founder-card p{
+      margin:0 0 12px;
+      color:#475569;
+      line-height:1.85;
+      font-size: 1.02rem;
+      font-weight: 550;
+      max-width: 760px;
+    }
+    .founder-actions{
+      display:flex;
+      gap: 10px;
+      flex-wrap:wrap;
+      margin-top: 10px;
+    }
+    .mini-btn{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      text-decoration:none;
+      font-weight: 900;
+      border: 1px solid rgba(15,23,42,0.10);
+      background: rgba(11,42,91,0.06);
+      color:#0b2a5b;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .mini-btn:hover{ transform: translateY(-1px); background: rgba(11,42,91,0.10); }
+
+    .founder-photo{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+    .founder-photo img{
+      width: 200px;
+      height: 200px;
+      border-radius: 999px;
+      object-fit: cover;
+      border: 3px solid rgba(255,255,255,0.95);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.18);
+      background: #e5e7eb;
+    }
+
+    /* ================= Testimonials (your structure, more premium) ================= */
+    .testimonials{
+      padding: 76px 18px;
+      background:#ffffff;
+      text-align:center;
+    }
+    .testimonials h2{
+      font-size: clamp(1.8rem, 3vw, 2.25rem);
+      font-weight: 950;
+      color:#0f172a;
+      margin-bottom: 26px;
+      letter-spacing: -0.02em;
+    }
+    .testimonials .card-container{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .testimonials .card{
+      background: #ffffff;
+      border-radius: 18px;
+      border: 1px solid rgba(15,23,42,0.08);
+      box-shadow: 0 14px 40px rgba(2,6,23,0.08);
+      padding: 26px 22px;
+      text-align:left;
+      position:relative;
+      overflow:hidden;
+    }
+    .testimonials .card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(600px 240px at 15% 0%, rgba(255,204,0,0.10), transparent 55%),
+        radial-gradient(600px 240px at 95% 10%, rgba(37,117,252,0.10), transparent 55%);
+      pointer-events:none;
+      opacity:.8;
+    }
+    .testimonials .card > *{ position:relative; z-index:1; }
+    .testimonials .card p{
+      margin:0 0 10px;
+      color:#334155;
+      line-height: 1.75;
+      font-style: italic;
+      font-weight: 550;
+    }
+    .testimonials .card strong{ color:#0f172a; font-weight: 900; }
+
+    /* ================= Footer ================= */
+    footer{
+      padding: 26px 12px;
+      text-align:center;
+      color: rgba(255,255,255,0.80);
+      background: rgba(7, 16, 31, 0.96);
+      border-top: 1px solid rgba(255,255,255,0.10);
+    }
+    footer p{ margin:0; font-weight: 650; }
+
+    /* ================= Custom chat button (premium) ================= */
+    #custom-chat-btn{
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      width: 56px;
+      height: 56px;
+      border: none;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+      color: #172033;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      box-shadow: 0 18px 40px rgba(2,6,23,0.18);
+      z-index: 99;
+      transition: transform .2s ease, filter .2s ease;
+    }
+    #custom-chat-btn i{ font-size: 20px; }
+    #custom-chat-btn:hover{ transform: translateY(-1px); filter: brightness(1.02); }
+    #custom-chat-btn:focus{ outline: none; box-shadow: 0 0 0 4px rgba(255,204,0,0.35), 0 18px 40px rgba(2,6,23,0.18); }
+
+    /* ================= Responsive ================= */
+    @media(max-width: 1000px){
+      .home-cards{ grid-template-columns: repeat(2, 1fr); }
+      .testimonials .card-container{ grid-template-columns: 1fr; }
+      .founder-wrap{ grid-template-columns: 1fr; }
+      .founder-photo{ order: -1; }
+    }
+    @media(max-width: 650px){
+      .home-cards{ grid-template-columns: 1fr; }
+      .hero-text{ padding-bottom: 62px; }
+      .hero-content{ padding: 18px 16px; }
+      .navbar{ padding: 14px 16px; }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="ITeccs Logo">
+    </div>
+    <ul class="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="founder.html">Who We Are</a></li>
+      <li><a href="program.html">Research & Innovation Programs</a></li>
+      <li><a href="education.html">Education & Professional Training</a></li>
+      <li><a href="consulting.html">Industry Collaboration & Technical Advisory</a></li>
+      <li><a href="howtopay.html">How to Pay</a></li>
+      <li>
+        <a href="contact.html" class="contact-nav-button">
+          <i class="fas fa-envelope"></i> Contact Us
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <video autoplay muted loop playsinline class="hero-video">
+      <source src="iteccs.mp4" type="video/mp4" />
+      Your browser doesn't support video background.
+    </video>
+
+    <div class="hero-text">
+      <div class="hero-content reveal">
+        <div class="kicker reveal d2">
+          <i class="fas fa-atom"></i>
+          <span>Applied Mathematics • AI • Scientific Computing • HPC</span>
+        </div>
+
+        <h2 class="reveal d3">ITECCS — Institute of Technology, Engineering, Computing, and Computational Sciences</h2>
+
+        <p class="reveal d4"><strong>Empowering innovators, engineers, and scientists</strong> through rigorous modeling, high-fidelity simulation, and deployable computational solutions.</p>
+
+        <p class="reveal d4">
+          We advance <strong>advanced numerical methods</strong>, <strong>multiscale porous-media transport</strong>, <strong>fluid mechanics & stability</strong>,
+          <strong>computational imaging & inverse problems</strong>, and <strong>high-performance computing</strong>—serving academia, industry, startups, and government partners.
+        </p>
+
+        <div class="hero-actions reveal d4">
+          <a href="program.html" class="cta-primary"><i class="fas fa-diagram-project"></i> Explore Research Programs</a>
+          <a href="consulting.html" class="cta-secondary"><i class="fas fa-handshake"></i> Industry Collaboration</a>
+          <a href="education.html" class="cta-secondary"><i class="fas fa-graduation-cap"></i> Education & Training</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- prestige band (adds credibility without changing video) -->
+    <div class="prestige-band">
+      <div class="prestige-inner floaty">
+        <strong>Aligned with priorities:</strong>
+        <span class="prestige-pill">NASA</span>
+        <span class="prestige-pill">NSF</span>
+        <span class="prestige-pill">NIH</span>
+        <span class="prestige-pill">DOE</span>
+        <span class="prestige-pill">DoD</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Prestige cards (YOUR CONTENT, preserved) -->
+  <section class="home-section">
+    <div class="home-wrap">
+      <h2 class="home-title reveal">Research. Education. Technical Advisory.</h2>
+      <p class="home-sub reveal d2">
+        ITECCS operates at the intersection of rigorous theory and real-world impact—building computational capabilities,
+        training the next generation, and partnering with organizations to solve high-consequence scientific and engineering challenges.
+      </p>
+
+      <div class="home-cards">
+        <a class="home-card card-sheen reveal" href="program.html">
+          <div class="icon"><i class="fas fa-flask"></i></div>
+          <h3>Research & Innovation Programs</h3>
+          <p>
+            Flagship initiatives and core programs spanning numerical methods, inverse modeling, porous media, fluid mechanics,
+            AI-enhanced scientific computing, and scalable HPC platforms.
+          </p>
+          <div class="meta">
+            <span class="pill">Advanced Numerical Methods</span>
+            <span class="pill">HPC & GPU</span>
+            <span class="pill">Multiphysics</span>
+          </div>
+        </a>
+
+        <a class="home-card card-sheen reveal d2" href="education.html">
+          <div class="icon"><i class="fas fa-graduation-cap"></i></div>
+          <h3>Education & Professional Training</h3>
+          <p>
+            Courses, certificates, workshops, and continuing professional education (CPE) designed for students,
+            educators, and professionals—online, hybrid, or on-site.
+          </p>
+          <div class="meta">
+            <span class="pill">Courses</span>
+            <span class="pill">Certificates & CPE</span>
+            <span class="pill">Workforce Development</span>
+          </div>
+        </a>
+
+        <a class="home-card card-sheen reveal d3" href="consulting.html">
+          <div class="icon"><i class="fas fa-screwdriver-wrench"></i></div>
+          <h3>Industry Collaboration & Technical Advisory</h3>
+          <p>
+            Research-to-deployment partnerships: modeling, simulation, algorithm design, validation, and secure
+            cloud/HPC implementation—delivering measurable engineering value.
+          </p>
+          <div class="meta">
+            <span class="pill">Technical Advisory</span>
+            <span class="pill">R&amp;D Partnerships</span>
+            <span class="pill">Deployment</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder highlight (adds prestige, keeps your brand message) -->
+  <section class="founder-band">
+    <div class="founder-wrap">
+      <div class="founder-card card-sheen reveal">
+        <h2>Led by Research & Engineering Leadership</h2>
+        <p>
+          ITECCS is guided by a rigorous research philosophy: combine mathematical theory, scalable computation, and deployable engineering
+          to solve complex challenges in science, technology, and industry.
+        </p>
+        <p>
+          <strong>Dr. Ahmed Kaffel</strong> leads ITECCS with a focus on high-fidelity modeling, AI-enhanced scientific computing,
+          and advanced STEM education—bridging academia, industry, and public-sector priorities.
+        </p>
+        <div class="founder-actions">
+          <a class="mini-btn" href="founder.html"><i class="fas fa-user-tie"></i> Meet the Founder</a>
+          <a class="mini-btn" href="contact.html"><i class="fas fa-paper-plane"></i> Request Collaboration</a>
+          <a class="mini-btn" href="program.html"><i class="fas fa-layer-group"></i> View Programs</a>
+        </div>
+      </div>
+
+      <div class="founder-photo reveal d2">
+        <img src="founder.jpg" alt="Dr. Ahmed Kaffel">
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials (YOUR STRUCTURE, preserved) -->
+  <section class="testimonials">
+    <h2 class="reveal">What Our Clients Say</h2>
+    <div class="card-container">
+      <div class="card reveal">
+        <p>“ITECCS brought clarity and technical depth to a complex modeling problem—delivering results we could deploy.”</p>
+        <strong>— Partner, Engineering &amp; R&amp;D</strong>
+      </div>
+      <div class="card reveal d2">
+        <p>“Excellent training and mentorship—highly structured, rigorous, and directly applicable to our workflows.”</p>
+        <strong>— Program Lead, Scientific Computing</strong>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 ITeccs.</p>
+  </footer>
+
+  <!-- Custom Chat Button -->
+  <button id="custom-chat-btn" aria-label="Open chat">
+    <i class="fas fa-comments"></i>
+  </button>
+
+  <!-- Tawk.to Script -->
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {};
+    var Tawk_LoadStart = new Date();
+
+    (function(){
+      var s1=document.createElement("script"),
+          s0=document.getElementsByTagName("script")[0];
+      s1.async=true;
+      s1.src='https://embed.tawk.to/685e2123390063190e54b4b2/1iunr2sv2';
+      s1.charset='UTF-8';
+      s1.setAttribute('crossorigin','*');
+      s0.parentNode.insertBefore(s1,s0);
+    })();
+
+    Tawk_API.onLoad = function(){ Tawk_API.hideWidget(); };
+
+    document.addEventListener("DOMContentLoaded", function(){
+      var btn = document.getElementById("custom-chat-btn");
+      if(btn){
+        btn.addEventListener("click", function(){
+          if(typeof Tawk_API !== "undefined"){ Tawk_API.maximize(); }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
