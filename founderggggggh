@@ -1,0 +1,355 @@
+<!-- founder.html (Elite High-Contrast FINAL Institutional Version) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Dr. Ahmed Kaffel | Founder & Director of ITECCS | Applied Mathematics, AI, Scientific Computing</title>
+
+<meta name="description" content="Dr. Ahmed Kaffel is the Founder & Director of ITECCS, advancing applied mathematics, AI, scientific computing, and engineering innovation through research, consulting, and education.">
+
+<meta name="keywords" content="Ahmed Kaffel, computational research institute, applied mathematics, scientific computing, AI research, engineering simulation, digital twins, HPC, CFD expert, ITECCS">
+
+<meta name="author" content="Dr. Ahmed Kaffel">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+:root{
+
+--ink:#0b1220;
+--muted:#475569;
+--brand:#0b2a5b;
+--accent:#f6c453;
+--accent2:#d9a83a;
+--radius:22px;
+--shadow:0 25px 60px rgba(0,0,0,0.45);
+--ring: rgba(246,196,83,0.35);
+--max:1200px;
+
+}
+
+*{box-sizing:border-box}
+
+body{
+margin:0;
+font-family:"Inter",sans-serif;
+background:
+radial-gradient(1200px 700px at 20% 0%, rgba(246,196,83,0.10), transparent 55%),
+radial-gradient(900px 540px at 80% 10%, rgba(59,130,246,0.10), transparent 50%),
+linear-gradient(180deg,#f7f9fe 0%,#eef2f8 100%);
+color:var(--ink);
+}
+
+/* NAVBAR */
+
+.navbar{
+position:sticky;
+top:0;
+z-index:50;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:16px 34px;
+background:rgba(11,18,32,0.88);
+backdrop-filter:blur(10px);
+}
+
+.nav-links{
+display:flex;
+gap:22px;
+list-style:none;
+}
+
+.nav-links a{
+color:white;
+text-decoration:none;
+font-weight:600;
+}
+
+.contact-nav-button{
+background:linear-gradient(135deg,var(--accent),var(--accent2));
+color:#1b2333!important;
+padding:10px 16px;
+border-radius:999px;
+font-weight:800;
+}
+
+/* MAIN */
+
+.content{
+max-width:var(--max);
+margin:auto;
+padding:30px 20px;
+}
+
+/* HERO */
+
+.founder-hero{
+
+position:relative;
+overflow:hidden;
+padding:36px 30px;
+border-radius:var(--radius);
+color:white;
+
+background:
+
+radial-gradient(900px 500px at 0% 0%, rgba(246,196,83,0.18), transparent 55%),
+radial-gradient(800px 500px at 100% 0%, rgba(59,130,246,0.18), transparent 55%),
+linear-gradient(135deg,#020617 0%,#071633 45%,#0b2a5b 100%);
+
+border:1px solid rgba(255,255,255,0.14);
+
+box-shadow:
+0 30px 80px rgba(0,0,0,0.55),
+inset 0 0 140px rgba(246,196,83,0.08);
+
+animation:heroGlowElite 7s ease-in-out infinite alternate;
+
+}
+
+@keyframes heroGlowElite{
+
+from{
+box-shadow:
+0 30px 80px rgba(0,0,0,0.55),
+inset 0 0 100px rgba(246,196,83,0.05);
+}
+
+to{
+box-shadow:
+0 30px 80px rgba(0,0,0,0.55),
+inset 0 0 160px rgba(246,196,83,0.14);
+}
+
+}
+
+/* CONTENT GRID */
+
+.founder-hero__content{
+display:grid;
+grid-template-columns:1.8fr 1fr;
+gap:30px;
+align-items:start;
+}
+
+/* TEXT PANEL */
+
+.founder-hero__content > div:first-child{
+
+background:
+linear-gradient(
+90deg,
+rgba(2,6,23,0.94) 0%,
+rgba(2,6,23,0.88) 45%,
+rgba(2,6,23,0.65) 75%,
+rgba(2,6,23,0.25) 95%,
+rgba(2,6,23,0.05) 100%
+);
+
+padding:22px 26px;
+border-radius:16px;
+
+backdrop-filter:blur(3px);
+
+border:1px solid rgba(255,255,255,0.08);
+
+box-shadow:
+0 20px 60px rgba(0,0,0,0.55),
+inset 0 0 60px rgba(246,196,83,0.06);
+
+}
+
+/* TEXT */
+
+.founder-hero__title{
+font-size:2.6rem;
+font-weight:800;
+color:white;
+margin:0;
+}
+
+.founder-hero__subtitle{
+color:white;
+font-weight:700;
+margin-top:10px;
+}
+
+.founder-hero__tagline{
+color:white;
+margin-top:12px;
+}
+
+/* BUTTONS */
+
+.btn{
+display:inline-block;
+padding:12px 20px;
+border-radius:999px;
+font-weight:700;
+text-decoration:none;
+margin-right:10px;
+margin-top:15px;
+}
+
+.btn-primary{
+background:linear-gradient(135deg,var(--accent),var(--accent2));
+color:#1b2333;
+}
+
+.btn-outline{
+border:1px solid white;
+color:white;
+}
+
+.btn-text{
+border:1px solid white;
+color:white;
+}
+
+/* PHOTO */
+
+.founder-hero__photo{
+width:200px;
+height:200px;
+border-radius:50%;
+border:3px solid white;
+object-fit:cover;
+}
+
+/* CARDS */
+
+.elite-card{
+background:white;
+padding:20px;
+margin-top:20px;
+border-radius:var(--radius);
+box-shadow:var(--shadow);
+}
+
+/* FOOTER */
+
+footer{
+margin-top:20px;
+padding:20px;
+text-align:center;
+background:#0b1220;
+color:white;
+}
+
+/* CHAT BUTTON */
+
+#custom-chat-btn{
+
+position:fixed;
+bottom:20px;
+right:20px;
+width:54px;
+height:54px;
+border-radius:50%;
+background:linear-gradient(135deg,var(--accent),var(--accent2));
+border:none;
+cursor:pointer;
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+
+<img src="logo.png" height="44">
+
+<ul class="nav-links">
+
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About Us</a></li>
+<li><a href="Founder.html">Who We Are</a></li>
+
+<li>
+<a href="contact.html" class="contact-nav-button">
+Contact
+</a>
+</li>
+
+</ul>
+
+</nav>
+
+<main class="content">
+
+<section class="founder-hero">
+
+<div class="founder-hero__content">
+
+<div>
+
+<h1 class="founder-hero__title">
+Dr. Ahmed Kaffel
+</h1>
+
+<p class="founder-hero__subtitle">
+Applied Mathematician · Computational Scientist · Engineering Research Leader
+</p>
+
+<p class="founder-hero__tagline">
+Founder & Director of ITECCS advancing applied mathematics, AI, and scientific computing.
+</p>
+
+<a href="contact.html" class="btn btn-primary">
+Collaborate with ITECCS
+</a>
+
+<a href="program.html" class="btn btn-outline">
+Explore Programs
+</a>
+
+<a href="contact.html" class="btn btn-text">
+Contact
+</a>
+
+</div>
+
+<div>
+
+<img src="founder.jpg" class="founder-hero__photo">
+
+</div>
+
+</div>
+
+</section>
+
+<section class="elite-card">
+
+<h3>Institutional Leadership</h3>
+
+<p>
+
+Dr. Ahmed Kaffel is Founder & Director of ITECCS, advancing applied mathematics, artificial intelligence, and scientific computing through research, consulting, and education.
+
+</p>
+
+</section>
+
+</main>
+
+<footer>
+
+© 2025 ITECCS
+
+</footer>
+
+<button id="custom-chat-btn">
+<i class="fas fa-comments"></i>
+</button>
+
+</body>
+</html>
