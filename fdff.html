@@ -1,0 +1,373 @@
+<style>
+
+/* =====================================================
+   ITECCS ELITE GLOBAL PALETTE
+   ===================================================== */
+
+:root{
+  --navy:#0B1F3A;
+  --navy-deep:#06152a;
+  --blue:#1E5AA8;
+  --blue-light:#2F80ED;
+  --gold:#FDB515;
+
+  --text:#0f172a;
+  --text-soft:#475569;
+  --text-muted:#64748b;
+
+  --bg:#f7fafc;
+  --card:#ffffff;
+
+  --shadow-main:0 30px 80px rgba(2,6,23,.12);
+  --shadow-soft:0 12px 35px rgba(2,6,23,.08);
+  --shadow-light:0 6px 18px rgba(2,6,23,.06);
+
+  --radius-xl:24px;
+  --radius-lg:18px;
+}
+
+
+/* =====================================================
+   WRAPPER
+   ===================================================== */
+
+.founder-wrapper{
+
+  font-family:"Inter",system-ui;
+  color:var(--text);
+
+  background:
+    radial-gradient(circle at 20% -10%, rgba(47,128,237,.08), transparent 55%),
+    radial-gradient(circle at 90% 10%, rgba(253,181,21,.06), transparent 50%),
+    linear-gradient(180deg,#ffffff 0%,#f7fafc 100%);
+
+  line-height:1.6;
+
+  padding:3rem 1rem 5rem;
+  max-width:1200px;
+  margin:auto;
+}
+
+
+/* =====================================================
+   HERO SECTION (ULTRA ELITE)
+   ===================================================== */
+
+.founder-hero{
+
+  padding:3rem 2.2rem;
+
+  background:
+
+    radial-gradient(circle at 15% 0%, rgba(47,128,237,.18), transparent 55%),
+
+    linear-gradient(
+      135deg,
+      var(--navy-deep) 0%,
+      var(--navy) 40%,
+      #162d63 100%
+    );
+
+  border-radius:var(--radius-xl);
+
+  box-shadow:var(--shadow-main);
+
+  color:white;
+}
+
+.founder-hero__content{
+
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:3rem;
+  align-items:center;
+}
+
+.founder-hero__eyebrow{
+
+  color:var(--gold);
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.founder-hero__title{
+
+  font-size:clamp(2.4rem,3vw,2.8rem);
+  font-weight:800;
+  margin:0;
+
+  color:white;
+}
+
+.founder-hero__subtitle{
+
+  color:rgba(255,255,255,.85);
+  font-weight:600;
+}
+
+.founder-hero__tagline{
+
+  color:rgba(255,255,255,.90);
+}
+
+
+/* =====================================================
+   BUTTONS (PRESTIGE STYLE)
+   ===================================================== */
+
+.btn{
+
+  border-radius:999px;
+  padding:.7rem 1.6rem;
+
+  font-weight:700;
+
+  transition:all .25s ease;
+}
+
+.btn-primary{
+
+  background:linear-gradient(135deg,var(--blue),var(--blue-light));
+  color:white;
+
+  box-shadow:0 10px 25px rgba(47,128,237,.25);
+}
+
+.btn-primary:hover{
+
+  transform:translateY(-2px);
+  box-shadow:0 16px 40px rgba(47,128,237,.35);
+}
+
+.btn-outline{
+
+  border:2px solid var(--blue-light);
+  color:var(--blue-light);
+}
+
+.btn-outline:hover{
+
+  background:rgba(47,128,237,.08);
+}
+
+.btn-text{
+
+  color:white;
+  opacity:.9;
+}
+
+.btn-text:hover{
+
+  opacity:1;
+}
+
+
+/* =====================================================
+   PHOTO
+   ===================================================== */
+
+.founder-hero__photo{
+
+  border:5px solid white;
+
+  box-shadow:
+
+    0 25px 60px rgba(0,0,0,.35),
+    0 0 0 6px rgba(255,255,255,.08);
+}
+
+
+/* =====================================================
+   STATS
+   ===================================================== */
+
+.founder-stats__item{
+
+  background:var(--card);
+
+  border-radius:var(--radius-lg);
+
+  box-shadow:var(--shadow-soft);
+
+  border:1px solid rgba(15,23,42,.05);
+}
+
+.founder-stats__number{
+
+  color:var(--blue);
+}
+
+
+/* =====================================================
+   ALIGNMENT BAR
+   ===================================================== */
+
+.founder-align{
+
+  background:linear-gradient(
+    135deg,
+    rgba(30,90,168,.08),
+    rgba(47,128,237,.10)
+  );
+
+  border:1px solid rgba(30,90,168,.15);
+}
+
+.founder-align__label{
+
+  color:var(--blue);
+}
+
+.founder-align__logos span{
+
+  background:white;
+  border:1px solid rgba(15,23,42,.08);
+}
+
+
+/* =====================================================
+   QUOTE
+   ===================================================== */
+
+.founder-quote blockquote{
+
+  font-size:1.05rem;
+
+  color:var(--navy);
+
+  font-weight:500;
+}
+
+
+/* =====================================================
+   HIGHLIGHT CARDS
+   ===================================================== */
+
+.founder-highlights__card{
+
+  border-radius:var(--radius-lg);
+
+  box-shadow:var(--shadow-light);
+
+  border:1px solid rgba(15,23,42,.05);
+
+  transition:.3s;
+}
+
+.founder-highlights__card:hover{
+
+  transform:translateY(-8px);
+
+  box-shadow:var(--shadow-main);
+}
+
+
+/* =====================================================
+   MESSAGE CARD
+   ===================================================== */
+
+.founder-message{
+
+  border-radius:var(--radius-xl);
+
+  box-shadow:var(--shadow-soft);
+
+  border:1px solid rgba(15,23,42,.05);
+}
+
+.founder-message h2{
+
+  color:var(--navy);
+}
+
+
+/* =====================================================
+   BIO SECTION
+   ===================================================== */
+
+.founder-bio{
+
+  border-top:1px solid rgba(15,23,42,.08);
+}
+
+.founder-bio h2,
+.founder-bio h3{
+
+  color:var(--navy);
+}
+
+
+/* =====================================================
+   CTA CARDS
+   ===================================================== */
+
+.founder-cta__card{
+
+  background:white;
+
+  border-radius:var(--radius-lg);
+
+  box-shadow:var(--shadow-light);
+
+  border:1px solid rgba(15,23,42,.05);
+
+  transition:.3s;
+}
+
+.founder-cta__card:hover{
+
+  transform:translateY(-6px);
+
+  box-shadow:var(--shadow-soft);
+}
+
+
+/* =====================================================
+   FINAL CTA SECTION
+   ===================================================== */
+
+section[style*="linear-gradient"]{
+
+  background:
+
+    linear-gradient(
+      135deg,
+      var(--navy),
+      var(--blue)
+    ) !important;
+
+  box-shadow:var(--shadow-main);
+}
+
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+footer{
+
+  background:linear-gradient(
+    90deg,
+    var(--navy-deep),
+    var(--navy)
+  );
+
+  color:white;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media(max-width:900px){
+
+  .founder-hero__content{
+
+    grid-template-columns:1fr;
+  }
+
+}
+
+</style>
