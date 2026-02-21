@@ -1,0 +1,499 @@
+<!-- index.html (ULTRA ELITE ITECCS HOMEPAGE — FINAL VERSION, VIDEO PRESERVED EXACTLY) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ITECCS | Institute of Technology, Engineering, Computing, and Computational Sciences</title>
+
+<meta name="description" content="ITECCS advances engineering, applied mathematics, scientific computing, artificial intelligence, and high-performance computing through research, education, and industry collaboration.">
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* ================= GLOBAL ================= */
+
+:root{
+--brand:#0b2a5b;
+--brand2:#07101f;
+--accent:#f6c453;
+--accent2:#d9a83a;
+
+--ink:#0f172a;
+--muted:#475569;
+
+--radius:20px;
+--shadow:0 25px 60px rgba(0,0,0,0.25);
+}
+
+*{box-sizing:border-box}
+
+body{
+margin:0;
+font-family:Inter,system-ui;
+background:#ffffff;
+color:var(--ink);
+line-height:1.65;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+position:fixed;
+top:0;
+width:100%;
+z-index:999;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:16px 34px;
+
+background:rgba(7,16,31,0.85);
+backdrop-filter:blur(12px);
+
+border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+.logo img{
+height:44px;
+}
+
+.nav-links{
+display:flex;
+gap:22px;
+list-style:none;
+margin:0;
+padding:0;
+}
+
+.nav-links a{
+color:#fff;
+text-decoration:none;
+font-weight:600;
+}
+
+.contact-nav-button{
+background:linear-gradient(135deg,var(--accent),var(--accent2));
+padding:10px 18px;
+border-radius:999px;
+color:#0b1220 !important;
+font-weight:800;
+}
+
+
+/* ================= HERO ================= */
+
+.hero{
+position:relative;
+height:100vh;
+overflow:hidden;
+}
+
+/* VIDEO UNTOUCHED */
+.hero-video{
+position:absolute;
+inset:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-2;
+
+filter:none !important;
+opacity:1 !important;
+transform:none !important;
+}
+
+/* overlay */
+.hero::after{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(
+135deg,
+rgba(7,16,31,0.55),
+rgba(7,16,31,0.35)
+);
+z-index:-1;
+}
+
+
+/* HERO CONTENT */
+
+.hero-text{
+position:absolute;
+bottom:80px;
+width:100%;
+display:flex;
+justify-content:center;
+}
+
+.hero-content{
+
+max-width:1000px;
+
+padding:36px;
+
+border-radius:var(--radius);
+
+background:rgba(7,16,31,0.55);
+
+border:1px solid rgba(255,255,255,0.18);
+
+backdrop-filter:blur(12px);
+
+box-shadow:var(--shadow);
+
+color:#fff;
+
+text-align:center;
+}
+
+
+.hero-content h1{
+font-size:clamp(2.4rem,4vw,3.4rem);
+font-weight:900;
+margin-bottom:12px;
+}
+
+.hero-content p{
+font-size:1.15rem;
+color:rgba(255,255,255,0.92);
+margin-bottom:18px;
+}
+
+
+.hero-buttons{
+display:flex;
+gap:14px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:14px 22px;
+border-radius:999px;
+font-weight:800;
+text-decoration:none;
+}
+
+.btn-primary{
+background:linear-gradient(135deg,var(--accent),var(--accent2));
+color:#07101f;
+}
+
+.btn-outline{
+border:1px solid rgba(255,255,255,0.6);
+color:#fff;
+}
+
+
+/* ================= SECTIONS ================= */
+
+.section{
+padding:90px 20px;
+}
+
+.section-wrap{
+max-width:1200px;
+margin:auto;
+}
+
+.section-title{
+font-size:2.2rem;
+font-weight:900;
+text-align:center;
+margin-bottom:18px;
+}
+
+.section-sub{
+text-align:center;
+max-width:900px;
+margin:auto;
+margin-bottom:40px;
+color:var(--muted);
+}
+
+
+/* ================= CARDS ================= */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:28px;
+}
+
+.card{
+
+background:#fff;
+
+padding:32px;
+
+border-radius:var(--radius);
+
+box-shadow:0 14px 45px rgba(0,0,0,0.08);
+
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 25px 70px rgba(0,0,0,0.14);
+}
+
+.card i{
+font-size:32px;
+color:var(--brand);
+margin-bottom:14px;
+}
+
+.card h3{
+margin-bottom:10px;
+}
+
+
+/* ================= TESTIMONIALS ================= */
+
+.testimonials{
+background:#f8fafc;
+}
+
+.testimonial-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:24px;
+}
+
+.testimonial{
+
+padding:28px;
+
+background:#fff;
+
+border-radius:var(--radius);
+
+box-shadow:0 12px 40px rgba(0,0,0,0.08);
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+background:#07101f;
+color:#fff;
+text-align:center;
+padding:30px;
+margin-top:40px;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1000px){
+
+.cards{
+grid-template-columns:1fr;
+}
+
+.testimonial-grid{
+grid-template-columns:1fr;
+}
+
+.hero-content{
+margin:0 16px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+<div class="logo">
+<img src="logo.png">
+</div>
+
+<ul class="nav-links">
+
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="founder.html">Founder</a></li>
+<li><a href="program.html">Research</a></li>
+<li><a href="education.html">Education</a></li>
+<li><a href="consulting.html">Consulting</a></li>
+
+<li>
+<a href="contact.html" class="contact-nav-button">
+Contact
+</a>
+</li>
+
+</ul>
+
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero">
+
+<video autoplay muted loop playsinline class="hero-video">
+<source src="iteccs.mp4" type="video/mp4">
+</video>
+
+<div class="hero-text">
+
+<div class="hero-content">
+
+<h1>
+ITECCS
+</h1>
+
+<p>
+Institute of Technology, Engineering, Computing, and Computational Sciences
+</p>
+
+<p>
+Advancing applied mathematics, artificial intelligence, and high-performance scientific computing.
+</p>
+
+<div class="hero-buttons">
+
+<a href="program.html" class="btn btn-primary">
+Explore Research
+</a>
+
+<a href="consulting.html" class="btn btn-outline">
+Industry Collaboration
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+
+<!-- SECTION -->
+
+<section class="section">
+
+<div class="section-wrap">
+
+<h2 class="section-title">
+Research, Education, and Innovation
+</h2>
+
+<p class="section-sub">
+ITECCS integrates mathematics, engineering, artificial intelligence, and high-performance computing to advance scientific discovery and deploy real-world solutions.
+</p>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<i class="fas fa-flask"></i>
+
+<h3>Research Programs</h3>
+
+<p>
+Advanced numerical methods, multiphysics modeling, inverse problems, and HPC.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<i class="fas fa-graduation-cap"></i>
+
+<h3>Education</h3>
+
+<p>
+Courses, certifications, and training in scientific computing and AI.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<i class="fas fa-handshake"></i>
+
+<h3>Consulting</h3>
+
+<p>
+Industry advisory, modeling, simulation, and AI deployment.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- TESTIMONIALS -->
+
+<section class="section testimonials">
+
+<div class="section-wrap">
+
+<h2 class="section-title">
+What Partners Say
+</h2>
+
+
+<div class="testimonial-grid">
+
+<div class="testimonial">
+
+ITECCS delivered advanced modeling capabilities and exceptional technical leadership.
+
+</div>
+
+
+<div class="testimonial">
+
+ITECCS provides world-class computational expertise and training.
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+© 2026 ITECCS
+
+</footer>
+
+
+</body>
+</html>
