@@ -1,0 +1,1094 @@
+<!-- program.html — ULTRA ELITE (ALL ORIGINAL CONTENT PRESERVED + PREMIUM SECTIONS ADDED) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Research & Innovation Programs | ITECCS Institute for Applied Mathematics, AI & Scientific Computing</title>
+  <meta name="description" content="ITECCS advances applied mathematics, AI, scientific computing, inverse problems, fluid mechanics, porous media, and high-performance simulation—delivering research programs, industry collaboration, and deployable computational innovation." />
+
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root{
+      --navy:#07101f;
+      --navy2:#0b2a5b;
+      --slate:#0f172a;
+      --muted:#475569;
+      --muted2:#64748b;
+      --bg:#f4f7fb;
+      --card:#ffffff;
+      --line:rgba(15,23,42,0.10);
+      --gold:#f6c453;
+      --gold2:#d9a83a;
+      --ring:rgba(246,196,83,0.32);
+      --shadow:0 22px 70px rgba(2,6,23,0.12);
+      --shadow2:0 14px 40px rgba(2,6,23,0.10);
+      --radius:22px;
+      --radius2:16px;
+      --max:1200px;
+    }
+
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--slate);
+      background:
+        radial-gradient(1200px 700px at 15% 0%, rgba(246,196,83,0.10), transparent 55%),
+        radial-gradient(900px 540px at 85% 10%, rgba(59,130,246,0.10), transparent 50%),
+        linear-gradient(180deg, #f7f9fe 0%, #eef2f8 100%);
+      line-height:1.7;
+    }
+
+    /* NAV (keeps your structure; elite styling) */
+    .navbar{
+      position:sticky;
+      top:0;
+      z-index:50;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:16px 34px;
+      background:rgba(7,16,31,0.90);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid rgba(255,255,255,0.10);
+    }
+    .logo img{height:44px; display:block;}
+    .nav-links{
+      display:flex;
+      gap:22px;
+      list-style:none;
+      margin:0;
+      padding:0;
+      align-items:center;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .nav-links a{
+      color:rgba(255,255,255,0.92);
+      text-decoration:none;
+      font-weight:650;
+      font-size:0.95rem;
+      transition:.2s ease;
+      opacity:.95;
+    }
+    .nav-links a:hover{opacity:1; color:var(--gold);}
+    .contact-nav-button{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 16px;
+      border-radius:999px;
+      font-weight:850;
+      color:#1b2333 !important;
+      background:linear-gradient(135deg,var(--gold) 0%, var(--gold2) 100%);
+      border:1px solid rgba(255,255,255,0.18);
+      box-shadow:0 14px 28px rgba(246,196,83,0.18);
+    }
+
+    /* PAGE WRAP */
+    .content{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:26px 18px 70px;
+    }
+
+    /* ELITE TOP BANNER */
+    .elite-hero{
+      position:relative;
+      overflow:hidden;
+      border-radius:var(--radius);
+      padding:44px 28px;
+      color:#fff;
+      background:
+        radial-gradient(800px 360px at 15% 0%, rgba(246,196,83,0.20), transparent 60%),
+        linear-gradient(135deg, #07101f 0%, #0b1630 52%, #0b2a5b 100%);
+      border:1px solid rgba(255,255,255,0.12);
+      box-shadow:0 30px 80px rgba(0,0,0,0.25);
+    }
+    .elite-hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(700px 280px at 85% 10%, rgba(255,255,255,0.08), transparent 55%),
+        linear-gradient(90deg, rgba(0,0,0,0.35), rgba(0,0,0,0.05));
+      pointer-events:none;
+    }
+    .elite-hero-inner{
+      position:relative;
+      display:grid;
+      grid-template-columns: 1.6fr 1fr;
+      gap:26px;
+      align-items:center;
+    }
+    .elite-eyebrow{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      font-size:0.78rem;
+      letter-spacing:0.14em;
+      text-transform:uppercase;
+      font-weight:850;
+      color:#38bdf8;
+      margin:0 0 10px;
+    }
+    .elite-eyebrow::before{
+      content:"";
+      width:28px;
+      height:2px;
+      border-radius:999px;
+      background:linear-gradient(90deg,var(--gold), rgba(246,196,83,0.12));
+    }
+    .elite-hero h1{
+      margin:0 0 10px;
+      font-size:clamp(2.1rem, 3vw, 2.9rem);
+      font-weight:950;
+      letter-spacing:-0.02em;
+      line-height:1.08;
+      text-shadow:0 12px 40px rgba(0,0,0,0.35);
+    }
+    .elite-hero p{
+      margin:0;
+      color:rgba(255,255,255,0.92);
+      font-size:1.06rem;
+      line-height:1.9;
+      max-width:58ch;
+    }
+    .elite-actions{
+      margin-top:18px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:12px 18px;
+      border-radius:999px;
+      font-weight:900;
+      text-decoration:none;
+      border:1px solid transparent;
+      transition:.18s ease;
+      white-space:nowrap;
+    }
+    .btn:focus{outline:none; box-shadow:0 0 0 4px var(--ring);}
+    .btn-primary{
+      background:linear-gradient(135deg,var(--gold) 0%, var(--gold2) 100%);
+      color:#182235;
+      box-shadow:0 16px 34px rgba(246,196,83,0.20);
+      border:1px solid rgba(255,255,255,0.16);
+    }
+    .btn-primary:hover{transform:translateY(-1px); filter:brightness(1.02);}
+    .btn-outline{
+      background:rgba(255,255,255,0.08);
+      color:#fff;
+      border-color:rgba(255,255,255,0.25);
+    }
+    .btn-outline:hover{transform:translateY(-1px); background:rgba(255,255,255,0.12);}
+
+    .founder-panel{
+      position:relative;
+      justify-self:end;
+      width:min(380px, 100%);
+      background:linear-gradient(135deg, rgba(255,255,255,0.10), rgba(255,255,255,0.05));
+      border:1px solid rgba(255,255,255,0.14);
+      border-radius:18px;
+      padding:18px 18px;
+      box-shadow:0 18px 50px rgba(0,0,0,0.22);
+      backdrop-filter: blur(10px);
+    }
+    .founder-row{
+      display:flex;
+      gap:14px;
+      align-items:center;
+    }
+    .founder-row img{
+      width:64px; height:64px; border-radius:999px;
+      object-fit:cover;
+      border:3px solid rgba(255,255,255,0.85);
+      box-shadow:0 12px 28px rgba(0,0,0,0.30);
+    }
+    .founder-name{margin:0; font-weight:950; letter-spacing:-0.01em;}
+    .founder-title{margin:2px 0 0; font-weight:650; color:rgba(255,255,255,0.88); font-size:0.92rem;}
+    .founder-links{
+      margin-top:12px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .mini-link{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:9px 12px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:850;
+      font-size:0.90rem;
+      color:#fff;
+      border:1px solid rgba(255,255,255,0.18);
+      background:rgba(255,255,255,0.07);
+    }
+    .mini-link:hover{background:rgba(255,255,255,0.11); transform:translateY(-1px);}
+
+    /* METRICS (animated) */
+    .elite-metrics{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0,1fr));
+      gap:14px;
+    }
+    .metric{
+      background:rgba(255,255,255,0.92);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:14px 14px;
+      box-shadow:0 12px 26px rgba(2,6,23,0.06);
+    }
+    .metric .num{
+      font-size:1.75rem;
+      font-weight:950;
+      color:var(--navy2);
+      letter-spacing:-0.02em;
+      display:block;
+    }
+    .metric .lbl{
+      margin-top:4px;
+      color:var(--muted);
+      font-weight:700;
+      font-size:0.90rem;
+      line-height:1.35;
+      display:block;
+    }
+
+    /* PARTNER STRIP */
+    .partners{
+      margin-top:16px;
+      background:rgba(255,255,255,0.92);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:16px 16px;
+      box-shadow:var(--shadow2);
+      overflow:hidden;
+    }
+    .partners h3{
+      margin:0 0 10px;
+      font-size:1.02rem;
+      font-weight:950;
+      color:var(--slate);
+      letter-spacing:-0.01em;
+    }
+    .logo-strip{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .pill{
+      background:rgba(246,248,252,0.96);
+      border:1px solid rgba(15,23,42,0.10);
+      border-radius:999px;
+      padding:8px 12px;
+      font-weight:850;
+      color:var(--navy2);
+      box-shadow:0 10px 18px rgba(2,6,23,0.05);
+      font-size:0.90rem;
+    }
+
+    /* SECTION HEADERS */
+    .section-head{
+      text-align:center;
+      margin:38px auto 14px;
+      max-width:980px;
+    }
+    .section-head h2{
+      margin:0 0 10px;
+      font-size:2rem;
+      color:var(--slate);
+      font-weight:950;
+      letter-spacing:-0.02em;
+    }
+    .section-head p{
+      margin:0;
+      color:var(--muted2);
+      line-height:1.85;
+      font-size:1.02rem;
+    }
+    .accent-line{
+      width:92px;
+      height:4px;
+      margin:12px auto 0;
+      border-radius:999px;
+      background:linear-gradient(90deg,var(--gold), rgba(11,42,91,0.20));
+    }
+
+    /* TIMELINE */
+    .timeline{
+      margin-top:18px;
+      background:rgba(255,255,255,0.92);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:18px 18px;
+      box-shadow:var(--shadow2);
+    }
+    .timeline-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:14px;
+    }
+    .step{
+      border-radius:18px;
+      padding:16px 16px;
+      background:rgba(246,248,252,0.96);
+      border:1px solid rgba(15,23,42,0.10);
+    }
+    .step .k{
+      font-weight:950;
+      color:var(--navy2);
+      letter-spacing:-0.01em;
+      margin:0 0 6px;
+    }
+    .step p{margin:0; color:var(--muted); line-height:1.75; font-weight:550;}
+
+    /* ORIGINAL GRID (you used .card-grid/.card; we keep class names but upgrade style) */
+    .card-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+      margin-top:18px;
+    }
+    .card{
+      background:rgba(255,255,255,0.94);
+      padding:22px;
+      border-radius:16px;
+      border:1px solid rgba(15,23,42,0.10);
+      box-shadow:0 14px 34px rgba(2,6,23,0.08);
+      transition:0.25s ease;
+    }
+    .card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 24px 60px rgba(2,6,23,0.14);
+    }
+    .card h3{
+      color:var(--navy2);
+      margin:0 0 12px;
+      font-size:1.05rem;
+      font-weight:950;
+      letter-spacing:-0.01em;
+    }
+    .card h3 i{color:var(--navy2);}
+    .card p{
+      margin:0;
+      color:#334155;
+      line-height:1.7;
+      font-size:0.95rem;
+      font-weight:550;
+    }
+    .card ul{
+      padding-left:20px;
+      margin:0;
+      color:#334155;
+      line-height:1.65;
+      font-size:0.95rem;
+      font-weight:550;
+    }
+    .card li{ margin:0 0 6px; }
+
+    /* PUBLICATIONS PREVIEW */
+    .pubs{
+      margin-top:18px;
+      background:rgba(255,255,255,0.92);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:18px 18px;
+      box-shadow:var(--shadow2);
+    }
+    .pubs h3{
+      margin:0 0 10px;
+      font-size:1.15rem;
+      font-weight:950;
+      color:var(--slate);
+      letter-spacing:-0.01em;
+    }
+    .pubs p{margin:0 0 10px; color:var(--muted); font-weight:550; line-height:1.85;}
+    .pubs .pub-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
+
+    /* EMPLOYER PANEL */
+    .recruit{
+      margin-top:18px;
+      background:
+        radial-gradient(700px 260px at 15% 0%, rgba(246,196,83,0.20), transparent 60%),
+        linear-gradient(135deg, #07101f 0%, #0b2a5b 55%, #0b1630 100%);
+      border:1px solid rgba(255,255,255,0.12);
+      border-radius:var(--radius);
+      padding:22px 18px;
+      color:#fff;
+      box-shadow:0 26px 70px rgba(0,0,0,0.20);
+      overflow:hidden;
+    }
+    .recruit h3{
+      margin:0 0 8px;
+      font-weight:950;
+      letter-spacing:-0.01em;
+    }
+    .recruit p{
+      margin:0 0 12px;
+      color:rgba(255,255,255,0.90);
+      max-width:980px;
+      line-height:1.85;
+      font-weight:550;
+    }
+    .recruit-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:12px;
+      margin-top:12px;
+    }
+    .recruit-card{
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.14);
+      border-radius:18px;
+      padding:14px 14px;
+      backdrop-filter: blur(10px);
+    }
+    .recruit-card .t{
+      font-weight:950;
+      margin:0 0 6px;
+    }
+    .recruit-card .d{
+      margin:0;
+      color:rgba(255,255,255,0.90);
+      font-weight:550;
+      line-height:1.75;
+      font-size:0.95rem;
+    }
+
+    /* Footer */
+    footer{
+      margin-top:18px;
+      padding:22px 12px;
+      text-align:center;
+      color:rgba(255,255,255,0.82);
+      background:rgba(7,16,31,0.92);
+      border-top:1px solid rgba(255,255,255,0.10);
+    }
+    footer p{margin:0; font-weight:650;}
+
+    @media(max-width:1000px){
+      .elite-hero-inner{grid-template-columns:1fr;}
+      .founder-panel{justify-self:start;}
+      .elite-metrics{grid-template-columns:repeat(2,minmax(0,1fr));}
+      .timeline-grid{grid-template-columns:1fr;}
+      .card-grid{grid-template-columns:repeat(2,1fr);}
+      .recruit-grid{grid-template-columns:1fr;}
+      .navbar{padding:14px 18px;}
+    }
+    @media(max-width:700px){
+      .card-grid{grid-template-columns:1fr;}
+    }
+
+    /* Preserve your .cta-button hook from style.css, but make sure it looks premium even if missing */
+    .cta-button{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 18px;
+      border-radius:999px;
+      font-weight:900;
+      text-decoration:none;
+      background:linear-gradient(135deg,var(--gold) 0%, var(--gold2) 100%);
+      color:#182235;
+      border:1px solid rgba(255,255,255,0.16);
+      box-shadow:0 16px 34px rgba(246,196,83,0.18);
+      transition:.18s ease;
+    }
+    .cta-button:hover{transform:translateY(-1px); filter:brightness(1.02);}
+    .cta-button:focus{outline:none; box-shadow:0 0 0 4px var(--ring);}
+  </style>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="ITECCS Logo">
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="Founder.html">Who We Are</a></li>
+      <li><a href="program.html">Research & Innovation Programs</a></li>
+      <li><a href="education.html">Education & Professional Training</a></li>
+      <li><a href="consulting.html">Industry Collaboration & Technical Advisory</a></li>
+      <li>
+        <a href="contact.html" class="contact-nav-button">
+          <i class="fas fa-envelope"></i> Contact Us
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <main class="content">
+
+    <!-- ULTRA ELITE HERO + FOUNDER -->
+    <section class="elite-hero" aria-label="ITECCS Research Programs Hero">
+      <div class="elite-hero-inner">
+        <div>
+          <div class="elite-eyebrow">ITECCS · Research & Innovation Programs</div>
+          <h1>Research & Innovation Programs</h1>
+          <p>
+            ITECCS advances applied mathematics, artificial intelligence, and high-performance scientific computing through
+            the development of novel numerical methods, multiscale modeling frameworks, and scalable simulation platforms.
+            Our work unifies rigorous mathematical foundations with deployable computational solutions—supporting
+            research, education, and industry innovation across engineering, healthcare, energy, and advanced technology.
+          </p>
+
+          <div class="elite-actions">
+            <a href="contact.html" class="btn btn-primary"><i class="fas fa-handshake"></i> Start a Collaboration</a>
+            <a href="consulting.html" class="btn btn-outline"><i class="fas fa-industry"></i> Industry Collaboration</a>
+          </div>
+        </div>
+
+        <aside class="founder-panel" aria-label="Founder Leadership">
+          <div class="founder-row">
+            <img src="founder.jpg" alt="Dr. Ahmed Kaffel">
+            <div>
+              <p class="founder-name" style="margin:0;">Dr. Ahmed Kaffel</p>
+              <p class="founder-title">Founder & Director · ITECCS</p>
+            </div>
+          </div>
+          <div class="founder-links">
+            <a class="mini-link" href="https://akaffel.com" target="_blank" rel="noopener">
+              <i class="fas fa-user-tie"></i> Founder Profile
+            </a>
+            <a class="mini-link" href="https://akaffel.com/publications.html" target="_blank" rel="noopener">
+              <i class="fas fa-book"></i> Publications
+            </a>
+          </div>
+          <p style="margin:12px 0 0; color:rgba(255,255,255,0.88); font-weight:550; line-height:1.75;">
+            Advanced modeling, AI-enabled simulation, inverse problems, porous media transport, fluid mechanics,
+            and scalable scientific computing for research-to-deployment impact.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- IMPACT METRICS (animated) -->
+    <section class="elite-metrics" aria-label="Research Impact Metrics">
+      <div class="metric">
+        <span class="num js-count" data-target="18">0</span>
+        <span class="lbl">Core Research Programs</span>
+      </div>
+      <div class="metric">
+        <span class="num js-count" data-target="40">0</span>
+        <span class="lbl">Publications & Research Projects</span>
+      </div>
+      <div class="metric">
+        <span class="num js-count" data-target="10">0</span>
+        <span class="lbl">International Collaborations</span>
+      </div>
+      <div class="metric">
+        <span class="num js-count" data-target="300">0</span>
+        <span class="lbl">Students & Professionals Mentored</span>
+      </div>
+    </section>
+
+    <!-- PARTNER LOGOS STRIP -->
+    <section class="partners" aria-label="Partner and Alignment Strip">
+      <h3>Aligned with and collaborating toward</h3>
+      <div class="logo-strip">
+        <span class="pill">NASA</span>
+        <span class="pill">NSF</span>
+        <span class="pill">NIH</span>
+        <span class="pill">DOE</span>
+        <span class="pill">DoD</span>
+        <span class="pill">National Labs</span>
+        <span class="pill">Research Universities</span>
+        <span class="pill">Industry Partners</span>
+      </div>
+    </section>
+
+    <!-- RESEARCH PIPELINE / TIMELINE -->
+    <section class="section-head" aria-label="Research to Deployment Timeline">
+      <h2>Research-to-Deployment Pipeline</h2>
+      <p>
+        ITECCS supports full-cycle innovation: mathematical theory → scalable algorithms → simulation platforms → deployable systems.
+      </p>
+      <div class="accent-line"></div>
+    </section>
+
+    <section class="timeline">
+      <div class="timeline-grid">
+        <div class="step">
+          <div class="k">1) Foundational Modeling</div>
+          <p>Rigorous applied mathematics, PDE frameworks, multiscale modeling, and inverse formulations.</p>
+        </div>
+        <div class="step">
+          <div class="k">2) Algorithms & HPC</div>
+          <p>High-order numerical schemes, scalable solvers, GPU acceleration, and cloud-enabled simulation workflows.</p>
+        </div>
+        <div class="step">
+          <div class="k">3) Deployable Systems</div>
+          <p>Scientific software engineering, digital twins, AI integration, and secure reliable deployment.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS PREVIEW -->
+    <section class="pubs" aria-label="Research Publications Preview">
+      <h3>Research Publications Preview</h3>
+      <p>
+        Explore selected contributions across scientific computing, inverse problems, porous media transport,
+        fluid mechanics, multiphase systems, and AI-enabled simulation.
+      </p>
+      <div class="pub-actions">
+        <a href="https://akaffel.com/publications.html" target="_blank" rel="noopener" class="btn btn-primary">
+          <i class="fas fa-book-open"></i> View Publications
+        </a>
+        <a href="https://akaffel.com" target="_blank" rel="noopener" class="btn btn-outline">
+          <i class="fas fa-user-tie"></i> Founder Profile
+        </a>
+      </div>
+    </section>
+
+    <!-- EMPLOYER / UNIVERSITY / AGENCY PANEL -->
+    <section class="recruit" aria-label="Employer and University Engagement Panel">
+      <h3>For Employers, Universities, Industry & Federal Agencies</h3>
+      <p>
+        ITECCS supports joint research programs, technical advisory, proposal development, advanced training,
+        and deployable computational solutions—bridging scientific rigor with operational impact.
+      </p>
+      <div class="recruit-grid">
+        <div class="recruit-card">
+          <p class="t"><i class="fas fa-university"></i> Universities & Research Labs</p>
+          <p class="d">Joint proposals, interdisciplinary research, graduate mentorship, and scalable computing frameworks.</p>
+        </div>
+        <div class="recruit-card">
+          <p class="t"><i class="fas fa-industry"></i> Industry & Engineering Teams</p>
+          <p class="d">Digital twins, multiphysics simulation, AI integration, validation pathways, and design optimization.</p>
+        </div>
+        <div class="recruit-card">
+          <p class="t"><i class="fas fa-shield-halved"></i> Government & Mission-Critical</p>
+          <p class="d">Secure workflows, reproducible pipelines, reliability-aware deployment, and high-fidelity modeling.</p>
+        </div>
+      </div>
+      <div style="margin-top:14px;">
+        <a href="contact.html" class="btn btn-primary"><i class="fas fa-envelope"></i> Initiate Collaboration</a>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         YOUR ORIGINAL CONTENT SECTION (PRESERVED VERBATIM)
+         ========================================================= -->
+
+    <section style="padding:60px 20px; background:#f8fafc; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; border-radius: var(--radius); margin-top:18px; border:1px solid rgba(15,23,42,0.10); box-shadow: var(--shadow2);">
+
+      <!-- HERO (ORIGINAL) -->
+      <div style="text-align:center; max-width:1050px; margin:auto; margin-bottom:40px;">
+        <h1 style="font-size:2.8rem; font-weight:800; color:#0f172a; margin:0 0 14px;">
+          Research & Innovation Programs
+        </h1>
+        <p style="font-size:1.15rem; line-height:1.85; color:#475569; margin:0;">
+          ITECCS advances applied mathematics, artificial intelligence, and high-performance scientific computing through
+          the development of novel numerical methods, multiscale modeling frameworks, and scalable simulation platforms.
+          Our work unifies rigorous mathematical foundations with deployable computational solutions—supporting
+          research, education, and industry innovation across engineering, healthcare, energy, and advanced technology.
+        </p>
+
+        <div style="margin-top:22px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+          <a href="contact.html" class="cta-button" style="text-decoration:none;">Start a Collaboration</a>
+          <a href="consulting.html" class="cta-button" style="text-decoration:none;">Industry Collaboration</a>
+        </div>
+      </div>
+
+      <!-- POSITIONING STRIP (ORIGINAL) -->
+      <div class="card-grid" style="margin-top:10px;">
+        <div class="card">
+          <h3><i class="fas fa-rocket"></i> Engineering the Future with AI & High-Fidelity Simulation</h3>
+          <p>
+            Scalable tools for digital twins, multiphysics modeling, and data-driven engineering across Aerospace,
+            Mechanical, Civil, and Biomedical sectors.
+          </p>
+        </div>
+        <div class="card">
+          <h3><i class="fas fa-diagram-project"></i> End-to-End Research-to-Deployment</h3>
+          <p>
+            From mathematical modeling and algorithm design to scientific software engineering and cloud-ready industrial deployment.
+          </p>
+        </div>
+        <div class="card">
+          <h3><i class="fas fa-shield-halved"></i> Secure & Reliable Systems</h3>
+          <p>
+            Advanced cybersecurity-aware architectures and robust cloud integration for enterprise-grade, mission-critical solutions.
+          </p>
+        </div>
+      </div>
+
+      <!-- CORE RESEARCH PROGRAMS (ORIGINAL) -->
+      <h2 style="text-align:center; margin:60px 0 18px; font-size:2rem; color:#0f172a;">
+        Core Research Programs
+      </h2>
+      <p style="text-align:center; max-width:980px; margin:0 auto 28px; color:#64748b; line-height:1.7;">
+        These programs reflect ITECCS’s full research scope—from foundational applied mathematics and scientific algorithms
+        to inverse imaging, porous media transport, fluid mechanics, and scalable AI/HPC systems.
+      </p>
+
+      <div class="card-grid">
+
+        <!-- PRIORITY (TOP) -->
+        <div class="card">
+          <h3><i class="fas fa-gears"></i> Advanced Numerical Methods & Scientific Algorithms</h3>
+          <ul>
+            <li>Finite Element (FEM) and Discontinuous Galerkin (DG) methods</li>
+            <li>Finite Volume (FVM) and Finite Difference (FDM) methods</li>
+            <li>High-order ENO/WENO schemes for sharp interfaces and stability</li>
+            <li>Spectral methods; Boundary Element (BEM); ALE frameworks</li>
+            <li>Efficient solvers with analytical simplification when possible</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3><i class="fas fa-microchip"></i> High-Performance Scientific Computing (HPC)</h3>
+          <ul>
+            <li>Parallel algorithms, GPU acceleration, scalable solvers</li>
+            <li>Large-scale multiphysics simulation frameworks</li>
+            <li>Numerical linear algebra for high-dimensional systems</li>
+            <li>Reduced-order / surrogate modeling for fast deployment</li>
+            <li>Cloud-enabled HPC workflows for research and industry</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3><i class="fas fa-water"></i> Fluid Mechanics, Stability, Turbulence & Free-Surface Flow</h3>
+          <ul>
+            <li>Hydrodynamic stability of parallel shear flows</li>
+            <li>Viscoelastic flow stability & transition to turbulence</li>
+            <li>Multiphase interfacial instability in microchannels</li>
+            <li>Free-surface turbulent channel flows & environmental hydraulics</li>
+            <li>Flow control, wave prediction, and instability mitigation</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3><i class="fas fa-wind"></i> Stability-to-Turbulence in Complex & Multiphase Flows</h3>
+          <ul>
+            <li>Predicting interfacial instabilities and wave patterns</li>
+            <li>Shear-flow transition mechanisms in complex fluids</li>
+            <li>Nonlinear evolution of unstable flow structures</li>
+            <li>High-order simulation for long-time dynamics</li>
+            <li>Applications: microfluidics, industrial flows, environment</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3><i class="fas fa-layer-group"></i> Multiscale Porous Media & Volume Averaging</h3>
+          <ul>
+            <li>Volume averaging (rigorous upscaling) for transport</li>
+            <li>Unsaturated flow through thin swelling porous layers</li>
+            <li>Multiphase porous-media flow & deformation coupling</li>
+            <li>Micro-to-macro modeling informed by pore-scale physics</li>
+            <li>Applications: absorbent materials, geology, biomedical tissues</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3><i class="fas fa-compress-arrows-alt"></i> Thin Swelling Porous Media: Multilayer Unsaturated Transport</h3>
+          <ul>
+            <li>Rigorous multiscale modeling via volume averaging</li>
+            <li>Coupled flow + deformation prediction in thin porous layers</li>
+            <li>Industrial-grade simulation for absorbent product performance</li>
+            <li>Model calibration and experimental validation pathways</li>
+            <li>Extensions: energy systems (e.g., PEM fuel-cell water management)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3><i class="fas fa-square-root-variable"></i> Applied Mathematics, PDEs & Dynamical Systems</h3>
+          <ul>
+            <li>Partial & ordinary differential equations (PDE/ODE)</li>
+            <li>Nonlinear dynamics, bifurcation, chaos, and stability theory</li>
+            <li>Optimal control & dynamical systems</li>
+            <li>Probability & stochastic processes; SDE modeling</li>
+            <li>Monte Carlo modeling and uncertainty propagation</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3><i class="fas fa-brain"></i> Data Science, Visualization & Machine Learning</h3>
+          <ul>
+            <li>Data-driven modeling for complex physical systems</li>
+            <li>Scientific visualization for interpretation and decisions</li>
+            <li>Physics-informed ML for parameter estimation and control</li>
+            <li>Uncertainty-aware predictive models</li>
+            <li>Workflows that connect data, simulation, and optimization</li>
+          </ul>
+        </div>
+
+        <!-- REMAINING (FULL SCOPE — KEPT) -->
+        <div class="card">
+          <h3><i class="fas fa-microscope"></i> Computational Imaging & Inverse Problems</h3>
+          <ul>
+            <li>Wavelet algorithms for high-resolution reconstruction</li>
+            <li>Magnetic induction tomography (MIT) imaging pipelines</li>
+            <li>Meshless / mesh-free discretization strategies</li>
+            <li>Regularized least squares & SVD-based inversion</li>
+            <li>Inverse problems in imaging, materials, and engineering systems</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3><i class="fas fa-bolt"></i> Computational Electromagnetics & Scientific Imaging Systems</h3>
+          <ul>
+            <li>Electromagnetic forward/inverse modeling</li>
+            <li>Imaging kernels and convolution-integral inversion</li>
+            <li>Error estimation and uncertainty-aware reconstruction</li>
+            <li>GPU-accelerated linear algebra for imaging solvers</li>
+            <li>Medical & industrial sensing technologies</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3><i class="fas fa-briefcase"></i> Industry-Validated Modeling & Product Innovation</h3>
+          <ul>
+            <li>Industrial porous-media modeling (absorbent hygiene systems)</li>
+            <li>Simulation-driven design: wick/transport/storage performance</li>
+            <li>Model calibration and validation against experimental data</li>
+            <li>Accelerating time-to-market via predictive simulation</li>
+            <li>Energy applications: water management in PEM fuel cells</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3><i class="fas fa-fish-fins"></i> Applied Hydrodynamics & Vehicle/Systems Modeling</h3>
+          <ul>
+            <li>Unmanned underwater vehicle (UUV) modeling & simulation</li>
+            <li>Control-oriented computational hydrodynamics</li>
+            <li>Coupled dynamics, response prediction, and optimization</li>
+            <li>Engineering simulations for complex operational environments</li>
+            <li>Translating models into actionable design insights</li>
+          </ul>
+        </div>
+
+        <!-- ONE CARD (as requested) -->
+        <div class="card">
+          <h3><i class="fas fa-heart-pulse"></i> Computational Medicine & Biomedical Simulation</h3>
+          <p style="margin-bottom:10px;">
+            Development of advanced mathematical models, high-performance simulation, and AI-driven inverse methods
+            to analyze physiological systems, medical imaging, and disease mechanisms—supporting next-generation
+            healthcare technologies and precision medicine.
+          </p>
+          <ul>
+            <li>Biomedical modeling & simulation: cardiovascular systems, tissue transport, multiscale biological processes</li>
+            <li>Computational physiology: predictive modeling of coupled organ/tissue dynamics and patient-specific inference</li>
+            <li>Medical imaging and inverse modeling: reconstruction, parameter estimation, uncertainty-aware diagnosis</li>
+            <li>Mathematical biology: mechanistic models linking data, theory, and clinical interpretation</li>
+            <li>Computational biomedicine: integrative simulation + AI for translational and applied healthcare innovation</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3><i class="fas fa-cube"></i> Digital Twins & Intelligent Engineering Systems</h3>
+          <ul>
+            <li>Digital twin architecture: model + data + decision layer</li>
+            <li>AI-powered analytics, monitoring, and forecasting</li>
+            <li>Virtual prototyping and rapid design validation</li>
+            <li>IoT-integrated simulation pipelines (where applicable)</li>
+            <li>Optimization of smart engineering systems</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3><i class="fas fa-leaf"></i> Energy, Sustainability & Emerging Technologies</h3>
+          <ul>
+            <li>Battery & energy storage modeling</li>
+            <li>Environmental transport and porous-media sustainability</li>
+            <li>AI for climate/resource optimization</li>
+            <li>Renewable energy system modeling</li>
+            <li>Quantum/nanoscale modeling (select projects)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3><i class="fas fa-shield"></i> Secure Computing, Cloud & Reliable Deployment</h3>
+          <ul>
+            <li>Secure-by-design scientific computing pipelines</li>
+            <li>Cloud architecture + DevOps for computational systems</li>
+            <li>Reliability, reproducibility, and audit-ready workflows</li>
+            <li>System integration for enterprise environments</li>
+            <li>Responsible AI + data governance (where needed)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3><i class="fas fa-pen-nib"></i> Innovation, Mentorship & Research Translation</h3>
+          <ul>
+            <li>Applied research mentorship: concept → prototype → impact</li>
+            <li>Grant proposal strategy, technical writing & publication support</li>
+            <li>Translating simulation into deployable engineering value</li>
+            <li>Training teams in advanced modeling and computing</li>
+            <li>Building long-term partnerships and research programs</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Wavelet & Meshless Imaging for Next-Generation MIT</h3>
+          <p>
+            High-resolution reconstruction for magnetic induction tomography using wavelets, mesh-free discretization,
+            and uncertainty-aware inverse solvers—supporting low-cost imaging in resource-limited settings.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- FLAGSHIP INITIATIVES -->
+      <h2 style="text-align:center; margin:60px 0 18px; font-size:2rem; color:#0f172a;">
+        Priority Research Frontiers
+      </h2>
+
+      <div class="card-grid">
+
+        <div class="card">
+          <h3><i class="fas fa-heart-pulse"></i> Computational Medicine & Biomedical Simulation</h3>
+          <p>
+            We develop advanced mathematical models, high-performance simulation workflows, and AI-driven inverse methods to
+            analyze physiological systems, medical imaging, and disease mechanisms—supporting next-generation healthcare
+            technologies and precision medicine.
+          </p>
+          <ul>
+            <li><strong>Biomedical Modeling & Simulation:</strong> cardiovascular systems, tissue transport, and multiscale biological processes</li>
+            <li><strong>Computational Physiology:</strong> predictive modeling of coupled organ/tissue dynamics and patient-specific inference</li>
+            <li><strong>Medical Imaging & Inverse Modeling:</strong> reconstruction, parameter estimation, and uncertainty-aware diagnosis</li>
+            <li><strong>Mathematical Biology:</strong> mechanistic models linking data, theory, and clinical interpretation</li>
+            <li><strong>Computational Biomedicine:</strong> integrative simulation + AI for translational and applied healthcare innovation</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Thin Swelling Porous Media: Multilayer Unsaturated Transport</h3>
+          <p>
+            Rigorous multiscale modeling via volume averaging to predict coupled flow and deformation in thin porous layers,
+            enabling industrial simulation and validated performance prediction.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Stability-to-Turbulence in Complex & Multiphase Flows</h3>
+          <p>
+            Predicting interfacial instabilities, shear-flow transition mechanisms, and turbulence behavior using advanced
+            theory and high-order simulation—supporting microfluidics, industrial flows, and environmental systems.
+          </p>
+        </div>
+      </div>
+
+      <!-- COLLABORATION FOCUS -->
+      <h2 style="text-align:center; margin:60px 0 18px; font-size:2rem; color:#0f172a;">
+        Industry & Government Collaboration Focus
+      </h2>
+
+      <div class="card-grid">
+        <div class="card">
+          <h3><i class="fas fa-plane"></i> Aerospace, Propulsion & Defense</h3>
+          <p>High-fidelity simulation, stability, multiphysics modeling, and AI-enabled digital twins for mission-critical systems.</p>
+        </div>
+        <div class="card">
+          <h3><i class="fas fa-hospital"></i> Biomedical & Healthcare Technology</h3>
+          <p>Inverse imaging, computational electromagnetics, physiological modeling, and predictive computational medicine.</p>
+        </div>
+        <div class="card">
+          <h3><i class="fas fa-industry"></i> Industrial Materials, Energy & Manufacturing</h3>
+          <p>Porous-media transport, swelling materials, validated industrial simulation, and scalable computing for design and optimization.</p>
+        </div>
+      </div>
+
+      <!-- CORE CAPABILITIES -->
+      <h2 style="text-align:center; margin:60px 0 18px; font-size:2rem; color:#0f172a;">
+        Core Technical Capabilities
+      </h2>
+
+      <div class="card-grid">
+        <div class="card">
+          <h3>Scientific Computing & Numerical Simulation</h3>
+          <p>MATLAB, Python, Julia, Fortran, C++; FEM, DG, FVM/FDM, ENO/WENO, spectral, BEM, ALE, meshless methods.</p>
+        </div>
+        <div class="card">
+          <h3>AI & Scientific Machine Learning</h3>
+          <p>PINNs, inverse modeling, uncertainty quantification, data-driven workflows, physics-informed ML and optimization.</p>
+        </div>
+        <div class="card">
+          <h3>HPC, GPU & Cloud Deployment</h3>
+          <p>Parallel algorithms, GPU acceleration, scalable linear algebra, cloud-enabled HPC workflows, reproducible pipelines.</p>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div style="text-align:center; margin-top:70px;">
+        <h2 style="color:#0f172a;">Collaborate with ITECCS</h2>
+        <p style="font-size:1.12rem; color:#475569; max-width:920px; margin:10px auto 22px; line-height:1.75;">
+          ITECCS welcomes collaborations with universities, research labs, industry partners, startups, and government agencies.
+          We support joint research programs, technical advisory, proposal development, advanced training, and deployable computational solutions.
+        </p>
+        <a href="contact.html" class="cta-button" style="text-decoration:none;">Start a Collaboration</a>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 ITECCS. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // COUNT-UP ANIMATION (reliable: triggers when metrics enter viewport)
+    (function(){
+      const els = Array.from(document.querySelectorAll(".js-count"));
+      if(!els.length) return;
+
+      const fmt = (n) => {
+        // add + for nice look where appropriate
+        // but keep exact values as numbers; you can change labels if needed
+        return n.toString();
+      };
+
+      const animate = (el) => {
+        const target = parseInt(el.getAttribute("data-target") || "0", 10);
+        const duration = 1200; // ms
+        const start = performance.now();
+        const from = 0;
+
+        const step = (t) => {
+          const p = Math.min(1, (t - start) / duration);
+          const eased = 1 - Math.pow(1 - p, 3); // cubic ease-out
+          const val = Math.floor(from + (target - from) * eased);
+          el.textContent = fmt(val) + (p >= 1 ? "+" : "");
+          if(p < 1) requestAnimationFrame(step);
+        };
+
+        requestAnimationFrame(step);
+      };
+
+      const seen = new WeakSet();
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if(e.isIntersecting && !seen.has(e.target)){
+            seen.add(e.target);
+            animate(e.target);
+          }
+        });
+      }, { threshold: 0.35 });
+
+      els.forEach(el => io.observe(el));
+    })();
+  </script>
+
+</body>
+</html>
