@@ -715,6 +715,68 @@
       .hero-content{ padding: 18px 16px; }
       .navbar{ padding: 14px 16px; }
     }
+
+
+
+
+
+    /* ================= Institute Identity Section (ULTRA-ELITE) ================= */
+
+.institute-identity{
+  background:
+    linear-gradient(180deg,#ffffff 0%,#f8fafc 100%);
+  padding: 90px 18px 85px;
+  position:relative;
+  overflow:hidden;
+}
+
+.institute-identity::before{
+  content:"";
+  position:absolute;
+  inset:-200px;
+  background:
+    radial-gradient(800px 300px at 10% 10%, rgba(255,204,0,0.10), transparent 60%),
+    radial-gradient(900px 340px at 90% 20%, rgba(37,117,252,0.10), transparent 60%);
+  pointer-events:none;
+}
+
+.identity-wrap{
+  max-width: 1100px;
+  margin:0 auto;
+  text-align:center;
+  position:relative;
+  z-index:1;
+}
+
+.identity-title{
+  font-size: clamp(2.0rem, 3.4vw, 2.6rem);
+  font-weight: 950;
+  letter-spacing:-0.02em;
+  color:#0b1220;
+  margin-bottom: 22px;
+}
+
+.identity-line{
+  width: 80px;
+  height: 3px;
+  margin: 0 auto 30px;
+  border-radius: 999px;
+  background: linear-gradient(90deg,#ffcc00,#f5b800);
+}
+
+.identity-text{
+  font-size: 1.12rem;
+  line-height: 1.95;
+  color:#334155;
+  font-weight: 550;
+  max-width: 920px;
+  margin:0 auto;
+}
+
+.identity-text strong{
+  color:#0b1220;
+  font-weight: 800;
+}
   </style>
 </head>
 
@@ -780,6 +842,28 @@
       </div>
     </div>
   </header>
+
+
+  <!-- ================= Institute Identity (NEW ULTRA-ELITE SECTION) ================= -->
+<section class="institute-identity">
+  <div class="identity-wrap reveal">
+
+    <h2 class="identity-title">
+      Institute of Technology, Engineering, Computing, and Computational Sciences
+    </h2>
+
+    <div class="identity-line"></div>
+
+    <p class="identity-text">
+      <strong>ITECCS is a premier research and education institute advancing applied mathematics, artificial intelligence, engineering, and scientific computing.</strong>
+      We provide high-quality education, professional training, and advanced research programs, and collaborate globally with universities, industry, and government partners to address complex scientific and technological challenges.
+      <br><br>
+      Through rigorous mathematical modeling, high-performance computing, and intelligent computational methods, ITECCS empowers researchers, engineers, students, and institutions to translate scientific insight into deployable technologies and real-world impact.
+      Our institute serves as a collaborative platform for innovation, enabling organizations to develop advanced computational capabilities, accelerate discovery, and strengthen technological leadership across diverse domains.
+    </p>
+
+  </div>
+</section>
 
   <!-- Prestige cards (YOUR FULL DETAILS preserved) -->
   <section class="section home-section">
