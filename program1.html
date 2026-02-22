@@ -513,8 +513,46 @@
       box-shadow:0 16px 34px rgba(246,196,83,0.18);
       transition:.18s ease;
     }
+    .highlight-gold{
+  color: var(--gold);
+  font-weight: 700;
+    }
+
+    .highlight-elite{
+  color: var(--gold);
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 6px;
+  background: linear-gradient(
+    90deg,
+    rgba(246,196,83,0.18),
+    rgba(246,196,83,0.05)
+  );
+  box-shadow: 0 0 12px rgba(246,196,83,0.18);
+}
     .cta-button:hover{transform:translateY(-1px); filter:brightness(1.02);}
     .cta-button:focus{outline:none; box-shadow:0 0 0 4px var(--ring);}
+.highlight-premium{
+  position: relative;
+  color: var(--gold);
+  font-weight: 800;
+}
+
+.highlight-premium::before{
+  content:"";
+  position:absolute;
+  left:-12px;
+  top:4px;
+  bottom:4px;
+  width:4px;
+  border-radius:4px;
+  background:linear-gradient(
+    180deg,
+    var(--gold),
+    rgba(246,196,83,0.2)
+  );
+}
+    
   </style>
 </head>
 
@@ -576,8 +614,13 @@
             </a>
           </div>
           <p style="margin:12px 0 0; color:rgba(255,255,255,0.88); font-weight:550; line-height:1.75;">
-            Advanced modeling, AI-enabled simulation, inverse problems, porous media transport, fluid mechanics,
-            and scalable scientific computing for research-to-deployment impact.
+ 
+
+            <span class="highlight-premium">
+Advanced modeling, AI-enabled simulation, inverse problems, porous media transport, fluid mechanics,
+and scalable scientific computing for research-to-deployment impact.
+</span>
+            
           </p>
         </aside>
       </div>
@@ -643,6 +686,9 @@
         </div>
       </div>
     </section>
+
+
+    
 
     <!-- PUBLICATIONS PREVIEW -->
     <section class="pubs" aria-label="Research Publications Preview">
