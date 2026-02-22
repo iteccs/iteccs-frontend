@@ -1,214 +1,549 @@
+<!-- index.html (elite homepage — ZERO overlay, keeps your video EXACTLY as-is) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ITECCS | Institute of Technology, Engineering, Computing, and Computational Sciences — Engineering, Applied Mathematics, AI & Scientific Computing</title>
+  <meta name="description" content="ITECCS advances engineering, applied mathematics, scientific computing, and AI-driven methods for high-fidelity simulation, inverse problems, porous media, fluid mechanics, and high-performance computing. Explore research programs, professional training, and technical advisory." />
+  <meta name="keywords" content="ITECCS, applied mathematics, scientific computing, high-performance computing, HPC, AI, inverse problems, computational imaging, porous media, fluid mechanics, turbulence, numerical methods, simulation, digital twins, technical advisory, professional training" />
+  <link rel="canonical" href="https://www.iteccs.com/" />
 
-<title>Dr. Ahmed Kaffel | Founder & Director | ITECCS</title>
+  <!-- Open Graph -->
+  <meta property="og:title" content="ITECCS — Applied Mathematics, AI & Scientific Computing" />
+  <meta property="og:description" content="Research & innovation programs, education & professional training, and technical advisory in applied mathematics, HPC, AI, inverse problems, porous media, and fluid mechanics." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="ITECCS" />
 
-<meta name="description" content="Dr. Ahmed Kaffel is Founder and Director of ITECCS, advancing applied mathematics, artificial intelligence, scientific computing, and engineering innovation through research, consulting, and education.">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root{
+      --ink:#0f172a;
+      --muted:#475569;
+      --line: rgba(15,23,42,0.10);
+      --brand:#0b2a5b;
+      --accent:#f6c453;
+      --accent2:#d9a83a;
+      --shadow: 0 18px 55px rgba(2, 6, 23, 0.18);
+      --shadow2: 0 10px 25px rgba(2, 6, 23, 0.10);
+      --radius: 18px;
+      --max: 1200px;
+    }
 
-<style>
-/* ===========================
-   ELITE DESIGN SYSTEM
-=========================== */
+    *{ box-sizing:border-box; }
+    html, body{ height:100%; }
+    body{
+      margin:0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      color: var(--ink);
+      background: #ffffff;
+      line-height: 1.6;
+    }
 
-:root{
---navy-950:#020617;
---navy-900:#051124;
---navy-800:#0a1f3d;
---gold:#FDB515;
---gold-soft:rgba(253,181,21,.15);
---text-dark:#0f172a;
---text-med:#334155;
---text-light:#64748b;
---bg:#f4f7fb;
-}
+    /* Navbar — elite */
+    .navbar{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding: 16px 34px;
+      background: rgba(11, 18, 32, 0.88);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+    }
+    .logo img{ height: 44px; display:block; }
+    .nav-links{
+      display:flex;
+      gap: 22px;
+      list-style:none;
+      margin:0;
+      padding:0;
+      align-items:center;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .nav-links a{
+      color: rgba(255,255,255,0.92);
+      text-decoration:none;
+      font-weight:600;
+      font-size: 0.95rem;
+      letter-spacing: 0.1px;
+      opacity: 0.95;
+      transition: opacity .2s ease, transform .2s ease;
+    }
+    .nav-links a:hover{ opacity:1; transform: translateY(-1px); }
 
-/* GLOBAL */
-body{
-font-family:"Inter",system-ui;
-background:var(--bg);
-margin:0;
-color:var(--text-dark);
--webkit-font-smoothing:antialiased;
-}
+    .contact-nav-button{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+      color: #1b2333 !important;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-weight: 800 !important;
+      border: 1px solid rgba(255,255,255,0.18);
+      box-shadow: 0 10px 24px rgba(246,196,83,0.20);
+      transition: transform .2s ease, filter .2s ease;
+    }
+    .contact-nav-button:hover{ transform: translateY(-1px); filter: brightness(1.02); }
 
-/* NAVBAR */
-.navbar{
-background:linear-gradient(135deg,var(--navy-950),var(--navy-800));
-padding:18px 40px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-box-shadow:0 6px 24px rgba(0,0,0,.4);
-}
+    /* HERO — video EXACTLY as-is, ZERO overlay */
+    .hero{
+      position: relative;
+      height: 95vh;
+      overflow: hidden;
+    }
+    .hero-video{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      z-index: -2;
 
-.logo img{ height:44px; }
+      /* IMPORTANT: keep video untouched */
+      filter: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
 
-.nav-links{
-display:flex;
-gap:28px;
-list-style:none;
-margin:0;
-padding:0;
-}
+    /* Hero text wrapper */
+    .hero-text{
+      position:relative;
+      z-index: 2;
+      height:100%;
+      display:flex;
+      align-items:flex-end;
+      justify-content:center;
+      padding: 0 18px 70px;
+      text-align:center;
+      color:#fff;
+    }
 
-.nav-links a{
-color:white;
-text-decoration:none;
-font-weight:600;
-opacity:.9;
-}
+    /* Premium readability panel (NOT an overlay on the whole video) */
+    .hero-content{
+      max-width: 980px;
+      padding: 22px 22px 18px;
+      border-radius: 18px;
+      background: rgba(2, 6, 23, 0.26);
+      border: 1px solid rgba(255,255,255,0.18);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 18px 60px rgba(0,0,0,0.30);
+    }
 
-.nav-links a:hover{ color:var(--gold); }
+    .hero-content .kicker{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      justify-content:center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.16);
+      font-size: 0.95rem;
+      margin-bottom: 14px;
+    }
 
-.contact-nav-button{
-background:linear-gradient(135deg,#FFD54F,#FDB515);
-padding:10px 18px;
-border-radius:8px;
-color:#1a1a1a !important;
-font-weight:700;
-}
+    .hero-content h2{
+      font-weight: 800;
+      font-size: clamp(1.8rem, 3.5vw, 2.65rem);
+      line-height: 1.15;
+      margin: 0 0 12px;
+      letter-spacing: 0.2px;
+      color:#fff;
+      text-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    }
 
-/* MAIN WRAPPER */
-.content{
-max-width:1300px;
-margin:auto;
-padding:60px 20px 100px;
-}
+    .hero-content p{
+      margin: 0 auto 12px;
+      max-width: 860px;
+      font-size: 1.08rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.92);
+      text-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
 
-/* HERO */
-.founder-hero{
-display:grid;
-grid-template-columns:1.3fr 0.7fr;
-padding:65px;
-border-radius:26px;
-background:
-radial-gradient(circle at 10% 10%,rgba(253,181,21,.2),transparent 60%),
-linear-gradient(135deg,var(--navy-900),var(--navy-800));
-box-shadow:0 60px 140px rgba(0,0,0,.45);
-color:white;
-align-items:center;
-}
+    .hero-actions{
+      display:flex;
+      gap: 12px;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin-top: 16px;
+    }
 
-.founder-hero__title{
-font-size:3rem;
-font-weight:900;
-}
+    .cta-primary{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: 12px 18px;
+      border-radius: 12px;
+      text-decoration:none;
+      font-weight: 800;
+      background: linear-gradient(135deg,#ffcc00,#f5b800);
+      color:#0b1220;
+      border: 1px solid rgba(255,255,255,0.15);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.22);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .cta-primary:hover{ transform: translateY(-2px); box-shadow: 0 16px 34px rgba(0,0,0,0.28); }
 
-.founder-hero__subtitle{
-margin-top:10px;
-font-weight:600;
-opacity:.95;
-}
+    .cta-secondary{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: 12px 18px;
+      border-radius: 12px;
+      text-decoration:none;
+      font-weight: 800;
+      background: rgba(255,255,255,0.10);
+      color:#fff;
+      border: 1px solid rgba(255,255,255,0.22);
+      transition: transform .2s ease, background .2s ease;
+    }
+    .cta-secondary:hover{ transform: translateY(-2px); background: rgba(255,255,255,0.14); }
 
-.founder-hero__tagline{
-margin-top:18px;
-line-height:1.7;
-font-size:1.05rem;
-}
+    /* Prestige section under hero */
+    .home-section{
+      padding: 70px 18px;
+      background: linear-gradient(135deg,#eef3ff,#f9fafc,#e8f0ff);
+    }
+    .home-wrap{ max-width: var(--max); margin: 0 auto; }
+    .home-title{
+      text-align:center;
+      font-size: 2.1rem;
+      font-weight: 900;
+      color:#0f172a;
+      margin: 0 0 12px;
+      letter-spacing: -0.02em;
+    }
+    .home-sub{
+      text-align:center;
+      max-width: 980px;
+      margin: 0 auto 26px;
+      color:#475569;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
 
-/* BUTTONS */
-.btn{
-display:inline-block;
-margin-top:22px;
-margin-right:10px;
-padding:12px 26px;
-border-radius:999px;
-font-weight:700;
-text-decoration:none;
-transition:.25s;
-}
+    /* Larger, elegant cards */
+    .home-cards{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 28px;
+    }
+    .home-card{
+      background: #ffffff;
+      border-radius: 18px;
+      border: 1px solid rgba(15,23,42,0.08);
+      box-shadow: 0 14px 40px rgba(2,6,23,0.08);
+      padding: 30px 26px;
+      text-decoration:none;
+      color: inherit;
+      transition: transform .25s ease, box-shadow .25s ease;
+      position: relative;
+      overflow:hidden;
+    }
+    .home-card::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(37,117,252,0.18), transparent 45%),
+        radial-gradient(circle at 80% 0%, rgba(106,17,203,0.16), transparent 50%);
+      opacity: 0.55;
+      z-index:0;
+      pointer-events:none;
+    }
+    .home-card > *{ position: relative; z-index: 1; }
 
-.btn-primary{
-background:linear-gradient(135deg,#FFD54F,#FDB515);
-color:#1a1a1a;
-}
+    .home-card:hover{
+      transform: translateY(-8px);
+      box-shadow: 0 24px 70px rgba(2,6,23,0.16);
+    }
+    .home-card .icon{
+      width: 54px; height: 54px;
+      border-radius: 14px;
+      display:flex; align-items:center; justify-content:center;
+      background: rgba(37,117,252,0.10);
+      border: 1px solid rgba(37,117,252,0.18);
+      margin-bottom: 14px;
+    }
+    .home-card .icon i{ font-size: 22px; color:#1e3a8a; }
 
-.btn-primary:hover{ transform:translateY(-2px); }
+    .home-card h3{
+      margin: 0 0 10px;
+      font-size: 1.25rem;
+      font-weight: 900;
+      color:#0f172a;
+    }
+    .home-card p{
+      margin: 0 0 14px;
+      color:#475569;
+      line-height: 1.75;
+      font-size: 1.0rem;
+    }
+    .home-card .meta{
+      display:flex;
+      gap: 10px;
+      flex-wrap:wrap;
+      margin-top: 8px;
+    }
+    .pill{
+      font-size: 0.85rem;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.06);
+      color:#0f172a;
+      border: 1px solid rgba(15,23,42,0.08);
+      font-weight: 700;
+    }
 
-.btn-outline{
-border:1.5px solid rgba(255,255,255,.7);
-color:white;
-}
+    /* Testimonials */
+    .testimonials{
+      padding: 70px 18px;
+      background:#ffffff;
+      text-align:center;
+    }
+    .testimonials h2{
+      font-size: 2.1rem;
+      font-weight: 900;
+      color:#0f172a;
+      margin-bottom: 26px;
+      letter-spacing: -0.02em;
+    }
+    .testimonials .card-container{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .testimonials .card{
+      background: #ffffff;
+      border-radius: 18px;
+      border: 1px solid rgba(15,23,42,0.08);
+      box-shadow: 0 14px 40px rgba(2,6,23,0.08);
+      padding: 26px 22px;
+      text-align:left;
+    }
+    .testimonials .card p{
+      margin:0 0 10px;
+      color:#334155;
+      line-height: 1.75;
+      font-style: italic;
+    }
+    .testimonials .card strong{ color:#0f172a; }
 
-.btn-text{
-border:1.5px solid rgba(255,255,255,.7);
-color:white;
-}
+    /* Footer */
+    footer{
+      padding: 22px 12px;
+      text-align:center;
+      color: rgba(255,255,255,0.80);
+      background: rgba(11, 18, 32, 0.92);
+      border-top: 1px solid rgba(255,255,255,0.10);
+    }
+    footer p{ margin:0; font-weight: 650; }
 
-/* PHOTO */
-.founder-hero__photo{
-width:220px;
-height:220px;
-border-radius:50%;
-border:4px solid white;
-box-shadow:0 45px 110px rgba(0,0,0,.6);
-object-fit:cover;
-}
+    /* Custom chat button */
+    #custom-chat-btn{
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      width: 54px;
+      height: 54px;
+      border: none;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+      color: #172033;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      box-shadow: 0 18px 40px rgba(2,6,23,0.18);
+      z-index: 99;
+      transition: transform .18s ease, filter .18s ease;
+    }
+    #custom-chat-btn i{ font-size: 20px; }
+    #custom-chat-btn:hover{ transform: translateY(-1px); filter: brightness(1.02); }
+    #custom-chat-btn:focus{ outline: none; box-shadow: 0 0 0 4px rgba(246,196,83,0.35), 0 18px 40px rgba(2,6,23,0.18); }
 
-/* STATS */
-.founder-stats__grid{
-margin-top:50px;
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:18px;
-}
-
-.founder-stats__item{
-background:white;
-padding:22px;
-border-radius:16px;
-text-align:center;
-box-shadow:0 15px 40px rgba(0,0,0,.08);
-}
-
-.founder-stats__number{
-font-size:1.7rem;
-font-weight:900;
-color:#1d4ed8;
-}
-
-/* SECTIONS */
-.elite-card,
-.founder-quote,
-.founder-message,
-.founder-bio,
-.founder-cta,
-.bottom-cta{
-margin-top:60px;
-background:white;
-padding:40px;
-border-radius:18px;
-box-shadow:0 20px 60px rgba(0,0,0,.06);
-}
-
-/* FOOTER */
-footer{
-background:linear-gradient(135deg,var(--navy-950),var(--navy-800));
-color:white;
-padding:40px;
-text-align:center;
-margin-top:70px;
-}
-
-/* RESPONSIVE */
-@media(max-width:900px){
-.founder-hero{
-grid-template-columns:1fr;
-text-align:center;
-}
-.founder-stats__grid{
-grid-template-columns:1fr 1fr;
-}
-}
-</style>
-
+    @media(max-width: 1000px){
+      .home-cards{ grid-template-columns: repeat(2, 1fr); }
+      .testimonials .card-container{ grid-template-columns: 1fr; }
+      .navbar{ padding: 14px 18px; }
+    }
+    @media(max-width: 650px){
+      .home-cards{ grid-template-columns: 1fr; }
+      .hero-text{ padding-bottom: 48px; }
+      .hero-content{ padding: 18px 16px; }
+    }
+  </style>
 </head>
 
 <body>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="ITeccs Logo">
+    </div>
+    <ul class="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="founder.html">Who We Are</a></li>
+      <li><a href="program.html">Research & Innovation Programs</a></li>
+      <li><a href="education.html">Education & Professional Training</a></li>
+      <li><a href="consulting.html">Industry Collaboration & Technical Advisory</a></li>
+      <li><a href="howtopay.html">How to Pay</a></li>
+      <li>
+        <a href="contact.html" class="contact-nav-button">
+          <i class="fas fa-envelope"></i> Contact Us
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <!-- VIDEO: kept exactly as-is -->
+    <video autoplay muted loop playsinline class="hero-video">
+      <source src="iteccs.mp4" type="video/mp4" />
+      Your browser doesn't support video background.
+    </video>
+
+    <div class="hero-text">
+      <div class="hero-content">
+        <div class="kicker">
+          <i class="fas fa-atom"></i>
+          <span>Applied Mathematics • AI • Scientific Computing • HPC</span>
+        </div>
+
+        <h2>ITECCS — Institute of Technology, Engineering, Computing, and Computational Sciences</h2>
+
+        <p><strong>Empowering innovators, engineers, and scientists</strong> through rigorous modeling, high-fidelity simulation, and deployable computational solutions.</p>
+
+        <p>
+          We advance <strong>advanced numerical methods</strong>, <strong>multiscale porous-media transport</strong>, <strong>fluid mechanics & stability</strong>,
+          <strong>computational imaging & inverse problems</strong>, and <strong>high-performance computing</strong>—serving academia, industry, startups, and government partners.
+        </p>
+
+        <div class="hero-actions">
+          <a href="program.html" class="cta-primary"><i class="fas fa-diagram-project"></i> Explore Research Programs</a>
+          <a href="consulting.html" class="cta-secondary"><i class="fas fa-handshake"></i> Industry Collaboration</a>
+          <a href="education.html" class="cta-secondary"><i class="fas fa-graduation-cap"></i> Education & Training</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Prestige cards -->
+  <section class="home-section">
+    <div class="home-wrap">
+      <h2 class="home-title">Research. Education. Technical Advisory.</h2>
+      <p class="home-sub">
+        ITECCS operates at the intersection of rigorous theory and real-world impact—building computational capabilities,
+        training the next generation, and partnering with organizations to solve high-consequence scientific and engineering challenges.
+      </p>
+
+      <div class="home-cards">
+        <a class="home-card" href="program.html">
+          <div class="icon"><i class="fas fa-flask"></i></div>
+          <h3>Research & Innovation Programs</h3>
+          <p>
+            Flagship initiatives and core programs spanning numerical methods, inverse modeling, porous media, fluid mechanics,
+            AI-enhanced scientific computing, and scalable HPC platforms.
+          </p>
+          <div class="meta">
+            <span class="pill">Advanced Numerical Methods</span>
+            <span class="pill">HPC & GPU</span>
+            <span class="pill">Multiphysics</span>
+          </div>
+        </a>
+
+        <a class="home-card" href="education.html">
+          <div class="icon"><i class="fas fa-graduation-cap"></i></div>
+          <h3>Education & Professional Training</h3>
+          <p>
+            Courses, certificates, workshops, and continuing professional education (CPE) designed for students,
+            educators, and professionals—online, hybrid, or on-site.
+          </p>
+          <div class="meta">
+            <span class="pill">Courses</span>
+            <span class="pill">Certificates & CPE</span>
+            <span class="pill">Workforce Development</span>
+          </div>
+        </a>
+
+        <a class="home-card" href="consulting.html">
+          <div class="icon"><i class="fas fa-screwdriver-wrench"></i></div>
+          <h3>Industry Collaboration & Technical Advisory</h3>
+          <p>
+            Research-to-deployment partnerships: modeling, simulation, algorithm design, validation, and secure
+            cloud/HPC implementation—delivering measurable engineering value.
+          </p>
+          <div class="meta">
+            <span class="pill">Technical Advisory</span>
+            <span class="pill">R&amp;D Partnerships</span>
+            <span class="pill">Deployment</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="card-container">
+      <div class="card">
+        <p>“ITECCS brought clarity and technical depth to a complex modeling problem—delivering results we could deploy.”</p>
+        <strong>— Partner, Engineering &amp; R&amp;D</strong>
+      </div>
+      <div class="card">
+        <p>“Excellent training and mentorship—highly structured, rigorous, and directly applicable to our workflows.”</p>
+        <strong>— Program Lead, Scientific Computing</strong>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 ITeccs.</p>
+  </footer>
+
+  <!-- Custom Chat Button -->
+  <button id="custom-chat-btn" aria-label="Open chat">
+    <i class="fas fa-comments"></i>
+  </button>
+
+  <!-- Tawk.to Script -->
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {};
+    var Tawk_LoadStart = new Date();
+
+    (function(){
+      var s1=document.createElement("script"),
+          s0=document.getElementsByTagName("script")[0];
+      s1.async=true;
+      s1.src='https://embed.tawk.to/685e2123390063190e54b4b2/1iunr2sv2';
+      s1.charset='UTF-8';
+      s1.setAttribute('crossorigin','*');
+      s0.parentNode.insertBefore(s1,s0);
+    })();
+
+    Tawk_API.onLoad = function(){ Tawk_API.hideWidget(); };
+
+    document.addEventListener("DOMContentLoaded", function(){
+      var btn = document.getElementById("custom-chat-btn");
+      if(btn){
+        btn.addEventListener("click", function(){
+          if(typeof Tawk_API !== "undefined"){ Tawk_API.maximize(); }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
