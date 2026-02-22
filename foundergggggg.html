@@ -1287,5 +1287,49 @@
     });
   </script>
   <!-- End of Tawk.to Script -->
+
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const counters = document.querySelectorAll('.founder-stats__number');
+
+  const observer = new IntersectionObserver(entries => {
+
+    entries.forEach(entry => {
+
+      if(entry.isIntersecting){
+
+        const counter = entry.target;
+        const target = parseInt(counter.innerText.replace('+',''));
+
+        let start = 0;
+        const duration = 1200;
+        const step = target / (duration / 16);
+
+        function animate(){
+          start += step;
+
+          if(start < target){
+            counter.innerText = Math.floor(start) + "+";
+            requestAnimationFrame(animate);
+          }
+          else{
+            counter.innerText = target + "+";
+          }
+        }
+
+        animate();
+        observer.unobserve(counter);
+
+      }
+
+    });
+
+  }, {threshold:0.5});
+
+  counters.forEach(counter => observer.observe(counter));
+
+});
+</script>
 </body>
 </html>
