@@ -777,6 +777,156 @@
   color:#0b1220;
   font-weight: 800;
 }
+
+
+
+
+    /* ================= ULTRA-ELITE EXECUTIVE IDENTITY ================= */
+
+.institute-identity{
+  background:
+    linear-gradient(180deg,#ffffff 0%,#f8fafc 60%,#ffffff 100%);
+  padding: 110px 18px 100px;
+  position:relative;
+  overflow:hidden;
+}
+
+/* animated academic prestige glow */
+.institute-identity::before{
+  content:"";
+  position:absolute;
+  inset:-300px;
+  background:
+    radial-gradient(800px 400px at 10% 10%, rgba(255,204,0,0.10), transparent 60%),
+    radial-gradient(900px 420px at 90% 20%, rgba(37,117,252,0.10), transparent 60%);
+  animation: prestigeGlow 8s ease-in-out infinite alternate;
+}
+
+@keyframes prestigeGlow{
+  from{ opacity:.7; }
+  to{ opacity:1; }
+}
+
+.identity-wrap{
+  max-width: 1050px;
+  margin:0 auto;
+  text-align:center;
+  position:relative;
+  z-index:2;
+}
+
+/* executive gold emblem */
+.identity-emblem{
+  width:72px;
+  height:72px;
+  margin:0 auto 26px;
+  border-radius:50%;
+  background: linear-gradient(135deg,#ffcc00,#f5b800);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 18px 40px rgba(255,204,0,0.35);
+  animation: emblemFloat 5s ease-in-out infinite alternate;
+}
+
+.identity-emblem i{
+  font-size:30px;
+  color:#07101f;
+}
+
+@keyframes emblemFloat{
+  from{ transform: translateY(0px);}
+  to{ transform: translateY(-6px);}
+}
+
+.identity-title{
+  font-size: clamp(2.2rem, 3.6vw, 2.8rem);
+  font-weight:950;
+  letter-spacing:-0.02em;
+  color:#07101f;
+  margin-bottom:18px;
+}
+
+.identity-divider{
+  width:90px;
+  height:4px;
+  margin:0 auto 32px;
+  border-radius:999px;
+  background: linear-gradient(90deg,#ffcc00,#f5b800);
+}
+
+.identity-text{
+  font-size:1.14rem;
+  line-height:1.95;
+  color:#334155;
+  font-weight:550;
+  max-width:900px;
+  margin:0 auto;
+}
+
+.identity-text strong{
+  color:#07101f;
+  font-weight:800;
+}
+
+/* prestige credibility indicators */
+
+.identity-cred{
+  margin-top:34px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:12px;
+}
+
+.cred-pill{
+  padding:10px 16px;
+  border-radius:999px;
+  background:#ffffff;
+  border:1px solid rgba(15,23,42,0.12);
+  font-weight:800;
+  font-size:.92rem;
+  box-shadow:0 10px 20px rgba(0,0,0,0.06);
+}
+
+/* executive engagement banner */
+
+.engagement-banner{
+  margin-top:42px;
+  padding:28px 24px;
+  border-radius:20px;
+  background: linear-gradient(135deg,#07101f,#0b2a5b);
+  color:white;
+  box-shadow:0 20px 50px rgba(0,0,0,0.25);
+}
+
+.engagement-banner h3{
+  font-size:1.4rem;
+  font-weight:900;
+  margin-bottom:12px;
+}
+
+.engagement-banner p{
+  opacity:.92;
+  font-size:1.05rem;
+  line-height:1.8;
+  margin-bottom:18px;
+}
+
+.engagement-btn{
+  display:inline-block;
+  padding:14px 22px;
+  background: linear-gradient(135deg,#ffcc00,#f5b800);
+  color:#07101f;
+  border-radius:12px;
+  font-weight:900;
+  text-decoration:none;
+  box-shadow:0 14px 32px rgba(255,204,0,0.35);
+}
+
+.engagement-btn:hover{
+  transform: translateY(-2px);
+}
   </style>
 </head>
 
@@ -842,7 +992,65 @@
       </div>
     </div>
   </header>
+<section class="institute-identity">
 
+  <div class="identity-wrap reveal">
+
+    <div class="identity-emblem">
+      <i class="fas fa-university"></i>
+    </div>
+
+    <h2 class="identity-title">
+      Institute of Technology, Engineering, Computing, and Computational Sciences
+    </h2>
+
+    <div class="identity-divider"></div>
+
+    <p class="identity-text">
+
+      <strong>ITECCS is a premier research and education institute advancing applied mathematics, artificial intelligence, engineering, and scientific computing.</strong>
+
+      We provide high-quality education and advanced professional training, and collaborate globally with universities, industry, and government partners to address complex scientific and technological challenges.
+
+      Through rigorous mathematical modeling, high-performance computing, and intelligent computational methods, ITECCS empowers researchers, engineers, and institutions to translate scientific insight into deployable technologies and real-world impact.
+
+      Our institute serves as a trusted platform for innovation, enabling organizations to strengthen their scientific capabilities, accelerate engineering development, and lead technological advancement in an increasingly computational world.
+
+    </p>
+
+    <div class="identity-cred">
+
+      <span class="cred-pill">Research Institute</span>
+
+      <span class="cred-pill">Education & Training</span>
+
+      <span class="cred-pill">Industry Collaboration</span>
+
+      <span class="cred-pill">Government Partnerships</span>
+
+      <span class="cred-pill">Global Engagement</span>
+
+    </div>
+
+    <div class="engagement-banner">
+
+      <h3>Collaborate with ITECCS</h3>
+
+      <p>
+
+      ITECCS actively collaborates with universities, companies, startups, and public institutions worldwide. We welcome opportunities in research partnerships, technical advisory, workforce training, and advanced computational development.
+
+      </p>
+
+      <a href="contact.html" class="engagement-btn">
+        Request Collaboration
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
 
   <!-- ================= Institute Identity (NEW ULTRA-ELITE SECTION) ================= -->
 <section class="institute-identity">
