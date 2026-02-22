@@ -537,6 +537,72 @@
     .btn{ width:100%; }
     .logos-strip{ border-radius: 18px; }
   }
+
+  /* DIRECTOR NOTE (Elite) */
+.director-note{
+  margin-top: 14px;
+  background: rgba(255,255,255,0.92);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow2);
+  position:relative;
+  overflow:hidden;
+}
+
+.director-note::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(700px 260px at 10% 0%, rgba(246,196,83,0.14), transparent 60%),
+    radial-gradient(700px 260px at 90% 10%, rgba(11,42,91,0.10), transparent 60%);
+  pointer-events:none;
+}
+
+.director-note__inner{
+  position:relative;
+  z-index:2;
+  padding: 22px 20px;
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.director-note__mark{
+  font-size: 3.2rem;
+  line-height: 1;
+  color: rgba(11,42,91,0.18);
+  font-weight: 950;
+  margin-bottom: 6px;
+}
+
+.director-note__title{
+  margin: 0 0 10px;
+  font-size: 1.35rem;
+  font-weight: 950;
+  color: var(--ink2);
+  letter-spacing: -0.02em;
+}
+
+.director-note__text{
+  margin: 0 0 12px;
+  color: var(--muted2);
+  line-height: 1.9;
+  font-size: 1.02rem;
+}
+
+.director-note__sig{
+  margin: 0;
+  color: var(--ink2);
+  font-weight: 900;
+}
+
+.director-note__actions{
+  margin-top: 14px;
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
 </style>
 </head>
 
@@ -567,10 +633,10 @@
   <section class="program-hero">
     <p class="hero-eyebrow">About the Institute</p>
 
-    <h1>Institute for Theoretical & Computational Science (ITECCS)</h1>
+    <h1>Institute for Theoretical & Computational Science </h1>
 
     <p>
-      ITECCS is a premier research and education institute advancing applied mathematics, artificial intelligence,
+      ITECCS is a premier research and education institute advancing areas like applied mathematics, artificial intelligence,
       scientific computing, and high-performance computational modeling. We integrate rigorous mathematical theory,
       scalable computational algorithms, and AI-driven methodologies to address complex scientific and engineering
       challenges across academia, industry, and government.
@@ -596,6 +662,61 @@
 
     <div class="subtle-line"></div>
   </section>
+   <!-- DIRECTOR MESSAGE -->
+<section class="director-note">
+
+  <div class="director-note__inner">
+
+    <div class="director-note__mark">“</div>
+
+    <h2 class="director-note__title">Message from the Director</h2>
+
+    <p class="director-note__text">
+   Welcome to ITECCS — the Institute of Technology, Engineering, Computing, and Computational Sciences.
+
+ITECCS was founded with a clear scientific mission and ambitious vision: to advance discovery, innovation, and technological 
+leadership through the rigorous integration of engineering, applied mathematics, artificial intelligence, and high-performance
+ scientific computing. In an era defined by unprecedented computational capability and data-driven science, the ability to model,
+ simulate, and understand complex systems has become essential to progress across engineering, medicine, energy, and emerging technologies.
+
+At ITECCS, we are committed to developing advanced mathematical models, scalable computational frameworks, and intelligent algorithms that 
+enable predictive understanding and transformative engineering solutions. Our work bridges foundational theory and real-world implementation,
+ ensuring that scientific insight translates into deployable technologies with measurable impact.
+
+Our institute serves as a collaborative platform connecting academia, industry, startups, and government partners worldwide. 
+Through interdisciplinary research, advanced education, and strategic technical advisory, we empower researchers, engineers, and organizations
+ to address complex scientific challenges and accelerate innovation responsibly and effectively.
+
+As Director, I am committed to fostering an environment of scientific excellence, intellectual rigor, and meaningful collaboration. We strive
+ not only to advance the frontiers of knowledge, but also to contribute solutions that benefit society, strengthen technological capability, 
+and support the next generation of scientific and engineering leaders.
+
+We invite you to explore our research, collaborate with our team, and join us in shaping the future of computational science and engineering.
+    </p>
+
+    <p class="director-note__sig">
+      — Dr. Ahmed Kaffel<br>
+      Founder & Director,
+      ITECCS - ITECCS — Institute of Technology, Engineering, Computing, and Computational Sciences
+    </p>
+
+    <div class="director-note__actions">
+
+      <a href="Founder.html" class="btn btn-primary">
+        Meet the Founder
+      </a>
+
+      <a href="https://akaffel.com/" target="_blank" class="btn btn-outline">
+        Academic Profile
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+  
 
   <!-- AUTHORITY: FOUNDER + PUBLICATIONS (ADDED, PRESTIGIOUS LINKS) -->
   <section class="authority-grid">
