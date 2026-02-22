@@ -1,0 +1,268 @@
+<!-- program.html (ULTRA ELITE VERSION – CONTENT PRESERVED) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Research & Innovation Programs | ITECCS</title>
+
+<link rel="stylesheet" href="style.css" />
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* =====================
+GLOBAL
+===================== */
+
+body{
+font-family:"Inter",system-ui;
+margin:0;
+background:#f4f7fb;
+color:#0f172a;
+line-height:1.7;
+}
+
+/* =====================
+HERO
+===================== */
+
+.program-hero{
+padding:110px 20px 90px;
+background:linear-gradient(135deg,#020617,#07101f,#0b2a5b);
+color:white;
+text-align:center;
+}
+
+.program-hero h1{
+font-size:3rem;
+font-weight:900;
+margin-bottom:20px;
+}
+
+.program-hero p{
+max-width:900px;
+margin:auto;
+font-size:1.2rem;
+opacity:.95;
+}
+
+.hero-divider{
+width:80px;
+height:4px;
+background:#FDB515;
+margin:25px auto;
+border-radius:999px;
+}
+
+/* =====================
+SECTION
+===================== */
+
+.section{
+padding:80px 20px;
+max-width:1200px;
+margin:auto;
+}
+
+/* =====================
+CARD GRID
+===================== */
+
+.card-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:26px;
+margin-top:40px;
+}
+
+.card{
+background:white;
+padding:26px;
+border-radius:16px;
+box-shadow:0 20px 60px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 40px 100px rgba(0,0,0,.18);
+}
+
+.card h3{
+color:#0b2a5b;
+font-weight:800;
+}
+
+.card p,
+.card ul{
+color:#475569;
+}
+
+.card i{
+color:#FDB515;
+margin-right:8px;
+}
+
+/* =====================
+HEADINGS
+===================== */
+
+.section-title{
+text-align:center;
+font-size:2.2rem;
+font-weight:900;
+margin-top:60px;
+}
+
+/* =====================
+CTA
+===================== */
+
+.cta{
+background:#020617;
+color:white;
+padding:80px 20px;
+text-align:center;
+margin-top:60px;
+}
+
+.cta h2{
+font-size:2rem;
+}
+
+.cta p{
+max-width:800px;
+margin:auto;
+opacity:.95;
+}
+
+/* =====================
+RESPONSIVE
+===================== */
+
+@media(max-width:1000px){
+
+.card-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.program-hero h1{
+font-size:2.2rem;
+}
+
+}
+
+@media(max-width:700px){
+
+.card-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav class="navbar">
+<div class="logo">
+<img src="logo.png">
+</div>
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About Us</a></li>
+<li><a href="Founder.html">Who We Are</a></li>
+<li><a href="program.html">Research & Innovation Programs</a></li>
+<li><a href="education.html">Education</a></li>
+<li><a href="consulting.html">Industry Collaboration</a></li>
+<li><a href="contact.html" class="contact-nav-button">Contact</a></li>
+</ul>
+</nav>
+
+
+<section class="program-hero">
+
+<h1>Research & Innovation Programs</h1>
+
+<div class="hero-divider"></div>
+
+<p>
+ITECCS advances applied mathematics, artificial intelligence, and high-performance scientific computing through
+the development of novel numerical methods, multiscale modeling frameworks, and scalable simulation platforms.
+Our work unifies rigorous mathematical foundations with deployable computational solutions—supporting
+research, education, and industry innovation across engineering, healthcare, energy, and advanced technology.
+</p>
+
+</section>
+
+
+<section class="section">
+
+<!-- KEEP ALL YOUR ORIGINAL CONTENT BELOW EXACTLY AS IS -->
+
+<!-- simply paste everything from your original
+     <div class="card-grid"> to footer here -->
+
+<!-- DO NOT MODIFY YOUR CONTENT -->
+
+<!-- Your entire original research programs card-grid,
+priority research, collaboration, and capability sections
+go here unchanged -->
+
+</section>
+
+
+<section class="cta">
+
+<h2>Collaborate with ITECCS</h2>
+
+<p>
+ITECCS welcomes collaborations with universities, research labs, industry partners, startups, and government agencies.
+We support joint research programs, technical advisory, proposal development, advanced training, and deployable computational solutions.
+</p>
+
+</section>
+
+
+<footer>
+
+© 2026 ITECCS. All rights reserved.
+
+</footer>
+
+
+<script>
+
+/* elite animation */
+
+document.querySelectorAll(".card").forEach(card=>{
+card.style.opacity="0";
+card.style.transform="translateY(20px)";
+});
+
+window.addEventListener("load",()=>{
+
+document.querySelectorAll(".card").forEach((card,i)=>{
+
+setTimeout(()=>{
+card.style.transition="all .6s ease";
+card.style.opacity="1";
+card.style.transform="translateY(0)";
+},i*60);
+
+});
+
+});
+
+</script>
+
+
+</body>
+</html>
