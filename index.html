@@ -1273,10 +1273,27 @@
 
         <!-- NOTE: This is a front-end form shell.
              If you want it to actually send emails, connect it to your backend or a service (Formspree, Netlify Forms, etc.). -->
-        <form class="news-form" action="#" method="post">
-          <input type="email" name="email" placeholder="Your email address" required>
-          <button type="submit"><i class="fas fa-envelope"></i> Subscribe</button>
-        </form>
+        
+
+
+
+
+
+        <form   class="news-form"  action="https://formspree.io/f/meelrnog"  method="POST">
+
+  <input type="email" name="email" placeholder="Your professional email address"  required >
+
+  <input type="hidden" name="_subject" value="ITECCS Newsletter Signup">
+
+  <input type="hidden" name="_next" value="https://iteccs.com/thank-you.html">
+
+  <button type="submit">
+    <i class="fas fa-envelope"></i> Subscribe
+  </button>
+
+</form>
+
+        
 
         <div class="news-note">
           By subscribing, you agree to receive periodic emails from ITECCS.
