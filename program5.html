@@ -1,0 +1,260 @@
+<!-- program.html — FINAL ULTRA ELITE SAFE VERSION -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Research & Innovation Programs | ITECCS</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* =========================
+BASE
+========================= */
+
+body{
+margin:0;
+font-family:"Inter",system-ui;
+background:linear-gradient(180deg,#f7f9fe,#eef2f8);
+color:#0f172a;
+}
+
+/* =========================
+HERO ELITE GLOW REFINEMENT
+========================= */
+
+.elite-hero{
+position:relative;
+overflow:hidden;
+}
+
+.elite-hero::after{
+content:"";
+position:absolute;
+right:-200px;
+top:-200px;
+width:600px;
+height:600px;
+background:radial-gradient(circle, rgba(246,196,83,0.35), transparent 60%);
+filter:blur(80px);
+animation:heroGlow 8s ease-in-out infinite;
+pointer-events:none;
+}
+
+@keyframes heroGlow{
+0%{opacity:.6; transform:scale(1);}
+50%{opacity:1; transform:scale(1.1);}
+100%{opacity:.6; transform:scale(1);}
+}
+
+/* =========================
+PIPELINE VISUAL ANIMATION
+========================= */
+
+.timeline-grid{
+position:relative;
+}
+
+.timeline-grid::before{
+content:"";
+position:absolute;
+left:0;
+right:0;
+top:50%;
+height:3px;
+background:linear-gradient(90deg,
+transparent,
+rgba(246,196,83,.8),
+transparent);
+animation:pipelineFlow 3s linear infinite;
+}
+
+@keyframes pipelineFlow{
+0%{transform:translateX(-100%);}
+100%{transform:translateX(100%);}
+}
+
+/* =========================
+CARD ENTRANCE ANIMATION
+========================= */
+
+.card,
+.metric,
+.timeline,
+.recruit,
+.pubs{
+opacity:0;
+transform:translateY(20px);
+animation:fadeUp .8s ease forwards;
+}
+
+.card:nth-child(2){animation-delay:.1s}
+.card:nth-child(3){animation-delay:.2s}
+.card:nth-child(4){animation-delay:.3s}
+
+@keyframes fadeUp{
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* =========================
+INSTITUTIONAL BAND SCROLL
+========================= */
+
+.logo-strip{
+display:flex;
+gap:40px;
+animation:scrollLogos 30s linear infinite;
+}
+
+@keyframes scrollLogos{
+0%{transform:translateX(0);}
+100%{transform:translateX(-50%);}
+}
+
+/* =========================
+PUBLICATION FEED
+========================= */
+
+.publication-feed{
+margin-top:20px;
+}
+
+.publication-feed a{
+display:block;
+margin-bottom:8px;
+color:#0b2a5b;
+font-weight:600;
+text-decoration:none;
+}
+
+.publication-feed a:hover{
+color:#f6c453;
+}
+
+/* =========================
+METRIC COUNT POLISH
+========================= */
+
+.metric .num{
+transition:.3s;
+}
+
+.metric:hover .num{
+transform:scale(1.05);
+color:#f6c453;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- KEEP YOUR ORIGINAL NAVBAR HERE -->
+
+
+<!-- KEEP YOUR ORIGINAL HERO HERE -->
+
+
+<!-- KEEP YOUR ORIGINAL METRICS HERE -->
+
+
+<!-- KEEP YOUR ORIGINAL PARTNERS STRIP HERE -->
+
+
+<!-- KEEP YOUR ORIGINAL PIPELINE HERE -->
+
+
+<!-- KEEP YOUR ORIGINAL PUBLICATIONS SECTION -->
+<div class="publication-feed" id="publication-feed">
+Loading latest publications...
+</div>
+
+
+<!-- KEEP YOUR ORIGINAL PROGRAM CARDS HERE -->
+
+
+<!-- KEEP YOUR ORIGINAL CTA HERE -->
+
+
+<!-- KEEP YOUR ORIGINAL FOOTER HERE -->
+
+
+<script>
+
+/* =========================
+SAFE PUBLICATION AUTO SYNC
+========================= */
+
+fetch("https://akaffel.com/publications.html")
+.then(res=>res.text())
+.then(html=>{
+
+const parser=new DOMParser();
+const doc=parser.parseFromString(html,"text/html");
+
+const links=[...doc.querySelectorAll("a")]
+.filter(a=>a.href.includes("pdf") || a.textContent.length>20)
+.slice(0,6);
+
+const container=document.getElementById("publication-feed");
+
+container.innerHTML="";
+
+links.forEach(link=>{
+const el=document.createElement("a");
+el.href=link.href;
+el.target="_blank";
+el.innerText=link.textContent;
+container.appendChild(el);
+});
+
+})
+.catch(()=>{
+document.getElementById("publication-feed").innerHTML=
+'<a href="https://akaffel.com/publications.html" target="_blank">View full publications →</a>';
+});
+
+
+/* =========================
+COUNT ANIMATION (SAFE)
+========================= */
+
+document.querySelectorAll(".js-count").forEach(el=>{
+
+let target=parseInt(el.dataset.target);
+
+let count=0;
+
+let step=target/60;
+
+function update(){
+
+count+=step;
+
+if(count>=target){
+el.innerText=target+"+";
+return;
+}
+
+el.innerText=Math.floor(count);
+
+requestAnimationFrame(update);
+
+}
+
+update();
+
+});
+
+</script>
+
+</body>
+</html>
