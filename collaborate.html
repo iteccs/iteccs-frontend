@@ -1,23 +1,45 @@
 <form action="https://formspree.io/f/meelrnog" method="POST">
 
-<input name="name" required placeholder="Full name">
+  <input
+    type="text"
+    name="full_name"
+    required
+    placeholder="Full name"
+    autocomplete="name"
+  >
 
-<input name="organization" required placeholder="University / Company">
+  <input
+    type="text"
+    name="organization"
+    required
+    placeholder="University / Company"
+    autocomplete="organization"
+  >
 
-<input name="email" required type="email" placeholder="Professional email">
+  <input
+    type="email"
+    name="email"
+    required
+    placeholder="Professional email"
+    autocomplete="email"
+  >
 
-<select name="interest">
-<option>Research collaboration</option>
-<option>Consulting project</option>
-<option>Training program</option>
-<option>Industry partnership</option>
-<option>Government collaboration</option>
-</select>
+  <select name="interest" required>
+    <option value="" selected disabled>Select collaboration interest</option>
+    <option value="Research collaboration">Research collaboration</option>
+    <option value="Consulting project">Consulting project</option>
+    <option value="Training program">Training program</option>
+    <option value="Industry partnership">Industry partnership</option>
+    <option value="Government collaboration">Government collaboration</option>
+  </select>
 
-<textarea name="message" required placeholder="Describe your collaboration interest"></textarea>
+  <textarea
+    name="message"
+    required
+    placeholder="Describe your collaboration interest"
+    rows="5"
+  ></textarea>
 
-<button type="submit">
-Request Collaboration
-</button>
+  <button type="submit">Request Collaboration</button>
 
 </form>
