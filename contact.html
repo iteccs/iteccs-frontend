@@ -18,6 +18,43 @@ content="Contact ITECCS for research collaboration, technical advisory, AI, CFD,
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
+  /* FIX HERO TEXT VISIBILITY */
+
+.contact-hero {
+  position: relative;
+  color: #ffffff;
+}
+
+/* Make overlay behind text */
+.contact-hero::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.55),
+    rgba(0,0,0,0.45)
+  );
+  z-index: 1;
+}
+
+/* Bring text ABOVE overlay */
+.contact-hero h1,
+.contact-hero p {
+  position: relative;
+  z-index: 3;
+  color: #ffffff;
+  opacity: 1;
+}
+
+/* Improve contrast */
+.contact-hero h1 {
+  text-shadow: 0 12px 35px rgba(0,0,0,.65);
+}
+
+.contact-hero p {
+  text-shadow: 0 8px 22px rgba(0,0,0,.55);
+}
 
 /* ============================= */
 /* ULTRA ELITE CONTACT STYLING */
