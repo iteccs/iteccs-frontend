@@ -1,850 +1,158 @@
+<!-- CFD TECHNICAL ADVISORY & ADVANCED METHODS -->
+<section style="margin-top:60px;">
 
-
-
-<!-- technical-advisory-cfd.html — Single-page Technical Advisory (CFD) Examples -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Technical Advisory Examples | CFD Applications & Solutions</title>
-  <meta name="description" content="A single-page template showcasing CFD-focused technical advisory: simulation & analysis, design optimization, virtual prototyping, implementation support, and industry applications." />
-
-  <style>
-    :root{
-      --bg:#0b1220;
-      --panel:rgba(255,255,255,.06);
-      --panel2:rgba(255,255,255,.085);
-      --stroke:rgba(255,255,255,.14);
-      --text:#eaf0ff;
-      --muted:rgba(234,240,255,.72);
-      --muted2:rgba(234,240,255,.58);
-      --accent:#7dd3fc;   /* light sky */
-      --accent2:#a78bfa;  /* violet */
-      --good:#86efac;
-      --warn:#fca5a5;
-      --shadow: 0 20px 60px rgba(0,0,0,.35);
-      --radius: 18px;
-      --radius2: 28px;
-      --max: 1120px;
-      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-    }
-
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family:var(--sans);
-      color:var(--text);
-      background:
-        radial-gradient(900px 700px at 15% 10%, rgba(125,211,252,.18), transparent 55%),
-        radial-gradient(800px 650px at 85% 20%, rgba(167,139,250,.16), transparent 55%),
-        radial-gradient(900px 700px at 50% 100%, rgba(134,239,172,.10), transparent 60%),
-        linear-gradient(180deg, #070b14 0%, #0b1220 55%, #070b14 100%);
-      overflow-x:hidden;
-    }
-
-    a{color:inherit; text-decoration:none}
-    .wrap{max-width:var(--max); margin:0 auto; padding:0 22px}
-    .grid{display:grid; gap:18px}
-
-    /* Top nav */
-    .topbar{
-      position:sticky; top:0; z-index:20;
-      backdrop-filter: blur(14px);
-      background: rgba(11,18,32,.62);
-      border-bottom: 1px solid rgba(255,255,255,.08);
-    }
-    .topbar-inner{
-      max-width:var(--max); margin:0 auto; padding:14px 22px;
-      display:flex; align-items:center; justify-content:space-between; gap:14px;
-    }
-    .brand{
-      display:flex; align-items:center; gap:10px;
-      letter-spacing:.2px;
-    }
-    .mark{
-      width:38px; height:38px; border-radius:12px;
-      background:
-        radial-gradient(circle at 30% 30%, rgba(125,211,252,.9), rgba(125,211,252,0) 55%),
-        radial-gradient(circle at 70% 70%, rgba(167,139,250,.85), rgba(167,139,250,0) 55%),
-        rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.14);
-      box-shadow: 0 10px 30px rgba(0,0,0,.25);
-    }
-    .brand strong{font-weight:800}
-    .brand small{display:block; color:var(--muted2); font-weight:600; margin-top:2px}
-
-    .nav{
-      display:flex; flex-wrap:wrap; gap:10px; align-items:center;
-      color:var(--muted);
-      font-weight:650;
-    }
-    .nav a{
-      padding:10px 12px; border-radius:12px;
-      border:1px solid transparent;
-      transition: .2s ease;
-    }
-    .nav a:hover{
-      border-color: rgba(255,255,255,.10);
-      background: rgba(255,255,255,.04);
-      color:var(--text);
-    }
-
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      gap:10px;
-      padding:12px 14px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.06);
-      color:var(--text);
-      font-weight:750;
-      transition: .2s ease;
-      cursor:pointer;
-      user-select:none;
-      white-space:nowrap;
-    }
-    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.085)}
-    .btn.primary{
-      border-color: rgba(125,211,252,.28);
-      background:
-        radial-gradient(250px 120px at 20% 30%, rgba(125,211,252,.26), transparent 60%),
-        radial-gradient(250px 120px at 80% 70%, rgba(167,139,250,.18), transparent 60%),
-        rgba(255,255,255,.06);
-    }
-    .btn.primary:hover{border-color: rgba(125,211,252,.40)}
-    .btn .dot{
-      width:10px; height:10px; border-radius:999px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      box-shadow: 0 0 0 4px rgba(125,211,252,.12);
-    }
-
-    /* Hero */
-    .hero{padding:52px 0 26px}
-    .hero-card{
-      position:relative;
-      padding:34px;
-      border-radius: var(--radius2);
-      border: 1px solid rgba(255,255,255,.12);
-      background:
-        radial-gradient(800px 300px at 20% 0%, rgba(125,211,252,.14), transparent 60%),
-        radial-gradient(700px 280px at 85% 15%, rgba(167,139,250,.12), transparent 60%),
-        rgba(255,255,255,.05);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-    }
-    .hero-card::after{
-      content:"";
-      position:absolute; inset:-2px;
-      background:
-        linear-gradient(90deg, rgba(125,211,252,.15), rgba(167,139,250,.12), rgba(134,239,172,.10));
-      filter: blur(28px);
-      opacity:.55;
-      pointer-events:none;
-      mask: radial-gradient(420px 240px at 18% 12%, #000 35%, transparent 70%);
-    }
-    .kicker{
-      display:inline-flex; align-items:center; gap:10px;
-      padding:8px 12px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(0,0,0,.18);
-      color:var(--muted);
-      font-weight:700;
-      font-size:13px;
-      letter-spacing:.2px;
-    }
-    h1{
-      margin:14px 0 10px;
-      font-size: clamp(30px, 4vw, 48px);
-      line-height:1.05;
-      letter-spacing:-.6px;
-    }
-    .lead{
-      max-width: 70ch;
-      margin:0;
-      color: var(--muted);
-      font-size: 16.5px;
-      line-height:1.6;
-    }
-    .hero-actions{margin-top:20px; display:flex; flex-wrap:wrap; gap:10px}
-    .stats{margin-top:22px; display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:12px}
-    .stat{
-      padding:14px 14px 12px;
-      border-radius: 16px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.04);
-    }
-    .stat b{display:block; font-size:18px}
-    .stat span{display:block; margin-top:3px; color:var(--muted2); font-weight:650; font-size:12.5px}
-
-    @media (max-width:840px){
-      .stats{grid-template-columns:1fr}
-      .nav{display:none}
-    }
-
-    /* Sections */
-    section{padding:28px 0}
-    .section-head{
-      display:flex; align-items:flex-end; justify-content:space-between; gap:14px;
-      margin: 0 0 14px;
-    }
-    .section-head h2{
-      margin:0;
-      font-size:22px;
-      letter-spacing:-.2px;
-    }
-    .section-head p{
-      margin:0;
-      color:var(--muted2);
-      font-weight:650;
-      max-width: 58ch;
-      line-height:1.5;
-    }
-    .card{
-      padding:18px;
-      border-radius: var(--radius);
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.05);
-      box-shadow: 0 14px 40px rgba(0,0,0,.22);
-    }
-
-    /* Service cards */
-    .services{grid-template-columns: repeat(4, minmax(0, 1fr))}
-    @media (max-width:1050px){ .services{grid-template-columns: repeat(2, minmax(0,1fr))}}
-    @media (max-width:560px){ .services{grid-template-columns: 1fr}}
-    .svc-top{display:flex; align-items:center; justify-content:space-between; gap:10px}
-    .pill{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:8px 10px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(0,0,0,.16);
-      color:var(--muted);
-      font-weight:750;
-      font-size:12px;
-    }
-    .pill .mini{
-      width:8px; height:8px; border-radius:999px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-    }
-    .svc h3{margin:12px 0 8px; font-size:16px; letter-spacing:-.2px}
-    .svc p{margin:0; color:var(--muted); line-height:1.55; font-size:13.8px}
-    .svc ul{margin:12px 0 0; padding-left:18px; color:var(--muted2); line-height:1.55; font-size:13px}
-    .svc li{margin:6px 0}
-
-    /* Advisory examples */
-    .filters{
-      display:flex; flex-wrap:wrap; gap:10px; align-items:center;
-      margin: 10px 0 16px;
-    }
-    .search{
-      flex:1 1 240px;
-      padding:12px 14px;
-      border-radius: 14px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.05);
-      color: var(--text);
-      outline:none;
-      font-weight:650;
-    }
-    .filterbar{display:flex; flex-wrap:wrap; gap:8px}
-    .chip{
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.04);
-      padding:10px 12px;
-      border-radius: 999px;
-      color: var(--muted);
-      font-weight:750;
-      cursor:pointer;
-      transition:.2s ease;
-      user-select:none;
-      font-size:12.5px;
-    }
-    .chip:hover{background: rgba(255,255,255,.07); color:var(--text)}
-    .chip.active{
-      color: var(--text);
-      border-color: rgba(125,211,252,.35);
-      background:
-        radial-gradient(220px 70px at 30% 30%, rgba(125,211,252,.18), transparent 60%),
-        rgba(255,255,255,.05);
-    }
-
-    .examples{grid-template-columns: repeat(3, minmax(0,1fr))}
-    @media (max-width:980px){ .examples{grid-template-columns: repeat(2, minmax(0,1fr))}}
-    @media (max-width:620px){ .examples{grid-template-columns: 1fr}}
-    .ex h3{margin:10px 0 8px; font-size:15.5px}
-    .ex p{margin:0; color:var(--muted); line-height:1.55; font-size:13.6px}
-    .ex .meta{
-      display:flex; flex-wrap:wrap; gap:8px;
-      margin-top:12px;
-    }
-    .tag{
-      display:inline-flex; align-items:center; gap:7px;
-      padding:8px 10px;
-      border-radius: 999px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(0,0,0,.14);
-      color: var(--muted2);
-      font-weight:750;
-      font-size:12px;
-    }
-    .tag .sq{
-      width:8px; height:8px; border-radius:4px;
-      background: rgba(125,211,252,.55);
-    }
-
-    /* Delivery workflow */
-    .flow{
-      display:grid;
-      grid-template-columns: repeat(4, minmax(0,1fr));
-      gap:12px;
-    }
-    @media (max-width:900px){ .flow{grid-template-columns:1fr}}
-    .step{
-      padding:16px;
-      border-radius: 18px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.05);
-      position:relative;
-      overflow:hidden;
-    }
-    .step b{
-      display:inline-flex; align-items:center; justify-content:center;
-      width:34px; height:34px;
-      border-radius: 12px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(0,0,0,.16);
-      margin-bottom:10px;
-      font-family: var(--mono);
-      font-size:13px;
-      color: var(--text);
-    }
-    .step h4{margin:0 0 6px; font-size:14.8px}
-    .step p{margin:0; color:var(--muted2); line-height:1.55; font-size:13.2px}
-
-    /* CTA */
-    .cta{
-      padding:28px;
-      border-radius: var(--radius2);
-      border:1px solid rgba(255,255,255,.12);
-      background:
-        radial-gradient(600px 240px at 20% 0%, rgba(125,211,252,.16), transparent 60%),
-        radial-gradient(520px 220px at 85% 20%, rgba(167,139,250,.12), transparent 60%),
-        rgba(255,255,255,.05);
-      box-shadow: var(--shadow);
-      display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:14px;
-    }
-    .cta h3{margin:0 0 6px; font-size:18px}
-    .cta p{margin:0; color:var(--muted); line-height:1.55; max-width: 70ch}
-    .cta .actions{display:flex; gap:10px; flex-wrap:wrap}
-
-    /* Footer */
-    footer{
-      padding:24px 0 40px;
-      color: var(--muted2);
-      font-weight:650;
-      border-top: 1px solid rgba(255,255,255,.08);
-      margin-top: 20px;
-    }
-    .foot{
-      display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between;
-    }
-    .fine{font-size:12.5px; line-height:1.45; max-width: 85ch}
-    .fine code{font-family:var(--mono); color:var(--text)}
-  </style>
-</head>
-
-<body>
-
-  <div class="topbar">
-    <div class="topbar-inner">
-      <a class="brand" href="#top" aria-label="Home">
-        <span class="mark" aria-hidden="true"></span>
-        <div>
-          <strong>Technical Advisory</strong>
-          <small>CFD applications & solutions — examples</small>
-        </div>
-      </a>
-
-      <nav class="nav" aria-label="Primary">
-        <a href="#services">Services</a>
-        <a href="#examples">Advisory Examples</a>
-        <a href="#workflow">Delivery Workflow</a>
-        <a href="#engagement">Engagement</a>
-      </nav>
-
-      <a class="btn primary" href="#contact">
-        <span class="dot" aria-hidden="true"></span>
-        Request a consult
-      </a>
-    </div>
-  </div>
-
-  <main id="top" class="wrap">
-    <!-- HERO -->
-    <div class="hero">
-      <div class="hero-card">
-        <span class="kicker">Simulation-driven decisions • rigorous modeling • practical recommendations</span>
-        <h1>CFD-Focused Technical Advisory<br/>for Performance, Reliability, and Speed-to-Market</h1>
-        <p class="lead">
-          This page is a <b>ready-to-use</b> example template for presenting technical advisory services around
-          <b>computational fluid dynamics (CFD)</b>: simulation & analysis, optimization, virtual prototyping,
-          and implementation support—across aerospace, automotive, energy, electronics, and industrial systems.
-        </p>
-
-        <div class="hero-actions">
-          <a class="btn primary" href="#examples"><span class="dot"></span>View advisory examples</a>
-          <a class="btn" href="#services">Explore services</a>
-          <a class="btn" href="#workflow">See delivery workflow</a>
-        </div>
-
-        <div class="stats" role="list">
-          <div class="stat" role="listitem">
-            <b>Reduce risk</b>
-            <span>Identify failure modes early via physics-based simulation</span>
-          </div>
-          <div class="stat" role="listitem">
-            <b>Cut iterations</b>
-            <span>Test design variants digitally before building prototypes</span>
-          </div>
-          <div class="stat" role="listitem">
-            <b>Improve performance</b>
-            <span>Optimize aerodynamics, thermal management, and flow efficiency</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- SERVICES -->
-    <section id="services">
-      <div class="section-head">
-        <div>
-          <h2>Service Pillars</h2>
-          <p>Clear, client-facing descriptions of what a CFD advisory team delivers—framed as outcomes and decision support.</p>
-        </div>
-      </div>
-
-      <div class="grid services">
-        <article class="card svc" data-kind="analysis">
-          <div class="svc-top">
-            <span class="pill"><span class="mini"></span>Simulation & Analysis</span>
-            <span class="pill" title="Decision-ready outputs">Reports</span>
-          </div>
-          <h3>CFD Simulation & Engineering Analysis</h3>
-          <p>Model flow, pressure, heat transfer, and forces to quantify performance and guide design choices.</p>
-          <ul>
-            <li>Flow fields, pressure drops, drag/lift, mixing, separation</li>
-            <li>Thermal management: conduction + convection + radiation (as needed)</li>
-            <li>Sensitivity studies + uncertainty-aware comparisons</li>
-          </ul>
-        </article>
-
-        <article class="card svc" data-kind="optimization">
-          <div class="svc-top">
-            <span class="pill"><span class="mini"></span>Optimization</span>
-            <span class="pill" title="Fewer iterations">Speed</span>
-          </div>
-          <h3>Design Optimization & Advisory</h3>
-          <p>Translate simulation results into practical recommendations—geometry changes, tolerances, and operating windows.</p>
-          <ul>
-            <li>Drag reduction, noise mitigation, cavitation avoidance</li>
-            <li>Cooling improvements and hotspot elimination</li>
-            <li>Energy efficiency gains in ducts/pipes/pumps</li>
-          </ul>
-        </article>
-
-        <article class="card svc" data-kind="prototype">
-          <div class="svc-top">
-            <span class="pill"><span class="mini"></span>Virtual Prototyping</span>
-            <span class="pill" title="Compare variants">DOE</span>
-          </div>
-          <h3>Virtual Prototyping & Simulation-Driven Design</h3>
-          <p>Evaluate multiple design variants quickly with structured design-of-experiments (DOE) and trade-off maps.</p>
-          <ul>
-            <li>Baseline vs. improved concepts with quantified deltas</li>
-            <li>Constraint-aware recommendations (manufacturing, cost)</li>
-            <li>Prototype-ready specs and verification plan</li>
-          </ul>
-        </article>
-
-        <article class="card svc" data-kind="implementation">
-          <div class="svc-top">
-            <span class="pill"><span class="mini"></span>Implementation</span>
-            <span class="pill" title="Enable internal teams">Training</span>
-          </div>
-          <h3>Software & Workflow Enablement</h3>
-          <p>Help teams implement CFD tools and processes: setup, validation, templates, and training for repeatable results.</p>
-          <ul>
-            <li>Best-practice modeling workflows + QA checklists</li>
-            <li>Geometry/mesh/solver templates for internal reuse</li>
-            <li>Onboarding and support for engineers</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <!-- EXAMPLES -->
-    <section id="examples">
-      <div class="section-head">
-        <div>
-          <h2>Technical Advisory Examples</h2>
-          <p>Concrete, client-friendly examples you can list under “Technical Advisory”—filter by domain and use-case.</p>
-        </div>
-      </div>
-
-      <div class="filters">
-        <input id="search" class="search" type="search" placeholder="Search examples (e.g., cooling, drag, pumps, HVAC)..." aria-label="Search examples" />
-        <div class="filterbar" aria-label="Filters">
-          <button class="chip active" data-filter="all">All</button>
-          <button class="chip" data-filter="aero">Aerospace</button>
-          <button class="chip" data-filter="auto">Automotive</button>
-          <button class="chip" data-filter="energy">Energy</button>
-          <button class="chip" data-filter="electronics">Electronics</button>
-          <button class="chip" data-filter="industrial">Industrial</button>
-          <button class="chip" data-filter="fluid-systems">Fluid Systems</button>
-        </div>
-      </div>
-
-      <div id="exampleGrid" class="grid examples">
-        <article class="card ex" data-domain="aero" data-text="airfoil wing drag lift separation stall boundary layer">
-          <span class="pill"><span class="mini"></span>Advisory Brief</span>
-          <h3>Drag/Lift Diagnostics for a UAV Wing</h3>
-          <p>Identify separation regions, quantify drag contributors, and recommend geometry refinements to meet range targets.</p>
-          <div class="meta">
-            <span class="tag"><span class="sq"></span>Aerospace</span>
-            <span class="tag"><span class="sq"></span>Aerodynamics</span>
-            <span class="tag"><span class="sq"></span>Design optimization</span>
-          </div>
-        </article>
-
-        <article class="card ex" data-domain="auto" data-text="vehicle underbody drag wake side mirrors aero noise">
-          <span class="pill"><span class="mini"></span>Advisory Brief</span>
-          <h3>Wake & Underbody Flow Optimization</h3>
-          <p>Reduce drag and wind noise by optimizing underbody panels and wake management—validated against target speed points.</p>
-          <div class="meta">
-            <span class="tag"><span class="sq"></span>Automotive</span>
-            <span class="tag"><span class="sq"></span>Drag reduction</span>
-            <span class="tag"><span class="sq"></span>Virtual prototyping</span>
-          </div>
-        </article>
-
-        <article class="card ex" data-domain="electronics" data-text="electronics cooling heat sink fan thermal hotspot enclosure">
-          <span class="pill"><span class="mini"></span>Advisory Brief</span>
-          <h3>Electronics Cooling: Hotspot Elimination</h3>
-          <p>Model enclosure airflow and heat sink performance; recommend fan curves, vent placement, and thermal interface changes.</p>
-          <div class="meta">
-            <span class="tag"><span class="sq"></span>Electronics</span>
-            <span class="tag"><span class="sq"></span>Thermal</span>
-            <span class="tag"><span class="sq"></span>Implementation</span>
-          </div>
-        </article>
-
-        <article class="card ex" data-domain="energy" data-text="turbine blade cooling combustion exhaust mixing heat transfer">
-          <span class="pill"><span class="mini"></span>Advisory Brief</span>
-          <h3>Thermal/Flow Assessment for Energy Systems</h3>
-          <p>Quantify heat transfer and flow losses, propose operating windows and redesign options to improve efficiency.</p>
-          <div class="meta">
-            <span class="tag"><span class="sq"></span>Energy</span>
-            <span class="tag"><span class="sq"></span>Heat transfer</span>
-            <span class="tag"><span class="sq"></span>Risk reduction</span>
-          </div>
-        </article>
-
-        <article class="card ex" data-domain="industrial" data-text="hvac duct pressure drop ventilation mixing indoor air quality">
-          <span class="pill"><span class="mini"></span>Advisory Brief</span>
-          <h3>HVAC & Ventilation Performance Review</h3>
-          <p>Evaluate duct losses and airflow distribution; improve mixing, reduce pressure drop, and enhance comfort constraints.</p>
-          <div class="meta">
-            <span class="tag"><span class="sq"></span>Industrial</span>
-            <span class="tag"><span class="sq"></span>HVAC</span>
-            <span class="tag"><span class="sq"></span>Decision support</span>
-          </div>
-        </article>
-
-        <article class="card ex" data-domain="fluid-systems" data-text="pump valve cavitation pipe network pressure pulsation water hammer">
-          <span class="pill"><span class="mini"></span>Advisory Brief</span>
-          <h3>Pumps/Valves: Cavitation & Loss Diagnostics</h3>
-          <p>Assess cavitation risk, pressure losses, and transients; recommend design or operating adjustments to reduce failures.</p>
-          <div class="meta">
-            <span class="tag"><span class="sq"></span>Fluid Systems</span>
-            <span class="tag"><span class="sq"></span>Reliability</span>
-            <span class="tag"><span class="sq"></span>Optimization</span>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- WORKFLOW -->
-    <section id="workflow">
-      <div class="section-head">
-        <div>
-          <h2>Delivery Workflow</h2>
-          <p>A clean, repeatable process you can describe to clients—high trust, low ambiguity, and decision-ready outputs.</p>
-        </div>
-      </div>
-
-      <div class="flow">
-        <div class="step">
-          <b>01</b>
-          <h4>Scope & Success Metrics</h4>
-          <p>Define objectives, constraints, operating conditions, and what “better” means (KPIs, compliance, safety margins).</p>
-        </div>
-        <div class="step">
-          <b>02</b>
-          <h4>Model Setup & Validation Plan</h4>
-          <p>Geometry cleanup, boundary conditions, mesh strategy, and validation targets (benchmarks, tests, prior data).</p>
-        </div>
-        <div class="step">
-          <b>03</b>
-          <h4>Simulation + Sensitivity Studies</h4>
-          <p>Run baseline, variants, and sensitivities; quantify trade-offs; confirm that conclusions are stable and meaningful.</p>
-        </div>
-        <div class="step">
-          <b>04</b>
-          <h4>Recommendations & Next Steps</h4>
-          <p>Deliver a concise decision memo, annotated visuals, and a prioritized roadmap for implementation and verification.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ENGAGEMENT MODELS -->
-    <section id="engagement">
-      <div class="section-head">
-        <div>
-          <h2>Engagement Options</h2>
-          <p>Use these as “packages” or client-friendly entry points for technical advisory.</p>
-        </div>
-      </div>
-
-      <div class="grid" style="grid-template-columns: repeat(3, minmax(0,1fr));">
-        <div class="card">
-          <span class="pill"><span class="mini"></span>Rapid Assessment</span>
-          <h3 style="margin:10px 0 8px; font-size:16px;">2–10 days</h3>
-          <p style="margin:0; color:var(--muted); line-height:1.55;">
-            A fast, structured review: feasibility, primary risks, and a clear plan (what to simulate, what to measure, what to change).
-          </p>
-          <ul style="margin:12px 0 0; padding-left:18px; color:var(--muted2); line-height:1.55; font-size:13px;">
-            <li>Quick baseline model + sanity checks</li>
-            <li>Top 3–5 improvement levers</li>
-            <li>Decision memo + next steps</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <span class="pill"><span class="mini"></span>Optimization Sprint</span>
-          <h3 style="margin:10px 0 8px; font-size:16px;">2–6 weeks</h3>
-          <p style="margin:0; color:var(--muted); line-height:1.55;">
-            Run variants, map trade-offs, and converge on a design direction aligned with constraints (manufacturing, cost, safety).
-          </p>
-          <ul style="margin:12px 0 0; padding-left:18px; color:var(--muted2); line-height:1.55; font-size:13px;">
-            <li>DOE + sensitivity + robust comparisons</li>
-            <li>Ranked recommendations with quantified deltas</li>
-            <li>Prototype/verification plan</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <span class="pill"><span class="mini"></span>Enablement & Training</span>
-          <h3 style="margin:10px 0 8px; font-size:16px;">Ongoing</h3>
-          <p style="margin:0; color:var(--muted); line-height:1.55;">
-            Build internal capability: workflows, templates, QA, and mentoring—so teams can deliver consistent CFD results at scale.
-          </p>
-          <ul style="margin:12px 0 0; padding-left:18px; color:var(--muted2); line-height:1.55; font-size:13px;">
-            <li>Modeling standards + checklists</li>
-            <li>Reusable templates & documentation</li>
-            <li>Office hours + technical reviews</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA / CONTACT -->
-    <section id="contact">
-      <div class="cta">
-        <div>
-          <h3>Ready to present “Technical Advisory” on your site?</h3>
-          <p>
-            Replace the brand name, add your email/Calendly link, and adjust the examples to match your strengths.
-            This template is designed to look <b>prestigious</b>, modern, and clear—without flashy colors or clutter.
-          </p>
-        </div>
-        <div class="actions">
-          <a class="btn primary" href="mailto:info@example.com"><span class="dot"></span>Email for consult</a>
-          <a class="btn" href="#top">Back to top</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ADVANCED METHODS & EXPERIENCE -->
-<section id="methods-expertise">
   <div class="section-head">
-    <div>
-      <h2>Advanced CFD Numerical Methods & Proven Expertise</h2>
-      <p>
-        Modern computational fluid dynamics advisory requires not only software proficiency,
-        but deep understanding of numerical methods, validation practices, and real-world benchmarking.
-      </p>
-    </div>
+    <h2>Advanced Computational Fluid Dynamics (CFD) & Technical Advisory</h2>
+    <p>
+      ITECCS provides high-fidelity computational fluid dynamics advisory grounded in rigorous numerical methods,
+      validated simulation workflows, and production-ready digital twin modeling—supporting aerospace, biomedical,
+      energy, automotive, civil infrastructure, electronics, and industrial engineering systems.
+    </p>
+    <div class="accent-line"></div>
   </div>
 
-  <div class="grid" style="grid-template-columns: repeat(2, minmax(0,1fr)); gap:18px;">
-    
-    <!-- Modern Methods -->
+  <!-- CORE METHODS -->
+  <div class="card-grid">
+
     <div class="card">
-      <span class="pill"><span class="mini"></span>Modern Numerical Methods</span>
-      <h3 style="margin:12px 0 8px;">State-of-the-Art CFD Techniques</h3>
-      <p style="margin:0; color:var(--muted); line-height:1.6;">
-        Our advisory integrates modern, high-fidelity, and computationally efficient CFD methodologies,
-        enabling accurate and production-ready digital models.
-      </p>
-      <ul style="margin:14px 0 0; padding-left:18px; color:var(--muted2); line-height:1.6;">
-        <li>Finite Volume & Finite Element formulations for complex geometries</li>
-        <li>High-order discretization schemes for improved accuracy</li>
-        <li>RANS, LES, and hybrid turbulence modeling</li>
-        <li>Adaptive mesh refinement (AMR)</li>
-        <li>Multiphase flow & dispersed particle modeling</li>
-        <li>Conjugate heat transfer and radiation modeling</li>
-        <li>GPU-accelerated solvers & HPC parallelization</li>
-        <li>Uncertainty quantification & sensitivity analysis</li>
+      <h3><i class="fas fa-square-root-variable"></i> Modern CFD Numerical Methods</h3>
+      <ul>
+        <li>Finite Volume (FVM), Finite Element (FEM), and Discontinuous Galerkin (DG)</li>
+        <li>High-order ENO/WENO and spectral discretization schemes</li>
+        <li>Large Eddy Simulation (LES), RANS, and hybrid turbulence models</li>
+        <li>Multiphase, free-surface, and dispersed particle flow modeling</li>
+        <li>Adaptive mesh refinement (AMR) and mesh-independent verification</li>
+        <li>Conjugate heat transfer and thermo-fluid coupling</li>
+        <li>Stability analysis and transition-to-turbulence prediction</li>
+        <li>GPU-accelerated and HPC-parallel CFD solvers</li>
       </ul>
     </div>
 
-    <!-- Experience & Validation -->
     <div class="card">
-      <span class="pill"><span class="mini"></span>Experience & Validation</span>
-      <h3 style="margin:12px 0 8px;">Benchmarking & Real-World Verification</h3>
-      <p style="margin:0; color:var(--muted); line-height:1.6;">
-        In computational fluid dynamics—and in all advanced engineering simulation—experience determines
-        whether a model is a superficial visualization or a true digital twin capable of guiding production.
+      <h3><i class="fas fa-microchip"></i> Digital Twin & Predictive Simulation</h3>
+      <ul>
+        <li>Physics-based digital twin construction and calibration</li>
+        <li>Simulation validated against experimental and field data</li>
+        <li>Predictive performance modeling prior to manufacturing</li>
+        <li>Sensitivity analysis and uncertainty quantification</li>
+        <li>Optimization of fluid, thermal, and multiphysics systems</li>
+        <li>Design-to-production modeling pipelines</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><i class="fas fa-shield-halved"></i> Validation, Verification & Reliability</h3>
+      <p>
+        In computational fluid dynamics and advanced engineering simulation, experience determines whether
+        a computational model represents a superficial visualization or a true predictive digital twin capable
+        of guiding design into production.
       </p>
-      <p style="margin-top:10px; color:var(--muted2); line-height:1.6;">
-        Our work is extensively benchmarked against laboratory experiments, field measurements,
-        and in-service performance data to ensure predictive reliability.
-      </p>
+      <ul>
+        <li>Benchmarking against laboratory experiments</li>
+        <li>Validation using in-service operational performance data</li>
+        <li>Model verification and convergence analysis</li>
+        <li>Reliable engineering-grade predictive modeling</li>
+      </ul>
     </div>
 
   </div>
 
-  <!-- Industry Portfolio -->
-  <div class="card" style="margin-top:18px;">
-    <span class="pill"><span class="mini"></span>Selected Case Domains</span>
-    <h3 style="margin:12px 0 10px;">Representative CFD Advisory Experience</h3>
-    <p style="margin:0; color:var(--muted); line-height:1.6;">
-      Years of applied CFD project work across diverse industries have shaped a portfolio of validated,
-      high-impact engineering solutions.
+  <!-- INDUSTRY EXPERIENCE -->
+  <div style="margin-top:40px;" class="section-head">
+    <h2>Representative CFD Advisory & Simulation Domains</h2>
+    <p>
+      Extensive CFD advisory experience across diverse engineering sectors demonstrates validated predictive capability
+      and production-grade modeling reliability.
     </p>
+    <div class="accent-line"></div>
+  </div>
 
-    <div class="grid" style="grid-template-columns: repeat(3, minmax(0,1fr)); gap:12px; margin-top:16px;">
-      <div class="card" style="background:rgba(255,255,255,.04);">
-        <h4 style="margin:0 0 6px; font-size:14px;">Aerospace & Space Systems</h4>
-        <p style="margin:0; color:var(--muted2); font-size:13px;">
-          Space-based communications equipment, aerodynamic drag analysis, high-altitude flow regimes.
-        </p>
-      </div>
+  <div class="card-grid">
 
-      <div class="card" style="background:rgba(255,255,255,.04);">
-        <h4 style="margin:0 0 6px; font-size:14px;">Energy & Civil Infrastructure</h4>
-        <p style="margin:0; color:var(--muted2); font-size:13px;">
-          Hydroelectric spillways, bio-fuel combustion systems, thermal energy optimization.
-        </p>
-      </div>
-
-      <div class="card" style="background:rgba(255,255,255,.04);">
-        <h4 style="margin:0 0 6px; font-size:14px;">Medical & Biomedical</h4>
-        <p style="margin:0; color:var(--muted2); font-size:13px;">
-          Medical flow devices, bio-fluid transport, patient-specific modeling.
-        </p>
-      </div>
-
-      <div class="card" style="background:rgba(255,255,255,.04);">
-        <h4 style="margin:0 0 6px; font-size:14px;">Marine & Automotive</h4>
-        <p style="margin:0; color:var(--muted2); font-size:13px;">
-          Hydrodynamic resistance, wake structures, drag reduction strategies.
-        </p>
-      </div>
-
-      <div class="card" style="background:rgba(255,255,255,.04);">
-        <h4 style="margin:0 0 6px; font-size:14px;">Electronics & Data Centers</h4>
-        <p style="margin:0; color:var(--muted2); font-size:13px;">
-          Power electronics cooling, airflow optimization, thermal reliability enhancement.
-        </p>
-      </div>
-
-      <div class="card" style="background:rgba(255,255,255,.04);">
-        <h4 style="margin:0 0 6px; font-size:14px;">Industrial & HVAC Systems</h4>
-        <p style="margin:0; color:var(--muted2); font-size:13px;">
-          Air handling systems, dispersed particle flow, ventilation efficiency.
-        </p>
-      </div>
+    <div class="card">
+      <h3><i class="fas fa-plane"></i> Aerospace & Space Systems</h3>
+      <ul>
+        <li>Aerodynamic drag and flow optimization</li>
+        <li>Space-based communication systems thermal analysis</li>
+        <li>High-altitude and compressible flow modeling</li>
+        <li>Flight stability and performance prediction</li>
+      </ul>
     </div>
 
-    <p style="margin-top:16px; color:var(--muted); line-height:1.6;">
-      Beyond graphical case studies, a searchable technical portfolio documents validated simulations,
-      providing transparent evidence of successful CFD advisory engagements.
+    <div class="card">
+      <h3><i class="fas fa-heart-pulse"></i> Biomedical & Medical Systems</h3>
+      <ul>
+        <li>Medical flow device simulation</li>
+        <li>Physiological and biofluid transport modeling</li>
+        <li>Patient-specific biomedical simulation</li>
+        <li>Thermal and fluid performance of medical equipment</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><i class="fas fa-bolt"></i> Energy & Power Systems</h3>
+      <ul>
+        <li>Biofuel combustion and thermal systems</li>
+        <li>Hydroelectric spillway flow modeling</li>
+        <li>Turbine cooling and efficiency optimization</li>
+        <li>Energy system multiphysics simulation</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><i class="fas fa-server"></i> Electronics & Data Centers</h3>
+      <ul>
+        <li>Power electronics cooling optimization</li>
+        <li>Data center airflow and thermal performance</li>
+        <li>Heat sink and enclosure flow modeling</li>
+        <li>Thermal reliability prediction</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><i class="fas fa-industry"></i> Industrial & HVAC Systems</h3>
+      <ul>
+        <li>HVAC airflow and ventilation optimization</li>
+        <li>Air handling and environmental systems</li>
+        <li>Particle transport and multiphase flows</li>
+        <li>Industrial process simulation</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><i class="fas fa-car"></i> Automotive & Marine Engineering</h3>
+      <ul>
+        <li>Vehicle aerodynamics and drag reduction</li>
+        <li>Hydrodynamic performance modeling</li>
+        <li>Wake structure and resistance analysis</li>
+        <li>Fluid-structure interaction modeling</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- EXPERIENCE STATEMENT -->
+  <div style="margin-top:40px;" class="card">
+    <h3><i class="fas fa-award"></i> Experience-Driven Predictive Engineering Advantage</h3>
+
+    <p style="margin-top:10px;">
+      Years of computational fluid dynamics project work across medical, aerospace, marine, HVAC, civil,
+      automotive, and industrial engineering domains have established validated predictive modeling capability.
+      These simulations are benchmarked against experimental measurements and operational system performance,
+      ensuring engineering-grade accuracy and reliability.
     </p>
 
-    <p style="margin-top:12px; color:var(--muted2); line-height:1.6;">
-      Our competitive advantage lies in transforming computational models into
-      robust digital twins—models that withstand experimental scrutiny and confidently guide design into production.
+    <p>
+      A comprehensive portfolio of CFD advisory and simulation projects—including space systems, biofuel combustion,
+      aerodynamic optimization, hydroelectric systems, dispersed particle flows, electronics cooling, and industrial
+      airflow—demonstrates the ability to translate advanced numerical simulation into deployable engineering solutions.
     </p>
+
+    <p>
+      This experience ensures that computational models developed through ITECCS represent validated predictive
+      digital twins capable of supporting engineering design, optimization, and production deployment.
+    </p>
+
   </div>
 
 </section>
-
-    <footer>
-      <div class="foot">
-        <div class="fine">
-          <div><b>Note:</b> This page is an example presentation for CFD advisory services.</div>
-          <div>Tip: replace <code>info@example.com</code> with your contact email, and tailor the examples to your actual offerings.</div>
-        </div>
-        <div class="fine">© <span id="yr"></span> Technical Advisory</div>
-      </div>
-    </footer>
-
-  </main>
-
-  <script>
-    // Lightweight filtering (no external libraries)
-    const chips = Array.from(document.querySelectorAll(".chip"));
-    const search = document.getElementById("search");
-    const cards = Array.from(document.querySelectorAll("#exampleGrid .ex"));
-    const yearEl = document.getElementById("yr");
-
-    yearEl.textContent = new Date().getFullYear();
-
-    let activeFilter = "all";
-    let query = "";
-
-    function applyFilters(){
-      const q = query.trim().toLowerCase();
-
-      cards.forEach(card => {
-        const domain = card.getAttribute("data-domain");
-        const hay = (card.getAttribute("data-text") || "") + " " + card.textContent;
-        const matchesDomain = (activeFilter === "all") || (domain === activeFilter);
-        const matchesQuery = !q || hay.toLowerCase().includes(q);
-
-        card.style.display = (matchesDomain && matchesQuery) ? "" : "none";
-      });
-    }
-
-    chips.forEach(btn => {
-      btn.addEventListener("click", () => {
-        chips.forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-        activeFilter = btn.getAttribute("data-filter");
-        applyFilters();
-      });
-    });
-
-    search.addEventListener("input", (e) => {
-      query = e.target.value || "";
-      applyFilters();
-    });
-  </script>
-
-</body>
-</html>
