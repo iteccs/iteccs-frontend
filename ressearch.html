@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T85X67KT5F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-T85X67KT5F');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Research | ITECCS Institute for Applied Mathematics, AI & Scientific Computing</title>
+  <meta name="description" content="ITECCS advances research in applied mathematics, artificial intelligence, scientific computing, computational modeling, inverse problems, porous media, fluid mechanics, biomedical simulation, digital twins, and high-performance computing." />
+  <meta name="keywords" content="ITECCS research, applied mathematics research, scientific computing, artificial intelligence for science, computational modeling, inverse problems, fluid mechanics, porous media, biomedical simulation, digital twins, high-performance computing, engineering simulation" />
+  <meta name="author" content="ITECCS" />
+  <meta name="robots" content="index, follow" />
+
+  <link rel="canonical" href="https://iteccs.com/research.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Research | ITECCS" />
+  <meta property="og:description" content="Advanced research in applied mathematics, AI, scientific computing, computational modeling, inverse problems, porous media, fluid mechanics, biomedical simulation, and high-performance computing." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://iteccs.com/research.html" />
+  <meta property="og:site_name" content="ITECCS" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Research | ITECCS" />
+  <meta name="twitter:description" content="ITECCS research in applied mathematics, AI, scientific computing, engineering simulation, and high-performance computing." />
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Research | ITECCS",
+    "url": "https://iteccs.com/research.html",
+    "description": "ITECCS research programs in applied mathematics, artificial intelligence, scientific computing, computational modeling, inverse problems, porous media, fluid mechanics, biomedical simulation, digital twins, and high-performance computing.",
+    "isPartOf": {
+      "@type": "EducationalOrganization",
+      "name": "ITECCS – Institute of Technology for Computational and Complex Systems",
+      "url": "https://iteccs.com"
+    },
+    "about": [
+      "Applied Mathematics",
+      "Artificial Intelligence",
+      "Scientific Computing",
+      "Computational Modeling",
+      "Inverse Problems",
+      "Fluid Mechanics",
+      "Porous Media",
+      "Biomedical Simulation",
+      "Digital Twins",
+      "High Performance Computing"
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root{
+      --navy:#07101f;
+      --navy2:#0b2a5b;
+      --slate:#0f172a;
+      --muted:#475569;
+      --muted2:#64748b;
+      --bg:#f4f7fb;
+      --card:#ffffff;
+      --line:rgba(15,23,42,0.10);
+      --gold:#f6c453;
+      --gold2:#d9a83a;
+      --ring:rgba(246,196,83,0.32);
+      --shadow:0 22px 70px rgba(2,6,23,0.12);
+      --shadow2:0 14px 40px rgba(2,6,23,0.10);
+      --radius:22px;
+      --radius2:16px;
+      --max:1200px;
+    }
+
+    *{box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{
+      margin:0;
+      font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--slate);
+      background:
+        radial-gradient(1200px 700px at 15% 0%, rgba(246,196,83,0.10), transparent 55%),
+        radial-gradient(900px 540px at 85% 10%, rgba(59,130,246,0.10), transparent 50%),
+        linear-gradient(180deg, #f7f9fe 0%, #eef2f8 100%);
+      line-height:1.7;
+    }
+
+    .navbar{
+      position:sticky;
+      top:0;
+      z-index:50;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:16px 34px;
+      background:rgba(7,16,31,0.90);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid rgba(255,255,255,0.10);
+    }
+    .logo img{height:44px; display:block;}
+    .nav-links{
+      display:flex;
+      gap:22px;
+      list-style:none;
+      margin:0;
+      padding:0;
+      align-items:center;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .nav-links a{
+      color:rgba(255,255,255,0.92);
+      text-decoration:none;
+      font-weight:650;
+      font-size:0.95rem;
+      transition:.2s ease;
+      opacity:.95;
+    }
+    .nav-links a:hover{opacity:1; color:var(--gold);}
+    .contact-nav-button{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 16px;
+      border-radius:999px;
+      font-weight:850;
+      color:#1b2333 !important;
+      background:linear-gradient(135deg,var(--gold) 0%, var(--gold2) 100%);
+      border:1px solid rgba(255,255,255,0.18);
+      box-shadow:0 14px 28px rgba(246,196,83,0.18);
+    }
+
+    .content{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:26px 18px 70px;
+    }
+
+    .elite-hero{
+      position:relative;
+      overflow:hidden;
+      border-radius:var(--radius);
+      padding:44px 28px;
+      color:#fff;
+      background:
+        radial-gradient(800px 360px at 15% 0%, rgba(246,196,83,0.20), transparent 60%),
+        linear-gradient(135deg, #07101f 0%, #0b1630 52%, #0b2a5b 100%);
+      border:1px solid rgba(255,255,255,0.12);
+      box-shadow:0 30px 80px rgba(0,0,0,0.25);
+    }
+    .elite-hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(700px 280px at 85% 10%, rgba(255,255,255,0.08), transparent 55%),
+        linear-gradient(90deg, rgba(0,0,0,0.35), rgba(0,0,0,0.05));
+      pointer-events:none;
+    }
+    .elite-hero-inner{
+      position:relative;
+      display:grid;
+      grid-template-columns:1.6fr 1fr;
+      gap:26px;
+      align-items:center;
+    }
+    .elite-eyebrow{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      font-size:0.78rem;
+      letter-spacing:0.14em;
+      text-transform:uppercase;
+      font-weight:850;
+      color:#38bdf8;
+      margin:0 0 10px;
+    }
+    .elite-eyebrow::before{
+      content:"";
+      width:28px;
+      height:2px;
+      border-radius:999px;
+      background:linear-gradient(90deg,var(--gold), rgba(246,196,83,0.12));
+    }
+    .elite-hero h1{
+      margin:0 0 10px;
+      font-size:clamp(2.1rem, 3vw, 2.9rem);
+      font-weight:950;
+      letter-spacing:-0.02em;
+      line-height:1.08;
+      color:#fff;
+    }
+    .elite-hero p{
+      margin:0;
+      color:rgba(255,255,255,0.92);
+      font-size:1.06rem;
+      line-height:1.9;
+      max-width:62ch;
+    }
+
+    .hero-panel{
+      justify-self:end;
+      width:min(380px, 100%);
+      background:linear-gradient(135deg, rgba(255,255,255,0.10), rgba(255,255,255,0.05));
+      border:1px solid rgba(255,255,255,0.14);
+      border-radius:18px;
+      padding:18px;
+      box-shadow:0 18px 50px rgba(0,0,0,0.22);
+      backdrop-filter: blur(10px);
+    }
+    .hero-panel h3{
+      margin:0 0 10px;
+      color:#fff;
+      font-weight:900;
+      font-size:1.05rem;
+    }
+    .hero-panel p{
+      color:rgba(255,255,255,0.88);
+      font-size:0.96rem;
+      line-height:1.8;
+      margin:0;
+    }
+
+    .hero-actions{
+      margin-top:18px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:12px 18px;
+      border-radius:999px;
+      font-weight:900;
+      text-decoration:none;
+      border:1px solid transparent;
+      transition:.18s ease;
+      white-space:nowrap;
+    }
+    .btn-primary{
+      background:linear-gradient(135deg,var(--gold) 0%, var(--gold2) 100%);
+      color:#182235;
+      box-shadow:0 16px 34px rgba(246,196,83,0.20);
+      border:1px solid rgba(255,255,255,0.16);
+    }
+    .btn-primary:hover{transform:translateY(-1px); filter:brightness(1.02);}
+    .btn-outline{
+      background:rgba(255,255,255,0.08);
+      color:#fff;
+      border-color:rgba(255,255,255,0.25);
+    }
+    .btn-outline:hover{transform:translateY(-1px); background:rgba(255,255,255,0.12);}
+
+    .section-head{
+      text-align:center;
+      margin:38px auto 14px;
+      max-width:980px;
+    }
+    .section-head h2{
+      margin:0 0 10px;
+      font-size:2rem;
+      color:var(--slate);
+      font-weight:950;
+      letter-spacing:-0.02em;
+    }
+    .section-head p{
+      margin:0;
+      color:var(--muted2);
+      line-height:1.85;
+      font-size:1.02rem;
+    }
+    .accent-line{
+      width:92px;
+      height:4px;
+      margin:12px auto 0;
+      border-radius:999px;
+      background:linear-gradient(90deg,var(--gold), rgba(11,42,91,0.20));
+    }
+
+    .insight-band{
+      margin-top:18px;
+      background:rgba(255,255,255,0.92);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:var(--shadow2);
+    }
+    .insight-grid{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:14px;
+    }
+    .insight-card{
+      background:rgba(246,248,252,0.96);
+      border:1px solid rgba(15,23,42,0.10);
+      border-radius:18px;
+      padding:16px;
+    }
+    .insight-card .num{
+      display:block;
+      font-size:1.65rem;
+      font-weight:950;
+      color:var(--navy2);
+      letter-spacing:-0.02em;
+    }
+    .insight-card .lbl{
+      display:block;
+      margin-top:4px;
+      color:var(--muted);
+      font-weight:700;
+      font-size:0.92rem;
+      line-height:1.35;
+    }
+
+    .card-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+      margin-top:18px;
+    }
+    .card{
+      background:rgba(255,255,255,0.94);
+      padding:22px;
+      border-radius:16px;
+      border:1px solid rgba(15,23,42,0.10);
+      box-shadow:0 14px 34px rgba(2,6,23,0.08);
+      transition:0.25s ease;
+    }
+    .card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 24px 60px rgba(2,6,23,0.14);
+    }
+    .card h3{
+      color:var(--navy2);
+      margin:0 0 12px;
+      font-size:1.06rem;
+      font-weight:950;
+      letter-spacing:-0.01em;
+    }
+    .card p{
+      margin:0;
+      color:#334155;
+      line-height:1.75;
+      font-size:0.96rem;
+      font-weight:550;
+    }
+    .card ul{
+      padding-left:20px;
+      margin:10px 0 0;
+      color:#334155;
+      line-height:1.68;
+      font-size:0.95rem;
+      font-weight:550;
+    }
+    .card li{ margin:0 0 6px; }
+
+    .focus-panel{
+      margin-top:18px;
+      background:
+        radial-gradient(700px 260px at 15% 0%, rgba(246,196,83,0.20), transparent 60%),
+        linear-gradient(135deg, #07101f 0%, #0b2a5b 55%, #0b1630 100%);
+      border:1px solid rgba(255,255,255,0.12);
+      border-radius:var(--radius);
+      padding:22px 18px;
+      color:#fff;
+      box-shadow:0 26px 70px rgba(0,0,0,0.20);
+    }
+    .focus-panel h3{
+      margin:0 0 10px;
+      font-weight:950;
+      letter-spacing:-0.01em;
+    }
+    .focus-panel p{
+      margin:0;
+      color:rgba(255,255,255,0.90);
+      max-width:980px;
+      line-height:1.85;
+      font-weight:550;
+    }
+
+    .cta-box{
+      margin-top:22px;
+      background:rgba(255,255,255,0.92);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:28px 22px;
+      box-shadow:var(--shadow2);
+      text-align:center;
+    }
+    .cta-box h2{
+      margin:0 0 10px;
+      font-size:1.9rem;
+      color:var(--slate);
+      font-weight:950;
+      letter-spacing:-0.02em;
+    }
+    .cta-box p{
+      margin:0 auto 18px;
+      color:var(--muted);
+      line-height:1.85;
+      max-width:900px;
+      font-weight:550;
+    }
+
+    footer{
+      margin-top:18px;
+      padding:22px 12px;
+      text-align:center;
+      color:rgba(255,255,255,0.82);
+      background:rgba(7,16,31,0.92);
+      border-top:1px solid rgba(255,255,255,0.10);
+    }
+    footer p{margin:0; font-weight:650;}
+
+    @media(max-width:1000px){
+      .elite-hero-inner{grid-template-columns:1fr;}
+      .hero-panel{justify-self:start;}
+      .insight-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+      .card-grid{grid-template-columns:repeat(2,1fr);}
+      .navbar{padding:14px 18px;}
+    }
+    @media(max-width:700px){
+      .card-grid{grid-template-columns:1fr;}
+      .insight-grid{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="ITECCS Logo">
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="founder.html">Who We Are</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="program.html">Research & Innovation Programs</a></li>
+      <li><a href="education.html">Education & Professional Training</a></li>
+      <li><a href="consulting.html">Industry Collaboration & Technical Advisory</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li>
+        <a href="contact.html" class="contact-nav-button">
+          <i class="fas fa-envelope"></i> Contact Us
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <main class="content">
+
+    <section class="elite-hero" aria-label="ITECCS Research Hero">
+      <div class="elite-hero-inner">
+        <div>
+          <div class="elite-eyebrow">ITECCS · Research</div>
+          <h1>Research at ITECCS</h1>
+          <p>
+            ITECCS conducts interdisciplinary research at the intersection of applied mathematics,
+            artificial intelligence, scientific computing, and engineering innovation. Our research
+            develops rigorous mathematical models, advanced numerical methods, scalable simulation
+            frameworks, and deployable computational systems to address complex scientific and
+            technological challenges across academia, industry, healthcare, energy, and mission-critical environments.
+          </p>
+
+          <div class="hero-actions">
+            <a href="publications.html" class="btn btn-primary"><i class="fas fa-book-open"></i> View Publications</a>
+            <a href="program.html" class="btn btn-outline"><i class="fas fa-layer-group"></i> Research Programs</a>
+            <a href="contact.html" class="btn btn-outline"><i class="fas fa-handshake"></i> Collaborate</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel">
+          <h3>Research Mission</h3>
+          <p>
+            Our mission is to advance research, innovation, and computational capability through
+            mathematically grounded, scientifically rigorous, and technologically relevant work
+            that can translate from theory and simulation into real-world impact.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="insight-band" aria-label="Research Highlights">
+      <div class="insight-grid">
+        <div class="insight-card">
+          <span class="num">Applied</span>
+          <span class="lbl">Mathematics & Modeling</span>
+        </div>
+        <div class="insight-card">
+          <span class="num">AI</span>
+          <span class="lbl">for Science & Engineering</span>
+        </div>
+        <div class="insight-card">
+          <span class="num">HPC</span>
+          <span class="lbl">Simulation & Scalable Computing</span>
+        </div>
+        <div class="insight-card">
+          <span class="num">Impact</span>
+          <span class="lbl">Research to Deployment</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-head">
+      <h2>Core Research Areas</h2>
+      <p>
+        The ITECCS research portfolio spans foundational theory, scientific algorithms,
+        computational modeling, and applied engineering systems. Our work is designed to
+        advance knowledge while enabling validated, deployable solutions.
+      </p>
+      <div class="accent-line"></div>
+    </section>
+
+    <section class="card-grid">
+      <div class="card">
+        <h3><i class="fas fa-square-root-variable"></i> Applied Mathematics & Dynamical Systems</h3>
+        <p>
+          Research in partial differential equations, nonlinear dynamics, stability theory,
+          dynamical systems, stochastic modeling, and uncertainty-aware mathematical frameworks
+          for complex physical and engineering processes.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3><i class="fas fa-gears"></i> Scientific Computing & Numerical Methods</h3>
+        <p>
+          Development of advanced numerical algorithms, high-order discretization techniques,
+          scalable solvers, and scientific simulation tools for multiphysics systems and
+          large-scale engineering applications.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3><i class="fas fa-microchip"></i> Artificial Intelligence for Science & Engineering</h3>
+        <p>
+          Physics-informed machine learning, scientific machine learning, data-driven modeling,
+          inverse methods, uncertainty quantification, and hybrid AI-simulation frameworks for
+          predictive scientific and engineering systems.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3><i class="fas fa-water"></i> Fluid Mechanics, Stability & Turbulence</h3>
+        <p>
+          Research on hydrodynamic stability, complex and viscoelastic flows, multiphase
+          instabilities, free-surface dynamics, and transition-to-turbulence mechanisms using
+          rigorous analysis and high-fidelity simulation.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3><i class="fas fa-layer-group"></i> Porous Media, Multiscale Transport & Volume Averaging</h3>
+        <p>
+          Research on multiscale transport, swelling porous materials, unsaturated flow,
+          micro-to-macro upscaling, and predictive modeling of coupled transport and deformation
+          in engineering, energy, and biomedical systems.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3><i class="fas fa-magnifying-glass-chart"></i> Inverse Problems & Computational Imaging</h3>
+        <p>
+          Computational imaging, inverse modeling, regularization, wavelet-based reconstruction,
+          meshless methods, parameter estimation, and uncertainty-aware imaging frameworks for
+          scientific, industrial, and biomedical applications.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3><i class="fas fa-heart-pulse"></i> Computational Medicine & Biomedical Simulation</h3>
+        <p>
+          Advanced physiological modeling, multiscale biomedical transport, patient-specific
+          inference, medical imaging analysis, and AI-integrated simulation approaches supporting
+          translational biomedical research and precision medicine.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3><i class="fas fa-server"></i> High-Performance Computing & Scalable Simulation</h3>
+        <p>
+          Parallel algorithms, GPU acceleration, scalable numerical linear algebra,
+          cloud-enabled scientific workflows, and reproducible high-performance computing
+          pipelines for large computational workloads.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3><i class="fas fa-cube"></i> Digital Twins & Intelligent Computational Systems</h3>
+        <p>
+          Integration of mechanistic models, simulation, monitoring, optimization, and
+          AI-enhanced decision support to develop digital twin architectures and intelligent
+          engineering systems.
+        </p>
+      </div>
+    </section>
+
+    <section class="section-head">
+      <h2>Featured Research Projects</h2>
+      <p>
+        Selected interdisciplinary research initiatives developed within ITECCS
+        that integrate applied mathematics, scientific computing, artificial
+        intelligence, and engineering simulation to address complex scientific
+        and technological challenges.
+      </p>
+      <div class="accent-line"></div>
+    </section>
+
+    <section class="card-grid">
+      <div class="card">
+        <h3>AI-Enhanced Scientific Computing</h3>
+        <p>
+          Development of hybrid computational frameworks combining physics-based
+          models with machine learning to accelerate scientific discovery,
+          improve predictive capability, and enable scalable simulation of
+          complex systems.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Multiscale Modeling of Porous Media</h3>
+        <p>
+          Research on volume averaging, multiscale transport, and coupled
+          flow-deformation processes in porous materials, with applications
+          in environmental systems, energy technologies, and biomedical
+          engineering.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Inverse Problems and Computational Imaging</h3>
+        <p>
+          Development of advanced inverse modeling and computational imaging
+          techniques for reconstructing hidden physical parameters using
+          wavelet methods, optimization, and uncertainty-aware algorithms.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Hydrodynamic Instability and Complex Flows</h3>
+        <p>
+          Investigation of flow instabilities, nonlinear dynamics, and
+          transition mechanisms in complex fluid systems using mathematical
+          analysis and high-fidelity numerical simulation.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Digital Twins for Engineering Systems</h3>
+        <p>
+          Integration of simulation, real-time data, and AI-based inference to
+          develop predictive digital twin architectures for engineering,
+          energy, and industrial systems.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Computational Medicine and Biomedical Modeling</h3>
+        <p>
+          Multiscale physiological modeling and computational analysis for
+          biomedical systems, enabling improved diagnostic tools, predictive
+          models, and data-driven healthcare technologies.
+        </p>
+      </div>
+    </section>
+
+    <section class="focus-panel">
+      <h3>Research Philosophy</h3>
+      <p>
+        ITECCS research is guided by a unified philosophy: rigorous mathematics, validated
+        scientific computing, and meaningful real-world deployment. We seek not only to
+        advance theory, but also to translate research into robust computational tools,
+        predictive models, advanced training, and strategic innovation pathways.
+      </p>
+    </section>
+
+    <section class="section-head">
+      <h2>Research Applications & Strategic Domains</h2>
+      <p>
+        Our research supports high-impact applications across engineering, healthcare,
+        advanced materials, environmental systems, scientific imaging, energy technologies,
+        and mission-oriented computational innovation.
+      </p>
+      <div class="accent-line"></div>
+    </section>
+
+    <section class="card-grid">
+      <div class="card">
+        <h3>Aerospace, Propulsion & Advanced Engineering</h3>
+        <ul>
+          <li>High-fidelity simulation of complex flow systems</li>
+          <li>Instability prediction and control-oriented modeling</li>
+          <li>Digital twins and deployable engineering computation</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Biomedical & Healthcare Technologies</h3>
+        <ul>
+          <li>Computational medicine and multiscale physiological modeling</li>
+          <li>Medical imaging and inverse reconstruction workflows</li>
+          <li>AI-supported predictive biomedical analysis</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Energy, Sustainability & Emerging Technologies</h3>
+        <ul>
+          <li>Porous-media transport and energy materials modeling</li>
+          <li>Water management and multiphysics energy systems</li>
+          <li>Data-driven sustainability and resource optimization</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section-head">
+      <h2>Research Collaboration</h2>
+      <p>
+        ITECCS welcomes collaboration with universities, research labs, industry partners,
+        startups, and public institutions. We support joint research projects, proposal
+        development, technical advisory, computational model development, and advanced
+        interdisciplinary research initiatives.
+      </p>
+      <div class="accent-line"></div>
+    </section>
+
+    <section class="card-grid">
+      <div class="card">
+        <h3><i class="fas fa-university"></i> Universities & Research Centers</h3>
+        <p>
+          Joint proposals, interdisciplinary research collaboration, graduate mentorship,
+          technical co-development, and advanced scientific computing frameworks.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3><i class="fas fa-industry"></i> Industry & Engineering Organizations</h3>
+        <p>
+          Modeling, simulation, AI integration, computational design, validation workflows,
+          and research-to-deployment partnerships for advanced engineering systems.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3><i class="fas fa-shield-halved"></i> Government & Mission-Critical Programs</h3>
+        <p>
+          Reliable scientific workflows, reproducible computational pipelines, high-fidelity
+          predictive modeling, and technically rigorous support for mission-oriented innovation.
+        </p>
+      </div>
+    </section>
+
+    <section class="cta-box">
+      <h2>Advance Research with ITECCS</h2>
+      <p>
+        Whether you are seeking research collaboration, technical advisory, applied modeling,
+        scientific computing support, or interdisciplinary project development, ITECCS is ready
+        to engage with institutions and partners committed to high-level research and innovation.
+      </p>
+      <a href="contact.html" class="btn btn-primary"><i class="fas fa-envelope"></i> Start a Research Collaboration</a>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 ITECCS. All rights reserved.</p>
+  </footer>
+</body>
+</html>
